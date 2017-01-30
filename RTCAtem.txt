@@ -247,3 +247,4 @@ hcaon = function( Odata, beky, keycol, hck = 5, hcm = "ward.D", dism = "euclidea
 
 # test
 # hcaon(im13,  hacbdt, pkb, dtname = "im13")
+# hcaon(im11,  hacbdt, pkb, dtname = "im11")
