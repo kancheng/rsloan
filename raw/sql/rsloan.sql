@@ -1,31 +1,4 @@
--- phpMyAdmin SQL Dump
--- version 4.0.10deb1
--- http://www.phpmyadmin.net
---
--- 主機: localhost
--- 建立日期: 2017 年 02 月 11 日 06:32
--- 伺服器版本: 5.5.54-MariaDB-1ubuntu0.14.04.1
--- PHP 版本: 5.5.9-1ubuntu4.20
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-
---
--- 資料庫: `rsloan`
---
-
--- --------------------------------------------------------
-
---
--- 資料表結構 `bu08`
---
-
+﻿
 CREATE TABLE IF NOT EXISTS `bu08` (
   `sid` varchar(9) DEFAULT NULL,
   `loam` int(1) DEFAULT NULL,
@@ -54,10 +27,6 @@ CREATE TABLE IF NOT EXISTS `bu08` (
   `eci` int(2) DEFAULT NULL,
   `buetc` int(2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `bu08`
---
 
 INSERT INTO `bu08` (`sid`, `loam`, `mm`, `ma`, `fm`, `ac`, `eca`, `ecb`, `inap`, `eebm`, `ima`, `pom`, `hrm`, `bul`, `esm`, `itdbul`, `cala`, `sta`, `calb`, `stb`, `erem`, `mant`, `itdc`, `mana`, `eci`, `buetc`) VALUES
 ('SD970445 ', 0, 78, 79, 80, 78, 74, 75, 94, 99, 98, 91, 96, 87, 91, 87, 90, 93, 95, 92, 76, 89, 87, 85, 93, 84),
@@ -163,12 +132,6 @@ INSERT INTO `bu08` (`sid`, `loam`, `mm`, `ma`, `fm`, `ac`, `eca`, `ecb`, `inap`,
 ('SD970557 ', 0, 80, 84, 75, 78, 71, 79, 89, 93, 98, 94, 86, 83, 80, 78, 96, 76, 93, 67, 73, 80, 86, 80, 63, 80),
 ('SD970558 ', 0, 84, 88, 70, 82, 71, 80, 90, 84, 91, 91, 80, 86, 88, 83, 91, 68, 93, 81, 73, 86, 89, 88, 74, 72);
 
--- --------------------------------------------------------
-
---
--- 資料表結構 `bu08df`
---
-
 CREATE TABLE IF NOT EXISTS `bu08df` (
   `maj` varchar(2) DEFAULT NULL,
   `year` int(4) DEFAULT NULL,
@@ -177,10 +140,6 @@ CREATE TABLE IF NOT EXISTS `bu08df` (
   `grade` int(1) DEFAULT NULL,
   `subd` varchar(24) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `bu08df`
---
 
 INSERT INTO `bu08df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('BU', 2008, 'mm', 'MM', 2, '行銷管理'),
@@ -208,12 +167,6 @@ INSERT INTO `bu08df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('BU', 2008, 'eci', 'PA', 2, '電子商務概論'),
 ('BU', 2008, 'buetc', 'GE', 3, '企業倫理');
 
--- --------------------------------------------------------
-
---
--- 資料表結構 `bu09`
---
-
 CREATE TABLE IF NOT EXISTS `bu09` (
   `sid` varchar(9) DEFAULT NULL,
   `loam` int(1) DEFAULT NULL,
@@ -240,10 +193,6 @@ CREATE TABLE IF NOT EXISTS `bu09` (
   `pjm` int(2) DEFAULT NULL,
   `ines` int(2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `bu09`
---
 
 INSERT INTO `bu09` (`sid`, `loam`, `mm`, `ma`, `fm`, `ac`, `eca`, `ecb`, `inap`, `eci`, `eebm`, `ima`, `mana`, `pom`, `hrm`, `esm`, `mads`, `sta`, `stb`, `erem`, `mant`, `cal`, `pjm`, `ines`) VALUES
 ('SD980465 ', 1, 72, 68, 71, 68, 60, 71, 72, 85, 99, 94, 78, 82, 83, 66, 90, 67, 70, 80, 60, 68, 73, 79),
@@ -342,12 +291,6 @@ INSERT INTO `bu09` (`sid`, `loam`, `mm`, `ma`, `fm`, `ac`, `eca`, `ecb`, `inap`,
 ('SD980577 ', 0, 79, 70, 60, 87, 32, 72, 86, 87, 63, 85, 79, 77, 82, 61, 85, 80, 68, 82, 78, 77, 61, 83),
 ('SD980578 ', 0, 75, 67, 60, 60, 25, 41, 74, 81, 72, 72, 63, 66, 75, 66, 85, 40, 39, 69, 71, 60, 66, 80);
 
--- --------------------------------------------------------
-
---
--- 資料表結構 `bu09df`
---
-
 CREATE TABLE IF NOT EXISTS `bu09df` (
   `maj` varchar(2) DEFAULT NULL,
   `year` int(4) DEFAULT NULL,
@@ -356,10 +299,6 @@ CREATE TABLE IF NOT EXISTS `bu09df` (
   `grade` int(1) DEFAULT NULL,
   `subd` varchar(24) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `bu09df`
---
 
 INSERT INTO `bu09df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('BU', 2009, 'mm', 'MM', 2, '行銷管理'),
@@ -384,12 +323,6 @@ INSERT INTO `bu09df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('BU', 2009, 'cal', 'MA', 1, '微積分'),
 ('BU', 2009, 'pjm', 'MM', 3, '專案管理'),
 ('BU', 2009, 'ines', 'GE', 3, '創新與創業');
-
--- --------------------------------------------------------
-
---
--- 資料表結構 `bu10`
---
 
 CREATE TABLE IF NOT EXISTS `bu10` (
   `sid` varchar(9) DEFAULT NULL,
@@ -417,10 +350,6 @@ CREATE TABLE IF NOT EXISTS `bu10` (
   `stb` int(2) DEFAULT NULL,
   `ec` int(2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `bu10`
---
 
 INSERT INTO `bu10` (`sid`, `loam`, `mm`, `ma`, `fm`, `ac`, `apec`, `inap`, `eci`, `eebm`, `ima`, `mana`, `pom`, `hrm`, `esm`, `mads`, `erem`, `pjm`, `ines`, `cala`, `calb`, `sta`, `stb`, `ec`) VALUES
 ('SD990459 ', 0, 60, 77, 75, 81, 72, 75, 72, 78, 88, 84, 95, 85, 89, 85, 87, 96, 87, 75, 60, 71, 73, 69),
@@ -517,12 +446,6 @@ INSERT INTO `bu10` (`sid`, `loam`, `mm`, `ma`, `fm`, `ac`, `apec`, `inap`, `eci`
 ('SD990578 ', 1, 72, 71, 72, 85, 71, 79, 72, 87, 99, 86, 72, 81, 65, 92, 72, 65, 90, 70, 61, 50, 0, 85),
 ('SD990579 ', 0, 62, 77, 62, 70, 63, 77, 78, 65, 68, 88, 67, 77, 76, 88, 63, 61, 69, 44, 60, 47, 35, 71);
 
--- --------------------------------------------------------
-
---
--- 資料表結構 `bu10df`
---
-
 CREATE TABLE IF NOT EXISTS `bu10df` (
   `maj` varchar(2) DEFAULT NULL,
   `year` int(4) DEFAULT NULL,
@@ -531,10 +454,6 @@ CREATE TABLE IF NOT EXISTS `bu10df` (
   `grade` int(1) DEFAULT NULL,
   `subd` varchar(24) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `bu10df`
---
 
 INSERT INTO `bu10df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('BU', 2010, 'mm', 'MM', 2, '行銷管理'),
@@ -560,12 +479,6 @@ INSERT INTO `bu10df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('BU', 2010, 'stb', 'MA', 2, '統計學(二)'),
 ('BU', 2010, 'ec', 'MM', 1, '經濟學原理');
 
--- --------------------------------------------------------
-
---
--- 資料表結構 `bu11`
---
-
 CREATE TABLE IF NOT EXISTS `bu11` (
   `sid` varchar(9) DEFAULT NULL,
   `loam` int(1) DEFAULT NULL,
@@ -590,10 +503,6 @@ CREATE TABLE IF NOT EXISTS `bu11` (
   `calb` int(3) DEFAULT NULL,
   `ec` int(2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `bu11`
---
 
 INSERT INTO `bu11` (`sid`, `loam`, `mm`, `fm`, `ac`, `eebm`, `bswa`, `mwsm`, `mana`, `pom`, `hrm`, `esm`, `mads`, `adpjm`, `erem`, `sta`, `stb`, `ines`, `care`, `cala`, `calb`, `ec`) VALUES
 ('SD1000510', 0, 81, 28, 60, 79, 65, 38, 55, 63, 61, 70, 80, 83, 64, 34, 39, 70, 80, 60, 60, 68),
@@ -709,12 +618,6 @@ INSERT INTO `bu11` (`sid`, `loam`, `mm`, `fm`, `ac`, `eebm`, `bswa`, `mwsm`, `ma
 ('SD1000738', 0, 74, 70, 0, 61, 0, 0, 0, 0, 61, 77, 88, 86, 69, 0, 69, 87, 77, 67, 60, 85),
 ('SD1000739', 0, 73, 63, 0, 0, 84, 0, 0, 0, 61, 72, 88, 88, 64, 0, 50, 88, 77, 60, 60, 80);
 
--- --------------------------------------------------------
-
---
--- 資料表結構 `bu11df`
---
-
 CREATE TABLE IF NOT EXISTS `bu11df` (
   `maj` varchar(2) DEFAULT NULL,
   `year` int(4) DEFAULT NULL,
@@ -723,10 +626,6 @@ CREATE TABLE IF NOT EXISTS `bu11df` (
   `grade` int(1) DEFAULT NULL,
   `subd` varchar(24) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `bu11df`
---
 
 INSERT INTO `bu11df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('BU', 2011, 'mm', 'MM', 2, '行銷管理'),
@@ -749,12 +648,6 @@ INSERT INTO `bu11df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('BU', 2011, 'cala', 'MA', 1, '商用微積分(一)'),
 ('BU', 2011, 'calb', 'MA', 1, '商用微積分(二)'),
 ('BU', 2011, 'ec', 'MM', 1, '經濟學原理與實務');
-
--- --------------------------------------------------------
-
---
--- 資料表結構 `bu12`
---
 
 CREATE TABLE IF NOT EXISTS `bu12` (
   `sid` varchar(9) DEFAULT NULL,
@@ -779,10 +672,6 @@ CREATE TABLE IF NOT EXISTS `bu12` (
   `calb` int(3) DEFAULT NULL,
   `ec` int(2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `bu12`
---
 
 INSERT INTO `bu12` (`sid`, `loam`, `mm`, `fm`, `ac`, `eebm`, `bswa`, `mwsm`, `mana`, `pom`, `hrm`, `esm`, `adpjm`, `erem`, `sta`, `stb`, `ines`, `care`, `cala`, `calb`, `ec`) VALUES
 ('SD1011002', 1, 92, 77, 60, 99, 86, 86, 62, 77, 89, 65, 71, 63, 76, 75, 74, 68, 84, 60, 64),
@@ -889,12 +778,6 @@ INSERT INTO `bu12` (`sid`, `loam`, `mm`, `fm`, `ac`, `eebm`, `bswa`, `mwsm`, `ma
 ('SD1011346', 0, 87, 92, 0, 99, 0, 0, 0, 93, 92, 76, 74, 63, 0, 87, 78, 78, 93, 81, 82),
 ('SD1011773', 0, 77, 60, 90, 80, 0, 73, 79, 36, 71, 51, 76, 48, 19, 0, 75, 78, 65, 50, 0);
 
--- --------------------------------------------------------
-
---
--- 資料表結構 `bu12df`
---
-
 CREATE TABLE IF NOT EXISTS `bu12df` (
   `maj` varchar(2) DEFAULT NULL,
   `year` int(4) DEFAULT NULL,
@@ -903,10 +786,6 @@ CREATE TABLE IF NOT EXISTS `bu12df` (
   `grade` int(1) DEFAULT NULL,
   `subd` varchar(24) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `bu12df`
---
 
 INSERT INTO `bu12df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('BU', 2012, 'mm', 'MM', 2, '行銷管理'),
@@ -928,12 +807,6 @@ INSERT INTO `bu12df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('BU', 2012, 'cala', 'MA', 1, '商用微積分(一)'),
 ('BU', 2012, 'calb', 'MA', 1, '商用微積分(二)'),
 ('BU', 2012, 'ec', 'MM', 1, '經濟學原理與實務');
-
--- --------------------------------------------------------
-
---
--- 資料表結構 `bu13`
---
 
 CREATE TABLE IF NOT EXISTS `bu13` (
   `sid` varchar(9) DEFAULT NULL,
@@ -957,10 +830,6 @@ CREATE TABLE IF NOT EXISTS `bu13` (
   `pjm` int(3) DEFAULT NULL,
   `pjmp` int(2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `bu13`
---
 
 INSERT INTO `bu13` (`sid`, `loam`, `mm`, `fm`, `ac`, `eebm`, `bswa`, `mwsm`, `mana`, `pom`, `hrm`, `erem`, `sta`, `stb`, `ines`, `cala`, `calb`, `ec`, `pjm`, `pjmp`) VALUES
 ('SD1020907', 1, 85, 83, 85, 99, 97, 89, 82, 94, 83, 85, 99, 98, 87, 90, 90, 99, 92, 92),
@@ -1069,12 +938,6 @@ INSERT INTO `bu13` (`sid`, `loam`, `mm`, `fm`, `ac`, `eebm`, `bswa`, `mwsm`, `ma
 ('SD1021024', 0, 87, 78, 97, 99, 93, 93, 95, 72, 92, 82, 74, 79, 89, 74, 94, 72, 92, 85),
 ('SD1021026', 1, 82, 83, 80, 99, 90, 80, 76, 78, 86, 70, 80, 77, 91, 93, 88, 60, 77, 85);
 
--- --------------------------------------------------------
-
---
--- 資料表結構 `bu13df`
---
-
 CREATE TABLE IF NOT EXISTS `bu13df` (
   `maj` varchar(2) DEFAULT NULL,
   `year` int(4) DEFAULT NULL,
@@ -1083,10 +946,6 @@ CREATE TABLE IF NOT EXISTS `bu13df` (
   `grade` int(1) DEFAULT NULL,
   `subd` varchar(24) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `bu13df`
---
 
 INSERT INTO `bu13df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('BU', 2013, 'mm', 'MM', 2, '行銷管理'),
@@ -1109,12 +968,6 @@ INSERT INTO `bu13df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('BU', 2013, 'pjm', 'MM', 2, '專案管理實務'),
 ('BU', 2013, 'pjmp', 'MM', 2, '專案企劃實務');
 
--- --------------------------------------------------------
-
---
--- 資料表結構 `bu14`
---
-
 CREATE TABLE IF NOT EXISTS `bu14` (
   `sid` varchar(9) DEFAULT NULL,
   `loam` int(1) DEFAULT NULL,
@@ -1132,10 +985,6 @@ CREATE TABLE IF NOT EXISTS `bu14` (
   `ec` int(3) DEFAULT NULL,
   `pjm` int(2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `bu14`
---
 
 INSERT INTO `bu14` (`sid`, `loam`, `mm`, `ac`, `eebm`, `bswa`, `mwsm`, `mana`, `pom`, `sta`, `stb`, `cala`, `calb`, `ec`, `pjm`) VALUES
 ('SD1030908', 0, 89, 91, 99, 94, 71, 75, 93, 77, 99, 64, 70, 94, 95),
@@ -1245,12 +1094,6 @@ INSERT INTO `bu14` (`sid`, `loam`, `mm`, `ac`, `eebm`, `bswa`, `mwsm`, `mana`, `
 ('SD1031037', 0, 54, 87, 62, 82, 60, 84, 60, 0, 0, 61, 60, 83, 54),
 ('SD1031327', 0, 67, 74, 61, 82, 79, 85, 84, 61, 65, 61, 70, 78, 75);
 
--- --------------------------------------------------------
-
---
--- 資料表結構 `bu14df`
---
-
 CREATE TABLE IF NOT EXISTS `bu14df` (
   `maj` varchar(2) DEFAULT NULL,
   `year` int(4) DEFAULT NULL,
@@ -1259,10 +1102,6 @@ CREATE TABLE IF NOT EXISTS `bu14df` (
   `grade` int(1) DEFAULT NULL,
   `subd` varchar(24) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `bu14df`
---
 
 INSERT INTO `bu14df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('BU', 2014, 'mm', 'MM', 2, '行銷管理'),
@@ -1281,12 +1120,6 @@ INSERT INTO `bu14df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('BU', 2014, 'ec', 'MM', 1, '經濟學原理與實務'),
 ('BU', 2014, 'pjm', 'MM', 2, '專案管理實務');
 
--- --------------------------------------------------------
-
---
--- 資料表結構 `bu15`
---
-
 CREATE TABLE IF NOT EXISTS `bu15` (
   `sid` varchar(9) DEFAULT NULL,
   `loam` int(1) DEFAULT NULL,
@@ -1295,10 +1128,6 @@ CREATE TABLE IF NOT EXISTS `bu15` (
   `ec` int(3) DEFAULT NULL,
   `care` int(3) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `bu15`
---
 
 INSERT INTO `bu15` (`sid`, `loam`, `bswa`, `sta`, `ec`, `care`) VALUES
 ('SD1040845', 0, 91, 91, 91, 94),
@@ -1404,12 +1233,6 @@ INSERT INTO `bu15` (`sid`, `loam`, `bswa`, `sta`, `ec`, `care`) VALUES
 ('SD1040953', 0, 76, 39, 78, 77),
 ('SD1040954', 0, 82, 86, 84, 73);
 
--- --------------------------------------------------------
-
---
--- 資料表結構 `bu15df`
---
-
 CREATE TABLE IF NOT EXISTS `bu15df` (
   `maj` varchar(2) DEFAULT NULL,
   `year` int(4) DEFAULT NULL,
@@ -1419,21 +1242,11 @@ CREATE TABLE IF NOT EXISTS `bu15df` (
   `subd` varchar(24) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- 資料表的匯出資料 `bu15df`
---
-
 INSERT INTO `bu15df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('BU', 2015, 'bswa', 'PA', 1, '商用軟體應用'),
 ('BU', 2015, 'sta', 'MA', 1, '應用統計學(一)'),
 ('BU', 2015, 'ec', 'MM', 1, '經濟學原理與實務'),
 ('BU', 2015, 'care', 'GE', 1, '興趣與職涯探索');
-
--- --------------------------------------------------------
-
---
--- 資料表結構 `fi08`
---
 
 CREATE TABLE IF NOT EXISTS `fi08` (
   `sid` varchar(9) DEFAULT NULL,
@@ -1467,10 +1280,6 @@ CREATE TABLE IF NOT EXISTS `fi08` (
   `ivpm` int(2) DEFAULT NULL,
   `filice` int(3) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `fi08`
---
 
 INSERT INTO `fi08` (`sid`, `loam`, `itdc`, `mana`, `eci`, `buetc`, `cala`, `calb`, `sta`, `stb`, `eca`, `ecb`, `ecmi`, `ecma`, `myba`, `mybb`, `imaca`, `imacb`, `inap`, `ecp`, `claw`, `bula`, `bulb`, `fma`, `fmb`, `ivm`, `inse`, `insep`, `ivpm`, `filice`) VALUES
 ('SD970332 ', 0, 73, 72, 82, 79, 75, 69, 61, 63, 63, 60, 70, 75, 68, 72, 64, 60, 85, 86, 88, 87, 72, 60, 69, 66, 85, 82, 63, 63),
@@ -1579,12 +1388,6 @@ INSERT INTO `fi08` (`sid`, `loam`, `itdc`, `mana`, `eci`, `buetc`, `cala`, `calb
 ('SD970442 ', 1, 88, 75, 85, 81, 85, 95, 70, 82, 77, 76, 67, 86, 80, 80, 95, 91, 82, 90, 91, 65, 72, 70, 78, 73, 82, 80, 77, 69),
 ('SD970443 ', 0, 97, 73, 72, 82, 49, 60, 24, 60, 47, 48, 69, 60, 73, 72, 60, 60, 79, 84, 83, 73, 66, 60, 42, 60, 80, 86, 63, 0);
 
--- --------------------------------------------------------
-
---
--- 資料表結構 `fi08df`
---
-
 CREATE TABLE IF NOT EXISTS `fi08df` (
   `maj` varchar(2) DEFAULT NULL,
   `year` int(4) DEFAULT NULL,
@@ -1593,10 +1396,6 @@ CREATE TABLE IF NOT EXISTS `fi08df` (
   `grade` int(1) DEFAULT NULL,
   `subd` varchar(24) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `fi08df`
---
 
 INSERT INTO `fi08df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('FI', 2008, 'itdc', 'PA', 1, '計算機概論'),
@@ -1625,12 +1424,6 @@ INSERT INTO `fi08df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('FI', 2008, 'ivm', 'PA', 3, '投資學'),
 ('FI', 2008, 'inse', 'PA', 3, '保險學');
 
--- --------------------------------------------------------
-
---
--- 資料表結構 `fi09`
---
-
 CREATE TABLE IF NOT EXISTS `fi09` (
   `sid` varchar(9) DEFAULT NULL,
   `loam` int(1) DEFAULT NULL,
@@ -1658,10 +1451,6 @@ CREATE TABLE IF NOT EXISTS `fi09` (
   `insep` int(2) DEFAULT NULL,
   `ivpm` int(2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `fi09`
---
 
 INSERT INTO `fi09` (`sid`, `loam`, `pjm`, `ines`, `cala`, `calb`, `sta`, `stb`, `eca`, `ecb`, `ecmi`, `ecma`, `myba`, `mybb`, `imaca`, `imacb`, `claw`, `bula`, `bulb`, `fma`, `fmb`, `ivm`, `inse`, `insep`, `ivpm`) VALUES
 ('SD980350 ', 0, 91, 92, 95, 95, 99, 100, 62, 64, 87, 89, 85, 91, 68, 93, 82, 90, 96, 78, 81, 83, 87, 76, 77),
@@ -1767,12 +1556,6 @@ INSERT INTO `fi09` (`sid`, `loam`, `pjm`, `ines`, `cala`, `calb`, `sta`, `stb`, 
 ('SD980460 ', 1, 74, 60, 63, 25, 0, 0, 60, 38, 63, 47, 75, 65, 10, 60, 63, 78, 59, 24, 27, 52, 76, 65, 60),
 ('SD980462 ', 1, 77, 79, 0, 0, 62, 66, 0, 0, 74, 76, 81, 72, 86, 91, 60, 75, 63, 60, 60, 54, 73, 72, 67);
 
--- --------------------------------------------------------
-
---
--- 資料表結構 `fi09df`
---
-
 CREATE TABLE IF NOT EXISTS `fi09df` (
   `maj` varchar(2) DEFAULT NULL,
   `year` int(4) DEFAULT NULL,
@@ -1781,10 +1564,6 @@ CREATE TABLE IF NOT EXISTS `fi09df` (
   `grade` int(1) DEFAULT NULL,
   `subd` varchar(24) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `fi09df`
---
 
 INSERT INTO `fi09df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('FI', 2009, 'pjm', 'MM', 3, '專案管理'),
@@ -1810,12 +1589,6 @@ INSERT INTO `fi09df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('FI', 2009, 'inse', 'PA', 3, '保險學'),
 ('FI', 2009, 'insep', 'PA', 3, '保險實務'),
 ('FI', 2009, 'ivpm', 'MM', 3, '投資組合管理');
-
--- --------------------------------------------------------
-
---
--- 資料表結構 `fi10`
---
 
 CREATE TABLE IF NOT EXISTS `fi10` (
   `sid` varchar(9) DEFAULT NULL,
@@ -1844,10 +1617,6 @@ CREATE TABLE IF NOT EXISTS `fi10` (
   `insep` int(2) DEFAULT NULL,
   `ivpm` int(2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `fi10`
---
 
 INSERT INTO `fi10` (`sid`, `loam`, `pjm`, `ines`, `cala`, `calb`, `sta`, `stb`, `ec`, `ecmi`, `ecma`, `apec`, `myba`, `mybb`, `imaca`, `imacb`, `claw`, `bula`, `bulb`, `fma`, `fmb`, `ivm`, `inse`, `insep`, `ivpm`) VALUES
 ('SD990341 ', 0, 78, 86, 94, 96, 83, 79, 83, 71, 77, 89, 61, 65, 0, 71, 0, 69, 82, 78, 86, 91, 69, 65, 79),
@@ -1952,12 +1721,6 @@ INSERT INTO `fi10` (`sid`, `loam`, `pjm`, `ines`, `cala`, `calb`, `sta`, `stb`, 
 ('SD990455 ', 0, 70, 88, 0, 0, 60, 41, 0, 65, 64, 87, 84, 79, 0, 0, 79, 65, 90, 63, 60, 67, 71, 72, 65),
 ('SD991015 ', 0, 75, 81, 0, 0, 77, 0, 0, 60, 67, 92, 73, 71, 71, 64, 74, 80, 77, 60, 68, 66, 67, 75, 71);
 
--- --------------------------------------------------------
-
---
--- 資料表結構 `fi10df`
---
-
 CREATE TABLE IF NOT EXISTS `fi10df` (
   `maj` varchar(2) DEFAULT NULL,
   `year` int(4) DEFAULT NULL,
@@ -1966,10 +1729,6 @@ CREATE TABLE IF NOT EXISTS `fi10df` (
   `grade` int(1) DEFAULT NULL,
   `subd` varchar(24) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `fi10df`
---
 
 INSERT INTO `fi10df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('FI', 2010, 'pjm', 'MM', 3, '專案管理'),
@@ -1996,12 +1755,6 @@ INSERT INTO `fi10df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('FI', 2010, 'insep', 'PA', 3, '保險實務'),
 ('FI', 2010, 'ivpm', 'MM', 3, '投資組合管理');
 
--- --------------------------------------------------------
-
---
--- 資料表結構 `fi11`
---
-
 CREATE TABLE IF NOT EXISTS `fi11` (
   `sid` varchar(9) DEFAULT NULL,
   `loam` int(1) DEFAULT NULL,
@@ -2027,10 +1780,6 @@ CREATE TABLE IF NOT EXISTS `fi11` (
   `fuop` int(2) DEFAULT NULL,
   `mfin` int(2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `fi11`
---
 
 INSERT INTO `fi11` (`sid`, `loam`, `ines`, `care`, `cala`, `calb`, `ec`, `sta`, `stb`, `apec`, `myba`, `mybb`, `imaca`, `imacb`, `fsta`, `claw`, `bul`, `fma`, `fmb`, `ivm`, `inse`, `fuop`, `mfin`) VALUES
 ('SD1000317', 0, 85, 92, 91, 93, 81, 71, 86, 85, 65, 70, 60, 77, 77, 78, 0, 82, 71, 76, 79, 82, 84),
@@ -2151,12 +1900,6 @@ INSERT INTO `fi11` (`sid`, `loam`, `ines`, `care`, `cala`, `calb`, `ec`, `sta`, 
 ('SD1000737', 0, 66, 88, 83, 60, 88, 60, 60, 87, 71, 63, 66, 60, 63, 70, 60, 60, 60, 67, 76, 65, 86),
 ('SD1000798', 0, 81, 87, 60, 60, 79, 0, 30, 76, 83, 72, 60, 47, 67, 82, 0, 94, 60, 51, 79, 64, 82);
 
--- --------------------------------------------------------
-
---
--- 資料表結構 `fi11df`
---
-
 CREATE TABLE IF NOT EXISTS `fi11df` (
   `maj` varchar(2) DEFAULT NULL,
   `year` int(4) DEFAULT NULL,
@@ -2165,10 +1908,6 @@ CREATE TABLE IF NOT EXISTS `fi11df` (
   `grade` int(1) DEFAULT NULL,
   `subd` varchar(24) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `fi11df`
---
 
 INSERT INTO `fi11df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('FI', 2011, 'ines', 'GE', 3, '創新與創業'),
@@ -2192,12 +1931,6 @@ INSERT INTO `fi11df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('FI', 2011, 'inse', 'PA', 2, '保險學'),
 ('FI', 2011, 'fuop', 'PA', 3, '期貨與選擇權'),
 ('FI', 2011, 'mfin', 'PA', 3, '金融業行銷');
-
--- --------------------------------------------------------
-
---
--- 資料表結構 `fi12`
---
 
 CREATE TABLE IF NOT EXISTS `fi12` (
   `sid` varchar(9) DEFAULT NULL,
@@ -2224,10 +1957,6 @@ CREATE TABLE IF NOT EXISTS `fi12` (
   `fuop` int(2) DEFAULT NULL,
   `mfin` int(2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `fi12`
---
 
 INSERT INTO `fi12` (`sid`, `loam`, `ines`, `care`, `cala`, `calb`, `ec`, `sta`, `stb`, `apec`, `myba`, `mybb`, `imaca`, `imacb`, `fsta`, `claw`, `bul`, `fma`, `fmb`, `ivm`, `inse`, `fuop`, `mfin`) VALUES
 ('SD1010687', 0, 25, 80, 0, 0, 61, 9, 12, 0, 63, 86, 0, 61, 66, 60, 71, 47, 61, 64, 72, 74, 81),
@@ -2340,12 +2069,6 @@ INSERT INTO `fi12` (`sid`, `loam`, `ines`, `care`, `cala`, `calb`, `ec`, `sta`, 
 ('SD1010998', 0, 80, 89, 0, 0, 0, 60, 76, 0, 88, 83, 60, 70, 66, 84, 81, 60, 82, 67, 0, 85, 90),
 ('SD1011156', 0, 74, 0, 81, 73, 72, 60, 40, 0, 50, 60, 63, 0, 0, 86, 79, 64, 66, 60, 69, 0, 60);
 
--- --------------------------------------------------------
-
---
--- 資料表結構 `fi12df`
---
-
 CREATE TABLE IF NOT EXISTS `fi12df` (
   `maj` varchar(2) DEFAULT NULL,
   `year` int(4) DEFAULT NULL,
@@ -2354,10 +2077,6 @@ CREATE TABLE IF NOT EXISTS `fi12df` (
   `grade` int(1) DEFAULT NULL,
   `subd` varchar(24) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `fi12df`
---
 
 INSERT INTO `fi12df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('FI', 2012, 'ines', 'GE', 3, '創新與創業'),
@@ -2381,12 +2100,6 @@ INSERT INTO `fi12df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('FI', 2012, 'inse', 'PA', 2, '保險學'),
 ('FI', 2012, 'fuop', 'PA', 3, '期貨與選擇權'),
 ('FI', 2012, 'mfin', 'PA', 3, '金融業行銷');
-
--- --------------------------------------------------------
-
---
--- 資料表結構 `fi13`
---
 
 CREATE TABLE IF NOT EXISTS `fi13` (
   `sid` varchar(9) DEFAULT NULL,
@@ -2412,10 +2125,6 @@ CREATE TABLE IF NOT EXISTS `fi13` (
   `inse` int(2) DEFAULT NULL,
   `mfin` int(2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `fi13`
---
 
 INSERT INTO `fi13` (`sid`, `loam`, `ines`, `cala`, `calb`, `ec`, `pjm`, `pjmp`, `sta`, `stb`, `apec`, `myba`, `mybb`, `imaca`, `imacb`, `claw`, `bul`, `fma`, `fmb`, `ivm`, `inse`, `mfin`) VALUES
 ('SD1020767', 0, 78, 93, 90, 52, 84, 98, 48, 72, 60, 79, 75, 26, 0, 74, 82, 60, 62, 60, 72, 72),
@@ -2521,12 +2230,6 @@ INSERT INTO `fi13` (`sid`, `loam`, `ines`, `cala`, `calb`, `ec`, `pjm`, `pjmp`, 
 ('SD1020891', 0, 75, 99, 79, 77, 60, 74, 77, 60, 86, 60, 66, 79, 80, 73, 81, 60, 48, 77, 54, 76),
 ('SD1020906', 0, 81, 0, 0, 67, 61, 71, 60, 67, 0, 60, 72, 60, 60, 0, 0, 48, 42, 86, 68, 77);
 
--- --------------------------------------------------------
-
---
--- 資料表結構 `fi13df`
---
-
 CREATE TABLE IF NOT EXISTS `fi13df` (
   `maj` varchar(2) DEFAULT NULL,
   `year` int(4) DEFAULT NULL,
@@ -2535,10 +2238,6 @@ CREATE TABLE IF NOT EXISTS `fi13df` (
   `grade` int(1) DEFAULT NULL,
   `subd` varchar(24) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `fi13df`
---
 
 INSERT INTO `fi13df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('FI', 2013, 'ines', 'GE', 3, '創新與創業'),
@@ -2563,12 +2262,6 @@ INSERT INTO `fi13df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('FI', 2013, 'fuop', 'PA', 3, '期貨與選擇權'),
 ('FI', 2013, 'mfin', 'PA', 3, '金融業行銷');
 
--- --------------------------------------------------------
-
---
--- 資料表結構 `fi14`
---
-
 CREATE TABLE IF NOT EXISTS `fi14` (
   `sid` varchar(9) DEFAULT NULL,
   `loam` int(1) DEFAULT NULL,
@@ -2584,10 +2277,6 @@ CREATE TABLE IF NOT EXISTS `fi14` (
   `bul` int(2) DEFAULT NULL,
   `fma` int(2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `fi14`
---
 
 INSERT INTO `fi14` (`sid`, `loam`, `cala`, `ec`, `pjm`, `sta`, `apec`, `myba`, `imaca`, `imacb`, `claw`, `bul`, `fma`) VALUES
 ('SD1030761', 0, 86, 71, 83, 77, 79, 67, 83, 73, 64, 69, 68),
@@ -2690,12 +2379,6 @@ INSERT INTO `fi14` (`sid`, `loam`, `cala`, `ec`, `pjm`, `sta`, `apec`, `myba`, `
 ('SD1030902', 0, 95, 89, 69, 60, 93, 76, 82, 0, 94, 92, 67),
 ('SD1030904', 1, 86, 84, 70, 66, 85, 80, 60, 0, 84, 81, 68);
 
--- --------------------------------------------------------
-
---
--- 資料表結構 `fi14df`
---
-
 CREATE TABLE IF NOT EXISTS `fi14df` (
   `maj` varchar(2) DEFAULT NULL,
   `year` int(4) DEFAULT NULL,
@@ -2704,10 +2387,6 @@ CREATE TABLE IF NOT EXISTS `fi14df` (
   `grade` int(1) DEFAULT NULL,
   `subd` varchar(24) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `fi14df`
---
 
 INSERT INTO `fi14df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('FI', 2014, 'care', 'GE', 3, '職涯分析與規劃'),
@@ -2728,12 +2407,6 @@ INSERT INTO `fi14df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('FI', 2014, 'fuop', 'PA', 3, '期貨與選擇權'),
 ('FI', 2014, 'mfin', 'PA', 3, '金融業行銷');
 
--- --------------------------------------------------------
-
---
--- 資料表結構 `fi15`
---
-
 CREATE TABLE IF NOT EXISTS `fi15` (
   `sid` varchar(9) DEFAULT NULL,
   `loam` int(1) DEFAULT NULL,
@@ -2743,10 +2416,6 @@ CREATE TABLE IF NOT EXISTS `fi15` (
   `imaca` int(3) DEFAULT NULL,
   `claw` int(2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `fi15`
---
 
 INSERT INTO `fi15` (`sid`, `loam`, `cala`, `ec`, `care`, `imaca`, `claw`) VALUES
 ('SD1040712', 0, 96, 75, 88, 87, 78),
@@ -2850,12 +2519,6 @@ INSERT INTO `fi15` (`sid`, `loam`, `cala`, `ec`, `care`, `imaca`, `claw`) VALUES
 ('SD1040829', 0, 89, 85, 88, 86, 60),
 ('SD1040830', 0, 97, 86, 88, 100, 75);
 
--- --------------------------------------------------------
-
---
--- 資料表結構 `fi15df`
---
-
 CREATE TABLE IF NOT EXISTS `fi15df` (
   `maj` varchar(2) DEFAULT NULL,
   `year` int(4) DEFAULT NULL,
@@ -2865,10 +2528,6 @@ CREATE TABLE IF NOT EXISTS `fi15df` (
   `subd` varchar(24) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- 資料表的匯出資料 `fi15df`
---
-
 INSERT INTO `fi15df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('FI', 2015, 'cala', 'MA', 1, '商用微積分(一)'),
 ('FI', 2015, 'ec', 'MM', 1, '經濟學原理與實務'),
@@ -2876,12 +2535,6 @@ INSERT INTO `fi15df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('FI', 2015, 'imaca', 'PA', 1, '中級會計學（一）'),
 ('FI', 2015, 'claw', 'PA', 1, '民法概要'),
 ('FI', 2015, 'ivm', 'PA', 3, '投資學');
-
--- --------------------------------------------------------
-
---
--- 資料表結構 `ib08`
---
 
 CREATE TABLE IF NOT EXISTS `ib08` (
   `sid` varchar(9) DEFAULT NULL,
@@ -2914,10 +2567,6 @@ CREATE TABLE IF NOT EXISTS `ib08` (
   `fm` int(2) DEFAULT NULL,
   `itmfi` int(2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `ib08`
---
 
 INSERT INTO `ib08` (`sid`, `loam`, `itdc`, `mana`, `eci`, `buetc`, `eitba`, `eitbb`, `ebcmm`, `eca`, `ecb`, `ecmi`, `ecma`, `cala`, `calb`, `sta`, `stb`, `apeci`, `mm`, `gmktm`, `itbsm`, `claw`, `prittd`, `mbinf`, `itmtr`, `aca`, `acb`, `fm`, `itmfi`) VALUES
 ('SD970219 ', 0, 95, 94, 85, 87, 85, 85, 86, 64, 60, 74, 95, 98, 99, 87, 90, 91, 93, 92, 84, 81, 81, 91, 87, 60, 65, 73, 94),
@@ -3023,12 +2672,6 @@ INSERT INTO `ib08` (`sid`, `loam`, `itdc`, `mana`, `eci`, `buetc`, `eitba`, `eit
 ('SD970330 ', 1, 84, 87, 76, 85, 63, 60, 78, 68, 60, 66, 60, 95, 90, 60, 60, 86, 60, 60, 63, 75, 75, 62, 71, 69, 60, 60, 70),
 ('SD970331 ', 0, 74, 86, 74, 86, 65, 73, 77, 60, 60, 78, 60, 94, 85, 80, 66, 77, 72, 75, 82, 71, 80, 61, 78, 60, 61, 68, 74);
 
--- --------------------------------------------------------
-
---
--- 資料表結構 `ib08df`
---
-
 CREATE TABLE IF NOT EXISTS `ib08df` (
   `maj` varchar(2) DEFAULT NULL,
   `year` int(4) DEFAULT NULL,
@@ -3037,10 +2680,6 @@ CREATE TABLE IF NOT EXISTS `ib08df` (
   `grade` int(1) DEFAULT NULL,
   `subd` varchar(27) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `ib08df`
---
 
 INSERT INTO `ib08df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('IB', 2008, 'itdc', 'PA', 1, '計算機概論'),
@@ -3071,12 +2710,6 @@ INSERT INTO `ib08df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('IB', 2008, 'fm', 'MM', 2, '財務管理'),
 ('IB', 2008, 'itmfi', 'PA', 3, '國際金融理論');
 
--- --------------------------------------------------------
-
---
--- 資料表結構 `ib09`
---
-
 CREATE TABLE IF NOT EXISTS `ib09` (
   `sid` varchar(9) DEFAULT NULL,
   `loam` int(1) DEFAULT NULL,
@@ -3103,10 +2736,6 @@ CREATE TABLE IF NOT EXISTS `ib09` (
   `pjm` int(2) DEFAULT NULL,
   `ines` int(2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `ib09`
---
 
 INSERT INTO `ib09` (`sid`, `loam`, `mm`, `ma`, `fm`, `ac`, `eca`, `ecb`, `inap`, `eci`, `eebm`, `ima`, `mana`, `pom`, `hrm`, `esm`, `mads`, `sta`, `stb`, `erem`, `mamt`, `cal`, `pjm`, `ines`) VALUES
 ('SD980465 ', 1, 72, 68, 71, 68, 60, 71, 72, 85, 99, 94, 78, 82, 83, 66, 90, 67, 70, 80, 60, 68, 73, 79),
@@ -3205,12 +2834,6 @@ INSERT INTO `ib09` (`sid`, `loam`, `mm`, `ma`, `fm`, `ac`, `eca`, `ecb`, `inap`,
 ('SD980577 ', 0, 79, 70, 60, 87, 32, 72, 86, 87, 63, 85, 79, 77, 82, 61, 85, 80, 68, 82, 78, 77, 61, 83),
 ('SD980578 ', 0, 75, 67, 60, 60, 25, 41, 74, 81, 72, 72, 63, 66, 75, 66, 85, 40, 39, 69, 71, 60, 66, 80);
 
--- --------------------------------------------------------
-
---
--- 資料表結構 `ib09df`
---
-
 CREATE TABLE IF NOT EXISTS `ib09df` (
   `maj` varchar(2) DEFAULT NULL,
   `year` int(4) DEFAULT NULL,
@@ -3219,10 +2842,6 @@ CREATE TABLE IF NOT EXISTS `ib09df` (
   `grade` int(1) DEFAULT NULL,
   `subd` varchar(24) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `ib09df`
---
 
 INSERT INTO `ib09df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('IB', 2009, 'mm', 'MM', 2, '行銷管理'),
@@ -3247,12 +2866,6 @@ INSERT INTO `ib09df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('IB', 2009, 'cal', 'MA', 1, '微積分'),
 ('IB', 2009, 'pjm', 'MM', 3, '專案管理'),
 ('IB', 2009, 'ines', 'GE', 3, '創新與創業');
-
--- --------------------------------------------------------
-
---
--- 資料表結構 `ib10`
---
 
 CREATE TABLE IF NOT EXISTS `ib10` (
   `sid` varchar(9) DEFAULT NULL,
@@ -3280,10 +2893,6 @@ CREATE TABLE IF NOT EXISTS `ib10` (
   `stb` int(2) DEFAULT NULL,
   `ec` int(2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `ib10`
---
 
 INSERT INTO `ib10` (`sid`, `loam`, `mm`, `ma`, `fm`, `ac`, `apec`, `inap`, `eci`, `eebm`, `ima`, `mana`, `pom`, `hrm`, `esm`, `mads`, `erem`, `pjm`, `ines`, `cala`, `calb`, `sta`, `stb`, `ec`) VALUES
 ('SD990459 ', 0, 60, 77, 75, 81, 72, 75, 72, 78, 88, 84, 95, 85, 89, 85, 87, 96, 87, 75, 60, 71, 73, 69),
@@ -3380,12 +2989,6 @@ INSERT INTO `ib10` (`sid`, `loam`, `mm`, `ma`, `fm`, `ac`, `apec`, `inap`, `eci`
 ('SD990578 ', 1, 72, 71, 72, 85, 71, 79, 72, 87, 99, 86, 72, 81, 65, 92, 72, 65, 90, 70, 61, 50, 0, 85),
 ('SD990579 ', 0, 62, 77, 62, 70, 63, 77, 78, 65, 68, 88, 67, 77, 76, 88, 63, 61, 69, 44, 60, 47, 35, 71);
 
--- --------------------------------------------------------
-
---
--- 資料表結構 `ib10df`
---
-
 CREATE TABLE IF NOT EXISTS `ib10df` (
   `maj` varchar(2) DEFAULT NULL,
   `year` int(4) DEFAULT NULL,
@@ -3394,10 +2997,6 @@ CREATE TABLE IF NOT EXISTS `ib10df` (
   `grade` int(1) DEFAULT NULL,
   `subd` varchar(24) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `ib10df`
---
 
 INSERT INTO `ib10df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('IB', 2010, 'mm', 'MM', 2, '行銷管理'),
@@ -3423,12 +3022,6 @@ INSERT INTO `ib10df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('IB', 2010, 'stb', 'MA', 2, '統計學(二)'),
 ('IB', 2010, 'ec', 'MM', 1, '經濟學原理');
 
--- --------------------------------------------------------
-
---
--- 資料表結構 `ib11`
---
-
 CREATE TABLE IF NOT EXISTS `ib11` (
   `sid` varchar(9) DEFAULT NULL,
   `loam` int(1) DEFAULT NULL,
@@ -3453,10 +3046,6 @@ CREATE TABLE IF NOT EXISTS `ib11` (
   `calb` int(3) DEFAULT NULL,
   `ec` int(2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `ib11`
---
 
 INSERT INTO `ib11` (`sid`, `loam`, `mm`, `fm`, `ac`, `eebm`, `bswa`, `mwsm`, `mana`, `pom`, `hrm`, `esm`, `mads`, `adpjm`, `erem`, `sta`, `stb`, `ines`, `care`, `cala`, `calb`, `ec`) VALUES
 ('SD1000510', 0, 81, 28, 60, 79, 65, 38, 55, 63, 61, 70, 80, 83, 64, 34, 39, 70, 80, 60, 60, 68),
@@ -3572,12 +3161,6 @@ INSERT INTO `ib11` (`sid`, `loam`, `mm`, `fm`, `ac`, `eebm`, `bswa`, `mwsm`, `ma
 ('SD1000738', 0, 74, 70, 0, 61, 0, 0, 0, 0, 61, 77, 88, 86, 69, 0, 69, 87, 77, 67, 60, 85),
 ('SD1000739', 0, 73, 63, 0, 0, 84, 0, 0, 0, 61, 72, 88, 88, 64, 0, 50, 88, 77, 60, 60, 80);
 
--- --------------------------------------------------------
-
---
--- 資料表結構 `ib11df`
---
-
 CREATE TABLE IF NOT EXISTS `ib11df` (
   `maj` varchar(2) DEFAULT NULL,
   `year` int(4) DEFAULT NULL,
@@ -3586,10 +3169,6 @@ CREATE TABLE IF NOT EXISTS `ib11df` (
   `grade` int(1) DEFAULT NULL,
   `subd` varchar(24) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `ib11df`
---
 
 INSERT INTO `ib11df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('IB', 2011, 'mm', 'MM', 2, '行銷管理'),
@@ -3612,12 +3191,6 @@ INSERT INTO `ib11df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('IB', 2011, 'cala', 'MA', 1, '商用微積分(一)'),
 ('IB', 2011, 'calb', 'MA', 1, '商用微積分(二)'),
 ('IB', 2011, 'ec', 'MM', 1, '經濟學原理與實務');
-
--- --------------------------------------------------------
-
---
--- 資料表結構 `ib12`
---
 
 CREATE TABLE IF NOT EXISTS `ib12` (
   `sid` varchar(9) DEFAULT NULL,
@@ -3650,10 +3223,6 @@ CREATE TABLE IF NOT EXISTS `ib12` (
   `fm` int(3) DEFAULT NULL,
   `itmfi` int(3) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `ib12`
---
 
 INSERT INTO `ib12` (`sid`, `loam`, `ines`, `care`, `cala`, `calb`, `ec`, `eitba`, `eitbb`, `ebcmm`, `eortr`, `eci`, `maec`, `apeci`, `sta`, `stb`, `mana`, `mm`, `itmt`, `itmtr`, `itbsm`, `prittda`, `prittdb`, `gmktm`, `erplab`, `aca`, `acb`, `fm`, `itmfi`) VALUES
 ('SD1010721', 1, 96, 79, 94, 98, 85, 91, 91, 89, 90, 96, 84, 89, 76, 98, 92, 89, 94, 76, 100, 95, 88, 90, 90, 60, 77, 100, 100),
@@ -3759,12 +3328,6 @@ INSERT INTO `ib12` (`sid`, `loam`, `ines`, `care`, `cala`, `calb`, `ec`, `eitba`
 ('SD1011249', 0, 67, 76, 74, 60, 76, 55, 84, 86, 80, 80, 0, 0, 0, 0, 0, 77, 86, 74, 67, 78, 60, 72, 91, 0, 0, 0, 65),
 ('SD1011349', 0, 74, 79, 78, 69, 77, 56, 81, 66, 65, 85, 73, 0, 0, 90, 0, 92, 85, 84, 88, 84, 77, 79, 79, 0, 71, 78, 60);
 
--- --------------------------------------------------------
-
---
--- 資料表結構 `ib12df`
---
-
 CREATE TABLE IF NOT EXISTS `ib12df` (
   `maj` varchar(2) DEFAULT NULL,
   `year` int(4) DEFAULT NULL,
@@ -3773,10 +3336,6 @@ CREATE TABLE IF NOT EXISTS `ib12df` (
   `grade` int(1) DEFAULT NULL,
   `subd` varchar(27) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `ib12df`
---
 
 INSERT INTO `ib12df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('IB', 2012, 'ines', 'GE', 3, '創新與創業'),
@@ -3809,12 +3368,6 @@ INSERT INTO `ib12df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('IB', 2012, 'fm', 'MM', 2, '財務管理'),
 ('IB', 2012, 'itmfi', 'PA', 3, '國際金融');
 
--- --------------------------------------------------------
-
---
--- 資料表結構 `ib13`
---
-
 CREATE TABLE IF NOT EXISTS `ib13` (
   `sid` varchar(9) DEFAULT NULL,
   `loam` int(1) DEFAULT NULL,
@@ -3840,10 +3393,6 @@ CREATE TABLE IF NOT EXISTS `ib13` (
   `acb` int(2) DEFAULT NULL,
   `fm` int(2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `ib13`
---
 
 INSERT INTO `ib13` (`sid`, `loam`, `ines`, `cala`, `calb`, `ec`, `pjm`, `pjmp`, `eitba`, `eortr`, `eci`, `maec`, `apeci`, `sta`, `stb`, `mana`, `mm`, `itmt`, `itbsm`, `prittda`, `aca`, `acb`, `fm`) VALUES
 ('SD1020646', 0, 93, 91, 98, 83, 82, 91, 87, 90, 86, 88, 91, 97, 95, 93, 93, 88, 75, 88, 72, 63, 86),
@@ -3943,12 +3492,6 @@ INSERT INTO `ib13` (`sid`, `loam`, `ines`, `cala`, `calb`, `ec`, `pjm`, `pjmp`, 
 ('SD1020761', 0, 98, 0, 0, 85, 0, 0, 76, 72, 95, 0, 90, 80, 97, 74, 98, 94, 76, 92, 61, 92, 90),
 ('SD1020762', 0, 78, 92, 83, 66, 0, 0, 66, 0, 89, 81, 84, 93, 88, 60, 60, 75, 60, 61, 70, 75, 60);
 
--- --------------------------------------------------------
-
---
--- 資料表結構 `ib13df`
---
-
 CREATE TABLE IF NOT EXISTS `ib13df` (
   `maj` varchar(2) DEFAULT NULL,
   `year` int(4) DEFAULT NULL,
@@ -3957,10 +3500,6 @@ CREATE TABLE IF NOT EXISTS `ib13df` (
   `grade` int(1) DEFAULT NULL,
   `subd` varchar(27) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `ib13df`
---
 
 INSERT INTO `ib13df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('IB', 2013, 'ines', 'GE', 3, '創新與創業'),
@@ -3994,12 +3533,6 @@ INSERT INTO `ib13df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('IB', 2013, 'fm', 'MM', 2, '財務管理'),
 ('IB', 2013, 'itmfi', 'PA', 3, '國際金融');
 
--- --------------------------------------------------------
-
---
--- 資料表結構 `ib14`
---
-
 CREATE TABLE IF NOT EXISTS `ib14` (
   `sid` varchar(9) DEFAULT NULL,
   `loam` int(1) DEFAULT NULL,
@@ -4017,10 +3550,6 @@ CREATE TABLE IF NOT EXISTS `ib14` (
   `aca` int(2) DEFAULT NULL,
   `acb` int(2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `ib14`
---
 
 INSERT INTO `ib14` (`sid`, `loam`, `cala`, `calb`, `ec`, `pjm`, `eortr`, `eci`, `maec`, `sta`, `mana`, `mm`, `itmt`, `aca`, `acb`) VALUES
 ('SD1030650', 0, 73, 73, 79, 71, 84, 75, 72, 90, 97, 84, 76, 66, 60),
@@ -4122,12 +3651,6 @@ INSERT INTO `ib14` (`sid`, `loam`, `cala`, `calb`, `ec`, `pjm`, `eortr`, `eci`, 
 ('SD1030756', 0, 92, 99, 83, 83, 82, 83, 85, 83, 87, 79, 83, 84, 63),
 ('SD1030759', 1, 86, 69, 71, 64, 69, 72, 0, 63, 0, 0, 74, 71, 63);
 
--- --------------------------------------------------------
-
---
--- 資料表結構 `ib14df`
---
-
 CREATE TABLE IF NOT EXISTS `ib14df` (
   `maj` varchar(2) DEFAULT NULL,
   `year` int(4) DEFAULT NULL,
@@ -4136,10 +3659,6 @@ CREATE TABLE IF NOT EXISTS `ib14df` (
   `grade` int(1) DEFAULT NULL,
   `subd` varchar(24) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `ib14df`
---
 
 INSERT INTO `ib14df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('IB', 2014, 'ines', 'GE', 3, '創新與創業'),
@@ -4165,12 +3684,6 @@ INSERT INTO `ib14df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('IB', 2014, 'fm', 'MM', 2, '財務管理'),
 ('IB', 2014, 'itmfi', 'PA', 3, '國際金融');
 
--- --------------------------------------------------------
-
---
--- 資料表結構 `ib15`
---
-
 CREATE TABLE IF NOT EXISTS `ib15` (
   `sid` varchar(9) DEFAULT NULL,
   `loam` int(1) DEFAULT NULL,
@@ -4180,10 +3693,6 @@ CREATE TABLE IF NOT EXISTS `ib15` (
   `mm` int(3) DEFAULT NULL,
   `aca` int(3) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `ib15`
---
 
 INSERT INTO `ib15` (`sid`, `loam`, `cala`, `ec`, `care`, `mm`, `aca`) VALUES
 ('SD1040605', 1, 100, 90, 85, 100, 70),
@@ -4290,12 +3799,6 @@ INSERT INTO `ib15` (`sid`, `loam`, `cala`, `ec`, `care`, `mm`, `aca`) VALUES
 ('SD1040709', 1, 91, 81, 92, 75, 68),
 ('SD1040710', 1, 79, 70, 77, 67, 62);
 
--- --------------------------------------------------------
-
---
--- 資料表結構 `ib15df`
---
-
 CREATE TABLE IF NOT EXISTS `ib15df` (
   `maj` varchar(2) DEFAULT NULL,
   `year` int(4) DEFAULT NULL,
@@ -4305,22 +3808,12 @@ CREATE TABLE IF NOT EXISTS `ib15df` (
   `subd` varchar(24) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- 資料表的匯出資料 `ib15df`
---
-
 INSERT INTO `ib15df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('IB', 2015, 'cala', 'MA', 1, '商用微積分(一)'),
 ('IB', 2015, 'ec', 'MM', 1, '經濟學原理與實務'),
 ('IB', 2015, 'care', 'GE', 1, '興趣與職涯探索'),
 ('IB', 2015, 'mm', 'MM', 1, '行銷管理'),
 ('IB', 2015, 'aca', 'MM', 1, '會計學(一)');
-
--- --------------------------------------------------------
-
---
--- 資料表結構 `id08`
---
 
 CREATE TABLE IF NOT EXISTS `id08` (
   `sid` varchar(9) DEFAULT NULL,
@@ -4350,10 +3843,6 @@ CREATE TABLE IF NOT EXISTS `id08` (
   `fypl` int(2) DEFAULT NULL,
   `pjm` int(2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `id08`
---
 
 INSERT INTO `id08` (`sid`, `loam`, `itdc`, `mana`, `eci`, `buetc`, `hufa`, `quma`, `ec`, `mots`, `sta`, `cmat`, `calb`, `pgl`, `oprsa`, `stb`, `oprsb`, `lgma`, `cala`, `pom`, `erp`, `ac`, `iidm`, `cotas`, `fypl`, `pjm`) VALUES
 ('SD970741 ', 1, 61, 62, 0, 90, 90, 79, 78, 83, 74, 83, 75, 70, 83, 85, 66, 83, 74, 86, 92, 81, 88, 99, 66, 82),
@@ -4463,12 +3952,6 @@ INSERT INTO `id08` (`sid`, `loam`, `itdc`, `mana`, `eci`, `buetc`, `hufa`, `quma
 ('SD970856 ', 1, 77, 93, 93, 75, 88, 75, 90, 99, 99, 78, 74, 84, 97, 98, 96, 88, 86, 80, 98, 100, 81, 95, 99, 90),
 ('SD970857 ', 1, 0, 0, 0, 0, 75, 70, 0, 60, 90, 81, 64, 90, 76, 0, 50, 81, 60, 60, 73, 60, 79, 30, 74, 0);
 
--- --------------------------------------------------------
-
---
--- 資料表結構 `id08df`
---
-
 CREATE TABLE IF NOT EXISTS `id08df` (
   `maj` varchar(2) DEFAULT NULL,
   `year` int(4) DEFAULT NULL,
@@ -4477,10 +3960,6 @@ CREATE TABLE IF NOT EXISTS `id08df` (
   `grade` int(1) DEFAULT NULL,
   `subd` varchar(21) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `id08df`
---
 
 INSERT INTO `id08df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('ID', 2008, 'itdc', 'PA', 1, '計算機概論'),
@@ -4507,12 +3986,6 @@ INSERT INTO `id08df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('ID', 2008, 'cotas', 'PA', 2, '企業成本分析'),
 ('ID', 2008, 'fypl', 'PA', 3, '設施規劃'),
 ('ID', 2008, 'pjm', 'MM', 3, '專案管理');
-
--- --------------------------------------------------------
-
---
--- 資料表結構 `id09`
---
 
 CREATE TABLE IF NOT EXISTS `id09` (
   `sid` varchar(9) DEFAULT NULL,
@@ -4542,10 +4015,6 @@ CREATE TABLE IF NOT EXISTS `id09` (
   `itdc` int(2) DEFAULT NULL,
   `mana` int(2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `id09`
---
 
 INSERT INTO `id09` (`sid`, `loam`, `pjm`, `ines`, `hufa`, `quma`, `eci`, `ec`, `mots`, `sta`, `cmat`, `calb`, `pgl`, `oprsa`, `stb`, `oprsb`, `lgma`, `cala`, `pom`, `erp`, `ac`, `iidm`, `cotas`, `fypl`, `itdc`, `mana`) VALUES
 ('SD980754 ', 0, 98, 81, 88, 73, 75, 70, 92, 81, 60, 64, 86, 85, 93, 87, 75, 80, 97, 84, 68, 87, 71, 84, 66, 67),
@@ -4645,12 +4114,6 @@ INSERT INTO `id09` (`sid`, `loam`, `pjm`, `ines`, `hufa`, `quma`, `eci`, `ec`, `
 ('SD980866 ', 0, 85, 75, 63, 64, 1, 74, 80, 73, 65, 60, 87, 40, 95, 50, 73, 75, 68, 76, 60, 60, 60, 67, 10, 69),
 ('SD980869 ', 0, 70, 90, 45, 7, 1, 0, 1, 75, 85, 0, 71, 41, 68, 35, 35, 0, 60, 68, 60, 77, 69, 60, 0, 0);
 
--- --------------------------------------------------------
-
---
--- 資料表結構 `id09df`
---
-
 CREATE TABLE IF NOT EXISTS `id09df` (
   `maj` varchar(2) DEFAULT NULL,
   `year` int(4) DEFAULT NULL,
@@ -4659,10 +4122,6 @@ CREATE TABLE IF NOT EXISTS `id09df` (
   `grade` int(1) DEFAULT NULL,
   `subd` varchar(21) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `id09df`
---
 
 INSERT INTO `id09df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('ID', 2009, 'pjm', 'MM', 3, '專案管理'),
@@ -4690,12 +4149,6 @@ INSERT INTO `id09df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('ID', 2009, 'itdc', 'PA', 1, '計算機概論'),
 ('ID', 2009, 'mana', 'MM', 1, '管理學');
 
--- --------------------------------------------------------
-
---
--- 資料表結構 `id10`
---
-
 CREATE TABLE IF NOT EXISTS `id10` (
   `sid` varchar(9) DEFAULT NULL,
   `loam` int(1) DEFAULT NULL,
@@ -4722,10 +4175,6 @@ CREATE TABLE IF NOT EXISTS `id10` (
   `itdc` int(2) DEFAULT NULL,
   `mana` int(2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `id10`
---
 
 INSERT INTO `id10` (`sid`, `loam`, `pjm`, `ines`, `cala`, `calb`, `sta`, `stb`, `ec`, `hufa`, `quma`, `eci`, `mots`, `pgl`, `oprsa`, `oprsb`, `lgma`, `pom`, `erp`, `ac`, `iidm`, `fypl`, `itdc`, `mana`) VALUES
 ('SD990763 ', 0, 99, 95, 64, 60, 78, 93, 60, 96, 87, 92, 94, 98, 90, 93, 89, 94, 90, 61, 88, 70, 77, 94),
@@ -4825,12 +4274,6 @@ INSERT INTO `id10` (`sid`, `loam`, `pjm`, `ines`, `cala`, `calb`, `sta`, `stb`, 
 ('SD990874 ', 0, 66, 77, 46, 76, 10, 71, 68, 88, 68, 86, 67, 52, 30, 65, 84, 60, 84, 99, 68, 70, 60, 54),
 ('SD990875 ', 1, 72, 70, 55, 61, 35, 60, 61, 57, 60, 81, 61, 54, 32, 60, 64, 60, 64, 92, 60, 63, 60, 34);
 
--- --------------------------------------------------------
-
---
--- 資料表結構 `id10df`
---
-
 CREATE TABLE IF NOT EXISTS `id10df` (
   `maj` varchar(2) DEFAULT NULL,
   `year` int(4) DEFAULT NULL,
@@ -4839,10 +4282,6 @@ CREATE TABLE IF NOT EXISTS `id10df` (
   `grade` int(1) DEFAULT NULL,
   `subd` varchar(21) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `id10df`
---
 
 INSERT INTO `id10df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('ID', 2010, 'pjm', 'MM', 3, '專案管理'),
@@ -4867,12 +4306,6 @@ INSERT INTO `id10df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('ID', 2010, 'fypl', 'PA', 3, '設施規劃'),
 ('ID', 2010, 'itdc', 'PA', 1, '計算機概論'),
 ('ID', 2010, 'mana', 'MM', 1, '管理學');
-
--- --------------------------------------------------------
-
---
--- 資料表結構 `id11`
---
 
 CREATE TABLE IF NOT EXISTS `id11` (
   `sid` varchar(9) DEFAULT NULL,
@@ -4899,10 +4332,6 @@ CREATE TABLE IF NOT EXISTS `id11` (
   `sta` int(2) DEFAULT NULL,
   `stb` int(2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `id11`
---
 
 INSERT INTO `id11` (`sid`, `loam`, `ines`, `care`, `cala`, `calb`, `ec`, `quma`, `oprs`, `lgma`, `pom`, `erp`, `ac`, `iidm`, `fypl`, `mana`, `comap`, `apeci`, `mots`, `hufa`, `adpjm`, `sta`, `stb`) VALUES
 ('SD1000820', 0, 81, 80, 89, 65, 82, 88, 97, 89, 90, 79, 70, 82, 88, 68, 78, 79, 75, 79, 97, 91, 82),
@@ -5013,12 +4442,6 @@ INSERT INTO `id11` (`sid`, `loam`, `ines`, `care`, `cala`, `calb`, `ec`, `quma`,
 ('SD1000944', 0, 85, 88, 0, 0, 71, 60, 60, 73, 68, 76, 65, 84, 83, 79, 0, 68, 60, 50, 77, 82, 85),
 ('SD1001004', 0, 70, 88, 0, 0, 73, 80, 62, 90, 67, 77, 65, 80, 71, 81, 0, 66, 75, 61, 89, 81, 67);
 
--- --------------------------------------------------------
-
---
--- 資料表結構 `id11df`
---
-
 CREATE TABLE IF NOT EXISTS `id11df` (
   `maj` varchar(2) DEFAULT NULL,
   `year` int(4) DEFAULT NULL,
@@ -5027,10 +4450,6 @@ CREATE TABLE IF NOT EXISTS `id11df` (
   `grade` int(1) DEFAULT NULL,
   `subd` varchar(24) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `id11df`
---
 
 INSERT INTO `id11df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('ID', 2011, 'ines', 'GE', 3, '創新與創業'),
@@ -5054,12 +4473,6 @@ INSERT INTO `id11df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('ID', 2011, 'adpjm', 'MM', 3, '進階專案管理實務'),
 ('ID', 2011, 'sta', 'MA', 2, '應用統計學(一)'),
 ('ID', 2011, 'stb', 'MA', 2, '應用統計學(二)');
-
--- --------------------------------------------------------
-
---
--- 資料表結構 `id12`
---
 
 CREATE TABLE IF NOT EXISTS `id12` (
   `sid` varchar(9) DEFAULT NULL,
@@ -5085,10 +4498,6 @@ CREATE TABLE IF NOT EXISTS `id12` (
   `sta` int(2) DEFAULT NULL,
   `stb` int(2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `id12`
---
 
 INSERT INTO `id12` (`sid`, `loam`, `ines`, `care`, `cala`, `calb`, `ec`, `quma`, `oprs`, `lgma`, `pom`, `erp`, `ac`, `iidm`, `mana`, `comap`, `apeci`, `mots`, `hufa`, `adpjm`, `sta`, `stb`) VALUES
 ('SD1011298', 0, 97, 92, 98, 95, 99, 95, 99, 87, 98, 99, 89, 94, 91, 92, 72, 99, 98, 99, 97, 97),
@@ -5193,12 +4602,6 @@ INSERT INTO `id12` (`sid`, `loam`, `ines`, `care`, `cala`, `calb`, `ec`, `quma`,
 ('SD1011415', 0, 89, 80, 76, 0, 76, 73, 60, 76, 70, 66, 60, 81, 80, 0, 73, 80, 61, 97, 71, 0),
 ('SD1011416', 0, 80, 80, 0, 0, 60, 72, 68, 63, 73, 75, 60, 80, 0, 0, 0, 80, 60, 96, 87, 67);
 
--- --------------------------------------------------------
-
---
--- 資料表結構 `id12df`
---
-
 CREATE TABLE IF NOT EXISTS `id12df` (
   `maj` varchar(2) DEFAULT NULL,
   `year` int(4) DEFAULT NULL,
@@ -5207,10 +4610,6 @@ CREATE TABLE IF NOT EXISTS `id12df` (
   `grade` int(1) DEFAULT NULL,
   `subd` varchar(24) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `id12df`
---
 
 INSERT INTO `id12df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('ID', 2012, 'ines', 'GE', 3, '創新與創業'),
@@ -5235,12 +4634,6 @@ INSERT INTO `id12df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('ID', 2012, 'sta', 'MA', 2, '應用統計學(一)'),
 ('ID', 2012, 'stb', 'MA', 2, '應用統計學(二)');
 
--- --------------------------------------------------------
-
---
--- 資料表結構 `id13`
---
-
 CREATE TABLE IF NOT EXISTS `id13` (
   `sid` varchar(9) DEFAULT NULL,
   `loam` int(1) DEFAULT NULL,
@@ -5264,10 +4657,6 @@ CREATE TABLE IF NOT EXISTS `id13` (
   `stb` int(2) DEFAULT NULL,
   `quma` int(2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `id13`
---
 
 INSERT INTO `id13` (`sid`, `loam`, `ines`, `cala`, `calb`, `ec`, `pjm`, `pjmp`, `oprs`, `lgma`, `pom`, `ac`, `iidm`, `mana`, `comap`, `apeci`, `mots`, `hufa`, `sta`, `stb`, `quma`) VALUES
 ('SD1021155', 0, 90, 86, 80, 88, 98, 100, 96, 89, 82, 95, 77, 93, 92, 100, 76, 84, 94, 96, 70),
@@ -5368,12 +4757,6 @@ INSERT INTO `id13` (`sid`, `loam`, `ines`, `cala`, `calb`, `ec`, `pjm`, `pjmp`, 
 ('SD1021262', 0, 74, 53, 60, 50, 73, 96, 0, 78, 80, 50, 66, 70, 51, 70, 50, 51, 70, 65, 60),
 ('SD1021264', 0, 83, 78, 60, 88, 74, 100, 82, 75, 80, 75, 83, 94, 76, 92, 78, 76, 83, 90, 75);
 
--- --------------------------------------------------------
-
---
--- 資料表結構 `id13df`
---
-
 CREATE TABLE IF NOT EXISTS `id13df` (
   `maj` varchar(2) DEFAULT NULL,
   `year` int(4) DEFAULT NULL,
@@ -5382,10 +4765,6 @@ CREATE TABLE IF NOT EXISTS `id13df` (
   `grade` int(1) DEFAULT NULL,
   `subd` varchar(24) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `id13df`
---
 
 INSERT INTO `id13df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('ID', 2013, 'ines', 'GE', 3, '創新與創業'),
@@ -5408,12 +4787,6 @@ INSERT INTO `id13df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('ID', 2013, 'stb', 'MA', 2, '應用統計學(二)'),
 ('ID', 2013, 'quma', 'MM', 3, '品質管理');
 
--- --------------------------------------------------------
-
---
--- 資料表結構 `id14`
---
-
 CREATE TABLE IF NOT EXISTS `id14` (
   `sid` varchar(9) DEFAULT NULL,
   `loam` int(1) DEFAULT NULL,
@@ -5431,10 +4804,6 @@ CREATE TABLE IF NOT EXISTS `id14` (
   `mots` int(2) DEFAULT NULL,
   `sta` int(2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `id14`
---
 
 INSERT INTO `id14` (`sid`, `loam`, `cala`, `calb`, `ec`, `pjm`, `oprs`, `pom`, `ac`, `iidm`, `mana`, `comap`, `apeci`, `mots`, `sta`) VALUES
 ('SD1031161', 0, 84, 62, 76, 91, 93, 70, 90, 35, 72, 63, 87, 63, 60),
@@ -5541,12 +4910,6 @@ INSERT INTO `id14` (`sid`, `loam`, `cala`, `calb`, `ec`, `pjm`, `oprs`, `pom`, `
 ('SD1031270', 1, 87, 81, 89, 67, 70, 60, 99, 89, 71, 72, 62, 63, 60),
 ('SD1031272', 0, 77, 77, 89, 100, 96, 82, 63, 77, 88, 77, 0, 85, 89);
 
--- --------------------------------------------------------
-
---
--- 資料表結構 `id14df`
---
-
 CREATE TABLE IF NOT EXISTS `id14df` (
   `maj` varchar(2) DEFAULT NULL,
   `year` int(4) DEFAULT NULL,
@@ -5555,10 +4918,6 @@ CREATE TABLE IF NOT EXISTS `id14df` (
   `grade` int(1) DEFAULT NULL,
   `subd` varchar(24) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `id14df`
---
 
 INSERT INTO `id14df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('ID', 2014, 'cala', 'MA', 1, '商用微積分(一)'),
@@ -5575,12 +4934,6 @@ INSERT INTO `id14df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('ID', 2014, 'mots', 'PA', 2, '工作研究'),
 ('ID', 2014, 'sta', 'MA', 2, '應用統計學(一)');
 
--- --------------------------------------------------------
-
---
--- 資料表結構 `id15`
---
-
 CREATE TABLE IF NOT EXISTS `id15` (
   `sid` varchar(9) DEFAULT NULL,
   `loam` int(1) DEFAULT NULL,
@@ -5591,10 +4944,6 @@ CREATE TABLE IF NOT EXISTS `id15` (
   `iidm` int(2) DEFAULT NULL,
   `comap` int(2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `id15`
---
 
 INSERT INTO `id15` (`sid`, `loam`, `cala`, `ec`, `care`, `ac`, `iidm`, `comap`) VALUES
 ('SD1041075', 1, 80, 77, 90, 60, 86, 90),
@@ -5698,12 +5047,6 @@ INSERT INTO `id15` (`sid`, `loam`, `cala`, `ec`, `care`, `ac`, `iidm`, `comap`) 
 ('SD1041179', 1, 79, 89, 86, 60, 91, 94),
 ('SD1041180', 1, 76, 68, 88, 94, 80, 80);
 
--- --------------------------------------------------------
-
---
--- 資料表結構 `id15df`
---
-
 CREATE TABLE IF NOT EXISTS `id15df` (
   `maj` varchar(2) DEFAULT NULL,
   `year` int(4) DEFAULT NULL,
@@ -5713,10 +5056,6 @@ CREATE TABLE IF NOT EXISTS `id15df` (
   `subd` varchar(24) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- 資料表的匯出資料 `id15df`
---
-
 INSERT INTO `id15df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('ID', 2015, 'cala', 'MA', 1, '商用微積分(一)'),
 ('ID', 2015, 'ec', 'MM', 1, '經濟學原理與實務'),
@@ -5724,12 +5063,6 @@ INSERT INTO `id15df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('ID', 2015, 'ac', 'MM', 1, '會計學'),
 ('ID', 2015, 'iidm', 'MM', 1, '工業管理導論'),
 ('ID', 2015, 'comap', 'PA', 1, '計算機應用');
-
--- --------------------------------------------------------
-
---
--- 資料表結構 `im08`
---
 
 CREATE TABLE IF NOT EXISTS `im08` (
   `sid` varchar(9) DEFAULT NULL,
@@ -5760,10 +5093,6 @@ CREATE TABLE IF NOT EXISTS `im08` (
   `dbms` int(2) DEFAULT NULL,
   `boodis` int(2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `im08`
---
 
 INSERT INTO `im08` (`sid`, `loam`, `itdc`, `mana`, `eci`, `buetc`, `intpr`, `st`, `cala`, `calb`, `ec`, `ac`, `sadm`, `mis`, `cppg`, `dtst`, `opsy`, `oopg`, `pcpg`, `adcpg`, `itmuis`, `nwkpm`, `itdcn`, `inkpg`, `idbs`, `dbms`, `boodis`) VALUES
 ('SD970562 ', 0, 79, 71, 83, 84, 70, 68, 60, 60, 78, 72, 74, 85, 63, 63, 76, 40, 63, 60, 88, 75, 80, 90, 68, 82, 84),
@@ -5922,12 +5251,6 @@ INSERT INTO `im08` (`sid`, `loam`, `itdc`, `mana`, `eci`, `buetc`, `intpr`, `st`
 ('SD970737 ', 0, 53, 65, 96, 95, 73, 71, 60, 60, 72, 64, 98, 76, 70, 66, 70, 75, 70, 67, 82, 71, 74, 86, 80, 83, 88),
 ('SD970738 ', 0, 0, 0, 99, 89, 80, 52, 97, 70, 0, 0, 98, 66, 0, 69, 62, 82, 63, 0, 0, 81, 81, 83, 72, 75, 88);
 
--- --------------------------------------------------------
-
---
--- 資料表結構 `im08df`
---
-
 CREATE TABLE IF NOT EXISTS `im08df` (
   `maj` varchar(2) DEFAULT NULL,
   `year` int(4) DEFAULT NULL,
@@ -5936,10 +5259,6 @@ CREATE TABLE IF NOT EXISTS `im08df` (
   `grade` int(1) DEFAULT NULL,
   `subd` varchar(24) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `im08df`
---
 
 INSERT INTO `im08df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('IM', 2008, 'itdc', 'PA', 1, '計算機概論'),
@@ -5968,12 +5287,6 @@ INSERT INTO `im08df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('IM', 2008, 'dbms', 'PA', 3, '資料庫管理系統'),
 ('IM', 2008, 'boodis', 'PA', 4, '書報討論');
 
--- --------------------------------------------------------
-
---
--- 資料表結構 `im09`
---
-
 CREATE TABLE IF NOT EXISTS `im09` (
   `sid` varchar(9) DEFAULT NULL,
   `loam` int(1) DEFAULT NULL,
@@ -6001,10 +5314,6 @@ CREATE TABLE IF NOT EXISTS `im09` (
   `idbs` int(2) DEFAULT NULL,
   `dbms` int(2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `im09`
---
 
 INSERT INTO `im09` (`sid`, `loam`, `pjm`, `ines`, `st`, `cala`, `calb`, `ec`, `ac`, `mana`, `sadm`, `mis`, `pom`, `itdc`, `cppg`, `dtst`, `opsy`, `oopg`, `pcpg`, `adcpg`, `nwkpm`, `itdcn`, `inkpg`, `idbs`, `dbms`) VALUES
 ('SD980584 ', 0, 84, 77, 63, 85, 95, 65, 75, 82, 85, 82, 66, 60, 81, 60, 72, 73, 60, 47, 88, 71, 75, 67, 84),
@@ -6143,12 +5452,6 @@ INSERT INTO `im09` (`sid`, `loam`, `pjm`, `ines`, `st`, `cala`, `calb`, `ec`, `a
 ('SD980749 ', 0, 82, 72, 80, 33, 60, 79, 79, 82, 75, 73, 67, 68, 60, 67, 78, 60, 61, 80, 61, 70, 72, 68, 68),
 ('SD980752 ', 0, 88, 69, 61, 0, 73, 0, 76, 0, 60, 52, 60, 0, 0, 64, 76, 98, 82, 0, 60, 80, 73, 66, 40);
 
--- --------------------------------------------------------
-
---
--- 資料表結構 `im09df`
---
-
 CREATE TABLE IF NOT EXISTS `im09df` (
   `maj` varchar(2) DEFAULT NULL,
   `year` int(4) DEFAULT NULL,
@@ -6157,10 +5460,6 @@ CREATE TABLE IF NOT EXISTS `im09df` (
   `grade` int(1) DEFAULT NULL,
   `subd` varchar(24) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `im09df`
---
 
 INSERT INTO `im09df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('IM', 2009, 'pjm', 'MM', 4, '專案管理'),
@@ -6186,12 +5485,6 @@ INSERT INTO `im09df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('IM', 2009, 'inkpg', 'PA', 3, '網際網路程式設計'),
 ('IM', 2009, 'idbs', 'PA', 2, '資料庫系統概論'),
 ('IM', 2009, 'dbms', 'PA', 3, '資料庫管理系統');
-
--- --------------------------------------------------------
-
---
--- 資料表結構 `im10`
---
 
 CREATE TABLE IF NOT EXISTS `im10` (
   `sid` varchar(9) DEFAULT NULL,
@@ -6220,10 +5513,6 @@ CREATE TABLE IF NOT EXISTS `im10` (
   `idbs` int(2) DEFAULT NULL,
   `dbms` int(3) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `im10`
---
 
 INSERT INTO `im10` (`sid`, `loam`, `pjm`, `ines`, `cala`, `calb`, `sta`, `ec`, `ac`, `mana`, `sadm`, `mis`, `pom`, `itdc`, `cppg`, `dtst`, `oopg`, `pcpg`, `adcpg`, `nwkpm`, `itdcn`, `inkpg`, `xmwd`, `idbs`, `dbms`) VALUES
 ('SD990595 ', 0, 94, 91, 60, 68, 71, 73, 62, 89, 87, 77, 73, 73, 30, 30, 60, 60, 35, 79, 67, 71, 70, 60, 76),
@@ -6371,12 +5660,6 @@ INSERT INTO `im10` (`sid`, `loam`, `pjm`, `ines`, `cala`, `calb`, `sta`, `ec`, `
 ('SD990758 ', 0, 81, 85, 83, 93, 75, 70, 87, 87, 68, 85, 67, 68, 66, 70, 77, 84, 85, 82, 74, 80, 87, 67, 89),
 ('SD990761 ', 0, 84, 76, 0, 0, 84, 0, 0, 84, 60, 85, 80, 0, 97, 75, 74, 90, 0, 90, 97, 69, 89, 83, 98);
 
--- --------------------------------------------------------
-
---
--- 資料表結構 `im10df`
---
-
 CREATE TABLE IF NOT EXISTS `im10df` (
   `maj` varchar(2) DEFAULT NULL,
   `year` int(4) DEFAULT NULL,
@@ -6385,10 +5668,6 @@ CREATE TABLE IF NOT EXISTS `im10df` (
   `grade` int(1) DEFAULT NULL,
   `subd` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `im10df`
---
 
 INSERT INTO `im10df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('IM', 2010, 'pjm', 'MM', 4, '專案管理'),
@@ -6415,12 +5694,6 @@ INSERT INTO `im10df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('IM', 2010, 'idbs', 'PA', 2, '資料庫系統概論'),
 ('IM', 2010, 'dbms', 'PA', 3, '資料庫管理系統');
 
--- --------------------------------------------------------
-
---
--- 資料表結構 `im11`
---
-
 CREATE TABLE IF NOT EXISTS `im11` (
   `sid` varchar(9) DEFAULT NULL,
   `loam` int(1) DEFAULT NULL,
@@ -6446,10 +5719,6 @@ CREATE TABLE IF NOT EXISTS `im11` (
   `idbs` int(2) DEFAULT NULL,
   `dbms` int(2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `im11`
---
 
 INSERT INTO `im11` (`sid`, `loam`, `ines`, `care`, `cala`, `calb`, `ec`, `st`, `mana`, `sadm`, `mis`, `pom`, `itdc`, `cppg`, `dtst`, `oopg`, `pcpg`, `nwkpm`, `itdcn`, `inkpg`, `xmwd`, `idbs`, `dbms`) VALUES
 ('SD1000636', 1, 90, 86, 91, 73, 88, 85, 77, 84, 72, 81, 78, 60, 78, 65, 69, 80, 84, 82, 80, 78, 83),
@@ -6607,12 +5876,6 @@ INSERT INTO `im11` (`sid`, `loam`, `ines`, `care`, `cala`, `calb`, `ec`, `st`, `
 ('SD1000817', 0, 40, 76, 60, 32, 42, 70, 73, 71, 85, 79, 69, 78, 60, 68, 85, 67, 71, 74, 92, 85, 76),
 ('SD1000818', 0, 70, 82, 61, 60, 0, 62, 0, 73, 94, 81, 0, 0, 62, 71, 65, 39, 78, 80, 75, 78, 93);
 
--- --------------------------------------------------------
-
---
--- 資料表結構 `im11df`
---
-
 CREATE TABLE IF NOT EXISTS `im11df` (
   `maj` varchar(2) DEFAULT NULL,
   `year` int(4) DEFAULT NULL,
@@ -6621,10 +5884,6 @@ CREATE TABLE IF NOT EXISTS `im11df` (
   `grade` int(1) DEFAULT NULL,
   `subd` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `im11df`
---
 
 INSERT INTO `im11df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('IM', 2011, 'ines', 'GE', 3, '創新與創業'),
@@ -6648,12 +5907,6 @@ INSERT INTO `im11df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('IM', 2011, 'xmwd', 'PA', 2, '延伸標記語言網頁設計'),
 ('IM', 2011, 'idbs', 'PA', 2, '資料庫系統概論'),
 ('IM', 2011, 'dbms', 'PA', 3, '資料庫管理系統');
-
--- --------------------------------------------------------
-
---
--- 資料表結構 `im12`
---
 
 CREATE TABLE IF NOT EXISTS `im12` (
   `sid` varchar(9) DEFAULT NULL,
@@ -6680,10 +5933,6 @@ CREATE TABLE IF NOT EXISTS `im12` (
   `idbs` int(2) DEFAULT NULL,
   `dbms` int(3) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `im12`
---
 
 INSERT INTO `im12` (`sid`, `loam`, `ines`, `care`, `cala`, `calb`, `ec`, `st`, `mana`, `sadm`, `mis`, `pom`, `itdc`, `cppg`, `dtst`, `oopg`, `pcpg`, `nwkpm`, `itdcn`, `inkpg`, `xmwd`, `idbs`, `dbms`) VALUES
 ('SD1011122', 0, 89, 88, 79, 75, 90, 64, 75, 90, 75, 83, 73, 60, 67, 60, 69, 70, 62, 75, 90, 75, 100),
@@ -6827,12 +6076,6 @@ INSERT INTO `im12` (`sid`, `loam`, `ines`, `care`, `cala`, `calb`, `ec`, `st`, `
 ('SD1011291', 1, 72, 92, 69, 60, 75, 60, 84, 63, 85, 65, 80, 61, 49, 48, 61, 85, 46, 60, 67, 61, 75),
 ('SD1011293', 1, 75, 86, 60, 0, 0, 67, 81, 61, 85, 81, 78, 63, 60, 87, 79, 82, 81, 63, 77, 68, 79);
 
--- --------------------------------------------------------
-
---
--- 資料表結構 `im12df`
---
-
 CREATE TABLE IF NOT EXISTS `im12df` (
   `maj` varchar(2) DEFAULT NULL,
   `year` int(4) DEFAULT NULL,
@@ -6841,10 +6084,6 @@ CREATE TABLE IF NOT EXISTS `im12df` (
   `grade` int(1) DEFAULT NULL,
   `subd` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `im12df`
---
 
 INSERT INTO `im12df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('IM', 2012, 'ines', 'GE', 3, '創新與創業'),
@@ -6868,12 +6107,6 @@ INSERT INTO `im12df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('IM', 2012, 'xmwd', 'PA', 2, '延伸標記語言網頁設計'),
 ('IM', 2012, 'idbs', 'PA', 2, '資料庫系統概論'),
 ('IM', 2012, 'dbms', 'PA', 3, '資料庫管理系統');
-
--- --------------------------------------------------------
-
---
--- 資料表結構 `im13`
---
 
 CREATE TABLE IF NOT EXISTS `im13` (
   `sid` varchar(9) DEFAULT NULL,
@@ -6900,10 +6133,6 @@ CREATE TABLE IF NOT EXISTS `im13` (
   `idbs` int(2) DEFAULT NULL,
   `dbms` int(3) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `im13`
---
 
 INSERT INTO `im13` (`sid`, `loam`, `ines`, `cala`, `calb`, `ec`, `pjm`, `pjmp`, `st`, `mana`, `sadm`, `mis`, `itdc`, `cppg`, `dtst`, `oopg`, `pcpg`, `nwkpm`, `itdcn`, `xmwd`, `inkpg`, `idbs`, `dbms`) VALUES
 ('SD1021033', 0, 84, 79, 83, 81, 92, 92, 78, 88, 82, 97, 76, 71, 70, 60, 90, 73, 85, 76, 95, 89, 98),
@@ -7011,12 +6240,6 @@ INSERT INTO `im13` (`sid`, `loam`, `ines`, `cala`, `calb`, `ec`, `pjm`, `pjmp`, 
 ('SD1021152', 1, 90, 65, 79, 92, 87, 60, 60, 77, 90, 84, 60, 65, 61, 47, 75, 60, 66, 68, 65, 78, 64),
 ('SD1021153', 0, 67, 71, 0, 0, 74, 78, 60, 69, 70, 80, 88, 84, 42, 0, 0, 4, 60, 30, 0, 52, 73);
 
--- --------------------------------------------------------
-
---
--- 資料表結構 `im13df`
---
-
 CREATE TABLE IF NOT EXISTS `im13df` (
   `maj` varchar(2) DEFAULT NULL,
   `year` int(4) DEFAULT NULL,
@@ -7025,10 +6248,6 @@ CREATE TABLE IF NOT EXISTS `im13df` (
   `grade` int(1) DEFAULT NULL,
   `subd` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `im13df`
---
 
 INSERT INTO `im13df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('IM', 2013, 'ines', 'GE', 3, '創新與創業'),
@@ -7054,12 +6273,6 @@ INSERT INTO `im13df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('IM', 2013, 'idbs', 'PA', 2, '資料庫系統概論'),
 ('IM', 2013, 'dbms', 'PA', 3, '資料庫管理系統');
 
--- --------------------------------------------------------
-
---
--- 資料表結構 `im14`
---
-
 CREATE TABLE IF NOT EXISTS `im14` (
   `sid` varchar(9) DEFAULT NULL,
   `loam` int(1) DEFAULT NULL,
@@ -7077,10 +6290,6 @@ CREATE TABLE IF NOT EXISTS `im14` (
   `nwkpm` int(2) DEFAULT NULL,
   `itdcn` int(2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `im14`
---
 
 INSERT INTO `im14` (`sid`, `loam`, `cala`, `calb`, `ec`, `pjm`, `st`, `mana`, `itdc`, `cppg`, `dtst`, `oopg`, `pcpg`, `nwkpm`, `itdcn`) VALUES
 ('SD1031038', 1, 60, 60, 75, 76, 61, 84, 70, 73, 43, 60, 73, 22, 68),
@@ -7188,12 +6397,6 @@ INSERT INTO `im14` (`sid`, `loam`, `cala`, `calb`, `ec`, `pjm`, `st`, `mana`, `i
 ('SD1031154', 1, 79, 60, 82, 83, 64, 60, 82, 70, 47, 53, 79, 73, 53),
 ('SD1031158', 0, 97, 82, 75, 94, 70, 62, 77, 85, 61, 86, 0, 60, 0);
 
--- --------------------------------------------------------
-
---
--- 資料表結構 `im14df`
---
-
 CREATE TABLE IF NOT EXISTS `im14df` (
   `maj` varchar(2) DEFAULT NULL,
   `year` int(4) DEFAULT NULL,
@@ -7202,10 +6405,6 @@ CREATE TABLE IF NOT EXISTS `im14df` (
   `grade` int(1) DEFAULT NULL,
   `subd` varchar(24) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `im14df`
---
 
 INSERT INTO `im14df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('IM', 2014, 'care', 'GE', 3, '職涯分析與規劃'),
@@ -7224,12 +6423,6 @@ INSERT INTO `im14df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('IM', 2014, 'nwkpm', 'PA', 2, '網路規劃與管理'),
 ('IM', 2014, 'itdcn', 'PA', 1, '網路概論');
 
--- --------------------------------------------------------
-
---
--- 資料表結構 `im15`
---
-
 CREATE TABLE IF NOT EXISTS `im15` (
   `sid` varchar(9) DEFAULT NULL,
   `loam` int(1) DEFAULT NULL,
@@ -7240,10 +6433,6 @@ CREATE TABLE IF NOT EXISTS `im15` (
   `cppg` int(2) DEFAULT NULL,
   `pcpg` int(2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 資料表的匯出資料 `im15`
---
 
 INSERT INTO `im15` (`sid`, `loam`, `cala`, `ec`, `care`, `itdc`, `cppg`, `pcpg`) VALUES
 ('SD1040958', 0, 77, 86, 92, 75, 60, 85),
@@ -7360,12 +6549,6 @@ INSERT INTO `im15` (`sid`, `loam`, `cala`, `ec`, `care`, `itdc`, `cppg`, `pcpg`)
 ('SD1041073', 0, 91, 70, 92, 95, 60, 60),
 ('SD1041074', 0, 93, 80, 92, 90, 60, 60);
 
--- --------------------------------------------------------
-
---
--- 資料表結構 `im15df`
---
-
 CREATE TABLE IF NOT EXISTS `im15df` (
   `maj` varchar(2) DEFAULT NULL,
   `year` int(4) DEFAULT NULL,
@@ -7375,10 +6558,6 @@ CREATE TABLE IF NOT EXISTS `im15df` (
   `subd` varchar(24) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- 資料表的匯出資料 `im15df`
---
-
 INSERT INTO `im15df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('IM', 2015, 'cala', 'MA', 1, '商用微積分(一)'),
 ('IM', 2015, 'ec', 'MM', 1, '經濟學原理與實務'),
@@ -7386,7 +6565,3 @@ INSERT INTO `im15df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
 ('IM', 2015, 'itdc', 'PA', 1, '計算機概論'),
 ('IM', 2015, 'cppg', 'PA', 1, '程式設計'),
 ('IM', 2015, 'pcpg', 'PA', 1, '程式設計實習');
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
