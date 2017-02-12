@@ -1,5 +1,0 @@
-﻿set.seed(929)
-setwd("C:/rshinyws")
-getwd()
-library(shiny)
-runApp("haoyehowld")
