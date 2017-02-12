@@ -7,4 +7,16 @@ kancheng project
 
 # 環境
 
-[R Shiny Server](https://github.com/kancheng/rsloan-environment)
+詳見 [rsloan-environment](https://github.com/kancheng/rsloan-environment) 環境部屬
+
+- [R Shiny Server](https://github.com/rstudio/shiny-server)
+- [Ubuntu 14.04](https://en.wikipedia.org/wiki/Ubuntu_(operating_system))
+- [RMySQL](https://github.com/rstats-db/RMySQL)
+
+# 資料
+
+NA 值的學科處理 [rsloanDCNA](https://github.com/kancheng/rsloanDCNA)
+
+# 文件
+
+詳見 .....
