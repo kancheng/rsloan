@@ -1,6 +1,6 @@
 # 目的
 
-利用 大學管理學院 8 年的"就學貸款"與"學生成績"資料，進行集群與視覺化分析。
+利用 大學管理學院 8 年的"就學貸款"與"學生成績"資料，進行 集群、ANOVA 與視覺化分析。
 
 # 環境
 
@@ -9,6 +9,7 @@
 - [R Shiny Server](https://github.com/rstudio/shiny-server)
 - [Ubuntu 14.04](https://en.wikipedia.org/wiki/Ubuntu_(operating_system))
 - [RMySQL](https://github.com/rstats-db/RMySQL)
+- [MariaDB](https://en.wikipedia.org/wiki/MariaDB)
 
 # 資料
 
