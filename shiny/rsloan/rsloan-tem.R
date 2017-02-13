@@ -7,61 +7,64 @@ library(ggplot2)
 
 ui = shinyUI(
   fluidPage(
-    navbarPage("rsloan",
-               
-      tabPanel("Home",
-               
-        titlePanel("Hello")
-
-      ),
-
-      tabPanel("Cluster",
-
-        titlePanel("Student Data"),
-        
-          sidebarLayout(
-
-              sidebarPanel(
-                selectInput("dataset", "Choose a dataset:", 
-                choices = c( "im08", "im09", "table")),
-                numericInput("obs", "Number of observations to view:", 10),
-                helpText("Note: Haoye test"),
-
-                tags$hr(),
-
-                fileInput('file1', 'Choose CSV File',
-                          accept=c('text/csv', 'text/comma-separated-values,text/plain', '.csv')
+    
+    tags$head(tags$link(rel = "shortcut icon", href = ""),
+    
+      navbarPage("rsloan",
+                 
+        tabPanel("Home",
+                 
+          titlePanel("Hello")
+  
+        ),
+  
+        tabPanel("Cluster",
+  
+          titlePanel("Student Data"),
+          
+            sidebarLayout(
+  
+                sidebarPanel(
+                  selectInput("dataset", "Choose a dataset:", 
+                  choices = c( "im08", "im09", "table")),
+                  numericInput("obs", "Number of observations to view:", 10),
+                  helpText("Note: Haoye test"),
+  
+                  tags$hr(),
+  
+                  fileInput('file1', 'Choose CSV File',
+                            accept=c('text/csv', 'text/comma-separated-values,text/plain', '.csv')
+                  ),
+                  
+                  submitButton("Update View")
+  
                 ),
-                
-                submitButton("Update View")
+  
+                mainPanel(
+                  h4("Observations"),
+                  tableOutput("view"),
+                  h4("Head"),
+                  verbatimTextOutput("headdat")
+                )
+            )
+        ),
 
-              ),
+        tabPanel("reference",
+                 titlePanel("Reference")
+  
+        ),
+  
+        tabPanel("about",
+          titlePanel("About"),
+            br(),
+            "Organization : Lunghwa University of Science and Technology",
+            br(),
+            "Author : Haoye",
+            br(),
+            "Github : ",a("https://github.com/kancheng/rsloan",href="https://github.com/kancheng/rsloan")
+        )
 
-              mainPanel(
-                h4("Observations"),
-                tableOutput("view"),
-                h4("Head"),
-                verbatimTextOutput("headdat")
-              )
-          )
-      ),
-
-      tabPanel("reference",
-               titlePanel("Reference")
-
-      ),
-
-      tabPanel("about",
-        titlePanel("About"),
-          br(),
-          "Organization : Lunghwa University of Science and Technology",
-          br(),
-          "Author : Haoye",
-          br(),
-          "Github : ",a("https://github.com/kancheng/rsloan",href="https://github.com/kancheng/rsloan")
       )
-
-
     )
   )
 )
