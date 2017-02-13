@@ -15,7 +15,7 @@ ui = shinyUI(
 
       ),
 
-      tabPanel("Summary",
+      tabPanel("Cluster",
 
         titlePanel("Student Data"),
         
@@ -23,17 +23,25 @@ ui = shinyUI(
 
               sidebarPanel(
                 selectInput("dataset", "Choose a dataset:", 
-                choices = c( "im08", "im09")),
+                choices = c( "im08", "im09", "table")),
                 numericInput("obs", "Number of observations to view:", 10),
                 helpText("Note: Haoye test"),
+
+                tags$hr(),
+
+                fileInput('file1', 'Choose CSV File',
+                          accept=c('text/csv', 'text/comma-separated-values,text/plain', '.csv')
+                ),
+                
                 submitButton("Update View")
+
               ),
 
               mainPanel(
                 h4("Observations"),
                 tableOutput("view"),
-                h4("Summary"),
-                verbatimTextOutput("summary")
+                h4("Head"),
+                verbatimTextOutput("headdat")
               )
           )
       ),
@@ -41,7 +49,11 @@ ui = shinyUI(
       tabPanel("about",
         titlePanel("About"),
           br(),
-          "Github : ",a("rsloan",href="https://github.com/kancheng/rsloan")
+          "Organization : Lunghwa University of Science and Technology",
+          br(),
+          "Author : Haoye",
+          br(),
+          "Github : ",a("https://github.com/kancheng/rsloan",href="https://github.com/kancheng/rsloan")
       )
 
 
@@ -53,23 +65,32 @@ ui = shinyUI(
 server = function(input, output) {
 
   conn = dbConnect(MySQL( ), dbname = "rsloan", username = "root", password = "hitachi")
-  
+  tablename = dbGetQuery(conn, "SHOW TABLES")
   im08 = dbGetQuery(conn, "SELECT * FROM im08")
   im09 = dbGetQuery(conn, "SELECT * FROM im09")
   
   dbDisconnect(conn)
   
+  output$contents <- renderTable({
+    inFile <- input$file1
+    if (is.null(inFile))
+      return(NULL)
+    read.csv(inFile$datapath, header=input$header, sep=input$sep, quote=input$quote)
+  })
+  
   datasetInput = reactive({
     switch(input$dataset,
-	"im09" = im09,
-	"im08" = im08)
+    "table" = tablename,
+    "im09" = im09,
+    "im08" = im08
+    )
   })
 
+
   
-  
-  output$summary = renderPrint({
+  output$headdat = renderPrint({
     dataset = datasetInput()
-    summary(dataset)
+    head(dataset)
   })
   
   # Show the first "n" observations
