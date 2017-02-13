@@ -45,7 +45,12 @@ ui = shinyUI(
               )
           )
       ),
-      
+
+      tabPanel("reference",
+               titlePanel("Reference")
+
+      ),
+
       tabPanel("about",
         titlePanel("About"),
           br(),
