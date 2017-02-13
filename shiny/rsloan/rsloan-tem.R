@@ -8,7 +8,7 @@ library(ggplot2)
 ui = shinyUI(
   fluidPage(
     
-    tags$head(tags$link(rel = "shortcut icon", href = "https://raw.githubusercontent.com/kancheng/rsloan/master/shiny/rsloan/www/logo.ico"),
+    tags$head(tags$link(rel = "shortcut icon", href = "https://raw.githubusercontent.com/kancheng/rsloan/master/shiny/rsloan/www/favicon.ico"),
     
       navbarPage("rsloan",
                  
