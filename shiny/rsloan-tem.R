@@ -3,32 +3,44 @@ setwd("/home/haoye/rws")
 getwd()
 library(shiny)
 library(RMySQL)
+library(ggplot2)
 
-ui = fluidPage(
-  
-  titlePanel("rsloan"),
-  
-  sidebarLayout(
-    sidebarPanel(
-      selectInput("dataset", "Choose a dataset:", 
-                  choices = c( "im08", "im09")),
-      
-      numericInput("obs", "Number of observations to view:", 10),
-      
-      helpText("Note: Haoye test"),
-      
-      submitButton("Update View")
-    ),
+ui = shinyUI(
+  fluidPage(
+    navbarPage("rsloan",
+               
+      tabPanel("Home",
+               
+        titlePanel("Hello")
 
-    mainPanel(
-      h4("Observations"),
-      tableOutput("view"),
-      
-      h4("Summary"),
-      verbatimTextOutput("summary")
+      ),
+
+      tabPanel("Summary",
+
+        titlePanel("Student Data"),
+        
+          sidebarLayout(
+
+              sidebarPanel(
+                selectInput("dataset", "Choose a dataset:", 
+                choices = c( "im08", "im09")),
+                numericInput("obs", "Number of observations to view:", 10),
+                helpText("Note: Haoye test"),
+                submitButton("Update View")
+              ),
+
+              mainPanel(
+                h4("Observations"),
+                tableOutput("view"),
+                h4("Summary"),
+                verbatimTextOutput("summary")
+              )
+          )
+      )
     )
   )
 )
+
 
 server = function(input, output) {
 
