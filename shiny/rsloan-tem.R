@@ -36,7 +36,15 @@ ui = shinyUI(
                 verbatimTextOutput("summary")
               )
           )
+      ),
+      
+      tabPanel("about",
+        titlePanel("About"),
+          br(),
+          "Github : ",a("rsloan",href="https://github.com/kancheng/rsloan")
       )
+
+
     )
   )
 )
