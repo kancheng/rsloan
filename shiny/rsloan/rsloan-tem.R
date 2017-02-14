@@ -6,19 +6,36 @@ library(RMySQL)
 library(ggplot2)
 
 ui = shinyUI(
-  fluidPage(theme = "main.css",
+  fluidPage(
 
-    tags$head(tags$link(rel = "shortcut icon", href = "https://raw.githubusercontent.com/kancheng/rsloan/master/shiny/rsloan/www/favicon.ico"),
-              
+    tags$head(
+      
+      tags$link(rel = "shortcut icon", href = "https://raw.githubusercontent.com/kancheng/rsloan/master/shiny/rsloan/www/favicon.ico")
+                        
+                        ),
     
-      navbarPage("rsloan",
+      navbarPage("RSLoan",
+
+        tabPanel( "Home",
+                  
+          div( 
+            style = "
+                max-height:516px;
+                width:100%;
+                text-align:center; 
+                background-color: #428BCA; 
+                background-repeat: repeat-x;
+                background-position: center;
+            ", 
+              div(
+                style = "
+                  font-size:120px;
+                  margin-bottom:0;
+                  color:#fdfdfd;",
+                "RSLoan"
+              )
+            )
                  
-        tabPanel("Home",
-                 
-          titlePanel("Hello"),
-          
-          div(
-              img(src = "https://raw.githubusercontent.com/kancheng/rsloan/master/shiny/rsloan/www/rsloan-bg.png"))
           ),
   
         tabPanel("Cluster",
@@ -54,7 +71,6 @@ ui = shinyUI(
 
         tabPanel("reference",
                  titlePanel("Reference")
-  
         ),
   
         tabPanel("about",
@@ -68,9 +84,10 @@ ui = shinyUI(
         )
 
       )
-    )
+
   )
 )
+
 
 
 server = function(input, output) {
