@@ -6,11 +6,10 @@ library(RMySQL)
 library(ggplot2)
 
 ui = shinyUI(
-  fluidPage(
+  fluidPage(theme = "main.css",
 
     tags$head(tags$link(rel = "shortcut icon", href = "https://raw.githubusercontent.com/kancheng/rsloan/master/shiny/rsloan/www/favicon.ico"),
               
-              tags$link(rel = "text/css", href = "main.css"),
     
       navbarPage("rsloan",
                  
@@ -18,10 +17,9 @@ ui = shinyUI(
                  
           titlePanel("Hello"),
           
-          div("OWO", class = "subject")
-          
-
-        ),
+          div(
+              img(src = "https://raw.githubusercontent.com/kancheng/rsloan/master/shiny/rsloan/www/rsloan-bg.png"))
+          ),
   
         tabPanel("Cluster",
   
