@@ -7,7 +7,7 @@ library(ggplot2)
 
 ui = shinyUI(
   fluidPage(
-    includeCSS(path = "main.css"),
+    includeCSS(path = "https://github.com/kancheng/rsloan/blob/master/shiny/rsloan/main.css"),
 
     tags$head(
       
@@ -34,15 +34,22 @@ ui = shinyUI(
                   margin-bottom:0;
                   color:#fdfdfd;",
                 "RSLoan"),
+            br(),br(),
             div(
               style = "
                   font-weight:200px;
                   font-size:17px;
                   color:#fdfdfd;",
-              "The system of analysis students learning performance and economic status.")     
-            )
-                 
-          ),
+              "The system of analysis students learning performance and economic status.")
+            ,br()),
+          div(          titlePanel("About"),
+                        br(),
+                        "Organization : Lunghwa University of Science and Technology",
+                        br(),
+                        "Author : Haoye",
+                        br(),
+                        "Github : ",a("https://github.com/kancheng/rsloan",href="https://github.com/kancheng/rsloan"))
+        ),
   
         tabPanel("Cluster",
   
@@ -80,13 +87,7 @@ ui = shinyUI(
         ),
   
         tabPanel("about",
-          titlePanel("About"),
-            br(),
-            "Organization : Lunghwa University of Science and Technology",
-            br(),
-            "Author : Haoye",
-            br(),
-            "Github : ",a("https://github.com/kancheng/rsloan",href="https://github.com/kancheng/rsloan")
+          titlePanel("About")
         )
 
       )
