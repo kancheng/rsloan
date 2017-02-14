@@ -7,15 +7,15 @@ library(ggplot2)
 
 ui = shinyUI(
   fluidPage(
-    
+
     tags$head(tags$link(rel = "shortcut icon", href = "https://raw.githubusercontent.com/kancheng/rsloan/master/shiny/rsloan/www/favicon.ico"),
     
       navbarPage("rsloan",
                  
-        tabPanel("Home",
+        tabPanel("Home", includeCSS("main.css"),
                  
-          titlePanel("Hello")
-  
+                 div( titlePanel("Hello"), style = "subject")
+
         ),
   
         tabPanel("Cluster",
