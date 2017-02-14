@@ -6,6 +6,18 @@
 
 當中`shiny/rsloan/` 下的 `rsloan-tem.R` 是在非正式完成前測試檔案，完成後才會移置 `ui.R` 和 `server.R` 這兩個檔案裡面 。
 
+將 `shiny/rsloan/...` 整個 rsloan 目錄整個放置在 `/srv/shiny-server/` 路徑下面，如下 :
+
+放置路徑
+```
+/srv/shiny-server/rsloan
+```
+
+瀏覽器
+```
+127.0.0.1:3838/rsloan
+```
+
 # 環境
 
 詳見 [rsloan-environment](https://github.com/kancheng/rsloan-environment) 環境部屬
