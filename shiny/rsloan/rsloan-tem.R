@@ -34,6 +34,12 @@ ui = shinyUI(
                   color:#fdfdfd;",
                 "RSLoan"
               )
+# The system of analysis students learning performance and economic status.
+$base-font-family: "Open Sans", "Source Han Sans TC", "Noto Sans T Chinese", Helvetica, Arial, "Microsoft Jhenghei", sans-serif;
+
+body {
+  font-family: $base-font-family;
+}
             )
                  
           ),
