@@ -9,12 +9,17 @@ ui = shinyUI(
   fluidPage(
 
     tags$head(tags$link(rel = "shortcut icon", href = "https://raw.githubusercontent.com/kancheng/rsloan/master/shiny/rsloan/www/favicon.ico"),
+              
+              tags$link(rel = "text/css", href = "main.css"),
     
       navbarPage("rsloan",
                  
-        tabPanel("Home", includeCSS("main.css"),
+        tabPanel("Home",
                  
-                 div( titlePanel("Hello"), style = "subject")
+          titlePanel("Hello"),
+          
+          div("OWO", class = "subject")
+          
 
         ),
   
