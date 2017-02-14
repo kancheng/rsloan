@@ -1,0 +1,8 @@
+.subject {
+    width: 100%;
+    max-height: 516px;
+    text-align: center;
+    background-color: #428BCA;
+    background-repeat: repeat-x;
+    background-position: center;
+}
