@@ -7,6 +7,7 @@ library(ggplot2)
 
 ui = shinyUI(
   fluidPage(
+    includeCSS(path = "main.css"),
 
     tags$head(
       
@@ -32,14 +33,13 @@ ui = shinyUI(
                   font-size:120px;
                   margin-bottom:0;
                   color:#fdfdfd;",
-                "RSLoan"
-              )
-# The system of analysis students learning performance and economic status.
-$base-font-family: "Open Sans", "Source Han Sans TC", "Noto Sans T Chinese", Helvetica, Arial, "Microsoft Jhenghei", sans-serif;
-
-body {
-  font-family: $base-font-family;
-}
+                "RSLoan"),
+            div(
+              style = "
+                  font-weight:200px;
+                  font-size:17px;
+                  color:#fdfdfd;",
+              "The system of analysis students learning performance and economic status.")     
             )
                  
           ),
