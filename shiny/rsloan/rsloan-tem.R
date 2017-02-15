@@ -41,19 +41,22 @@ ui = shinyUI(
                   font-weight:200px;
                   font-size:17px;
                   color:#fdfdfd;",
-              "The system of analysis students learning performance and economic status.")
+              "The system is to analyze students' learning performance and economic status.")
             ,br()),
           div(          titlePanel("About"),
                         "Organization : Lunghwa University of Science and Technology",
                         br(),
                         "Author : Haoye",
                         br(),
-                        "Github : ",a("https://github.com/kancheng/rsloan",href="https://github.com/kancheng/rsloan"))
+                        "Github : ",a("https://github.com/kancheng/rsloan",href="https://github.com/kancheng/rsloan"),
+                        br(),
+                        "ResearchGate : ",a("https://www.researchgate.net/profile/Hao_Cheng_Kan",href="https://www.researchgate.net/profile/Hao_Cheng_Kan")
+          )
         ),
   
-        tabPanel("Cluster",
+        tabPanel("Work",
   
-          titlePanel("Student Data"),
+          titlePanel("Cluster"),
           
             sidebarLayout(
   
@@ -87,8 +90,10 @@ ui = shinyUI(
             )
         ),
 
-        tabPanel("reference",
-                 titlePanel("Reference")
+        tabPanel("Reference",
+                 titlePanel("Reference"),
+                 br(),
+                 downloadButton('downloadData', 'Download')
         )
       )
 
