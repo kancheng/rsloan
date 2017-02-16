@@ -1,13 +1,5 @@
+$base-font-family: "Open Sans", "Source Han Sans TC", "Noto Sans T Chinese", Helvetica, Arial, "Microsoft Jhenghei", sans-serif;
 
-.subject-rsloan {
-    width: 100%;
-    max-height: 516px;
-    text-align: center;
-    background-color: #428BCA;
-    background-repeat: repeat-x;
-    background-position: center;
-}
-
-body{
-  background-color: #428BCA;
+body {
+  font-family: $base-font-family;
 }
