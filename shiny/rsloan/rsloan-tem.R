@@ -69,7 +69,7 @@ ui = shinyUI(
                     "id08", "id09", "id10", "id11", "id12", "id13", "id14", "id15",
                     "im08", "im09", "im10", "im11", "im12", "im13", "im14", "im15")),
                   numericInput("obs", "Number of observations to view:", 10),
-                  # helpText("Note: Haoye test"),
+                  helpText("Please follow the instruction went Upload dataset."),
   
                   tags$hr(),
   
@@ -90,8 +90,8 @@ ui = shinyUI(
             )
         ),
 
-        tabPanel("Reference",
-                 titlePanel("Reference"),
+        tabPanel("Instruction",
+                 titlePanel("Instruction"),
                  # demo data csv
                  br(),
                  "If you want to use the RSLoan, Please download demo csv file."
