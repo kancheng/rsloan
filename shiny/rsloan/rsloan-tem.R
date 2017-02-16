@@ -69,7 +69,7 @@ ui = shinyUI(
                     "id08", "id09", "id10", "id11", "id12", "id13", "id14", "id15",
                     "im08", "im09", "im10", "im11", "im12", "im13", "im14", "im15")),
                   numericInput("obs", "Number of observations to view:", 10),
-                  helpText("Note: Haoye test"),
+                  # helpText("Note: Haoye test"),
   
                   tags$hr(),
   
@@ -92,13 +92,16 @@ ui = shinyUI(
 
         tabPanel("Reference",
                  titlePanel("Reference"),
+                 # demo data csv
                  br(),
-                 downloadButton('downloadData', 'Download')
+                 "If you want to use the RSLoan, Please download demo csv file."
+
         )
       )
-
   )
+
 )
+
 
 
 
@@ -214,18 +217,19 @@ server = function(input, output) {
     )
   })
 
-
-  
   output$headdat = renderPrint({
     dataset = datasetInput()
     head(dataset)
   })
-  
+
   # Show the first "n" observations
   output$view = renderTable({
     head(datasetInput(), n = input$obs)
   })
+  
 
+  
+  
 }
 
 
