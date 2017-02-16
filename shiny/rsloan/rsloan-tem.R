@@ -1,6 +1,5 @@
 set.seed(929)
-setwd("/home/haoye/rws")
-getwd()
+
 library(shiny)
 library(RMySQL)
 library(ggplot2)
@@ -55,14 +54,19 @@ ui = shinyUI(
         ),
   
         tabPanel("Work",
-  
-          titlePanel("Cluster"),
+          navlistPanel("Analyze",widths = c(1,8),
+            tabPanel("Data Input",
+              titlePanel("Data Input"),
           
-            sidebarLayout(
-  
-                sidebarPanel(
+              sidebarLayout(
+
+                sidebarPanel(width = 3,
+                  fileInput('file1', 'Choose CSV File',
+                            accept=c('text/csv', 'text/comma-separated-values,text/plain', '.csv')
+                  ),                  
+                  tags$hr(),
                   selectInput("dataset", "Choose a dataset:", 
-                  choices = c( 
+                  choices = c( "demo",
                     "bu08", "bu09", "bu10", "bu11", "bu12", "bu13", "bu14", "bu15",
                     "fi08", "fi09", "fi10", "fi11", "fi12", "fi13", "fi14", "fi15",
                     "ib08", "ib09", "ib10", "ib11", "ib12", "ib13", "ib14", "ib15",
@@ -70,24 +74,26 @@ ui = shinyUI(
                     "im08", "im09", "im10", "im11", "im12", "im13", "im14", "im15")),
                   numericInput("obs", "Number of observations to view:", 10),
                   helpText("Please follow the instruction went Upload dataset."),
-  
-                  tags$hr(),
-  
-                  fileInput('file1', 'Choose CSV File',
-                            accept=c('text/csv', 'text/comma-separated-values,text/plain', '.csv')
-                  ),
-                  
                   submitButton("Update View")
   
                 ),
   
-                mainPanel(
+                mainPanel(width = 8,
                   h4("Observations"),
                   tableOutput("view"),
                   h4("Head"),
                   verbatimTextOutput("headdat")
                 )
+              )
+            ),
+
+            tabPanel("Cluster",
+              titlePanel("Cluster")
+            ),
+            tabPanel("Diagram",
+                     titlePanel("Diagram")
             )
+          )
         ),
 
         tabPanel("Instruction",
@@ -95,7 +101,6 @@ ui = shinyUI(
                  # demo data csv
                  br(),
                  "If you want to use the RSLoan, Please download demo csv file."
-
         )
       )
   )
@@ -106,6 +111,8 @@ ui = shinyUI(
 
 
 server = function(input, output) {
+  
+  source("demo.R")
 
   conn = dbConnect(MySQL( ), dbname = "rsloan", username = "root", password = "hitachi")
   
@@ -169,6 +176,7 @@ server = function(input, output) {
     switch(input$dataset,
 
     # "table" = tablename,
+    "demo" = demo,
 
     "bu08" = bu08,
     "bu09" = bu09,
@@ -226,6 +234,8 @@ server = function(input, output) {
   output$view = renderTable({
     head(datasetInput(), n = input$obs)
   })
+  
+
   
 
   
