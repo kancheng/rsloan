@@ -7,7 +7,7 @@ library(ggplot2)
 
 ui = shinyUI(
   fluidPage(
-    includeCSS(path = "https://github.com/kancheng/rsloan/blob/master/shiny/rsloan/main.css"),
+    includeCSS(path = "https://github.com/kancheng/rsloan/blob/master/shiny/rsloan/www/main.css"),
 
     tags$head(
       
