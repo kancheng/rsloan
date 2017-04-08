@@ -124,56 +124,19 @@ server = function(input, output) {
               "id08", "id09", "id10", "id11", "id12", "id13", "id14", "id15",
               "im08", "im09", "im10", "im11", "im12", "im13", "im14", "im15")
 
+  selesqltb = function (ind){
+    for( i in 1:length(ind)){
+      cmds = paste0("dbGetQuery(conn, \"SELECT * FROM ", ind[i], "\")")
+      assign(ind[i],
+        eval(parse(text = cmds))
+      , env = .GlobalEnv)
+    }
+  }
+  # all data
+  selesqltb(keydfn)
   
   # all table name
   tablename = dbGetQuery(conn, "SHOW TABLES")
-  
-  
-  # all data
-  bu08 = dbGetQuery(conn, "SELECT * FROM bu08")
-  bu09 = dbGetQuery(conn, "SELECT * FROM bu09")
-  bu10 = dbGetQuery(conn, "SELECT * FROM bu10")
-  bu11 = dbGetQuery(conn, "SELECT * FROM bu11")
-  bu12 = dbGetQuery(conn, "SELECT * FROM bu12")
-  bu13 = dbGetQuery(conn, "SELECT * FROM bu13")
-  bu14 = dbGetQuery(conn, "SELECT * FROM bu14")
-  bu15 = dbGetQuery(conn, "SELECT * FROM bu15")
-  
-  fi08 = dbGetQuery(conn, "SELECT * FROM fi08")
-  fi09 = dbGetQuery(conn, "SELECT * FROM fi09")
-  fi10 = dbGetQuery(conn, "SELECT * FROM fi10")
-  fi11 = dbGetQuery(conn, "SELECT * FROM fi11")
-  fi12 = dbGetQuery(conn, "SELECT * FROM fi12")
-  fi13 = dbGetQuery(conn, "SELECT * FROM fi13")
-  fi14 = dbGetQuery(conn, "SELECT * FROM fi14")
-  fi15 = dbGetQuery(conn, "SELECT * FROM fi15")
-  
-  ib08 = dbGetQuery(conn, "SELECT * FROM ib08")
-  ib09 = dbGetQuery(conn, "SELECT * FROM ib09")
-  ib10 = dbGetQuery(conn, "SELECT * FROM ib10")
-  ib11 = dbGetQuery(conn, "SELECT * FROM ib11")
-  ib12 = dbGetQuery(conn, "SELECT * FROM ib12")
-  ib13 = dbGetQuery(conn, "SELECT * FROM ib13")
-  ib14 = dbGetQuery(conn, "SELECT * FROM ib14")
-  ib15 = dbGetQuery(conn, "SELECT * FROM ib15")
-  
-  id08 = dbGetQuery(conn, "SELECT * FROM id08")
-  id09 = dbGetQuery(conn, "SELECT * FROM id09")
-  id10 = dbGetQuery(conn, "SELECT * FROM id10")
-  id11 = dbGetQuery(conn, "SELECT * FROM id11")
-  id12 = dbGetQuery(conn, "SELECT * FROM id12")
-  id13 = dbGetQuery(conn, "SELECT * FROM id13")
-  id14 = dbGetQuery(conn, "SELECT * FROM id14")
-  id15 = dbGetQuery(conn, "SELECT * FROM id15")
-  
-  im08 = dbGetQuery(conn, "SELECT * FROM im08")
-  im09 = dbGetQuery(conn, "SELECT * FROM im09")
-  im10 = dbGetQuery(conn, "SELECT * FROM im10")
-  im11 = dbGetQuery(conn, "SELECT * FROM im11")
-  im12 = dbGetQuery(conn, "SELECT * FROM im12")
-  im13 = dbGetQuery(conn, "SELECT * FROM im13")
-  im14 = dbGetQuery(conn, "SELECT * FROM im14")
-  im15 = dbGetQuery(conn, "SELECT * FROM im15")
   
   output$contents = renderTable({
     inFile <- input$file1
