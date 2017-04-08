@@ -10,7 +10,7 @@ ui = shinyUI(
 
     tags$head(
       
-      tags$link(rel = "shortcut icon", href = "favicon.ico")
+      tags$link(rel = "shortcut icon", href = "https://raw.githubusercontent.com/kancheng/rsloan/master/shiny/www/favicon.ico")
                         
                         ),
     
