@@ -37,7 +37,7 @@ shiny/rsloan/...
 
 # 資料
 
-NA 值的學科處理 [rsloanDCNA](https://github.com/kancheng/rsloanDCNA)
+NA 值的學科處理 [rsloan-dcna](https://github.com/kancheng/rsloan-dcna)
 
 # 文件
 
