@@ -6,11 +6,11 @@ library(ggplot2)
 
 ui = shinyUI(
   fluidPage(
-    includeCSS(path = "https://github.com/kancheng/rsloan/blob/master/shiny/rsloan/www/main.css"),
+    includeCSS(path = "./www/main.css"),
 
     tags$head(
       
-      tags$link(rel = "shortcut icon", href = "https://raw.githubusercontent.com/kancheng/rsloan/master/shiny/rsloan/www/favicon.ico")
+      tags$link(rel = "shortcut icon", href = "favicon.ico")
                         
                         ),
     
@@ -63,8 +63,10 @@ ui = shinyUI(
                 sidebarPanel(width = 3,
                   fileInput('file1', 'Choose CSV File',
                             accept=c('text/csv', 'text/comma-separated-values,text/plain', '.csv')
-                  ),                  
+                  ),
+                  helpText("Please follow the instruction went Upload dataset."),
                   tags$hr(),
+                  
                   selectInput("dataset", "Choose a dataset:", 
                   choices = c( "demo",
                     "bu08", "bu09", "bu10", "bu11", "bu12", "bu13", "bu14", "bu15",
@@ -73,9 +75,9 @@ ui = shinyUI(
                     "id08", "id09", "id10", "id11", "id12", "id13", "id14", "id15",
                     "im08", "im09", "im10", "im11", "im12", "im13", "im14", "im15")),
                   numericInput("obs", "Number of observations to view:", 10),
-                  helpText("Please follow the instruction went Upload dataset."),
+
                   submitButton("Update View")
-  
+
                 ),
   
                 mainPanel(width = 8,
@@ -116,8 +118,16 @@ server = function(input, output) {
 
   conn = dbConnect(MySQL( ), dbname = "rsloan", username = "root", password = "hitachi")
   
+  keydfn = c( "bu08", "bu09", "bu10", "bu11", "bu12", "bu13", "bu14", "bu15",
+              "fi08", "fi09", "fi10", "fi11", "fi12", "fi13", "fi14", "fi15",
+              "ib08", "ib09", "ib10", "ib11", "ib12", "ib13", "ib14", "ib15",
+              "id08", "id09", "id10", "id11", "id12", "id13", "id14", "id15",
+              "im08", "im09", "im10", "im11", "im12", "im13", "im14", "im15")
+
+  
   # all table name
   tablename = dbGetQuery(conn, "SHOW TABLES")
+  
   
   # all data
   bu08 = dbGetQuery(conn, "SELECT * FROM bu08")
@@ -234,10 +244,6 @@ server = function(input, output) {
   output$view = renderTable({
     head(datasetInput(), n = input$obs)
   })
-  
-
-  
-
   
   
 }
