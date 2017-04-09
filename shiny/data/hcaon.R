@@ -1,12 +1,3 @@
-# HCA conform
-# Use serna, hcadpic, hcad CA R Function
-# Odata 為資料來源的 DF
-# beky 根據資料來源的 DF 下，進行集群分群基礎的直行名稱。
-# keycol 根據資料來源的 DF 下，進行集群分群基礎的 PK 直行名稱。
-# serna 為給 DataFrame 產生 HCA 分群基準資料。
-# hck 為集群分析的分群群數
-# hcm 為分群的方法
-# dism 為分群的距離計算方式
 
 hcaon = function( Odata, beky, keycol, hck = 5, hcm = "ward.D", dism = "euclidean",
 	dtname = "untitled", swd = getwd(),...){

@@ -49,7 +49,7 @@ ui = shinyUI(
                   tags$hr(),
                   
                   selectInput("dataset", "Choose a dataset:", 
-                  choices = c( "demo",
+                  choices = c(
                     "bu08", "bu09", "bu10", "bu11", "bu12", "bu13", "bu14", "bu15",
                     "fi08", "fi09", "fi10", "fi11", "fi12", "fi13", "fi14", "fi15",
                     "ib08", "ib09", "ib10", "ib11", "ib12", "ib13", "ib14", "ib15",
@@ -63,9 +63,7 @@ ui = shinyUI(
   
                 mainPanel(width = 8,
                   h4("Observations"),
-                  tableOutput("view"),
-                  h4("Head"),
-                  verbatimTextOutput("headdat")
+                  tableOutput("view")
                 )
               )
             ),
@@ -96,7 +94,7 @@ ui = shinyUI(
 
 
 server = function(input, output) {
-  
+  source("./data/main-rfunc.R")
   source("./data/demo.R")
   output$swdmtb = renderTable({demo}, caption = paste("If you want to use the RSLoan, Please download demo csv file."),
     caption.placement = getOption("xtable.caption.placement", "top"),
@@ -154,7 +152,6 @@ server = function(input, output) {
   })
 
 }
-
 
 shinyApp(ui = ui, server = server)
 
