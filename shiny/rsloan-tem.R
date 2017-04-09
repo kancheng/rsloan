@@ -7,22 +7,23 @@ library(ggplot2)
 ui = shinyUI(
   fluidPage(
     includeCSS(path = "./www/main.css"),
-
     tags$head(
       tags$link(rel = "shortcut icon", href = "https://raw.githubusercontent.com/kancheng/rsloan/master/shiny/www/favicon.ico")
     ),
       navbarPage("RSLoan",
-
+  
         tabPanel( "Home",
-                  
-          div( id = "home-txtbg", 
+
+          div( id = "home-txtbg",
               div( id = "home-txtct", "RSLoan"),
+              
             br(),
             br(),
-            div(
-              id = "home-micttxt",
+            
+            div( id = "home-micttxt",
               "The system is to analyze students' learning performance and economic status.")
             ,br()),
+
           div( titlePanel("About"),
             "Organization : Lunghwa University of Science and Technology",
                         br(),
@@ -35,32 +36,44 @@ ui = shinyUI(
         ),
   
         tabPanel("Work",
-          navlistPanel("Analyze",widths = c(1,8),
+          navlistPanel("Analyze", widths = c(1,8),
             tabPanel("Data Input",
               titlePanel("Data Input"),
           
               sidebarLayout(
-
                 sidebarPanel(width = 3,
-                  fileInput('file1', 'Choose CSV File',
-                            accept=c('text/csv', 'text/comma-separated-values,text/plain', '.csv')
-                  ),
-                  helpText("Please follow the instruction went Upload dataset."),
+
+                  radioButtons("inputdt", "Choose :",
+                               c("Sample Data" = "wkdsct","External Data" = "wkupfdt")
+                               ),
+                  numericInput("obsr", "Row View:", 15),
+                  numericInput("obsc", "Col View:", 15),
+                  submitButton("Update View"),
                   tags$hr(),
-                  
-                  selectInput("dataset", "Choose a dataset:", 
-                  choices = c(
-                    "bu08", "bu09", "bu10", "bu11", "bu12", "bu13", "bu14", "bu15",
-                    "fi08", "fi09", "fi10", "fi11", "fi12", "fi13", "fi14", "fi15",
-                    "ib08", "ib09", "ib10", "ib11", "ib12", "ib13", "ib14", "ib15",
-                    "id08", "id09", "id10", "id11", "id12", "id13", "id14", "id15",
-                    "im08", "im09", "im10", "im11", "im12", "im13", "im14", "im15")),
-                  numericInput("obs", "Number of observations to view:", 10),
+                  selectInput("dataset", "Sample Data :", 
+                              choices = c(
+                                "bu08", "bu09", "bu10", "bu11", "bu12", "bu13", "bu14", "bu15",
+                                "fi08", "fi09", "fi10", "fi11", "fi12", "fi13", "fi14", "fi15",
+                                "ib08", "ib09", "ib10", "ib11", "ib12", "ib13", "ib14", "ib15",
+                                "id08", "id09", "id10", "id11", "id12", "id13", "id14", "id15",
+                                "im08", "im09", "im10", "im11", "im12", "im13", "im14", "im15")),
+                  tags$hr(),
+                  fileInput('upfile', 'External Data : ',
+                    accept=c('text/csv', 
+                      'text/comma-separated-values,text/plain',  '.csv')),
+                    checkboxInput('header', 'Header', TRUE),
+                    radioButtons('sep', 'Separator',
+                        c(Comma=',',
+                          Semicolon=';',
+                          Tab='\t'),
+                        ','),
+                    radioButtons('quote', 'Quote',
+                        c(None='',
+                          'Double Quote'='"',
+                          'Single Quote'="'"),
+                          '"'),
+                  helpText("Please follow the instruction went Upload dataset.")),
 
-                  submitButton("Update View")
-
-                ),
-  
                 mainPanel(width = 8,
                   h4("Observations"),
                   tableOutput("view")
@@ -87,8 +100,8 @@ ui = shinyUI(
 
       )
   )
-
 )
+
 
 
 
@@ -117,19 +130,30 @@ server = function(input, output) {
       , env = .GlobalEnv)
     }
   }
+  
   # all data
   selesqltb(keydfn)
   
   # all table name
   tablename = dbGetQuery(conn, "SHOW TABLES")
-  
-  output$contents = renderTable({
-    inFile <- input$file1
-    if (is.null(inFile))
-      return(NULL)
-    read.csv(inFile$datapath, header=input$header, sep=input$sep, quote=input$quote)
-  })
-  
+
+    output$view = renderTable({
+      indsw = switch(input$inputdt,
+                     wkupfdt = {
+                       inFile = input$upfile
+                      if (is.null(inFile)){
+                        return(NULL)
+                      }
+                      head(
+                        read.csv(inFile$datapath, header = input$header, sep = input$sep,  quote = input$quote)
+                        , n = input$obsr)[1:input$obsc]
+                     },
+                      wkdsct = {
+                        head(datasetInput(), n = input$obsr)[1:input$obsc]
+                      }
+                     )
+    })
+
   datasetInput = reactive({
     switch(input$dataset,
     # "table" = tablename,
@@ -141,14 +165,22 @@ server = function(input, output) {
     )
   })
 
-  output$headdat = renderPrint({
-    dataset = datasetInput()
-    head(dataset)
-  })
+#  output$headdat = renderPrint({
+#    dataset = datasetInput()
+#    head(dataset)
+#  })
 
   # Show the first "n" observations
-  output$view = renderTable({
+
+  output$viewct = renderTable({
     head(datasetInput(), n = input$obs)
+  })
+
+  output$viewcsv = renderTable({
+    inFile = input$upfile
+    if (is.null(inFile))
+      return(NULL)
+    read.csv(inFile$datapath, header=input$header, sep=input$sep,  quote=input$quote)
   })
 
 }
