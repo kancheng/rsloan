@@ -1,4 +1,4 @@
-# 目的
+# rsloan
 
 利用 大學管理學院 8 年的"就學貸款"與"學生成績"資料，進行 集群、ANOVA 與視覺化分析。
 
@@ -10,7 +10,7 @@
 
 by Windows
 
-## Shiny
+## shiny
 
 by Ubuntu Linux
 
