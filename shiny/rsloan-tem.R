@@ -83,8 +83,10 @@ ui = shinyUI(
                  titlePanel("Instruction"),
                  # demo data csv
                  br(),
-                 "If you want to use the RSLoan, Please download demo csv file."
+                 tableOutput("swdmtb")
+
         )
+
       )
   )
 
@@ -95,7 +97,11 @@ ui = shinyUI(
 
 server = function(input, output) {
   
-  source("demo.R")
+  source("./data/demo.R")
+  output$swdmtb = renderTable({demo}, caption = paste("If you want to use the RSLoan, Please download demo csv file."),
+    caption.placement = getOption("xtable.caption.placement", "top"),
+    caption.width = getOption("xtable.caption.width", NULL)
+  )
 
   conn = dbConnect(MySQL( ), dbname = "rsloan", username = "root", password = "hitachi")
   
@@ -128,54 +134,12 @@ server = function(input, output) {
   
   datasetInput = reactive({
     switch(input$dataset,
-
     # "table" = tablename,
-    "demo" = demo,
-
-    "bu08" = bu08,
-    "bu09" = bu09,
-    "bu10" = bu10,
-    "bu11" = bu11,
-    "bu12" = bu12,
-    "bu13" = bu13,
-    "bu14" = bu14,
-    "bu15" = bu15,
-    
-    "fi08" = fi08,
-    "fi09" = fi09,
-    "fi10" = fi10,
-    "fi11" = fi11,
-    "fi12" = fi12,
-    "fi13" = fi13,
-    "fi14" = fi14,
-    "fi15" = fi15,
-    
-    "ib08" = ib08,
-    "ib09" = ib09,
-    "ib10" = ib10,
-    "ib11" = ib11,
-    "ib12" = ib12,
-    "ib13" = ib13,
-    "ib14" = ib14,
-    "ib15" = ib15,
-    
-    "id08" = id08,
-    "id09" = id09,
-    "id10" = id10,
-    "id11" = id11,
-    "id12" = id12,
-    "id13" = id13,
-    "id14" = id14,
-    "id15" = id15,
-    
-    "im08" = im08,
-    "im09" = im09,
-    "im10" = im10,
-    "im11" = im11,
-    "im12" = im12,
-    "im13" = im13,
-    "im14" = im14,
-    "im15" = im15
+    "bu08" = bu08, "bu09" = bu09, "bu10" = bu10, "bu11" = bu11, "bu12" = bu12, "bu13" = bu13, "bu14" = bu14, "bu15" = bu15,
+    "fi08" = fi08, "fi09" = fi09, "fi10" = fi10, "fi11" = fi11, "fi12" = fi12, "fi13" = fi13, "fi14" = fi14, "fi15" = fi15,
+    "ib08" = ib08, "ib09" = ib09, "ib10" = ib10, "ib11" = ib11, "ib12" = ib12, "ib13" = ib13, "ib14" = ib14, "ib15" = ib15,
+    "id08" = id08, "id09" = id09, "id10" = id10, "id11" = id11, "id12" = id12, "id13" = id13, "id14" = id14, "id15" = id15,
+    "im08" = im08, "im09" = im09, "im10" = im10, "im11" = im11, "im12" = im12, "im13" = im13, "im14" = im14, "im15" = im15
     )
   })
 
@@ -188,8 +152,7 @@ server = function(input, output) {
   output$view = renderTable({
     head(datasetInput(), n = input$obs)
   })
-  
-  
+
 }
 
 
