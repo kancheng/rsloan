@@ -2,7 +2,17 @@
 
 利用 大學管理學院 8 年的"就學貸款"與"學生成績"資料，進行 集群、ANOVA 與視覺化分析。
 
-# R Shiny
+## raw
+
+為目前分析過後的管理學院學生資料
+
+## rfunc
+
+by Windows
+
+## Shiny
+
+by Ubuntu Linux
 
 當中`shiny/rsloan/` 下的 `rsloan-tem.R` 是在非正式完成前測試檔案，完成後才會移置 `ui.R` 和 `server.R` 這兩個檔案裡面 。
 
