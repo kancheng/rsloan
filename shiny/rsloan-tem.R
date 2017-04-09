@@ -9,41 +9,22 @@ ui = shinyUI(
     includeCSS(path = "./www/main.css"),
 
     tags$head(
-      
       tags$link(rel = "shortcut icon", href = "https://raw.githubusercontent.com/kancheng/rsloan/master/shiny/www/favicon.ico")
-                        
-                        ),
-    
+    ),
       navbarPage("RSLoan",
 
         tabPanel( "Home",
                   
-          div( 
-            style = "
-                max-height:516px;
-                width:100%;
-                text-align:center; 
-                background-color: #428BCA; 
-                background-repeat: repeat-x;
-                background-position: center;
-            ", 
-              div(
-                style = "
-                  font-size:120px;
-                  margin-bottom:0;
-                  color:#fdfdfd;",
-                "RSLoan"),
+          div( id = "home-txtbg", 
+              div( id = "home-txtct", "RSLoan"),
             br(),
             br(),
             div(
-              style = "
-                  font-weight:200px;
-                  font-size:17px;
-                  color:#fdfdfd;",
+              id = "home-micttxt",
               "The system is to analyze students' learning performance and economic status.")
             ,br()),
-          div(          titlePanel("About"),
-                        "Organization : Lunghwa University of Science and Technology",
+          div( titlePanel("About"),
+            "Organization : Lunghwa University of Science and Technology",
                         br(),
                         "Author : Haoye",
                         br(),
