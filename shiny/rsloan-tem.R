@@ -36,17 +36,17 @@ ui = shinyUI(
         ),
   
         tabPanel("Work",
-          navlistPanel("Analyze", widths = c(1,8),
+          tabsetPanel("Analyze",
             tabPanel("Import",
               sidebarLayout(
                 sidebarPanel(width = 3,
-
+                  actionButton("Submit", icon("refresh"), width = "100%"),
                   radioButtons("inputdt", "Choose :",
                                c("Sample Data" = "wkdsct","External Data" = "wkupfdt")
                                ),
-                  numericInput("obsr", "Row View:", 15),
-                  numericInput("obsc", "Col View:", 20),
-                  submitButton("Submit", icon("refresh"), width = "100%"),
+                  numericInput("obsr", "Row View:", 15, min = 1, width = "100%"),
+                  numericInput("obsc", "Col View:", 20, min = 1, width = "100%"),
+                  submitButton("Update", icon("refresh"), width = "100%"),
                  # tags$hr(),
                   tags$br(),
                   selectInput("dataset", "Sample Data :", 
@@ -72,7 +72,9 @@ ui = shinyUI(
                           '"'),
                   helpText("Please follow the instruction went Upload dataset.")),
                 mainPanel(width = 8,
-                  h4("Observations"),
+                  br(),
+                  h1("Observations"),
+                  br(),
                   tableOutput("view")
                 )
               )
@@ -81,6 +83,14 @@ ui = shinyUI(
             tabPanel("Cluster",
               titlePanel("Cluster"),      
                        tableOutput('clutable')
+            ),
+            tabPanel("Summary"
+            ),
+            tabPanel("Analysis"
+            ),
+            tabPanel("Loan"
+            ),
+            tabPanel("Propotion"
             ),
             tabPanel("Diagram"
             ),
@@ -152,14 +162,13 @@ server = function(input, output) {
                       cudf = read.csv(inFile$datapath, header = input$header, sep = input$sep,  quote = input$quote)
                      # assign ("cudf", cudf, env = .GlobalEnv)
                       head( cudf , n = input$obsr)[1:input$obsc]
-                      
                      },
                      
                       wkdsct = {
                         cudf = datasetInput()
                         #assign ("cudf", cudf, env = .GlobalEnv)
                         head( cudf, n = input$obsr)[1:input$obsc]
-                        
+
                       }
                      )
     })
