@@ -37,8 +37,7 @@ ui = shinyUI(
   
         tabPanel("Work",
           navlistPanel("Analyze", widths = c(1,8),
-            tabPanel("Data Input",
-              titlePanel("Data Input"),
+            tabPanel("Import",
               sidebarLayout(
                 sidebarPanel(width = 3,
 
@@ -46,7 +45,7 @@ ui = shinyUI(
                                c("Sample Data" = "wkdsct","External Data" = "wkupfdt")
                                ),
                   numericInput("obsr", "Row View:", 15),
-                  numericInput("obsc", "Col View:", 15),
+                  numericInput("obsc", "Col View:", 20),
                   submitButton("Submit", icon("refresh"), width = "100%"),
                  # tags$hr(),
                   tags$br(),
@@ -83,8 +82,9 @@ ui = shinyUI(
               titlePanel("Cluster"),      
                        tableOutput('clutable')
             ),
-            tabPanel("Diagram",
-                     titlePanel("Diagram")
+            tabPanel("Diagram"
+            ),
+            tabPanel("Export"
             )
           )
         ),
