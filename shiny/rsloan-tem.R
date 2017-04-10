@@ -39,7 +39,6 @@ ui = shinyUI(
           navlistPanel("Analyze", widths = c(1,8),
             tabPanel("Data Input",
               titlePanel("Data Input"),
-          
               sidebarLayout(
                 sidebarPanel(width = 3,
 
@@ -48,8 +47,9 @@ ui = shinyUI(
                                ),
                   numericInput("obsr", "Row View:", 15),
                   numericInput("obsc", "Col View:", 15),
-                  submitButton("Update View"),
-                  tags$hr(),
+                  submitButton("Submit", icon("refresh"), width = "100%"),
+                 # tags$hr(),
+                  tags$br(),
                   selectInput("dataset", "Sample Data :", 
                               choices = c(
                                 "bu08", "bu09", "bu10", "bu11", "bu12", "bu13", "bu14", "bu15",
@@ -57,9 +57,8 @@ ui = shinyUI(
                                 "ib08", "ib09", "ib10", "ib11", "ib12", "ib13", "ib14", "ib15",
                                 "id08", "id09", "id10", "id11", "id12", "id13", "id14", "id15",
                                 "im08", "im09", "im10", "im11", "im12", "im13", "im14", "im15")),
-                  tags$hr(),
                   fileInput('upfile', 'External Data : ',
-                    accept=c('text/csv', 
+                    accept = c('text/csv', 
                       'text/comma-separated-values,text/plain',  '.csv')),
                     checkboxInput('header', 'Header', TRUE),
                     radioButtons('sep', 'Separator',
@@ -73,7 +72,6 @@ ui = shinyUI(
                           'Single Quote'="'"),
                           '"'),
                   helpText("Please follow the instruction went Upload dataset.")),
-
                 mainPanel(width = 8,
                   h4("Observations"),
                   tableOutput("view")
@@ -82,7 +80,8 @@ ui = shinyUI(
             ),
 
             tabPanel("Cluster",
-              titlePanel("Cluster")
+              titlePanel("Cluster"),      
+                       tableOutput('clutable')
             ),
             tabPanel("Diagram",
                      titlePanel("Diagram")
@@ -109,13 +108,17 @@ ui = shinyUI(
 server = function(input, output) {
   source("./data/main-rfunc.R")
   source("./data/demo.R")
+  
+  # Instruction
   output$swdmtb = renderTable({demo}, caption = paste("If you want to use the RSLoan, Please download demo csv file."),
     caption.placement = getOption("xtable.caption.placement", "top"),
     caption.width = getOption("xtable.caption.width", NULL)
   )
-
+  
+  # DB Connect
   conn = dbConnect(MySQL( ), dbname = "rsloan", username = "root", password = "hitachi")
   
+  # DB Table Name
   keydfn = c( "bu08", "bu09", "bu10", "bu11", "bu12", "bu13", "bu14", "bu15",
               "fi08", "fi09", "fi10", "fi11", "fi12", "fi13", "fi14", "fi15",
               "ib08", "ib09", "ib10", "ib11", "ib12", "ib13", "ib14", "ib15",
@@ -137,19 +140,26 @@ server = function(input, output) {
   # all table name
   tablename = dbGetQuery(conn, "SHOW TABLES")
 
+  # Data Input
     output$view = renderTable({
       indsw = switch(input$inputdt,
                      wkupfdt = {
-                       inFile = input$upfile
+                       
+                      inFile = input$upfile
                       if (is.null(inFile)){
                         return(NULL)
                       }
-                      head(
-                        read.csv(inFile$datapath, header = input$header, sep = input$sep,  quote = input$quote)
-                        , n = input$obsr)[1:input$obsc]
+                      cudf = read.csv(inFile$datapath, header = input$header, sep = input$sep,  quote = input$quote)
+                     # assign ("cudf", cudf, env = .GlobalEnv)
+                      head( cudf , n = input$obsr)[1:input$obsc]
+                      
                      },
+                     
                       wkdsct = {
-                        head(datasetInput(), n = input$obsr)[1:input$obsc]
+                        cudf = datasetInput()
+                        #assign ("cudf", cudf, env = .GlobalEnv)
+                        head( cudf, n = input$obsr)[1:input$obsc]
+                        
                       }
                      )
     })
@@ -165,24 +175,24 @@ server = function(input, output) {
     )
   })
 
-#  output$headdat = renderPrint({
-#    dataset = datasetInput()
-#    head(dataset)
-#  })
-
-  # Show the first "n" observations
-
-  output$viewct = renderTable({
-    head(datasetInput(), n = input$obs)
+  # Cluster
+  # output$cluwork = 
+  
+  output$clutable = renderTable({
+    if(!(is.null(input$upfile$datapath))){
+      
+      cudf = read.csv(input$upfile$datapath, header = input$header, sep = input$sep,  quote = input$quote)
+      head(cudf)
+    } else if(!(is.null(datasetInput()))){
+      head(datasetInput())
+    }
   })
-
-  output$viewcsv = renderTable({
-    inFile = input$upfile
-    if (is.null(inFile))
-      return(NULL)
-    read.csv(inFile$datapath, header=input$header, sep=input$sep,  quote=input$quote)
-  })
-
+  
+  
+  #output$clutable = renderTable({
+  #  input$submbtn
+  # })
+  
 }
 
 shinyApp(ui = ui, server = server)
