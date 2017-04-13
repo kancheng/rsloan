@@ -8,7 +8,9 @@
 
 ## rfunc
 
-by Windows
+by Windows R Console
+
+若想要直接在 Console 的部分直接用寫好的自訂函數，可於 `rfunc` 目錄中執行寫好的 R File。
 
 ## shiny
 
@@ -32,9 +34,6 @@ shiny/rsloan/...
 127.0.0.1:3838/rsloan
 ```
 
-# R Console
-
-若想要直接在 Console 的部分直接用寫好的自訂函數，可於 `rfunc` 目錄中執行寫好的 R File。
 
 # 環境
 
