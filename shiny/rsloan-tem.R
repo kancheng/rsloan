@@ -85,8 +85,21 @@ ui = shinyUI(
               sidebarLayout(
                 sidebarPanel(width = 2
                 ),
-                
-                mainPanel(width = 8)
+                mainPanel(width = 8,
+                  h2( "Primary Column : " ),
+                  chooserInput("pchoser", "Available frobs", "Selected frobs",
+                      row.names(iris), c(), size = 10, multiple = TRUE
+                  ),
+                  br(),
+                  verbatimTextOutput("pcselt"),
+                  br(),
+                  hr(),
+                  h2( "Cluster Base Column : " ),
+                  chooserInput("cbchoser", "Available frobs", "Selected frobs",
+                      row.names(iris), c(), size = 10, multiple = TRUE
+                  ),
+                  verbatimTextOutput("cbcselt")
+                )
               )
             ),
             tabPanel("Cluster",
@@ -147,7 +160,8 @@ server = function(input, output, session) {
   # source r file
   source("./data/main-rfunc.R")
   source("./data/demo.R")
-  
+  source("chooser.R")
+
   spac = ""
   assign("rslds", spac, env = .GlobalEnv)
   
@@ -246,8 +260,14 @@ server = function(input, output, session) {
 #  output$clutable = renderTable({
 #    return(im13avt)
 #  })
-  
-  
+  output$pcselt = renderPrint(
+    input$pchoser
+  )
+
+  output$cbcselt = renderPrint(
+    input$cbchoser
+  )
+
   output$clutable = renderTable({
     if(!(is.null(input$upfile$datapath))){
 
