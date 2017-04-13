@@ -73,7 +73,7 @@ ui = shinyUI(
                           'Single Quote'="'"),
                           '"'),
                   helpText("Please follow the instruction went Upload dataset.")),
-                mainPanel(width = 8,
+                mainPanel(width = 7,
                   br(),
                   h1("Observations"),
                   br(),
@@ -81,17 +81,32 @@ ui = shinyUI(
                 )
               )
             ),
-
+            tabPanel("Setting",
+              sidebarLayout(
+                sidebarPanel(width = 2
+                ),
+                
+                mainPanel(width = 8)
+              )
+            ),
             tabPanel("Cluster",
-                h2("Choose col :"),
-                br(),
-                tableOutput('clutable')
+                     
+                sidebarLayout(
+                sidebarPanel(width = 2
+                             
+                ),
+                       
+                mainPanel(width = 8, 
+                        h2("Choose col :"),
+                        tableOutput('clutable')
+                )
+              )
             ),
             tabPanel("Summary"
             ),
             tabPanel("Analysis"
             ),
-            tabPanel("Loan"
+            tabPanel("SLoan"
             ),
             tabPanel("Propotion"
             ),
@@ -119,10 +134,23 @@ ui = shinyUI(
 
 
 server = function(input, output, session) {
+  
+  # tem
+  temspace = reactiveValues(
+    hacbdt = "",
+    pkb = "",
+    hcaonobjdf = "",
+    hclust.methods = c("ward.D", "single", "complete", "average", "mcquitty", "median", "centroid", "ward.D2"),
+    dist.methods = c("euclidean", "maximum", "manhattan", "canberra", "binary" , "minkowski")
+  )
+  
+  # source r file
   source("./data/main-rfunc.R")
   source("./data/demo.R")
+  
   spac = ""
   assign("rslds", spac, env = .GlobalEnv)
+  
   # Instruction
   output$swdmtb = renderTable({demo}, caption = paste("If you want to use the RSLoan, Please download demo csv file."),
     caption.placement = getOption("xtable.caption.placement", "top"),
@@ -153,13 +181,13 @@ server = function(input, output, session) {
   selesqltb(keydfn)
   
   # all table name
-  tablename = dbGetQuery(conn, "SHOW TABLES")
+  # tablename = dbGetQuery(conn, "SHOW TABLES")
 
   # Data Input
     output$view = renderTable({
     indsw = switch(input$inputdt,
+                   
             wkupfdt = {
-
                 inFile = input$upfile
                 if (is.null(inFile)){ return(NULL) }
                 cudf = read.csv(inFile$datapath, header = input$header, sep = input$sep,  quote = input$quote)
@@ -197,6 +225,8 @@ server = function(input, output, session) {
     )
   })
 
+  # Setting
+  
   # Cluster
   # output$cluwork
   
