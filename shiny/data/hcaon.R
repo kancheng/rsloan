@@ -1,6 +1,6 @@
 
 hcaon = function( Odata, beky, keycol, hck = 5, hcm = "ward.D", dism = "euclidean",
-	dtname = "untitled", swd = getwd(),...){
+	dtname = "unt", swd = getwd(),...){
 
 	hcktem = hck
 	hcmtem = hcm

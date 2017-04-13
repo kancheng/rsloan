@@ -4,7 +4,9 @@ library(shiny)
 library(RMySQL)
 library(ggplot2)
 
-# UI R File
+# UI R File & Object
+source("chooser.R")
+
 ui = shinyUI(
   fluidPage(
     includeCSS(path = "./www/main.css"),
@@ -41,7 +43,6 @@ ui = shinyUI(
             tabPanel("Import",
               sidebarLayout(
                 sidebarPanel(width = 3,
-                  actionButton("submit1", "Submit Dataset", width = "100%"),
                   tags$hr(),
                   radioButtons("inputdt", "Choose :",
                                c("Sample Data" = "wkdsct","External Data" = "wkupfdt")
@@ -82,25 +83,23 @@ ui = shinyUI(
               )
             ),
             tabPanel("Setting",
-              sidebarLayout(
-                sidebarPanel(width = 2
-                ),
-                mainPanel(width = 8,
+                  h2( "Dataset Column : " ),
+                  helpText("Display the Dataset's Colume name which user's choice. "),
+                  br(),
+                  textOutput("alldtscolnm", container = pre),
+                  br(),
                   h2( "Primary Column : " ),
-                  chooserInput("pchoser", "Available frobs", "Selected frobs",
-                      row.names(iris), c(), size = 10, multiple = TRUE
-                  ),
+                  textInput("pchoser", "", value = "555"),
                   br(),
                   verbatimTextOutput("pcselt"),
                   br(),
+                  submitButton("Submit", icon("refresh"), width = "30%"),
                   hr(),
                   h2( "Cluster Base Column : " ),
-                  chooserInput("cbchoser", "Available frobs", "Selected frobs",
-                      row.names(iris), c(), size = 10, multiple = TRUE
-                  ),
-                  verbatimTextOutput("cbcselt")
-                )
-              )
+                  textInput("cbchoser", "", value = "555"),
+                  verbatimTextOutput("cbcselt"),
+                  br(),
+                  submitButton("Submit", icon("refresh"), width = "30%")
             ),
             tabPanel("Cluster",
                      
@@ -143,27 +142,24 @@ ui = shinyUI(
 )
 
 
-
-
+# SERVER R File & Object
 
 server = function(input, output, session) {
   
   # tem
-  temspace = reactiveValues(
-    hacbdt = "",
-    pkb = "",
-    hcaonobjdf = "",
-    hclust.methods = c("ward.D", "single", "complete", "average", "mcquitty", "median", "centroid", "ward.D2"),
-    dist.methods = c("euclidean", "maximum", "manhattan", "canberra", "binary" , "minkowski")
-  )
-  
+  tmsp = reactiveValues()
+
+  #hacbdt = "OwO",
+  #pkb = "",
+
+  hclust.methods = c("ward.D", "single", "complete", "average", "mcquitty", "median", "centroid", "ward.D2")
+  dist.methods = c("euclidean", "maximum", "manhattan", "canberra", "binary" , "minkowski")
+
   # source r file
   source("./data/main-rfunc.R")
   source("./data/demo.R")
   source("chooser.R")
 
-  spac = ""
-  assign("rslds", spac, env = .GlobalEnv)
   
   # Instruction
   output$swdmtb = renderTable({demo}, caption = paste("If you want to use the RSLoan, Please download demo csv file."),
@@ -198,30 +194,28 @@ server = function(input, output, session) {
   # tablename = dbGetQuery(conn, "SHOW TABLES")
 
   # Data Input
+
     output$view = renderTable({
     indsw = switch(input$inputdt,
                    
             wkupfdt = {
                 inFile = input$upfile
                 if (is.null(inFile)){ return(NULL) }
-                cudf = read.csv(inFile$datapath, header = input$header, sep = input$sep,  quote = input$quote)
-                rslds = cudf
-                if ( length(colnames(cudf)) < 20 ){
-                  head( cudf , n = input$obsr)[1:length(colnames(cudf))]
+                tmsp$cudf = read.csv(inFile$datapath, header = input$header, sep = input$sep,  quote = input$quote)
+                if ( length(colnames(tmsp$cudf)) < 20 ){
+                  head( tmsp$cudf , n = input$obsr)[1:length(colnames(tmsp$cudf))]
                 }else{
-                  head( cudf , n = input$obsr)[1:input$obsc]
+                  head( tmsp$cudf , n = input$obsr)[1:input$obsc]
                 }
 
             },
                      
             wkdsct = {
-                cudf = datasetInput()
-                assign("rslds", cudf, env = .GlobalEnv)
-                rslds = cudf
-                if ( length(colnames(cudf)) < 20 ){
-                  head( cudf , n = input$obsr)[1:length(colnames(cudf))]
+                tmsp$cudf = datasetInput()
+                if ( length(colnames(tmsp$cudf)) < 20 ){
+                  head( tmsp$cudf , n = input$obsr)[1:length(colnames(tmsp$cudf))]
                 }else{
-                  head( cudf , n = input$obsr)[1:input$obsc]
+                  head( tmsp$cudf , n = input$obsr)[1:input$obsc]
                 }
                 
             }
@@ -240,9 +234,34 @@ server = function(input, output, session) {
   })
 
   # Setting
+  output$alldtscolnm = renderPrint({
+    colnames(tmsp$cudf)
+  })
   
+  # paste0(dtname,"ln", loanstatus[dscnm],"dsc")
+  # eval(parse(text = slon.commands))
+
+
+  output$pcselt = renderPrint({
+    tmsp$pkb = input$pchoser
+    tmsp$pkb
+  })
+  
+  output$cbcselt = renderPrint({
+    tmsp$cbase = input$cbchoser
+    tmsp$cbase
+  })
+
   # Cluster
-  # output$cluwork
+
+  output$clutable = renderTable({
+    hcaon(tmsp$cudf,c("cala","ec"),"sid")
+    untavt
+  }) 
+  
+  
+  
+  
   
 #  output$clutable = renderTable({
    # if (input$submit1 == 0){isolate({get("rslds")})}
@@ -260,24 +279,21 @@ server = function(input, output, session) {
 #  output$clutable = renderTable({
 #    return(im13avt)
 #  })
-  output$pcselt = renderPrint(
-    input$pchoser
-  )
+  
+  
 
-  output$cbcselt = renderPrint(
-    input$cbchoser
-  )
+#  output$clutable = renderTable({
+#    if(!(is.null(input$upfile$datapath))){
+#
+#      cudf = read.csv(input$upfile$datapath, header = input$header, sep = input$sep,  quote = input$quote)
+#     head(cudf)
+#   } else if(!(is.null(datasetInput()))){
+#     head(datasetInput())
+#   }
+#  })
 
-  output$clutable = renderTable({
-    if(!(is.null(input$upfile$datapath))){
-
-      cudf = read.csv(input$upfile$datapath, header = input$header, sep = input$sep,  quote = input$quote)
-     head(cudf)
-   } else if(!(is.null(datasetInput()))){
-     head(datasetInput())
-   }
-  })
-
+  
+  
   
   
   #output$clutable = renderTable({
