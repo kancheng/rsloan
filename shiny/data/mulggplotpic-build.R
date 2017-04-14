@@ -1,9 +1,9 @@
 # HCA Multiple ggplot proc
 
-sg2proc = function( dft, midx, cidx){
+sg2proc = function( dft = ""untavt"", midx, cidx){
 
 	for( snm in 1:length(cidx)){
-		s.nm = paste0( dft, ".", cidx[snm], ".", "gmp")	
+		s.nm = paste0( dft, ".", "gmp")	
 		s.cmdr = paste0( "ggplot(", dft, 
 		") + geom_point( aes(x = ", 
 		midx, ", y = ", cidx[snm], 
@@ -15,7 +15,7 @@ sg2proc = function( dft, midx, cidx){
 
 }
 
-mg2proc = function( dft, midx, cidx, lbobj){
+mg2proc = function( dft = "untavt", midx, cidx){
 
 	mupnbid = trunc(sqrt(length(cidx))) + 1 
 	mupobjnm = vector(mode = "character", length = 0)
