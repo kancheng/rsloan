@@ -5,7 +5,6 @@ library(RMySQL)
 library(ggplot2)
 
 # UI R File & Object
-source("chooser.R")
 
 ui = shinyUI(
   fluidPage(
@@ -231,7 +230,6 @@ server = function(input, output, session) {
   # source r file
   source("./data/main-rfunc.R")
   source("./data/demo.R")
-  source("chooser.R")
 
   
   # Instruction
