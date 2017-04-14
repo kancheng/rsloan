@@ -1,6 +1,6 @@
 # HCA Multiple ggplot proc
 
-sg2proc = function( dft = ""untavt"", midx, cidx){
+sg2proc = function( dft = "untavt", midx, cidx){
 
 	for( snm in 1:length(cidx)){
 		s.nm = paste0( dft, ".", "gmp")	
