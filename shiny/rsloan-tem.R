@@ -37,7 +37,6 @@ ui = shinyUI(
                         "ResearchGate : ",a("https://www.researchgate.net/profile/Hao_Cheng_Kan",href="https://www.researchgate.net/profile/Hao_Cheng_Kan")
           )
         ),
-  
         tabPanel("Work",
           tabsetPanel("Analyze",
             tabPanel("Import",
@@ -95,7 +94,7 @@ ui = shinyUI(
                   submitButton("Submit", icon("refresh"), width = "30%"),
                   hr(),
                   h2( "Cluster Base Column : " ),
-                  textInput("cbchoser", "", value = "c(\"cala\")" ),
+                  textInput("cbchoser", "", value = "c(\"loam\", \"mm\" )" ),
                   verbatimTextOutput("cbcselt"),
                   br(),
                   submitButton("Submit", icon("refresh"), width = "30%")
@@ -104,67 +103,114 @@ ui = shinyUI(
               tabsetPanel(
                 tabPanel("Dataset",
                   h2("Cluster :"),
+                  submitButton("Submit", icon("refresh"), width = "30%"),
+                  br(),
                   tableOutput('clutable')
                 ),
                 tabPanel("Plot",
                   h2("Plot :"),
+                  submitButton("Submit", icon("refresh"), width = "30%"),
+                  br(),
                   plotOutput('cluplot')
-                )          
+                )
               )
             ),
             tabPanel("Summary",
-                     
               h2("Summary :"),
+              submitButton("Submit", icon("refresh"), width = "30%"),
+              br(),
               tableOutput('sumytable')
-                     
             ),
             tabPanel("Analysis",
-                     
               h2("Analysis :"),
+              submitButton("Submit", icon("refresh"), width = "30%"),
+              br(),
               tableOutput('anaytable')
-                     
             ),
             tabPanel("SLoan",
               tabsetPanel(
                 tabPanel( "Have SLoan",
                   h2("Have SLoan :"),
+                  submitButton("Submit", icon("refresh"), width = "30%"),
+                  br(),
                   tableOutput('hsloandt')
                 ),
                 tabPanel( "Not SLoan",
                   h2("Not SLoan :"),
+                  submitButton("Submit", icon("refresh"), width = "30%"),
+                  br(),
                   tableOutput('nsloandt')
                 )
               )
             ),
             tabPanel("Propotion",
               h2("Propotion :"),
+              submitButton("Submit", icon("refresh"), width = "30%"),
+              br(),
               tableOutput('pptndt')
             ),
-            
             tabPanel("Diagram",
               tabsetPanel(
-                tabPanel("Plot Setting"
-                  
+                tabPanel("Plot Setting",
+                  sidebarLayout(
+                    sidebarPanel(width = 3,
+                      h1( "Dataset Column : " ),
+                      helpText("Display the Dataset's Colume name which user's choice. "),
+                      br(),
+                      textOutput("alldtscolnm2", container = pre)
+                    ),
+                    mainPanel(width = 7,
+                      h2( "1. Single Plot :" ),
+                      h3("PK Column : "),
+                      textInput("spbtxt1", "", value = "c(\"cala\")"),
+                      verbatimTextOutput("spbt1vto"),
+                      submitButton("Submit", icon("refresh"), width = "30%"),
+                      h3("Analyze Column : "),
+                      textInput("spbtxt2", "", value = "c(\"itdc\")"),
+                      verbatimTextOutput("spbt2vto"),
+                      submitButton("Submit", icon("refresh"), width = "30%"),
+                      br(),
+                      h2( "2. Multiple Plot :" ),
+                      h3("PK Column : "),
+                      textInput("mpbtxt1", "", value = "c(\"cala\")"),
+                      verbatimTextOutput("mpb1vto"),
+                      submitButton("Submit", icon("refresh"), width = "30%"),
+                      h3("Analyze Column : "),
+                      textInput("mpbtxt2", "", value = "c(\"mm\", \"ma\", \"fm\", \"ac\", \"eca\", \"ecb\", \"calb\")", width = "100%"),
+                      verbatimTextOutput("mpb2vto"),
+                      submitButton("Submit", icon("refresh"), width = "30%")
+                    )
+                  )
                 ),
                 tabPanel("Single Plot",
+                  h2("Single Plot"),
+                  br(),
+                  submitButton("Submit", icon("refresh"), width = "30%"),
+                  br(),
                   plotOutput("singplot")
                 ),
-                tabPanel("Multiple",
+                tabPanel("Multiple Plot",
+                  h2("Multiple Plot"),
+                  br(),
+                  submitButton("Submit", icon("refresh"), width = "30%"),
+                  br(),
                   plotOutput("multiplot")
-                )                         
+                )
               )
-            ),
-            tabPanel("Export"
             )
           )
         ),
 
         tabPanel("Instruction",
-                 titlePanel("Instruction"),
-                 # demo data csv
-                 br(),
-                 tableOutput("swdmtb")
-
+          sidebarLayout(
+            sidebarPanel("Instruction",
+              downloadButton('downloadDemo', 'Download')
+            ),
+            mainPanel(
+              # demo data csv
+              tableOutput("swdmtb")
+            )
+          )
         )
 
       )
@@ -277,53 +323,104 @@ server = function(input, output, session) {
 
   # Cluster
   
+  
   output$cluplot = renderPlot({
     hcaon(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)))
   })
   
   output$clutable = renderTable({
+    hcaon(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)))
     untavt
   }) 
-  
-
   
   # Summary
   
   output$sumytable = renderTable({
+    hcaon(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)))
     untal2ndsc
   }) 
 
   # Analysis
   output$anaytable = renderTable({
+    hcaon(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)))
     unttkav
   })  
   
   # SLoan
 
   output$hsloandt = renderTable({
+    hcaon(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)))
     untln1dsc
   })
   
   output$nsloandt = renderTable({
+    hcaon(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)))
     untln0dsc
   })  
   
   # Propotion
   output$pptndt = renderTable({
+    hcaon(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)))
     untslon
   })  
 
   # Diagram
+  mainindex = c( "cala" )
+  courindex1 = c( "itdc")
   
-# mainindex = c( "cala" )
-#  courindex = c( "itdc", "cppg", "pcpg", "oopg", "itdcn", "cala", "calb", "ec", 
-#                "dtst", "nwkpm", "sadm", "idbs", "st", "mana", "inkpg", "dbms", "mis")
+  courindex2 = c( "itdc", "cppg", "pcpg", "oopg", "itdcn", "cala", "calb", "ec", 
+                  "dtst", "nwkpm", "sadm", "idbs", "st", "mana", "inkpg", "dbms", "mis")
+
+  output$spbt1vto = renderPrint({
+    tmsp$spbtxt1 = input$spbtxt1
+    cat(tmsp$spbtxt1)
+  })
   
-#  sg2proc("im11avt", mainindex, courindex, "im11df")
-#  mg2proc("im11avt", mainindex, courindex, "im11df")
+  output$spbt2vto = renderPrint({
+    tmsp$spbtxt2 = input$spbtxt2
+    cat(tmsp$spbtxt2)
+  })
   
-  # Export
+  output$mpb1vto = renderPrint({
+    tmsp$mpbtxt1 = input$mpbtxt1
+    cat(tmsp$mpbtxt1)
+  })
   
+  output$mpb2vto = renderPrint({
+    tmsp$mpbtxt2 = input$mpbtxt2
+    cat(tmsp$mpbtxt2)
+  })
+  
+  
+  output$singplot = renderPlot({
+    tmsp$evalspbtxt1 = eval(parse(text = tmsp$spbtxt1))
+    tmsp$evalspbtxt2 = eval(parse(text = tmsp$spbtxt2))
+    tmsp$shspic  = sg2proc("untavt", tmsp$evalspbtxt1, tmsp$evalspbtxt2)
+    untavt.gmp
+  })
+  
+  output$multiplot = renderPlot({
+    tmsp$evalmpbtxt1 = eval(parse(text = tmsp$mpbtxt1))
+    tmsp$evalmpbtxt2 = eval(parse(text = tmsp$mpbtxt2))
+    tmsp$shmpic = mg2proc("untavt", tmsp$evalmpbtxt1, tmsp$evalmpbtxt2)
+    untavt.mulgmp
+  })
+  
+  output$alldtscolnm2 = renderPrint({
+    colnames(tmsp$cudf)
+  })
+
+
+  # Instruction
+  
+  output$downloadDemo = downloadHandler(
+    filename = function() { 
+      paste( "demo", '.csv', sep = '') 
+    },
+    content = function(file) {
+      write.csv(demo, file)
+    }
+  )
 }
 
 shinyApp(ui = ui, server = server)
