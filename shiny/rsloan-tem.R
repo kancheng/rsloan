@@ -43,7 +43,6 @@ ui = shinyUI(
             tabPanel("Import",
               sidebarLayout(
                 sidebarPanel(width = 3,
-                  tags$hr(),
                   radioButtons("inputdt", "Choose :",
                                c("Sample Data" = "wkdsct","External Data" = "wkupfdt")
                                ),
@@ -89,38 +88,51 @@ ui = shinyUI(
                   textOutput("alldtscolnm", container = pre),
                   br(),
                   h2( "Primary Column : " ),
-                  textInput("pchoser", "", value = "555"),
+                  textInput("pchoser", "", value = "c(\"sid\")"),
                   br(),
                   verbatimTextOutput("pcselt"),
                   br(),
                   submitButton("Submit", icon("refresh"), width = "30%"),
                   hr(),
                   h2( "Cluster Base Column : " ),
-                  textInput("cbchoser", "", value = "555"),
+                  textInput("cbchoser", "", value = "c(\"cala\")" ),
                   verbatimTextOutput("cbcselt"),
                   br(),
                   submitButton("Submit", icon("refresh"), width = "30%")
             ),
             tabPanel("Cluster",
                      
-                sidebarLayout(
-                sidebarPanel(width = 2
-                             
+              h2("Cluster :"),
+              tableOutput('clutable')
+              
+            ),
+            tabPanel("Summary",
+                     
+              h2("Summary :"),
+              tableOutput('sumytable')
+                     
+            ),
+            tabPanel("Analysis",
+                     
+              h2("Analysis :"),
+              tableOutput('anaytable')
+                     
+            ),
+            tabPanel("SLoan",
+              tabsetPanel(
+                tabPanel( "Have SLoan",
+                  h2("Have SLoan :"),
+                  tableOutput('hsloandt')
                 ),
-                       
-                mainPanel(width = 8, 
-                        h2("Choose col :"),
-                        tableOutput('clutable')
+                tabPanel( "Not SLoan",
+                  h2("Not SLoan :"),
+                  tableOutput('nsloandt')
                 )
               )
             ),
-            tabPanel("Summary"
-            ),
-            tabPanel("Analysis"
-            ),
-            tabPanel("SLoan"
-            ),
-            tabPanel("Propotion"
+            tabPanel("Propotion",
+              h2("Propotion :"),
+              tableOutput('pptndt')
             ),
             tabPanel("Diagram"
             ),
@@ -148,9 +160,6 @@ server = function(input, output, session) {
   
   # tem
   tmsp = reactiveValues()
-
-  #hacbdt = "OwO",
-  #pkb = "",
 
   hclust.methods = c("ward.D", "single", "complete", "average", "mcquitty", "median", "centroid", "ward.D2")
   dist.methods = c("euclidean", "maximum", "manhattan", "canberra", "binary" , "minkowski")
@@ -238,67 +247,48 @@ server = function(input, output, session) {
     colnames(tmsp$cudf)
   })
   
-  # paste0(dtname,"ln", loanstatus[dscnm],"dsc")
-  # eval(parse(text = slon.commands))
-
-
   output$pcselt = renderPrint({
     tmsp$pkb = input$pchoser
-    tmsp$pkb
+    cat(tmsp$pkb)
   })
   
   output$cbcselt = renderPrint({
     tmsp$cbase = input$cbchoser
-    tmsp$cbase
+    cat(tmsp$cbase)
   })
 
   # Cluster
 
   output$clutable = renderTable({
-    hcaon(tmsp$cudf,c("cala","ec"),"sid")
+    hcaon(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)))
     untavt
   }) 
   
+  # Summary
   
-  
-  
-  
-#  output$clutable = renderTable({
-   # if (input$submit1 == 0){isolate({get("rslds")})}
-    #get("rslds")
-    # if (input$submit1 == 0){
-    #  return()
-    #} else {return(rslds)}
-# })
+  output$sumytable = renderTable({
+    untal2ndsc
+  }) 
 
-# test R function
-#  hacbdt = c("cala","loam","ec", "cppg")
-#  pkb = c ("sid")
-#  hcaon( im13, hacbdt, pkb, dtname = "im13") 
-#  
-#  output$clutable = renderTable({
-#    return(im13avt)
-#  })
+  # Analysis
+  output$anaytable = renderTable({
+    unttkav
+  })  
   
-  
+  # SLoan
 
-#  output$clutable = renderTable({
-#    if(!(is.null(input$upfile$datapath))){
-#
-#      cudf = read.csv(input$upfile$datapath, header = input$header, sep = input$sep,  quote = input$quote)
-#     head(cudf)
-#   } else if(!(is.null(datasetInput()))){
-#     head(datasetInput())
-#   }
-#  })
-
+  output$hsloandt = renderTable({
+    untln1dsc
+  })
   
+  output$nsloandt = renderTable({
+    untln0dsc
+  })  
   
-  
-  
-  #output$clutable = renderTable({
-  #  input$submbtn
-  # })
+  # Propotion
+  output$pptndt = renderTable({
+    untslon
+  })  
   
 }
 
