@@ -101,10 +101,16 @@ ui = shinyUI(
                   submitButton("Submit", icon("refresh"), width = "30%")
             ),
             tabPanel("Cluster",
-                     
-              h2("Cluster :"),
-              tableOutput('clutable')
-              
+              tabsetPanel(
+                tabPanel("Dataset",
+                  h2("Cluster :"),
+                  tableOutput('clutable')
+                ),
+                tabPanel("Plot",
+                  h2("Plot :"),
+                  plotOutput('cluplot')
+                )          
+              )
             ),
             tabPanel("Summary",
                      
@@ -134,7 +140,19 @@ ui = shinyUI(
               h2("Propotion :"),
               tableOutput('pptndt')
             ),
-            tabPanel("Diagram"
+            
+            tabPanel("Diagram",
+              tabsetPanel(
+                tabPanel("Plot Setting"
+                  
+                ),
+                tabPanel("Single Plot",
+                  plotOutput("singplot")
+                ),
+                tabPanel("Multiple",
+                  plotOutput("multiplot")
+                )                         
+              )
             ),
             tabPanel("Export"
             )
@@ -258,11 +276,16 @@ server = function(input, output, session) {
   })
 
   # Cluster
-
-  output$clutable = renderTable({
+  
+  output$cluplot = renderPlot({
     hcaon(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)))
+  })
+  
+  output$clutable = renderTable({
     untavt
   }) 
+  
+
   
   # Summary
   
@@ -289,6 +312,17 @@ server = function(input, output, session) {
   output$pptndt = renderTable({
     untslon
   })  
+
+  # Diagram
+  
+# mainindex = c( "cala" )
+#  courindex = c( "itdc", "cppg", "pcpg", "oopg", "itdcn", "cala", "calb", "ec", 
+#                "dtst", "nwkpm", "sadm", "idbs", "st", "mana", "inkpg", "dbms", "mis")
+  
+#  sg2proc("im11avt", mainindex, courindex, "im11df")
+#  mg2proc("im11avt", mainindex, courindex, "im11df")
+  
+  # Export
   
 }
 
