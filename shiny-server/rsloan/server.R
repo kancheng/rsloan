@@ -1,13 +1,14 @@
 set.seed(929)
 
+library(plotly)
 library(shiny)
 library(RMySQL)
 library(ggplot2)
-
+library(rmarkdown)
 
 # SERVER R File & Object
 
-server = function(input, output, session) {
+function(input, output, session) {
   
   # tem
   tmsp = reactiveValues()
@@ -111,7 +112,7 @@ server = function(input, output, session) {
   
   
   output$cluplot = renderPlot({
-    hcaon(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)))
+    hcaon2(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)))
   })
   
   output$clutable = renderTable({
@@ -209,4 +210,4 @@ server = function(input, output, session) {
   )
 }
 
-shinyApp(ui = ui, server = server)
+

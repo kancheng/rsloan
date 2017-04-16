@@ -1,12 +1,14 @@
 set.seed(929)
 
+library(plotly)
 library(shiny)
 library(RMySQL)
 library(ggplot2)
+library(rmarkdown)
 
 # UI R File & Object
 
-ui = shinyUI(
+shinyUI(
   fluidPage(
     includeCSS(path = "./www/main.css"),
     tags$head(
