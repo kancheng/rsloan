@@ -1,20 +1,20 @@
 # R Kan Dev Function IO
-source("./data/io.R")
+source("C:/dataipt/rfunc/io.R")
 
 # R Kan Dev Function HCA
-source("./data/hca.R")
+source("C:/dataipt/rfunc/hca.R")
 
 # R Multiple graphs on one page 
-source("./data/mulggplotpic.R")
+source("C:/dataipt/rfunc/mulggplotpic.R")
 
 # R Kan Dev Function AS Class & Head List
-source("./data/ashd.R")
+source("C:/dataipt/rfunc/ashd.R")
 
 # R Kan Dev Function Pic Opt
-source("./data/picopt.R")
+source("C:/dataipt/rfunc/picopt.R")
 
 # R Kan Dev Function HCA
-source("./data/hcaon.R")
+source("C:/dataipt/rfunc/hcaon.R")
 
 # R Multiple graphs build object
-source("./data/mulggplotpic-build.R")
+source("C:/dataipt/rfunc/mulggplotpic-build.R")
