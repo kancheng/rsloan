@@ -1,15 +1,6 @@
-# HCA conform
-# Use serna, hcadpic, hcad CA R Function
-# Odata 為資料來源的 DF
-# beky 根據資料來源的 DF 下，進行集群分群基礎的直行名稱。
-# keycol 根據資料來源的 DF 下，進行集群分群基礎的 PK 直行名稱。
-# serna 為給 DataFrame 產生 HCA 分群基準資料。
-# hck 為集群分析的分群群數
-# hcm 為分群的方法
-# dism 為分群的距離計算方式
 
 hcaon = function( Odata, beky, keycol, hck = 5, hcm = "ward.D", dism = "euclidean",
-	dtname = "untitled", swd = getwd(),...){
+	dtname = "unt", swd = getwd(),...){
 
 	hcktem = hck
 	hcmtem = hcm
@@ -36,8 +27,8 @@ hcaon = function( Odata, beky, keycol, hck = 5, hcm = "ward.D", dism = "euclidea
 	hcadata = hcad( hcdata = dhdc, hck = hcktem, hcm = hcmtem, dism = dismtem)
 
 # HCA pic
-	piophdn = paste0( dtname, ".png")
-	hcadpic( hcdata = dhdc, hck = hcktem, hcm = hcmtem, dism = dismtem)
+#	piophdn = paste0( dtname, ".png")
+#	hcadpic( hcdata = dhdc, hck = hcktem, hcm = hcmtem, dism = dismtem)
 
 # HCA Data DF OUT
 	hcad2 = cbind(data,hcadata)
@@ -188,4 +179,39 @@ hcaon = function( Odata, beky, keycol, hck = 5, hcm = "ward.D", dism = "euclidea
 			eckallds
 		, env = .GlobalEnv)
 
+}
+
+
+
+hcaon2 = function( Odata, beky, keycol, hck = 5, hcm = "ward.D", dism = "euclidean",
+                  dtname = "unt", swd = getwd(),...){
+  
+  hcktem = hck
+  hcmtem = hcm
+  dismtem = dism
+  
+  serna = function( data, beky, keycol){
+    tdfnm = rep(1:nrow(data))
+    pkb = data[ , keycol]
+    temdf = data.frame( bnm = tdfnm, bpk = pkb)
+    hcabd = data[ , beky]
+    nap = vector( mode = "character", length = 0)
+    for( i in 1:NCOL(hcabd)) {
+      nam = paste0("base", i, ".", beky[i])
+      nap = c( nap, nam)
+    }
+    names(hcabd) = nap
+    hcal2d = cbind( temdf, hcabd)
+    hcal2d
+  }
+  
+  # HCA Data DF IN
+  data = serna( Odata, beky, keycol)
+  dhdc = data[ , -c(1, 2)]
+  hcadata = hcad( hcdata = dhdc, hck = hcktem, hcm = hcmtem, dism = dismtem)
+  
+  # HCA pic
+  piophdn = paste0( dtname, ".png")
+  hcadpic( hcdata = dhdc, hck = hcktem, hcm = hcmtem, dism = dismtem)
+  
 }
