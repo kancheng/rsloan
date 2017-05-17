@@ -5,6 +5,7 @@ library(shiny)
 library(RMySQL)
 library(ggplot2)
 library(rmarkdown)
+library("clValid")
 
 # SERVER R File & Object
 
@@ -96,7 +97,10 @@ function(input, output, session) {
     )
   })
   
-  ## Setting
+  # CV
+  
+  
+  # Setting
   
   output$alldtscolnm = renderPrint({
     colnames(tmsp$cudf)
@@ -155,6 +159,16 @@ function(input, output, session) {
     untslon
   })  
   
+  output$prosloan = renderPlot({
+    
+    tmsp$slone1 = data.frame(club = untslon$club, type = rep("slon"), data = untslon$slon)
+    tmsp$slone2 = data.frame(club = untslon$club, type = rep("no.slon"), data = untslon$no.slon)
+    tmsp$slone3 = data.frame(club = untslon$club, type = rep("total"), data = untslon$total)
+    tmsp$slonae = rbind( tmsp$slone1, tmsp$slone2, tmsp$slone3)
+    ggplot(data = tmsp$slonae, mapping = aes(club,data, fill = type)) + geom_bar(stat = 'identity', position = 'dodge') + 
+      geom_text(mapping = aes(label = data), size = 5, colour = 'black', vjust = 1, hjust = .5, position = position_dodge(1)) + labs( title = "分群就貸比")
+  })
+  
   # Diagram
   output$spbt1vto = renderPrint({
     tmsp$spbtxt1 = paste0( "c(", input$spbtxt1, ")")
@@ -195,7 +209,9 @@ function(input, output, session) {
     colnames(tmsp$cudf)
   })
   
-  
+  output$alldtscolnm3 = renderPrint({
+    colnames(tmsp$cudf)
+  })
   # Instruction
   
   output$downloadDemo = downloadHandler(
