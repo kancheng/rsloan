@@ -13,9 +13,6 @@ function(input, output, session) {
   # tem
   tmsp = reactiveValues()
   
-  hclust.methods = c("ward.D", "single", "complete", "average", "mcquitty", "median", "centroid", "ward.D2")
-  dist.methods = c("euclidean", "maximum", "manhattan", "canberra", "binary" , "minkowski")
-  
   # source r file
   source("./data/main-rfunc.R")
   source("./data/demo.R")
@@ -99,18 +96,19 @@ function(input, output, session) {
     )
   })
   
-  # Setting
+  ## Setting
+  
   output$alldtscolnm = renderPrint({
     colnames(tmsp$cudf)
   })
   
   output$pcselt = renderPrint({
-    tmsp$pkb = input$pchoser
+    tmsp$pkb = paste0( "c(", input$pchoser, ")")
     cat(tmsp$pkb)
   })
   
   output$cbcselt = renderPrint({
-    tmsp$cbase = input$cbchoser
+    tmsp$cbase = paste0( "c(", input$cbchoser, ")")
     cat(tmsp$cbase)
   })
   
@@ -118,51 +116,46 @@ function(input, output, session) {
   
   
   output$cluplot = renderPlot({
-    hcaon2(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)))
+    hcaon2(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)), hck = input$clunmtb, hcm = input$hclust.methods, dism = input$dist.methods)
   })
   
   output$clutable = renderTable({
-    hcaon(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)))
+    hcaon(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)), hck = input$clunmtb, hcm = input$hclust.methods, dism = input$dist.methods)
     untavt
   }) 
   
   # Summary
   
   output$sumytable = renderTable({
-    hcaon(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)))
+    hcaon(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)), hck = input$clunmtb, hcm = input$hclust.methods, dism = input$dist.methods)
     untal2ndsc
   }) 
   
   # Analysis
   output$anaytable = renderTable({
-    hcaon(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)))
+    hcaon(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)), hck = input$clunmtb, hcm = input$hclust.methods, dism = input$dist.methods)
     unttkav
   })  
   
   # SLoan
   
   output$hsloandt = renderTable({
-    hcaon(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)))
+    hcaon(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)), hck = input$clunmtb, hcm = input$hclust.methods, dism = input$dist.methods)
     untln1dsc
   })
   
   output$nsloandt = renderTable({
-    hcaon(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)))
+    hcaon(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)), hck = input$clunmtb, hcm = input$hclust.methods, dism = input$dist.methods)
     untln0dsc
   })  
   
   # Propotion
   output$pptndt = renderTable({
-    hcaon(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)))
+    hcaon(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)), hck = input$clunmtb, hcm = input$hclust.methods, dism = input$dist.methods)
     untslon
   })  
   
   # Diagram
-  mainindex = c( "cala" )
-  courindex1 = c( "itdc")
-  
-  courindex2 = c( "itdc", "mana", "sta", "cala")
-  
   output$spbt1vto = renderPrint({
     tmsp$spbtxt1 = paste0( "c(", input$spbtxt1, ")")
     cat(tmsp$spbtxt1)
