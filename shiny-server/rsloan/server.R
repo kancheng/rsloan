@@ -6,6 +6,7 @@ library(RMySQL)
 library(ggplot2)
 library(rmarkdown)
 library("clValid")
+library("DT")
 
 # SERVER R File & Object
 
@@ -123,10 +124,14 @@ function(input, output, session) {
     hcaon2(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)), hck = input$clunmtb, hcm = input$hclust.methods, dism = input$dist.methods)
   })
   
-  output$clutable = renderTable({
-    hcaon(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)), hck = input$clunmtb, hcm = input$hclust.methods, dism = input$dist.methods)
-    untavt
-  }) 
+ # output$clutable = renderTable({
+   # hcaon(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)), hck = input$clunmtb, hcm = input$hclust.methods, dism = input$dist.methods)
+   # untavt
+  #}) 
+  output$clutable = DT::renderDataTable({
+    hcaon2(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)), hck = input$clunmtb, hcm = input$hclust.methods, dism = input$dist.methods)
+    DT::datatable(untavt,options = list(pageLength = 25))
+  })
   
   # Summary
   

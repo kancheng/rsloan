@@ -6,6 +6,7 @@ library(RMySQL)
 library(ggplot2)
 library(rmarkdown)
 library("clValid")
+library("DT")
 
 # UI R File & Object
 
@@ -97,43 +98,45 @@ shinyUI(
                                     #),
                                     tabPanel("Setting - 分析設定",
                                           sidebarLayout(
-                                            sidebarPanel(width = 3,
-                                                     helpText("由此選擇分群數量與分群方法跟距離。"),
-                                                     h1("分群數量"),
-                                                     numericInput("clunmtb", "Clu Number:", 6),
-                                                     h1("分群方法"),
-                                                     radioButtons("hclust.methods", "Choose :",
-                                                                  c("Ward.D" = "ward.D", "Ward.D2" = "ward.D2", "Single" = "single",
-                                                                    "Complete" = "complete", "Average" = "average", "Mcquitty" = "mcquitty",
-                                                                    "Median" = "median", "Centroid" = "centroid"
-                                                                    )
-                                                     ),
-                                                     h1("分群距離"),
-                                                     radioButtons("dist.methods", "Choose :",
-                                                                  c("Euclidean" = "euclidean","Maximum" = "maximum", "Manhattan" = "manhattan",
-                                                                    "Canberra" = "canberra", "Binary" = "binary", "Minkowski" = "minkowski"
-                                                                    )
-                                                     ),
-                                                     submitButton("Update", icon("refresh"), width = "100%")
+                                            mainPanel(width = 5,
+                                                         h2( "檢視資料欄位" ),
+                                                         helpText("Display the Dataset's Colume name which user's choice. "),
+                                                         br(),
+                                                         textOutput("alldtscolnm", container = pre),
+                                                         hr(),
+                                                         h2( "主要欄位" ),
+                                                         helpText("為辨別個別學生的欄位"),
+                                                         textInput("pchoser", "", value = "\"sid\""),
+                                                         br(),
+                                                         verbatimTextOutput("pcselt"),
+                                                         br(),
+                                                         submitButton("Submit", icon("refresh"), width = "30%"),
+                                                         hr(),
+                                                         h2( "分群基礎欄位" ),
+                                                         helpText("為所要分群的科目欄位"),
+                                                         textInput("cbchoser", "", value = "\"loam\", \"微積分一\",\"經濟學\",\"程式設計\"" ),
+                                                         verbatimTextOutput("cbcselt"),
+                                                         br(),
+                                                         submitButton("Submit", icon("refresh"), width = "30%")
                                             ),
-                                            mainPanel(width = 7,
-                                              h2( "檢視資料欄位" ),
-                                              helpText("Display the Dataset's Colume name which user's choice. "),
-                                              br(),
-                                              textOutput("alldtscolnm", container = pre),
-                                              br(),
-                                              h2( "主要欄位" ),
-                                              textInput("pchoser", "", value = "\"sid\""),
-                                              br(),
-                                              verbatimTextOutput("pcselt"),
-                                              br(),
-                                              submitButton("Submit", icon("refresh"), width = "30%"),
-                                              hr(),
-                                              h2( "分群基礎欄位" ),
-                                              textInput("cbchoser", "", value = "\"loam\", \"微積分一\",\"經濟學\",\"程式設計\"" ),
-                                              verbatimTextOutput("cbcselt"),
-                                              br(),
-                                              submitButton("Submit", icon("refresh"), width = "30%")
+                                            mainPanel(width = 5,
+                                                      h1("分群數量"),
+                                                      helpText("由此選擇分群數量與分群方法跟距離。"),
+                                                      numericInput("clunmtb", "Clu Number:", 6),
+                                                      h1("分群方法"),
+                                                      radioButtons("hclust.methods", "Choose :",
+                                                                   c("Ward.D" = "ward.D", "Ward.D2" = "ward.D2", "Single" = "single",
+                                                                     "Complete" = "complete", "Average" = "average", "Mcquitty" = "mcquitty",
+                                                                     "Median" = "median", "Centroid" = "centroid"
+                                                                   )
+                                                      ),
+                                                      h1("分群距離"),
+                                                      radioButtons("dist.methods", "Choose :",
+                                                                   c("Euclidean" = "euclidean","Maximum" = "maximum", "Manhattan" = "manhattan",
+                                                                     "Canberra" = "canberra", "Binary" = "binary", "Minkowski" = "minkowski"
+                                                                   )
+                                                      ),
+                                                      submitButton("Update", icon("refresh"), width = "100%")
                                             )
                                           )
                                     ),
@@ -144,7 +147,8 @@ shinyUI(
                                                         helpText("檢視分群資料集"),
                                                         # submitButton("Submit", icon("refresh"), width = "30%"),
                                                         br(),
-                                                        tableOutput('clutable')
+                                                        # tableOutput('clutable')
+                                                        DT::dataTableOutput('clutable')
                                                ),
                                                tabPanel("集群圖",
                                                         h2("Plot"),
@@ -187,14 +191,14 @@ shinyUI(
                                     ),
                                     tabPanel("Propotion - 就學貸款人數比率",
                                       sidebarLayout(
-                                        sidebarPanel(width = 3,
+                                        mainPanel(width = 4,
                                              h2("Table"),
                                              helpText("檢視就學貸款人數比率資料集"),
                                              # submitButton("Submit", icon("refresh"), width = "30%"),
                                              br(),
                                              tableOutput('pptndt')
                                         ),
-                                        mainPanel(width = 7,
+                                        mainPanel(width = 6,
                                              h2("Plot"),
                                              br(),
                                              # submitButton("Submit", icon("refresh"), width = "30%"),
@@ -207,13 +211,13 @@ shinyUI(
                                              tabsetPanel(
                                                tabPanel("Plot Setting - 單圖參數設定",
                                                         sidebarLayout(
-                                                          sidebarPanel(width = 3,
+                                                          sidebarPanel(width = 5,
                                                                        h1( "Dataset Column" ),
                                                                        helpText("Display the Dataset's Colume name which user's choice. "),
                                                                        br(),
                                                                        textOutput("alldtscolnm2", container = pre)
                                                           ),
-                                                          mainPanel(width = 7,
+                                                          mainPanel(width = 5,
                                                                     h2( "Single Plot" ),
                                                                     h3("PK Column"),
                                                                     textInput("spbtxt1", "", value = "\"微積分一\""),
@@ -235,13 +239,13 @@ shinyUI(
                                                ),
                                                tabPanel("Plot Setting - 多圖參數設定",
                                                         sidebarLayout(
-                                                          sidebarPanel(width = 3,
+                                                          sidebarPanel(width = 5,
                                                                        h1( "Dataset Column" ),
                                                                        helpText("Display the Dataset's Colume name which user's choice. "),
                                                                        br(),
                                                                        textOutput("alldtscolnm3", container = pre)
                                                           ),
-                                                          mainPanel(width = 7,
+                                                          mainPanel(width = 5,
                                                                     h2( "Multiple Plot" ),
                                                                     h3("PK Column"),
                                                                     textInput("mpbtxt1", "", value = "\"微積分一\""),
@@ -268,12 +272,18 @@ shinyUI(
                ),
                
                tabPanel("Instruction",
+                        h1("說明"),
                         sidebarLayout(
-                          sidebarPanel("Instruction",
+                          mainPanel( width = 4,
+                                      h2("範例檔案下載"),
+                                     br(),
                                        downloadButton('downloadDemo', 'Download')
                           ),
-                          mainPanel(
+                          mainPanel( width = 6,
                             # demo data csv
+                            h2("檢視範例"),
+                            br(),
+                            helpText("除去 'sid' 、'loam'，這兩個為學生編號與管院就貸欄位，可直接往後填自己想要的成績欄位。"),
                             tableOutput("swdmtb")
                           )
                         )
