@@ -86,59 +86,67 @@ shinyUI(
                                                )
                                              )
                                     ),
-                                    #tabPanel("CV - 建議分群",
-                                    #         sidebarLayout(
-                                    #           sidebarPanel( width = 3
-                                    #             
-                                    #           ),
-                                    #           mainPanel( width = 7
-                                    #             
-                                    #           )
-                                    #         )
-                                    #),
+
                                     tabPanel("Setting - 分析設定",
+                                      tabsetPanel(
+                                        tabPanel("分群設定",
+
+                                          h1( "檢視資料欄位" ),
+                                          helpText("Display the Dataset's Colume name which user's choice. "),
+                                          br(),
+                                          textOutput("alldtscolnm", container = pre),
+                                          hr(),
+                                                 
+                                          h2( "主要欄位" ),
+                                          helpText("為辨別個別學生的欄位"),
+                                          textInput("pchoser", "", value = "\"sid\""),
+                                          verbatimTextOutput("pcselt"),
+                                          # submitButton("Submit", icon("refresh"), width = "50%"),
+                                          hr(),
+                                                         
+                                          h2( "分群基礎欄位" ),
+                                          helpText("為所要分群的科目欄位"),
+                                          textInput("cbchoser", "", value = "\"loam\", \"微積分一\",\"經濟學\",\"程式設計\"" ),
+                                          verbatimTextOutput("cbcselt"),
+                                          submitButton("Submit", icon("refresh"), width = "40%")
+
+                                        ),
+                                        tabPanel("建議分群",
                                           sidebarLayout(
-                                            mainPanel(width = 5,
-                                                         h2( "檢視資料欄位" ),
-                                                         helpText("Display the Dataset's Colume name which user's choice. "),
-                                                         br(),
-                                                         textOutput("alldtscolnm", container = pre),
-                                                         hr(),
-                                                         h2( "主要欄位" ),
-                                                         helpText("為辨別個別學生的欄位"),
-                                                         textInput("pchoser", "", value = "\"sid\""),
-                                                         br(),
-                                                         verbatimTextOutput("pcselt"),
-                                                         br(),
-                                                         submitButton("Submit", icon("refresh"), width = "30%"),
-                                                         hr(),
-                                                         h2( "分群基礎欄位" ),
-                                                         helpText("為所要分群的科目欄位"),
-                                                         textInput("cbchoser", "", value = "\"loam\", \"微積分一\",\"經濟學\",\"程式設計\"" ),
-                                                         verbatimTextOutput("cbcselt"),
-                                                         br(),
-                                                         submitButton("Submit", icon("refresh"), width = "30%")
+                                            
+                                            sidebarPanel(width = 3,
+                                                         
+                                              h2("分群數量"),
+                                              helpText("由此選擇分群數量與分群方法跟距離。"),
+                                              numericInput("clunmtb", "Clu Number:", 6),
+                                                         
+                                              h2("分群方法"),
+                                              radioButtons("hclust.methods", "Choose :",
+                                                c("Ward.D" = "ward.D", "Ward.D2" = "ward.D2", "Single" = "single",
+                                                    "Complete" = "complete", "Average" = "average", "Mcquitty" = "mcquitty",
+                                                    "Median" = "median", "Centroid" = "centroid"
+                                                )
+                                              ),
+                                                         
+                                              h2("分群距離"),
+                                              radioButtons("dist.methods", "Choose :",
+                                                c("Euclidean" = "euclidean","Maximum" = "maximum", "Manhattan" = "manhattan",
+                                                  "Canberra" = "canberra", "Binary" = "binary", "Minkowski" = "minkowski"
+                                                )
+                                              ),
+                                              submitButton("Update", icon("refresh"), width = "100%")        
                                             ),
-                                            mainPanel(width = 5,
-                                                      h1("分群數量"),
-                                                      helpText("由此選擇分群數量與分群方法跟距離。"),
-                                                      numericInput("clunmtb", "Clu Number:", 6),
-                                                      h1("分群方法"),
-                                                      radioButtons("hclust.methods", "Choose :",
-                                                                   c("Ward.D" = "ward.D", "Ward.D2" = "ward.D2", "Single" = "single",
-                                                                     "Complete" = "complete", "Average" = "average", "Mcquitty" = "mcquitty",
-                                                                     "Median" = "median", "Centroid" = "centroid"
-                                                                   )
-                                                      ),
-                                                      h1("分群距離"),
-                                                      radioButtons("dist.methods", "Choose :",
-                                                                   c("Euclidean" = "euclidean","Maximum" = "maximum", "Manhattan" = "manhattan",
-                                                                     "Canberra" = "canberra", "Binary" = "binary", "Minkowski" = "minkowski"
-                                                                   )
-                                                      ),
-                                                      submitButton("Update", icon("refresh"), width = "100%")
+                                            
+                                            mainPanel(width = 7,
+                                              h1("建議分群"),
+                                              br(),
+                                              plotOutput('clValidplot')   
                                             )
+
                                           )
+                                        )
+
+                                      )
                                     ),
                                     tabPanel("Cluster - 集群分析",
                                              tabsetPanel(

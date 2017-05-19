@@ -98,9 +98,6 @@ function(input, output, session) {
     )
   })
   
-  # CV
-  
-  
   # Setting
   
   output$alldtscolnm = renderPrint({
@@ -109,6 +106,7 @@ function(input, output, session) {
   
   output$pcselt = renderPrint({
     tmsp$pkb = paste0( "c(", input$pchoser, ")")
+    tmsp$pkbone = input$pchoser
     cat(tmsp$pkb)
   })
   
@@ -116,6 +114,25 @@ function(input, output, session) {
     tmsp$cbase = paste0( "c(", input$cbchoser, ")")
     cat(tmsp$cbase)
   })
+  
+  #  Setting - clValid
+  
+  cvplot = function(cvdfobj,cvdfcolobj, cvpkdfobj){
+    
+    basedf = cvdfobj[ ,cvdfcolobj]
+    # rownames(basedf) = im08$cvpkdfobj
+    
+    stab.basedf = clValid(basedf, 2:6, clMethods = c("hierarchical","kmeans","pam"), validation = "stability")
+    
+    ## summary(stab.basedf)
+    par( mfrow = c( 2, 2))
+    plot( stab.basedf, legend = FALSE)
+  }
+  
+  output$clValidplot = renderPlot({
+    cvplot(tmsp$cudf,  eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)))
+  })
+  
   
   
   # Cluster
