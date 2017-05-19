@@ -164,14 +164,16 @@ shinyUI(
                                              helpText("分群狀態、最小最大等計算"),
                                              # submitButton("Submit", icon("refresh"), width = "30%"),
                                              br(),
-                                             tableOutput('sumytable')
+                                             # tableOutput('sumytable')
+                                             DT::dataTableOutput('sumytable')
                                     ),
                                     tabPanel("Analysis - 變異數分析",
                                              h2("Analysis"),
                                              helpText("ANOVA & Tukey 分析"),
                                              # submitButton("Submit", icon("refresh"), width = "30%"),
                                              br(),
-                                             tableOutput('anaytable')
+                                             # tableOutput('anaytable')
+                                             DT::dataTableOutput('anaytable')
                                     ),
                                     tabPanel("SLoan - 就學貸敘述統計",
                                              tabsetPanel(
@@ -179,13 +181,15 @@ shinyUI(
                                                          h2("Have SLoan"),
                                                          # submitButton("Submit", icon("refresh"), width = "30%"),
                                                          br(),
-                                                         tableOutput('hsloandt')
+                                                         # tableOutput('hsloandt')
+                                                         DT::dataTableOutput('hsloandt')
                                                ),
                                                tabPanel( "Not SLoan - 無就學貸款",
                                                          h2("Not SLoan"),
                                                          # submitButton("Submit", icon("refresh"), width = "30%"),
                                                          br(),
-                                                         tableOutput('nsloandt')
+                                                         # tableOutput('nsloandt')
+                                                         DT::dataTableOutput('nsloandt')
                                                )
                                              )
                                     ),
@@ -222,8 +226,9 @@ shinyUI(
                                                                     h3("PK Column"),
                                                                     textInput("spbtxt1", "", value = "\"微積分一\""),
                                                                     verbatimTextOutput("spbt1vto"),
-                                                                    submitButton("Submit", icon("refresh"), width = "30%"),
-                                                                    h3("Analyze Column : "),
+                                                                    # submitButton("Submit", icon("refresh"), width = "30%"),
+                                                                    
+                                                                    h3("Analyze Column"),
                                                                     textInput("spbtxt2", "", value = "\"計算機概論\""),
                                                                     verbatimTextOutput("spbt2vto"),
                                                                     submitButton("Submit", icon("refresh"), width = "30%")
@@ -250,8 +255,9 @@ shinyUI(
                                                                     h3("PK Column"),
                                                                     textInput("mpbtxt1", "", value = "\"微積分一\""),
                                                                     verbatimTextOutput("mpb1vto"),
-                                                                    submitButton("Submit", icon("refresh"), width = "30%"),
-                                                                    h3("Analyze Column : "),
+                                                                    # submitButton("Submit", icon("refresh"), width = "30%"),
+                                                                    
+                                                                    h3("Analyze Column"),
                                                                     textInput("mpbtxt2", "", value = "\"計算機概論\", \"管理學\", \"統計學\", \"微積分一\""
                                                                               , width = "100%"),
                                                                     verbatimTextOutput("mpb2vto"),
@@ -283,7 +289,7 @@ shinyUI(
                             # demo data csv
                             h2("檢視範例"),
                             br(),
-                            helpText("除去 'sid' 、'loam'，這兩個為學生編號與管院就貸欄位，可直接往後填自己想要的成績欄位。"),
+                            helpText("除去 'sid' 、'loan'，除去這兩個為 '學生編號' 與 '就學貸款'欄位，可直接往後填自己想要的成績欄位。"),
                             tableOutput("swdmtb")
                           )
                         )

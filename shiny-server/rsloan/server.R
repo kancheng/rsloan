@@ -117,45 +117,54 @@ function(input, output, session) {
     cat(tmsp$cbase)
   })
   
-  # Cluster
   
+  # Cluster
   
   output$cluplot = renderPlot({
     hcaon2(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)), hck = input$clunmtb, hcm = input$hclust.methods, dism = input$dist.methods)
   })
+
   
- # output$clutable = renderTable({
-   # hcaon(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)), hck = input$clunmtb, hcm = input$hclust.methods, dism = input$dist.methods)
-   # untavt
-  #}) 
+# 原始的表格檢視
+#  output$clutable = renderTable({
+#    hcaon(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)), hck = input$clunmtb, hcm = input$hclust.methods, dism = input$dist.methods)
+#    untavt
+#  })
+  
+  # use renderDataTable
   output$clutable = DT::renderDataTable({
-    hcaon2(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)), hck = input$clunmtb, hcm = input$hclust.methods, dism = input$dist.methods)
-    DT::datatable(untavt,options = list(pageLength = 25))
+    hcaon(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)), hck = input$clunmtb, hcm = input$hclust.methods, dism = input$dist.methods)
+    untavt
+    DT::datatable(untavt, options = list(pageLength = 25))
   })
   
   # Summary
-  
-  output$sumytable = renderTable({
+
+  output$sumytable = renderDataTable({
     hcaon(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)), hck = input$clunmtb, hcm = input$hclust.methods, dism = input$dist.methods)
     untal2ndsc
+    DT::datatable( untal2ndsc, options = list(pageLength = 25))
   }) 
   
   # Analysis
-  output$anaytable = renderTable({
+  output$anaytable = renderDataTable({
     hcaon(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)), hck = input$clunmtb, hcm = input$hclust.methods, dism = input$dist.methods)
     unttkav
+    DT::datatable( unttkav, options = list(pageLength = 25))
   })  
   
   # SLoan
   
-  output$hsloandt = renderTable({
+  output$hsloandt = renderDataTable({
     hcaon(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)), hck = input$clunmtb, hcm = input$hclust.methods, dism = input$dist.methods)
     untln1dsc
+    DT::datatable( untln1dsc, options = list(pageLength = 25))
   })
   
-  output$nsloandt = renderTable({
+  output$nsloandt = renderDataTable({
     hcaon(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)), hck = input$clunmtb, hcm = input$hclust.methods, dism = input$dist.methods)
     untln0dsc
+    DT::datatable( untln0dsc, options = list(pageLength = 25))
   })  
   
   # Propotion
@@ -224,7 +233,7 @@ function(input, output, session) {
       paste( "demo", '.csv', sep = '') 
     },
     content = function(file) {
-      write.csv(demo, file)
+      write.csv(demo, file = file, quote = FALSE, sep = ",", row.names = FALSE)
     }
   )
 }
