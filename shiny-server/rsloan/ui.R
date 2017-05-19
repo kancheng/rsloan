@@ -147,6 +147,7 @@ shinyUI(
                                                         helpText("檢視分群資料集"),
                                                         # submitButton("Submit", icon("refresh"), width = "30%"),
                                                         br(),
+                                                        
                                                         # tableOutput('clutable')
                                                         DT::dataTableOutput('clutable')
                                                ),
@@ -156,41 +157,87 @@ shinyUI(
                                                         # submitButton("Submit", icon("refresh"), width = "30%"),
                                                         br(),
                                                         plotOutput('cluplot')
+                                               ),
+                                               tabPanel("Download",
+                                                        h2("集群分析"),
+                                                        helpText("下載分群資料集 CSV"),
+                                                        br(),
+                                                        downloadButton('clutabledl', 'Download')
                                                )
+                                               
                                              )
                                     ),
                                     tabPanel("Summary - 敘述統計",
+                                      tabsetPanel(
+                                        tabPanel("Summary" ,
                                              h2("Summary"),
                                              helpText("分群狀態、最小最大等計算"),
                                              # submitButton("Submit", icon("refresh"), width = "30%"),
                                              br(),
                                              # tableOutput('sumytable')
                                              DT::dataTableOutput('sumytable')
+                                        ),
+                                        tabPanel("Download",
+                                                 h2("敘述統計"),
+                                                 helpText("下載敘述統計資料集 CSV"),
+                                                 br(),
+                                                 downloadButton('sumytabledl', 'Download')
+                                        )
+                                      )
                                     ),
                                     tabPanel("Analysis - 變異數分析",
+                                      tabsetPanel(  
+                                             
+                                        tabPanel("Analysis",
                                              h2("Analysis"),
                                              helpText("ANOVA & Tukey 分析"),
                                              # submitButton("Submit", icon("refresh"), width = "30%"),
                                              br(),
                                              # tableOutput('anaytable')
                                              DT::dataTableOutput('anaytable')
+                                        ),
+                                        
+                                        tabPanel("Download",
+                                                 h2("變異數分析"),
+                                                 helpText("下載變異數分析資料集 CSV"),
+                                                 br(),
+                                                 downloadButton('anaytabledl', 'Download')
+                                        )
+                                        
+                                      )
                                     ),
                                     tabPanel("SLoan - 就學貸敘述統計",
                                              tabsetPanel(
+                                               
                                                tabPanel( "Have SLoan - 有就學貸款",
                                                          h2("Have SLoan"),
+                                                         helpText("有辦理就學貸款的各群敘述統計"),
                                                          # submitButton("Submit", icon("refresh"), width = "30%"),
                                                          br(),
                                                          # tableOutput('hsloandt')
                                                          DT::dataTableOutput('hsloandt')
                                                ),
+                                               
                                                tabPanel( "Not SLoan - 無就學貸款",
                                                          h2("Not SLoan"),
+                                                         helpText("無辦理就學貸款的各群敘述統計"),
                                                          # submitButton("Submit", icon("refresh"), width = "30%"),
                                                          br(),
                                                          # tableOutput('nsloandt')
                                                          DT::dataTableOutput('nsloandt')
+                                               ),
+                                               
+                                               tabPanel("Download",
+                                                        h2("Have SLoan"),
+                                                        helpText("下載變異數分析資料集 CSV"),
+                                                        br(),
+                                                        downloadButton('hsloandtdl', 'Download'),
+                                                        br(),
+                                                        h2("Not SLoan"),
+                                                        helpText("下載變異數分析資料集 CSV"),
+                                                        downloadButton('nsloandtdl', 'Download')
                                                )
+                                               
                                              )
                                     ),
                                     tabPanel("Propotion - 就學貸款人數比率",
@@ -200,7 +247,9 @@ shinyUI(
                                              helpText("檢視就學貸款人數比率資料集"),
                                              # submitButton("Submit", icon("refresh"), width = "30%"),
                                              br(),
-                                             tableOutput('pptndt')
+                                             tableOutput('pptndt'),
+                                             helpText("下載就學貸款人數比率資料集 CSV"),
+                                             downloadButton('pptndtdl', 'Download')
                                         ),
                                         mainPanel(width = 6,
                                              h2("Plot"),

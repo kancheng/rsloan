@@ -134,44 +134,112 @@ function(input, output, session) {
   # use renderDataTable
   output$clutable = DT::renderDataTable({
     hcaon(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)), hck = input$clunmtb, hcm = input$hclust.methods, dism = input$dist.methods)
-    untavt
+    tmsp$temuntavt = untavt
     DT::datatable(untavt, options = list(pageLength = 25))
   })
+  
+  # clutable download 
+  
+  output$clutabledl = downloadHandler(
+    filename = function() { 
+      paste( "untavt", '.csv', sep = '') 
+    },
+    content = function(file) {
+      write.csv(tmsp$temuntavt, file = file, quote = FALSE, sep = ",", row.names = FALSE)
+    }
+  )
   
   # Summary
 
   output$sumytable = renderDataTable({
     hcaon(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)), hck = input$clunmtb, hcm = input$hclust.methods, dism = input$dist.methods)
-    untal2ndsc
+    tmsp$temuntal2ndsc = untal2ndsc
     DT::datatable( untal2ndsc, options = list(pageLength = 25))
   }) 
   
+  # sumytable download 
+  
+  output$sumytabledl = downloadHandler(
+    filename = function() { 
+      paste( "untal2ndsc", '.csv', sep = '') 
+    },
+    content = function(file) {
+      write.csv(tmsp$temuntal2ndsc, file = file, quote = FALSE, sep = ",", row.names = FALSE)
+    }
+  )
+  
+  
   # Analysis
+  
   output$anaytable = renderDataTable({
     hcaon(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)), hck = input$clunmtb, hcm = input$hclust.methods, dism = input$dist.methods)
-    unttkav
+    tmsp$temunttkav = unttkav
     DT::datatable( unttkav, options = list(pageLength = 25))
   })  
+  
+  # anaytable download 
+  
+  output$anaytabledl = downloadHandler(
+    filename = function() { 
+      paste( "unttkav", '.csv', sep = '') 
+    },
+    content = function(file) {
+      write.csv(tmsp$temunttkav, file = file, quote = FALSE, sep = ",", row.names = FALSE)
+    }
+  )
+  
   
   # SLoan
   
   output$hsloandt = renderDataTable({
     hcaon(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)), hck = input$clunmtb, hcm = input$hclust.methods, dism = input$dist.methods)
-    untln1dsc
+    tmsp$temuntln1dsc = untln1dsc
     DT::datatable( untln1dsc, options = list(pageLength = 25))
   })
   
   output$nsloandt = renderDataTable({
     hcaon(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)), hck = input$clunmtb, hcm = input$hclust.methods, dism = input$dist.methods)
-    untln0dsc
+    tmsp$temuntln0dsc = untln0dsc
     DT::datatable( untln0dsc, options = list(pageLength = 25))
   })  
+  
+  # hsloandt download 
+  
+  output$hsloandtdl = downloadHandler(
+    filename = function() { 
+      paste( "untln1dsc", '.csv', sep = '') 
+    },
+    content = function(file) {
+      write.csv(tmsp$temuntln1dsc, file = file, quote = FALSE, sep = ",", row.names = FALSE)
+    }
+  )
+  
+  # nsloandt download 
+  
+  output$nsloandtdl = downloadHandler(
+    filename = function() { 
+      paste( "untln0dsc", '.csv', sep = '') 
+    },
+    content = function(file) {
+      write.csv(tmsp$temuntln0dsc, file = file, quote = FALSE, sep = ",", row.names = FALSE)
+    }
+  )
   
   # Propotion
   output$pptndt = renderTable({
     hcaon(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)), hck = input$clunmtb, hcm = input$hclust.methods, dism = input$dist.methods)
-    untslon
+    tmsp$temuntslon = untslon
   })  
+  
+  # pptndt download 
+  output$pptndtdl = downloadHandler(
+    filename = function() { 
+      paste( "untslon", '.csv', sep = '') 
+    },
+    content = function(file) {
+      write.csv(tmsp$temuntslon, file = file, quote = FALSE, sep = ",", row.names = FALSE)
+    }
+  )
   
   output$prosloan = renderPlot({
     
