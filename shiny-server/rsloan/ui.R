@@ -98,7 +98,7 @@ shinyUI(
                                           hr(),
                                                  
                                           h2( "主要欄位" ),
-                                          helpText("為辨別個別學生的欄位"),
+                                          helpText("為辨別個別學生的欄位，欄位與資料皆為唯一"),
                                           textInput("pchoser", "", value = "\"sid\""),
                                           verbatimTextOutput("pcselt"),
                                           # submitButton("Submit", icon("refresh"), width = "50%"),
@@ -177,6 +177,7 @@ shinyUI(
                                     ),
                                     tabPanel("Summary - 敘述統計",
                                       tabsetPanel(
+                                        
                                         tabPanel("Summary" ,
                                              h2("Summary"),
                                              helpText("分群狀態、最小最大等計算"),
@@ -185,12 +186,35 @@ shinyUI(
                                              # tableOutput('sumytable')
                                              DT::dataTableOutput('sumytable')
                                         ),
+                                        
+                                        tabPanel("Summary - 單科目平均檢視",
+                                          sidebarLayout(
+                                            
+                                            sidebarPanel(width = 3,
+                                              h2( "輸入單科目名稱" ),
+                                              helpText("為所要檢視的分群單科目平均狀態"),
+                                              textInput("sumyplotcol", "", value = "\"微積分一\"" ),
+                                              submitButton("Submit", icon("refresh"), width = "40%")
+                                                         
+                                            ),
+                                            mainPanel(width = 7,
+                                              h2("Summary"),
+                                              tableOutput("sumyeach"),
+                                              br(),
+                                              h2("Plot"),
+                                              plotOutput("sumyeachplot") 
+                                            )
+                                                     
+                                          )
+                                        ),
+                                        
                                         tabPanel("Download",
                                                  h2("敘述統計"),
                                                  helpText("下載敘述統計資料集 CSV"),
                                                  br(),
                                                  downloadButton('sumytabledl', 'Download')
                                         )
+                                        
                                       )
                                     ),
                                     tabPanel("Analysis - 變異數分析",
@@ -215,39 +239,82 @@ shinyUI(
                                       )
                                     ),
                                     tabPanel("SLoan - 就學貸敘述統計",
-                                             tabsetPanel(
+                                      tabsetPanel(
                                                
-                                               tabPanel( "Have SLoan - 有就學貸款",
+                                        tabPanel( "Have SLoan - 有就學貸款",
                                                          h2("Have SLoan"),
                                                          helpText("有辦理就學貸款的各群敘述統計"),
                                                          # submitButton("Submit", icon("refresh"), width = "30%"),
                                                          br(),
                                                          # tableOutput('hsloandt')
                                                          DT::dataTableOutput('hsloandt')
-                                               ),
+                                        ),
                                                
-                                               tabPanel( "Not SLoan - 無就學貸款",
+                                        tabPanel( "Have SLoan - 單科目平均檢視",
+                                          sidebarLayout(
+                                            
+                                            sidebarPanel(width = 3,
+                                              h2( "輸入單科目名稱" ),
+                                              helpText("為所要檢視的分群單科目平均狀態"),
+                                              textInput("hslplotcol", "", value = "\"微積分一\"" ),
+                                              submitButton("Submit", icon("refresh"), width = "40%")              
+                                            ),
+                                                    
+                                            mainPanel(width = 7,
+                                              h2("Summary"),
+                                              tableOutput("hsleach"),
+                                              br(),
+                                              h2("Plot"),
+                                              plotOutput("hsleachplot")            
+                                            )
+                                                    
+                                          )
+                                        ),
+                                               
+                                        tabPanel( "Not SLoan - 無就學貸款",
                                                          h2("Not SLoan"),
                                                          helpText("無辦理就學貸款的各群敘述統計"),
                                                          # submitButton("Submit", icon("refresh"), width = "30%"),
                                                          br(),
                                                          # tableOutput('nsloandt')
                                                          DT::dataTableOutput('nsloandt')
-                                               ),
+                                        ),
+                                              
+                                        tabPanel( "Not SLoan - 單科目平均檢視",
+                                          sidebarLayout(
+                                                    
+                                            sidebarPanel(width = 3,
+                                              h2( "輸入單科目名稱" ),
+                                              helpText("為所要檢視的分群單科目平均狀態"),
+                                              textInput("nslplotcol", "", value = "\"微積分一\"" ),
+                                              submitButton("Submit", icon("refresh"), width = "40%")             
+                                            ),
+                                                    
+                                            mainPanel(width = 7,
+                                              h2("Summary"),
+                                              tableOutput("nsleach"),
+                                              br(),
+                                              h2("Plot"),
+                                              plotOutput("nsleachplot")     
+                                            )
+                                                    
+                                          )
+                                        ),
                                                
-                                               tabPanel("Download",
-                                                        h2("Have SLoan"),
-                                                        helpText("下載變異數分析資料集 CSV"),
-                                                        br(),
-                                                        downloadButton('hsloandtdl', 'Download'),
-                                                        br(),
-                                                        h2("Not SLoan"),
-                                                        helpText("下載變異數分析資料集 CSV"),
-                                                        downloadButton('nsloandtdl', 'Download')
-                                               )
+                                        tabPanel("Download",
+                                          h2("Have SLoan"),
+                                          helpText("下載變異數分析資料集 CSV"),
+                                          br(),
+                                          downloadButton('hsloandtdl', 'Download'),
+                                          br(),
+                                          h2("Not SLoan"),
+                                          helpText("下載變異數分析資料集 CSV"),
+                                          downloadButton('nsloandtdl', 'Download')
+                                        )
                                                
-                                             )
+                                      )
                                     ),
+                                    
                                     tabPanel("Propotion - 就學貸款人數比率",
                                       sidebarLayout(
                                         mainPanel(width = 4,

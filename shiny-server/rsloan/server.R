@@ -106,7 +106,6 @@ function(input, output, session) {
   
   output$pcselt = renderPrint({
     tmsp$pkb = paste0( "c(", input$pchoser, ")")
-    tmsp$pkbone = input$pchoser
     cat(tmsp$pkb)
   })
   
@@ -185,7 +184,29 @@ function(input, output, session) {
     }
   )
   
+  # Summary Plot
   
+  summaryplot = function( sycol, sydfobj){
+    sydfobj = sydfobj[sydfobj$subj == sycol, ]
+    sydfobj
+  }
+  
+  
+  output$sumyeach = renderTable({
+    tmsp$temsumyplotcol = input$sumyplotcol
+    tmsp$temsumyplotdt = summaryplot(eval(parse(text = tmsp$temsumyplotcol)), tmsp$temuntal2ndsc)
+    tmsp$temsumyplotdt
+  })
+  
+  output$sumyeachplot = renderPlot({
+    
+  ggplot(tmsp$temsumyplotdt, aes( club, mean, fill = subj)) + geom_bar(stat="identity",position='dodge') + 
+  geom_text(mapping = aes(label = mean), size = 5, colour = 'black', vjust = 1, hjust = .5, position = position_dodge(1)) + 
+  labs( title = tmsp$temsumyplotcol)
+    
+  })
+
+
   # Analysis
   
   output$anaytable = renderDataTable({
@@ -231,6 +252,23 @@ function(input, output, session) {
     }
   )
   
+  # Have SLoan Plot
+  
+  output$hsleach = renderTable({
+    tmsp$temhslplotcol = input$hslplotcol
+    tmsp$temhslplotdt = summaryplot(eval(parse(text = tmsp$temhslplotcol)), tmsp$temuntln1dsc)
+    tmsp$temhslplotdt
+  })
+  
+  output$hsleachplot = renderPlot({
+    
+    ggplot( tmsp$temhslplotdt, aes( club, mean, fill = subj)) + geom_bar(stat="identity",position='dodge') + 
+      geom_text(mapping = aes(label = mean), size = 5, colour = 'black', vjust = 1, hjust = .5, position = position_dodge(1)) + 
+      labs( title = tmsp$temhslplotcol)
+    
+  })
+  
+  
   # nsloandt download 
   
   output$nsloandtdl = downloadHandler(
@@ -241,6 +279,23 @@ function(input, output, session) {
       write.csv(tmsp$temuntln0dsc, file = file, quote = FALSE, sep = ",", row.names = FALSE)
     }
   )
+  
+  # Not SLoan Plot
+  
+  output$nsleach = renderTable({
+    tmsp$temnslplotcol = input$nslplotcol
+    tmsp$temnslplotdt = summaryplot(eval(parse(text = tmsp$temnslplotcol)), tmsp$temuntln0dsc)
+    tmsp$temnslplotdt
+  })
+  
+  output$nsleachplot = renderPlot({
+    
+    ggplot( tmsp$temnslplotdt, aes( club, mean, fill = subj)) + geom_bar(stat="identity",position='dodge') + 
+      geom_text(mapping = aes(label = mean), size = 5, colour = 'black', vjust = 1, hjust = .5, position = position_dodge(1)) + 
+      labs( title = tmsp$temnslplotcol)
+    
+  })
+
   
   # Propotion
   output$pptndt = renderTable({
