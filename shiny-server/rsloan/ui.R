@@ -346,7 +346,7 @@ shinyUI(
                             # demo data csv
                             h2("檢視範例"),
                             br(),
-                            helpText("除去 'sid' 、'loan'，除去這兩個為 '學生編號' 與 '就學貸款'欄位，可直接往後填自己想要的成績欄位。"),
+                            helpText("除去這兩個為 '學生編號'(sid) 與 '管理學院-就學貸款'(loam) 欄位，其他可直接往後填自己想要的成績欄位。"),
                             tableOutput("swdmtb")
                           )
                         )
