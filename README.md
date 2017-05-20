@@ -6,6 +6,14 @@
 
 為 R Shiny 開發。
 
+### Home
+
+![rsloanhome](https://cloud.githubusercontent.com/assets/6993715/26279500/895e3722-3de8-11e7-8165-7b8c544483eb.png)
+
+
+### Work
+
+![rsloanimport](https://cloud.githubusercontent.com/assets/6993715/26279502/a8cb9f50-3de8-11e7-8245-6f5d8a93b12d.png)
 
 
 ## R Function
