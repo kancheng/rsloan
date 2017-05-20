@@ -65,3 +65,58 @@ hcaon2( Odata, beky, keycol, hck = 5, hcm = "ward.D", dism = "euclidean", dtname
 ```
 
 ## io.R
+
+自動對指定路徑的目錄下的所有 CSV 檔案進行匯入與 Data.Frame 輸出。
+
+### 匯入為 Data.Frame 格式
+
+```
+path = "C:/csv"
+rcsvdf(path)
+```
+
+### 匯入為 List 格式
+
+```
+path = "C:/csv"
+rcsvlt(path)
+```
+
+### 匯出為 CSV 檔案
+
+```
+wrta(xdo , ycsv, swd)
+```
+- `xdo` Data.Frame 的 物件
+
+- `ycsv` 所要匯出 CSV 的檔名 (字串)
+
+- `swd` 匯出的目錄路徑 (字串)
+
+## ashd.R
+
+為資料型態的轉換與檢視 `List` 中多個 `Data.Frame` 資料。
+
+## mulggplotpic.R
+
+來源為 `cookbook` 的 ggplot2 多圖合併 Function。[Here](http://www.cookbook-r.com/Graphs/Multiple_graphs_on_one_page_(ggplot2)/)
+
+```
+multiplot()
+```
+
+
+## mulggplotpic-build.R
+
+`hcaon.R` 下的 `hcaon()` 所產生的集群資料，處理成散佈圖。
+
+- `sg2proc()` 為單圖散佈圖
+
+- `mg2proc()` 為多圖散佈圖
+
+
+## picopt.R
+
+繪圖輸出
+
+`picopt()` 、 `gpot()`
