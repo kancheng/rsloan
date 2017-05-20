@@ -2,17 +2,17 @@
 
 利用 大學管理學院 8 年的"就學貸款"與"學生成績"資料，進行 集群、ANOVA 與視覺化分析。
 
-# RSLoan - R Shiny
+## RSLoan - R Shiny
 
 為 R Shiny 開發。
 
 
 
-# R Function
+## R Function
 
 分析集群的函數，為 `rsloan` 的基礎， `dataipt` 、 `dataopt` 為資料輸入跟資料輸出的目錄。
 
-## Import
+### Import
 
 ```
 set.seed(929)
@@ -47,7 +47,7 @@ pkb = c( "sid")
 ```
 
 
-## Hierarchical clustering
+### Hierarchical clustering
 
 產生 `階層式分群` 、 `變異數分析` 、 `各群敘述統計` 、 `就學貸款下的各群敘述統計` 、 `各分群的人數比例` 等 結果資料集。
 
@@ -57,7 +57,7 @@ hcaon(im13,  hacbdt, pkb, hck = 6, dtname = "im13")
 ```
 
 
-## Plot
+### Plot
 
 產生 `單科目` 與 `多科目` 的散佈圖。
 
@@ -72,9 +72,9 @@ sg2proc("im11avt", mainindex, courindex, "im11df")
 mg2proc("im11avt", mainindex, courindex, "im11df")
 ```
 
-# Details
+## Details
 
-## raw
+### raw
 
 為目前分析過後的管理學院學生資料。
 
@@ -85,14 +85,14 @@ mg2proc("im11avt", mainindex, courindex, "im11df")
 - [sql](https://github.com/kancheng/rsloan/tree/master/raw/sql) 為資料清洗過 NA 的 SQL 資料。
 
 
-## rfunc
+### rfunc
 
 by Windows R Console 。 [Here](https://github.com/kancheng/rsloan/blob/master/man/rfunc.md)
 
 若想要直接在 Console 的部分直接用寫好的自訂函數，可於 `rfunc` 目錄中執行寫好的 R File。
 
 
-## shiny-server
+### shiny-server
 
 by Ubuntu Linux
 
@@ -112,12 +112,12 @@ shiny-server/rsloan/...
 127.0.0.1:3838/rsloan
 ```
 
-## rprofile
+### rprofile
 
 為執行 R 執行預設時自動載入。
 
 
-# Environment
+## Environment
 
 詳見 [rsloan-environment](https://github.com/kancheng/rsloan-environment) 環境部屬
 
@@ -126,20 +126,20 @@ shiny-server/rsloan/...
 - [RMySQL](https://github.com/rstats-db/RMySQL)
 - [MariaDB](https://en.wikipedia.org/wiki/MariaDB)
 
-# Version
+## Version
 
 `R version 3.3.2` 當中的所有 package 對應該版本。
 
-# LICENSE
+## LICENSE
 
 [MIT](https://github.com/kancheng/rsloan/blob/master/LICENSE)
 
 
-# Data Cleaning
+## Data Cleaning
 
 NA 值的學科處理 [rsloan-dcna](https://github.com/kancheng/rsloan-dcna) 。
 
 
-# Paper
+## Paper
 
 詳見 .....
