@@ -130,16 +130,23 @@ shiny-server/rsloan/...
 
 `R version 3.3.2` 當中的所有 package 對應該版本。
 
-## LICENSE
-
-[MIT](https://github.com/kancheng/rsloan/blob/master/LICENSE)
-
 
 ## Data Cleaning
 
-NA 值的學科處理 [rsloan-dcna](https://github.com/kancheng/rsloan-dcna) 。
+NA 值的資料筆數處理 [rsloan-dcna](https://github.com/kancheng/rsloan-dcna) 。
+
+```
+(有實際成績的科目數量)/(所有科目欄位數量)
+```
 
 
 ## Paper
 
 詳見 .....
+
+
+## LICENSE
+
+[MIT](https://github.com/kancheng/rsloan/blob/master/LICENSE)
+
+
