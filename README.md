@@ -2,6 +2,73 @@
 
 利用 大學管理學院 8 年的"就學貸款"與"學生成績"資料，進行 集群、ANOVA 與視覺化分析。
 
+
+# R Function
+
+分析集群的函數，為 `rsloan` 的基礎， `dataipt` 、 `dataopt` 為資料輸入跟資料輸出的目錄。
+
+## 匯入資料、函數與設定
+
+```
+set.seed(929)
+getwd()
+
+# R Kan Dev Function Main File
+source("C:/dataipt/rfunc/main-rfunc.R")
+
+# Data input CSV file
+dataipth = "C:/dataipt/lhucmdt/lhumlndcw70"
+
+# Data output CSV file
+dataopth = "C:/dataopt/lhucmdt"
+
+# Data coldf input CSV file
+dfcolipth = "C:/dataipt/lhucmdt/dfsubjab/csv"
+
+# input DF
+rcsvdf(dataipth)
+
+# input coldf Data
+rcsvdf(dfcolipth)
+
+# input List
+lhudata = rcsvlt(dataipth)
+
+# Cluster Analysis Base colnames 
+hacbdt = c( "cala","loam","ec", "cppg")
+
+# Cluster Analysis PKey colnames 
+pkb = c( "sid")
+```
+
+
+## 階層分群
+
+產生 `階層式分群` 、 `變異數分析` 、 `各群敘述統計` 、 `就學貸款下的各群敘述統計` 、 `各分群的人數比例` 等 結果資料集。
+
+```
+# hierarchical clustering
+hcaon(im13,  hacbdt, pkb, hck = 6, dtname = "im13")
+```
+
+
+## 繪圖
+
+產生 `單科目` 與 `多科目` 的散佈圖。
+
+```
+# HCA Multiple ggplot proc
+
+mainindex = c( "cala" )
+courindex = c( "itdc", "cppg", "pcpg", "oopg", "itdcn", "cala", "calb", "ec", 
+"dtst", "nwkpm", "sadm", "idbs", "st", "mana", "inkpg", "dbms", "mis")
+
+sg2proc("im11avt", mainindex, courindex, "im11df")
+mg2proc("im11avt", mainindex, courindex, "im11df")
+```
+
+# Details
+
 ## raw
 
 為目前分析過後的管理學院學生資料。
@@ -44,6 +111,7 @@ shiny-server/rsloan/...
 
 為執行 R 執行預設時自動載入。
 
+
 # 環境
 
 詳見 [rsloan-environment](https://github.com/kancheng/rsloan-environment) 環境部屬
@@ -57,9 +125,11 @@ shiny-server/rsloan/...
 
 `R version 3.3.2` 當中的所有 package 對應該版本。
 
+
 # 資料
 
 NA 值的學科處理 [rsloan-dcna](https://github.com/kancheng/rsloan-dcna) 。
+
 
 # 文件
 
