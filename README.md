@@ -4,19 +4,23 @@
 
 ## raw
 
-為目前分析過後的管理學院學生資料
+為目前分析過後的管理學院學生資料。
+
+- [dtcna70](https://github.com/kancheng/rsloan/tree/master/raw/dtcna70)
+- [origdt](https://github.com/kancheng/rsloan/tree/master/raw/origdt)
+- [sql](https://github.com/kancheng/rsloan/tree/master/raw/sql)
 
 ## rfunc
 
 by Windows R Console
 
-若想要直接在 Console 的部分直接用寫好的自訂函數，可於 [`rfunc`](https://github.com/kancheng/rsloan/blob/master/man/rfunc.md) 目錄中執行寫好的 R File。
+若想要直接在 Console 的部分直接用寫好的自訂函數，可於 `rfunc` 目錄中執行寫好的 R File。
+
+[Here](https://github.com/kancheng/rsloan/blob/master/man/rfunc.md)
 
 ## shiny-server
 
 by Ubuntu Linux
-
-當中`shiny-server/rsloan/` 下的 `rsloan-tem.R` 是在非正式完成前測試檔案，完成後才會移置 `ui.R` 和 `server.R` 這兩個檔案裡面 。
 
 ```
 shiny-server/rsloan/...
@@ -46,6 +50,10 @@ shiny-server/rsloan/...
 - [Ubuntu 14.04](https://en.wikipedia.org/wiki/Ubuntu_(operating_system))
 - [RMySQL](https://github.com/rstats-db/RMySQL)
 - [MariaDB](https://en.wikipedia.org/wiki/MariaDB)
+
+# 版本
+
+`R version 3.3.2` 當中的所有 package 對應該版本。
 
 # 資料
 
