@@ -10,19 +10,19 @@
 
 by Windows R Console
 
-若想要直接在 Console 的部分直接用寫好的自訂函數，可於 `rfunc` 目錄中執行寫好的 R File。
+若想要直接在 Console 的部分直接用寫好的自訂函數，可於 [`rfunc`](https://github.com/kancheng/rsloan/blob/master/man/rfunc.md) 目錄中執行寫好的 R File。
 
-## shiny
+## shiny-server
 
 by Ubuntu Linux
 
-當中`shiny/rsloan/` 下的 `rsloan-tem.R` 是在非正式完成前測試檔案，完成後才會移置 `ui.R` 和 `server.R` 這兩個檔案裡面 。
+當中`shiny-server/rsloan/` 下的 `rsloan-tem.R` 是在非正式完成前測試檔案，完成後才會移置 `ui.R` 和 `server.R` 這兩個檔案裡面 。
 
 ```
-shiny/rsloan/...
+shiny-server/rsloan/...
 ``` 
 
-將 shiny 目錄向下 的整個 rsloan 目錄複製整個放置在 `/srv/shiny-server/` 路徑下面，如下 :
+將 shiny-server 目錄向下 的整個 rsloan 目錄複製整個放置在 `/srv/shiny-server/` 路徑下面，如下 :
 
 放置路徑
 ```
@@ -34,6 +34,9 @@ shiny/rsloan/...
 127.0.0.1:3838/rsloan
 ```
 
+## rprofile
+
+為執行 R 執行預設時自動載入。
 
 # 環境
 
