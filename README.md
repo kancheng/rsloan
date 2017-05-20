@@ -126,9 +126,9 @@ shiny-server/rsloan/...
 - [RMySQL](https://github.com/rstats-db/RMySQL)
 - [MariaDB](https://en.wikipedia.org/wiki/MariaDB)
 
-## Version
+## R Version
 
-`R version 3.3.2` 當中的所有 package 對應該版本。
+package 對應該版本為 `R version 3.3.2`。
 
 
 ## Data Cleaning
