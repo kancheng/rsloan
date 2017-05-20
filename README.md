@@ -15,11 +15,10 @@
 
 ## rfunc
 
-by Windows R Console
+by Windows R Console 。 [Here](https://github.com/kancheng/rsloan/blob/master/man/rfunc.md)
 
 若想要直接在 Console 的部分直接用寫好的自訂函數，可於 `rfunc` 目錄中執行寫好的 R File。
 
-[Here](https://github.com/kancheng/rsloan/blob/master/man/rfunc.md)
 
 ## shiny-server
 
@@ -60,7 +59,7 @@ shiny-server/rsloan/...
 
 # 資料
 
-NA 值的學科處理 [rsloan-dcna](https://github.com/kancheng/rsloan-dcna)
+NA 值的學科處理 [rsloan-dcna](https://github.com/kancheng/rsloan-dcna) 。
 
 # 文件
 
