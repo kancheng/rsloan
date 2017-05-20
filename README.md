@@ -6,9 +6,12 @@
 
 為目前分析過後的管理學院學生資料。
 
-- [dtcna70](https://github.com/kancheng/rsloan/tree/master/raw/dtcna70)
-- [origdt](https://github.com/kancheng/rsloan/tree/master/raw/origdt)
-- [sql](https://github.com/kancheng/rsloan/tree/master/raw/sql)
+- [dtcna70](https://github.com/kancheng/rsloan/tree/master/raw/dtcna70) 為資料清洗過 NA 的資料集。
+
+- [origdt](https://github.com/kancheng/rsloan/tree/master/raw/origdt) 為資料未處理 NA 的原始資料集。
+
+- [sql](https://github.com/kancheng/rsloan/tree/master/raw/sql) 為資料清洗過 NA 的 SQL 資料。
+
 
 ## rfunc
 
