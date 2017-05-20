@@ -135,8 +135,10 @@ package 對應該版本為 `R version 3.3.2`。
 
 NA 值的資料筆數處理 [rsloan-dcna](https://github.com/kancheng/rsloan-dcna) 。
 
+### 比例
+
 ```
-(有實際成績的科目數量)/(所有科目欄位數量)
+有實際成績的科目欄位 / 所有科目欄位
 ```
 
 
