@@ -19,5 +19,8 @@ source("C:/dataipt/rfunc/hcaon.R")
 # R Kan Dev Function KMC
 source("C:/dataipt/rfunc/kmon.R")
 
+# R Kan Dev Function PAMC
+source("C:/dataipt/rfunc/pamon.R")
+
 # R Multiple graphs build object
 source("C:/dataipt/rfunc/mulggplotpic-build.R")
