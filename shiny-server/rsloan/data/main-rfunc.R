@@ -1,4 +1,4 @@
-# R Kan Dev Function IO
+﻿# R Kan Dev Function IO
 source("./data/io.R")
 
 # R Kan Dev Function HCA
@@ -15,6 +15,12 @@ source("./data/picopt.R")
 
 # R Kan Dev Function HCA
 source("./data/hcaon.R")
+
+# R Kan Dev Function KMC
+source("./data/kmon.R")
+
+# R Kan Dev Function PAMC
+source("./data/pamon.R")
 
 # R Multiple graphs build object
 source("./data/mulggplotpic-build.R")
