@@ -20,6 +20,7 @@
 
 分析集群的函數，為 `rsloan` 的基礎， `dataipt` 、 `dataopt` 為資料輸入跟資料輸出的目錄。
 
+
 ### Import
 
 ```
@@ -35,18 +36,17 @@ dataipth = "C:/dataipt/lhucmdt/lhumlndcw70"
 # Data output CSV file
 dataopth = "C:/dataopt/lhucmdt"
 
-# Data coldf input CSV file
-dfcolipth = "C:/dataipt/lhucmdt/dfsubjab/csv"
-
 # input DF
 rcsvdf(dataipth)
 
-# input coldf Data
-rcsvdf(dfcolipth)
-
 # input List
 lhudata = rcsvlt(dataipth)
+```
 
+
+### Setting
+
+```
 # Cluster Analysis Base colnames 
 hacbdt = c( "cala","loam","ec", "cppg")
 
@@ -76,8 +76,8 @@ mainindex = c( "cala" )
 courindex = c( "itdc", "cppg", "pcpg", "oopg", "itdcn", "cala", "calb", "ec", 
 "dtst", "nwkpm", "sadm", "idbs", "st", "mana", "inkpg", "dbms", "mis")
 
-sg2proc("im11avt", mainindex, courindex, "im11df")
-mg2proc("im11avt", mainindex, courindex, "im11df")
+sg2proc("im11avt", mainindex, courindex)
+mg2proc("im11avt", mainindex, courindex)
 ```
 
 ## Details
