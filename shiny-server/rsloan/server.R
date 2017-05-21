@@ -200,7 +200,7 @@ function(input, output, session) {
   
   output$sumyeachplot = renderPlot({
     
-  ggplot(tmsp$temsumyplotdt, aes( club, mean, fill = subj)) + geom_bar(stat="identity",position='dodge') + 
+  ggplot(tmsp$temsumyplotdt, aes( club, round( mean,digits = 2), fill = subj)) + geom_bar(stat="identity",position='dodge') + 
   geom_text(mapping = aes(label = mean), size = 5, colour = 'black', vjust = 1, hjust = .5, position = position_dodge(1)) + 
   labs( title = tmsp$temsumyplotcol)
     
@@ -262,7 +262,7 @@ function(input, output, session) {
   
   output$hsleachplot = renderPlot({
     
-    ggplot( tmsp$temhslplotdt, aes( club, mean, fill = subj)) + geom_bar(stat="identity",position='dodge') + 
+    ggplot( tmsp$temhslplotdt, aes( club, round( mean,digits = 2), fill = subj)) + geom_bar(stat="identity",position='dodge') + 
       geom_text(mapping = aes(label = mean), size = 5, colour = 'black', vjust = 1, hjust = .5, position = position_dodge(1)) + 
       labs( title = tmsp$temhslplotcol)
     
@@ -290,7 +290,7 @@ function(input, output, session) {
   
   output$nsleachplot = renderPlot({
     
-    ggplot( tmsp$temnslplotdt, aes( club, mean, fill = subj)) + geom_bar(stat="identity",position='dodge') + 
+    ggplot( tmsp$temnslplotdt, aes( club, round( mean,digits = 2), fill = subj)) + geom_bar(stat="identity",position='dodge') + 
       geom_text(mapping = aes(label = mean), size = 5, colour = 'black', vjust = 1, hjust = .5, position = position_dodge(1)) + 
       labs( title = tmsp$temnslplotcol)
     
