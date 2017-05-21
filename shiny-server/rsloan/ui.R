@@ -112,29 +112,19 @@ shinyUI(
 
                                         ),
                                         tabPanel("建議分群",
-                                          sidebarLayout(
-                                            
+                                          sidebarLayout( 
                                             sidebarPanel(width = 3,
                                                          
                                               h2("分群數量"),
                                               helpText("由此選擇分群數量與分群方法跟距離。"),
                                               numericInput("clunmtb", "Clu Number:", 6),
-                                                         
-                                              h2("分群方法"),
-                                              radioButtons("hclust.methods", "Choose :",
-                                                c("Ward.D" = "ward.D", "Ward.D2" = "ward.D2", "Single" = "single",
-                                                    "Complete" = "complete", "Average" = "average", "Mcquitty" = "mcquitty",
-                                                    "Median" = "median", "Centroid" = "centroid"
-                                                )
+                                              radioButtons("xxxrb", "Choose :",
+                                                           c("Hierarchical Clustering" = "hcarb1", 
+                                                             "K-Means" = "kmcrb2", "PAM" = "pamrb3"
+                                                           )
                                               ),
-                                                         
-                                              h2("分群距離"),
-                                              radioButtons("dist.methods", "Choose :",
-                                                c("Euclidean" = "euclidean","Maximum" = "maximum", "Manhattan" = "manhattan",
-                                                  "Canberra" = "canberra", "Binary" = "binary", "Minkowski" = "minkowski"
-                                                )
-                                              ),
-                                              submitButton("Update", icon("refresh"), width = "100%")        
+                                              submitButton("Update", icon("refresh"), width = "100%") 
+                                              
                                             ),
                                             
                                             mainPanel(width = 7,
@@ -144,6 +134,35 @@ shinyUI(
                                             )
 
                                           )
+                                        ),
+                                        tabPanel("分群方法",
+                                          fluidRow(
+                                            column(4, wellPanel(
+                                              h2("Hierarchical Clustering"),       
+                                              h3("分群方法"),
+                                              radioButtons("hclust.methods", "Choose :",
+                                                           c("Ward.D" = "ward.D", "Ward.D2" = "ward.D2", "Single" = "single",
+                                                             "Complete" = "complete", "Average" = "average", "Mcquitty" = "mcquitty",
+                                                             "Median" = "median", "Centroid" = "centroid"
+                                                           )
+                                              ),
+                                              
+                                              h3("分群距離"),
+                                              radioButtons("dist.methods", "Choose :",
+                                                           c("Euclidean" = "euclidean","Maximum" = "maximum", "Manhattan" = "manhattan",
+                                                             "Canberra" = "canberra", "Binary" = "binary", "Minkowski" = "minkowski"
+                                                           )
+                                              ),
+                                              submitButton("Update", icon("refresh"), width = "100%") 
+                                            )),
+                                                   
+                                            column(4, wellPanel(
+                                              h2("K-Means"),
+                                              numericInput("xxx", "Nstart Number:", 25),
+                                              submitButton("Update", icon("refresh"), width = "100%") 
+                                            ))
+                                          )
+
                                         )
 
                                       )
