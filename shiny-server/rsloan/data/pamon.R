@@ -1,10 +1,8 @@
-﻿pamon = function( Odata, beky, keycol, pamkc = 6,
+pamon = function( Odata, beky, keycol, pamkc = 6,
 	dtname = "unt", swd = getwd(),...){
 
 	tempamkc = pamkc
 
-	require(cluster)
-	require(useful)
 
 	serna = function( data, beky, keycol){
 		tdfnm = rep(1:nrow(data))
@@ -188,8 +186,6 @@
 pamon2 = function( Odata, beky, keycol, pamkc = 6,
 	dtname = "unt", swd = getwd(),...){
 
-	require(cluster)
-	require(useful)
 
 	tempamkc = pamkc
 

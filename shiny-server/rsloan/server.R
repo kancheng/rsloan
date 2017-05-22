@@ -7,6 +7,8 @@ library(ggplot2)
 library(rmarkdown)
 library("clValid")
 library("DT")
+
+require(cluster)
 require(useful)
 
 # SERVER R File & Object
@@ -17,7 +19,33 @@ function(input, output, session) {
   tmsp = reactiveValues()
   
   # source r file
-  source("./data/main-rfunc.R")
+
+  # R Kan Dev Function IO
+  source("./data/io.R")
+  
+  # R Kan Dev Function HCA
+  source("./data/hca.R")
+  
+  # R Multiple graphs on one page 
+  source("./data/mulggplotpic.R")
+  
+  # R Kan Dev Function AS Class & Head List
+  source("./data/ashd.R")
+  
+  # R Kan Dev Function Pic Opt
+  source("./data/picopt.R")
+  
+  # R Kan Dev Function HCA
+  source("./data/hcaon.R")
+  
+  # R Kan Dev Function KMC
+  source("./data/kmon.R")
+  
+  # R Kan Dev Function PAMC
+  source("./data/pamon.R")
+  
+  # R Multiple graphs build object
+  source("./data/mulggplotpic-build.R")
   source("./data/demo.R")
   source("./data/colnm.R")
   
