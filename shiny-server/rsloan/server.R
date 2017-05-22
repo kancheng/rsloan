@@ -128,11 +128,23 @@ function(input, output, session) {
     par( mfrow = c( 2, 2))
     plot( stab.basedf, legend = FALSE)
   }
+  cvsummary = function( cvdfobj, cvdfcolobj, cvpkdfobj){
+    
+    basedf = cvdfobj[ ,cvdfcolobj]
+    # rownames(basedf) = im08$cvpkdfobj
+    
+    stab.basedf = clValid(basedf, 2:6, clMethods = c("hierarchical","kmeans","pam"), validation = "stability")
+    
+    summary(stab.basedf)
+  }
   
   output$clValidplot = renderPlot({
     cvplot(tmsp$cudf,  eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)))
   })
   
+  output$clValidSummary = renderPrint({
+    cvsummary(tmsp$cudf,  eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)))
+  })
   
   
   # Cluster
@@ -203,9 +215,26 @@ function(input, output, session) {
   # Summary
 
   output$sumytable = renderDataTable({
-    hcaon(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)), hck = input$clunmtb, hcm = input$hclust.methods, dism = input$dist.methods)
-    tmsp$temuntal2ndsc = untal2ndsc
-    DT::datatable( untal2ndsc, options = list(pageLength = 25))
+    allcluswmd = switch(input$allclurbmd,
+                        
+                        hcarb1 = {
+                          hcaon(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)), hck = input$clunmtb, hcm = input$hclust.methods, dism = input$dist.methods)
+                          tmsp$temuntal2ndsc = untal2ndsc
+                          DT::datatable( untal2ndsc, options = list(pageLength = 25))
+                        },
+                        
+                        kmcrb2 = {
+                          kmon(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)), kc = input$clunmtb, knstart = input$knstartnum )
+                          tmsp$temuntal2ndsc = untal2ndsc
+                          DT::datatable( untal2ndsc, options = list(pageLength = 25))
+                        },
+                        
+                        pamrb3 = {
+                          pamon(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)), pamkc = input$clunmtb)
+                          tmsp$temuntal2ndsc = untal2ndsc
+                          DT::datatable( untal2ndsc, options = list(pageLength = 25))
+                        }
+    )
   }) 
   
   # sumytable download 
@@ -245,9 +274,26 @@ function(input, output, session) {
   # Analysis
   
   output$anaytable = renderDataTable({
-    hcaon(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)), hck = input$clunmtb, hcm = input$hclust.methods, dism = input$dist.methods)
-    tmsp$temunttkav = unttkav
-    DT::datatable( unttkav, options = list(pageLength = 25))
+    allcluswmd = switch(input$allclurbmd,
+                        
+                        hcarb1 = {
+                          hcaon(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)), hck = input$clunmtb, hcm = input$hclust.methods, dism = input$dist.methods)
+                          tmsp$temunttkav = unttkav
+                          DT::datatable( unttkav, options = list(pageLength = 25))
+                        },
+                        
+                        kmcrb2 = {
+                          kmon(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)), kc = input$clunmtb, knstart = input$knstartnum )
+                          tmsp$temunttkav = unttkav
+                          DT::datatable( unttkav, options = list(pageLength = 25))
+                        },
+                        
+                        pamrb3 = {
+                          pamon(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)), pamkc = input$clunmtb)
+                          tmsp$temunttkav = unttkav
+                          DT::datatable( unttkav, options = list(pageLength = 25))
+                        }
+    )
   })  
   
   # anaytable download 
@@ -265,15 +311,51 @@ function(input, output, session) {
   # SLoan
   
   output$hsloandt = renderDataTable({
-    hcaon(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)), hck = input$clunmtb, hcm = input$hclust.methods, dism = input$dist.methods)
-    tmsp$temuntln1dsc = untln1dsc
-    DT::datatable( untln1dsc, options = list(pageLength = 25))
+    allcluswmd = switch(input$allclurbmd,
+                        
+                        hcarb1 = {
+                          hcaon(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)), hck = input$clunmtb, hcm = input$hclust.methods, dism = input$dist.methods)
+                          tmsp$temuntln1dsc = untln1dsc
+                          DT::datatable( untln1dsc, options = list(pageLength = 25))
+                        },
+                        
+                        kmcrb2 = {
+                          kmon(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)), kc = input$clunmtb, knstart = input$knstartnum )
+                          tmsp$temuntln1dsc = untln1dsc
+                          DT::datatable( untln1dsc, options = list(pageLength = 25))
+                        },
+                        
+                        pamrb3 = {
+                          pamon(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)), pamkc = input$clunmtb)
+                          tmsp$temuntln1dsc = untln1dsc
+                          DT::datatable( untln1dsc, options = list(pageLength = 25))
+                        }
+    )
   })
   
   output$nsloandt = renderDataTable({
-    hcaon(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)), hck = input$clunmtb, hcm = input$hclust.methods, dism = input$dist.methods)
-    tmsp$temuntln0dsc = untln0dsc
-    DT::datatable( untln0dsc, options = list(pageLength = 25))
+    allcluswmd = switch(input$allclurbmd,
+                        
+                        hcarb1 = {
+                          hcaon(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)), hck = input$clunmtb, hcm = input$hclust.methods, dism = input$dist.methods)
+                          tmsp$temuntln0dsc = untln0dsc
+                          DT::datatable( untln0dsc, options = list(pageLength = 25))
+                        },
+                        
+                        kmcrb2 = {
+                          kmon(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)), kc = input$clunmtb, knstart = input$knstartnum )
+                          tmsp$temuntln0dsc = untln0dsc
+                          DT::datatable( untln0dsc, options = list(pageLength = 25))
+                        },
+                        
+                        pamrb3 = {
+                          pamon(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)), pamkc = input$clunmtb)
+                          tmsp$temuntln0dsc = untln0dsc
+                          DT::datatable( untln0dsc, options = list(pageLength = 25))
+                        }
+    )
+    
+    
   })  
   
   # hsloandt download 
@@ -334,8 +416,24 @@ function(input, output, session) {
   
   # Propotion
   output$pptndt = renderTable({
-    hcaon(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)), hck = input$clunmtb, hcm = input$hclust.methods, dism = input$dist.methods)
-    tmsp$temuntslon = untslon
+
+    allcluswmd = switch(input$allclurbmd,
+                        
+                        hcarb1 = {
+                          hcaon(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)), hck = input$clunmtb, hcm = input$hclust.methods, dism = input$dist.methods)
+                          tmsp$temuntslon = untslon
+                        },
+                        
+                        kmcrb2 = {
+                          kmon(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)), kc = input$clunmtb, knstart = input$knstartnum )
+                          tmsp$temuntslon = untslon
+                        },
+                        
+                        pamrb3 = {
+                          pamon(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)), pamkc = input$clunmtb)
+                          tmsp$temuntslon = untslon
+                        }
+    )
   })  
   
   # pptndt download 
@@ -350,9 +448,9 @@ function(input, output, session) {
   
   output$prosloan = renderPlot({
     
-    tmsp$slone1 = data.frame(club = untslon$club, type = rep("slon"), data = untslon$slon)
-    tmsp$slone2 = data.frame(club = untslon$club, type = rep("no.slon"), data = untslon$no.slon)
-    tmsp$slone3 = data.frame(club = untslon$club, type = rep("total"), data = untslon$total)
+    tmsp$slone1 = data.frame(club = untslon$club, type = rep("slon"), data = tmsp$temuntslon$slon)
+    tmsp$slone2 = data.frame(club = untslon$club, type = rep("no.slon"), data = tmsp$temuntslon$no.slon)
+    tmsp$slone3 = data.frame(club = untslon$club, type = rep("total"), data = tmsp$temuntslon$total)
     tmsp$slonae = rbind( tmsp$slone1, tmsp$slone2, tmsp$slone3)
     ggplot(data = tmsp$slonae, mapping = aes(club,data, fill = type)) + geom_bar(stat = 'identity', position = 'dodge') + 
       geom_text(mapping = aes(label = data), size = 5, colour = 'black', vjust = 1, hjust = .5, position = position_dodge(1)) + labs( title = "分群就貸比")

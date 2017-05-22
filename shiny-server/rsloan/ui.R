@@ -131,9 +131,10 @@ shinyUI(
                                             ),
                                             
                                             mainPanel(width = 7,
-                                              h1("建議分群"),
-                                              br(),
-                                              plotOutput('clValidplot')   
+                                                      tabsetPanel( id = "allcvsuyplot",
+                                                        tabPanel("建議分群", plotOutput('clValidplot')),
+                                                        tabPanel("Summary", verbatimTextOutput('clValidSummary'))
+                                                      )
                                             )
 
                                           )
