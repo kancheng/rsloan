@@ -15,7 +15,7 @@ shinyUI(
   fluidPage(
     includeCSS(path = "./www/main.css"),
     tags$head(
-      tags$link(rel = "shortcut icon", href = "https://raw.githubusercontent.com/kancheng/rsloan/master/shiny-server/rsloan/favicon.ico")
+      tags$link(rel = "shortcut icon", href = "https://raw.githubusercontent.com/kancheng/rsloan/master/shiny-server/rsloan/www/favicon.ico")
     ),
     navbarPage("RSLoan",
                
