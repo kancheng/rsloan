@@ -1,4 +1,4 @@
-﻿kmon = function( Odata, beky, keycol, kc = 6, knstart = 25,
+kmon = function( Odata, beky, keycol, kc = 6, knstart = 25,
 	dtname = "unt", swd = getwd(),...){
 
 	temkc = kc
@@ -215,8 +215,10 @@ kmon2 = function( Odata, beky, keycol, kc = 6, knstart = 25,
 #	piophdn = paste0( dtname, ".png")
 
 require(useful)
-kmcplot = plot(kmcal, data=dhdc)
-kmcplot
+	par( mfrow = c( 1, 2))
+
+  plot(dhdc, col = hcadata)
+
 }
 
 # kmon2( im08, hacbdt, pkb, kc = 6, knstart = 25, dtname = "im08")

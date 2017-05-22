@@ -7,6 +7,7 @@ library(ggplot2)
 library(rmarkdown)
 library("clValid")
 library("DT")
+require(useful)
 
 # UI R File & Object
 
@@ -118,7 +119,9 @@ shinyUI(
                                               h2("分群數量"),
                                               helpText("由此選擇分群數量與分群方法跟距離。"),
                                               numericInput("clunmtb", "Clu Number:", 6),
-                                              radioButtons("xxxrb", "Choose :",
+                                              br(),
+                                              h2("分群方法選擇"),
+                                              radioButtons("allclurbmd", "Choose :",
                                                            c("Hierarchical Clustering" = "hcarb1", 
                                                              "K-Means" = "kmcrb2", "PAM" = "pamrb3"
                                                            )
@@ -158,7 +161,7 @@ shinyUI(
                                                    
                                             column(4, wellPanel(
                                               h2("K-Means"),
-                                              numericInput("xxx", "Nstart Number:", 25),
+                                              numericInput("knstartnum", "Nstart Number:", 25),
                                               submitButton("Update", icon("refresh"), width = "100%") 
                                             ))
                                           )

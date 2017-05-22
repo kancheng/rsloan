@@ -7,6 +7,7 @@ library(ggplot2)
 library(rmarkdown)
 library("clValid")
 library("DT")
+require(useful)
 
 # SERVER R File & Object
 
@@ -116,7 +117,7 @@ function(input, output, session) {
   
   #  Setting - clValid
   
-  cvplot = function(cvdfobj,cvdfcolobj, cvpkdfobj){
+  cvplot = function( cvdfobj, cvdfcolobj, cvpkdfobj){
     
     basedf = cvdfobj[ ,cvdfcolobj]
     # rownames(basedf) = im08$cvpkdfobj
@@ -137,7 +138,22 @@ function(input, output, session) {
   # Cluster
   
   output$cluplot = renderPlot({
-    hcaon2(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)), hck = input$clunmtb, hcm = input$hclust.methods, dism = input$dist.methods)
+    
+    allcluswmd = switch(input$allclurbmd,
+                        
+                        hcarb1 = {
+                          hcaon2(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)), hck = input$clunmtb, hcm = input$hclust.methods, dism = input$dist.methods)
+                        },
+                        
+                        kmcrb2 = {
+                          kmon2(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)), kc = input$clunmtb, knstart = input$knstartnum )
+                        },
+                        
+                        pamrb3 = {
+                          pamon2(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)), pamkc = input$clunmtb)
+                        }
+    )
+    
   })
 
   
@@ -149,9 +165,28 @@ function(input, output, session) {
   
   # use renderDataTable
   output$clutable = DT::renderDataTable({
-    hcaon(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)), hck = input$clunmtb, hcm = input$hclust.methods, dism = input$dist.methods)
-    tmsp$temuntavt = untavt
-    DT::datatable(untavt, options = list(pageLength = 25))
+    
+    allcluswmd = switch(input$allclurbmd,
+                        
+                        hcarb1 = {
+                          hcaon(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)), hck = input$clunmtb, hcm = input$hclust.methods, dism = input$dist.methods)
+                          tmsp$temuntavt = untavt
+                          DT::datatable(untavt, options = list(pageLength = 25))
+                        },
+                        
+                        kmcrb2 = {
+                          kmon(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)), kc = input$clunmtb, knstart = input$knstartnum )
+                          tmsp$temuntavt = untavt
+                          DT::datatable(untavt, options = list(pageLength = 25))
+                        },
+                        
+                        pamrb3 = {
+                          pamon(tmsp$cudf, eval(parse(text = tmsp$cbase)), eval(parse(text = tmsp$pkb)), pamkc = input$clunmtb)
+                          tmsp$temuntavt = untavt
+                          DT::datatable(untavt, options = list(pageLength = 25))
+                        }
+    )
+
   })
   
   # clutable download 
