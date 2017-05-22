@@ -30,7 +30,7 @@ hcad( hcdata, hck = 5, hcm = "ward.D", dism = "euclidean")
 
 ## hcaon.R
 
-共有 `hcaon()` 、 `hcaon2()` 函數。
+為 `Hierarchical Clustering` 的方法，共有 `hcaon()` 、 `hcaon2()` 函數。
 
 ### hcaon()
 
@@ -63,6 +63,14 @@ hcaon2() 會產生階層式分群的樹狀圖，參數與 hcaon() 一致。
 ```
 hcaon2( Odata, beky, keycol, hck = 5, hcm = "ward.D", dism = "euclidean", dtname = "unt", swd = getwd())
 ```
+
+## kmon.R
+
+為 `K-Means` 的方法。
+
+## pamon.R
+
+為 `K-Medoid` 的 `pam()` 函數所寫的方法。
 
 ## io.R
 
