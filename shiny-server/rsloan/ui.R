@@ -120,13 +120,15 @@ shinyUI(
                                               helpText("由此選擇分群數量與分群方法跟距離。"),
                                               numericInput("clunmtb", "Clu Number:", 6),
                                               br(),
-                                              h2("分群方法選擇"),
+                                              h2("分群方法設定"),
                                               radioButtons("allclurbmd", "Choose :",
                                                            c("Hierarchical Clustering" = "hcarb1", 
                                                              "K-Means" = "kmcrb2", "PAM" = "pamrb3"
                                                            )
                                               ),
-                                              submitButton("Update", icon("refresh"), width = "100%") 
+                                              submitButton("Update", icon("refresh"), width = "100%"),
+                                              br(),
+                                              helpText("請至下一分頁設定功能參數")
                                               
                                             ),
                                             
@@ -139,7 +141,7 @@ shinyUI(
 
                                           )
                                         ),
-                                        tabPanel("分群方法",
+                                        tabPanel("功能參數設定",
                                           fluidRow(
                                             column(4, wellPanel(
                                               h2("Hierarchical Clustering"),       
@@ -157,13 +159,13 @@ shinyUI(
                                                              "Canberra" = "canberra", "Binary" = "binary", "Minkowski" = "minkowski"
                                                            )
                                               ),
-                                              submitButton("Update", icon("refresh"), width = "100%") 
+                                              submitButton("Run", icon("refresh"), width = "100%") 
                                             )),
                                                    
                                             column(4, wellPanel(
                                               h2("K-Means"),
                                               numericInput("knstartnum", "Nstart Number:", 25),
-                                              submitButton("Update", icon("refresh"), width = "100%") 
+                                              submitButton("Run", icon("refresh"), width = "100%") 
                                             ))
                                           )
 
