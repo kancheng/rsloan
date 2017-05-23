@@ -475,15 +475,60 @@ function(input, output, session) {
     }
   )
   
-  output$prosloan = renderPlot({
+  output$prosloan3 = renderPlot({
     
-    tmsp$slone1 = data.frame(club = untslon$club, type = rep("slon"), data = tmsp$temuntslon$slon)
-    tmsp$slone2 = data.frame(club = untslon$club, type = rep("no.slon"), data = tmsp$temuntslon$no.slon)
-    tmsp$slone3 = data.frame(club = untslon$club, type = rep("total"), data = tmsp$temuntslon$total)
-    tmsp$slonae = rbind( tmsp$slone1, tmsp$slone2, tmsp$slone3)
-    ggplot(data = tmsp$slonae, mapping = aes(club,data, fill = type)) + geom_bar(stat = 'identity', position = 'dodge') + 
-      geom_text(mapping = aes(label = data), size = 5, colour = 'black', vjust = 1, hjust = .5, position = position_dodge(1)) + labs( title = "分群就貸比")
+    tmsp$slone11 = data.frame(club = as.character(untslon$club), 
+                              type = as.character(rep("slon")), data = as.numeric(as.character(tmsp$temuntslon$slon)))
+    
+    tmsp$slone12 = data.frame(club = as.character(untslon$club), 
+                              type = as.character(rep("no.slon")), data = as.numeric(as.character(tmsp$temuntslon$no.slon)))
+    
+    tmsp$slone13 = data.frame(club = as.character(untslon$club), 
+                              type = as.character(rep("total")), data = as.numeric(as.character(tmsp$temuntslon$total)))
+    
+    tmsp$slone21 = data.frame(club = as.character(untslon$club), 
+                              type = as.character(rep("slon")), data = as.numeric(as.character(tmsp$temuntslon$slon)))
+    
+    tmsp$slone22 = data.frame(club = as.character(untslon$club), 
+                              type = as.character(rep("no.slon")), data = as.numeric(as.character(tmsp$temuntslon$no.slon)))
+    
+    tmsp$slonae = rbind( tmsp$slone11, tmsp$slone12, tmsp$slone13)
+    tmsp$temae = ggplot(data = tmsp$slonae, mapping = aes( club, data, fill = type)) + geom_bar(stat = 'identity', position = 'dodge') + 
+      geom_text(mapping = aes(label = data), size = 5, colour = 'black', vjust = 1, hjust = .5, position = position_dodge(1)) + labs( title = "分群比")
+    
+    tmsp$slonae2 = rbind( tmsp$slone21, tmsp$slone22)
+    tmsp$temae2 = ggplot(data = tmsp$slonae2, mapping = aes(club,data, fill = type)) + geom_bar(stat = 'identity', position = 'stack') + 
+      labs( title = "就貸比") + geom_text(mapping = aes(label = data), size = 5, colour = 'black', vjust = 1.5, hjust = .5, position = position_stack())
+    
+    require(grid)
+    # Move to a new page
+    grid.newpage()
+    # Create layout : nrow = 2, ncol = 2
+    # pushViewport(viewport(layout = grid.layout(2, 2)))
+    pushViewport(viewport(layout = grid.layout(1, 2)))
+    # A helper function to define a region on the layout
+    define_region = function(row, col){
+      viewport(layout.pos.row = row, layout.pos.col = col)
+    } 
+    
+    print(tmsp$temae, vp = define_region(1, 1))
+    print(tmsp$temae2, vp = define_region(1, 2))
+    
   })
+  
+  
+  output$prosloan = renderPlot({
+
+    tmsp$temae
+
+  })
+  
+  output$prosloan2 = renderPlot({
+    
+    tmsp$temae2
+  })
+  
+
   
   # Diagram
   output$spbt1vto = renderPrint({
@@ -514,6 +559,12 @@ function(input, output, session) {
     untavt.gmp
   })
   
+  output$singplot2 = renderPlot({
+    tmsp$evalspbtxt1 = eval(parse(text = tmsp$spbtxt1))
+    tmsp$evalspbtxt2 = eval(parse(text = tmsp$spbtxt2))
+    tmsp$shspic  = sg2proc2("untavt", tmsp$evalspbtxt1, tmsp$evalspbtxt2)
+    untavt.gmp2
+  })
   output$multiplot = renderPlot({
     tmsp$evalmpbtxt1 = eval(parse(text = tmsp$mpbtxt1))
     tmsp$evalmpbtxt2 = eval(parse(text = tmsp$mpbtxt2))

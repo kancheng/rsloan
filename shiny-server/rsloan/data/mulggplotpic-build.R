@@ -15,6 +15,18 @@ sg2proc = function( dft = "untavt", midx, cidx){
 
 }
 
+sg2proc2 = function( dft = "untavt", midx, cidx){
+  for( snm in 1:length(cidx)){
+    s.nm = paste0( dft, ".", "gmp2")	
+    s.cmdr = paste0( "ggplot(", dft, 
+                     ") + geom_point( aes(x = ", 
+                     midx, ", y = ", cidx[snm], 
+                     ", colour = factor(hcadata) )) + facet_grid( ~ loam) ")
+    s.eval = eval(parse(text = s.cmdr))
+    assign( s.nm, s.eval, env = .GlobalEnv)
+  }
+}
+
 mg2proc = function( dft = "untavt", midx, cidx){
 
 	mupnbid = trunc(sqrt(length(cidx))) + 1 

@@ -352,11 +352,29 @@ shinyUI(
                                              downloadButton('pptndtdl', 'Download')
                                         ),
                                         mainPanel(width = 6,
-                                             h2("Plot"),
-                                             br(),
-                                             # submitButton("Submit", icon("refresh"), width = "30%"),
-                                             br(),
-                                             plotOutput("prosloan")
+                                          tabsetPanel(
+                                            tabPanel("Merge",
+                                                     h2("Plot"),
+                                                     br(),
+                                                     # submitButton("Submit", icon("refresh"), width = "30%"),
+                                                     br(),
+                                                     plotOutput("prosloan3")
+                                            ),
+                                            tabPanel("分群比",
+                                              h2("Plot"),
+                                              br(),
+                                              # submitButton("Submit", icon("refresh"), width = "30%"),
+                                              br(),
+                                              plotOutput("prosloan")
+                                            ),
+                                            tabPanel("就貸比",
+                                              h2("Plot"),
+                                              br(),
+                                              # submitButton("Submit", icon("refresh"), width = "30%"),
+                                              br(),
+                                              plotOutput("prosloan2")
+                                            )
+                                          )
                                         )
                                       )        
                                     ),
@@ -364,58 +382,85 @@ shinyUI(
                                              tabsetPanel(
                                                tabPanel("Plot Setting - 單圖參數設定",
                                                         sidebarLayout(
-                                                          sidebarPanel(width = 5,
-                                                                       h1( "Dataset Column" ),
-                                                                       helpText("Display the Dataset's Colume name which user's choice. "),
-                                                                       br(),
-                                                                       textOutput("alldtscolnm2", container = pre)
+                                                          sidebarPanel(width = 3,
+                                                                       
+                                                                       h2( "Single Plot" ),
+                                                                      # radioButtons("pointview", "Choose :",
+                                                                                 #   c("顯示數值" = "havepoint", 
+                                                                                  #    "隱藏數值" = "notpoint"
+                                                                                  #  )
+                                                                       #),
+                                                                       h3("PK Column"),
+                                                                       textInput("spbtxt1", "", value = "\"微積分一\""),
+                                                                       verbatimTextOutput("spbt1vto"),
+                                                                       # submitButton("Submit", icon("refresh"), width = "30%"),
+                                                                       
+                                                                       h3("Analyze Column"),
+                                                                       textInput("spbtxt2", "", value = "\"計算機概論\""),
+                                                                       verbatimTextOutput("spbt2vto"),
+                                                                       submitButton("Submit", icon("refresh"), width = "30%")
+                                                                       
                                                           ),
-                                                          mainPanel(width = 5,
-                                                                    h2( "Single Plot" ),
-                                                                    h3("PK Column"),
-                                                                    textInput("spbtxt1", "", value = "\"微積分一\""),
-                                                                    verbatimTextOutput("spbt1vto"),
-                                                                    # submitButton("Submit", icon("refresh"), width = "30%"),
-                                                                    
-                                                                    h3("Analyze Column"),
-                                                                    textInput("spbtxt2", "", value = "\"計算機概論\""),
-                                                                    verbatimTextOutput("spbt2vto"),
-                                                                    submitButton("Submit", icon("refresh"), width = "30%")
+                                                          mainPanel(width = 7,
+
+                                                                    h1( "Dataset Column" ),
+                                                                    helpText("Display the Dataset's Colume name which user's choice. "),
+                                                                    br(),
+                                                                    textOutput("alldtscolnm2", container = pre)
+
                                                           )
                                                         )
                                                ),
                                                tabPanel("Single Plot - 單繪圖",
-                                                        h2("Single Plot"),
-                                                        br(),
-                                                        submitButton("Submit", icon("refresh"), width = "30%"),
-                                                        br(),
-                                                        plotOutput("singplot")
+                                                        tabsetPanel(
+                                                          tabPanel("顯示數值",
+                                                            h2("Single Plot"),
+                                                            helpText("單一科目散佈圖"),
+                                                            br(),
+                                                            submitButton("Submit", icon("refresh"), width = "30%"),
+                                                            br(),
+                                                            plotOutput("singplot")
+                                                          ),
+                                                          tabPanel("隱藏數值",
+                                                            h2("Single Plot"),
+                                                            helpText("單一科目散佈圖"),
+                                                            br(),
+                                                            submitButton("Submit", icon("refresh"), width = "30%"),
+                                                            br(),
+                                                            plotOutput("singplot2")                                                          
+                                                          )
+                                                        )
                                                ),
                                                tabPanel("Plot Setting - 多圖參數設定",
                                                         sidebarLayout(
-                                                          sidebarPanel(width = 5,
-                                                                       h1( "Dataset Column" ),
-                                                                       helpText("Display the Dataset's Colume name which user's choice. "),
-                                                                       br(),
-                                                                       textOutput("alldtscolnm3", container = pre)
+                                                          sidebarPanel(width = 3,
+                                                                       
+                                                            h2( "Multiple Plot" ),
+                                                            h3("PK Column"),
+                                                            textInput("mpbtxt1", "", value = "\"微積分一\""),
+                                                            verbatimTextOutput("mpb1vto"),
+                                                            # submitButton("Submit", icon("refresh"), width = "30%"),
+                                                                       
+                                                            h3("Analyze Column"),
+                                                            textInput("mpbtxt2", "", value = "\"計算機概論\", \"管理學\", \"統計學\", \"微積分一\""
+                                                                  , width = "100%"),
+                                                            verbatimTextOutput("mpb2vto"),
+                                                            submitButton("Submit", icon("refresh"), width = "30%") 
+
                                                           ),
-                                                          mainPanel(width = 5,
-                                                                    h2( "Multiple Plot" ),
-                                                                    h3("PK Column"),
-                                                                    textInput("mpbtxt1", "", value = "\"微積分一\""),
-                                                                    verbatimTextOutput("mpb1vto"),
-                                                                    # submitButton("Submit", icon("refresh"), width = "30%"),
+                                                          mainPanel(width = 7,
                                                                     
-                                                                    h3("Analyze Column"),
-                                                                    textInput("mpbtxt2", "", value = "\"計算機概論\", \"管理學\", \"統計學\", \"微積分一\""
-                                                                              , width = "100%"),
-                                                                    verbatimTextOutput("mpb2vto"),
-                                                                    submitButton("Submit", icon("refresh"), width = "30%")
+                                                            h1( "Dataset Column" ),
+                                                            helpText("Display the Dataset's Colume name which user's choice. "),
+                                                            br(),
+                                                            textOutput("alldtscolnm3", container = pre)
+
                                                           )
                                                         )
                                                ),
                                                tabPanel("Multiple Plot - 多繪圖",
                                                         h2("Multiple Plot"),
+                                                        helpText("多科目散佈圖合併"),
                                                         br(),
                                                         submitButton("Submit", icon("refresh"), width = "30%"),
                                                         br(),
