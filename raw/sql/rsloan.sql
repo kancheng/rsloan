@@ -1,6 +1,33 @@
-﻿
+-- phpMyAdmin SQL Dump
+-- version 4.0.10deb1
+-- http://www.phpmyadmin.net
+--
+-- 主機: localhost
+-- 建立日期: 2017 年 05 月 24 日 19:46
+-- 伺服器版本: 5.5.54-MariaDB-1ubuntu0.14.04.1
+-- PHP 版本: 5.5.9-1ubuntu4.20
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- 資料庫: `rsloan`
+--
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `bu08`
+--
+
 CREATE TABLE IF NOT EXISTS `bu08` (
-  `sid` varchar(9) DEFAULT NULL,
+  `sid` varchar(9) NOT NULL DEFAULT '',
   `loam` int(1) DEFAULT NULL,
   `mm` int(2) DEFAULT NULL,
   `ma` int(2) DEFAULT NULL,
@@ -25,8 +52,13 @@ CREATE TABLE IF NOT EXISTS `bu08` (
   `itdc` int(2) DEFAULT NULL,
   `mana` int(2) DEFAULT NULL,
   `eci` int(2) DEFAULT NULL,
-  `buetc` int(2) DEFAULT NULL
+  `buetc` int(2) DEFAULT NULL,
+  PRIMARY KEY (`sid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 資料表的匯出資料 `bu08`
+--
 
 INSERT INTO `bu08` (`sid`, `loam`, `mm`, `ma`, `fm`, `ac`, `eca`, `ecb`, `inap`, `eebm`, `ima`, `pom`, `hrm`, `bul`, `esm`, `itdbul`, `cala`, `sta`, `calb`, `stb`, `erem`, `mant`, `itdc`, `mana`, `eci`, `buetc`) VALUES
 ('SD970445 ', 0, 78, 79, 80, 78, 74, 75, 94, 99, 98, 91, 96, 87, 91, 87, 90, 93, 95, 92, 76, 89, 87, 85, 93, 84),
@@ -132,43 +164,14 @@ INSERT INTO `bu08` (`sid`, `loam`, `mm`, `ma`, `fm`, `ac`, `eca`, `ecb`, `inap`,
 ('SD970557 ', 0, 80, 84, 75, 78, 71, 79, 89, 93, 98, 94, 86, 83, 80, 78, 96, 76, 93, 67, 73, 80, 86, 80, 63, 80),
 ('SD970558 ', 0, 84, 88, 70, 82, 71, 80, 90, 84, 91, 91, 80, 86, 88, 83, 91, 68, 93, 81, 73, 86, 89, 88, 74, 72);
 
-CREATE TABLE IF NOT EXISTS `bu08df` (
-  `maj` varchar(2) DEFAULT NULL,
-  `year` int(4) DEFAULT NULL,
-  `subj` varchar(6) DEFAULT NULL,
-  `sdas` varchar(2) DEFAULT NULL,
-  `grade` int(1) DEFAULT NULL,
-  `subd` varchar(24) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- --------------------------------------------------------
 
-INSERT INTO `bu08df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
-('BU', 2008, 'mm', 'MM', 2, '行銷管理'),
-('BU', 2008, 'ma', 'MM', 2, '管理會計'),
-('BU', 2008, 'fm', 'MM', 2, '財務管理'),
-('BU', 2008, 'ac', 'MM', 1, '會計學'),
-('BU', 2008, 'eca', 'MM', 1, '經濟學（一）'),
-('BU', 2008, 'ecb', 'MM', 1, '經濟學（二）'),
-('BU', 2008, 'inap', 'PA', 1, '網際網路應用'),
-('BU', 2008, 'eebm', 'PA', 2, '電子企業經營管理'),
-('BU', 2008, 'ima', 'PA', 2, '資訊管理應用'),
-('BU', 2008, 'pom', 'MM', 2, '生產與作業管理'),
-('BU', 2008, 'hrm', 'MM', 3, '人力資源管理'),
-('BU', 2008, 'bul', 'PA', 3, '商事法'),
-('BU', 2008, 'esm', 'PA', 3, '企業策略管理'),
-('BU', 2008, 'itdbul', 'PA', 1, '企業概論'),
-('BU', 2008, 'cala', 'MA', 1, '微積分（一）'),
-('BU', 2008, 'sta', 'MA', 1, '統計學（一）'),
-('BU', 2008, 'calb', 'MA', 2, '微積分（二）'),
-('BU', 2008, 'stb', 'MA', 2, '統計學（二）'),
-('BU', 2008, 'erem', 'PA', 3, '企業研究方法'),
-('BU', 2008, 'mant', 'MA', 2, '管理數學'),
-('BU', 2008, 'itdc', 'PA', 1, '計算機概論'),
-('BU', 2008, 'mana', 'MM', 1, '管理學'),
-('BU', 2008, 'eci', 'PA', 2, '電子商務概論'),
-('BU', 2008, 'buetc', 'GE', 3, '企業倫理');
+--
+-- 資料表結構 `bu09`
+--
 
 CREATE TABLE IF NOT EXISTS `bu09` (
-  `sid` varchar(9) DEFAULT NULL,
+  `sid` varchar(9) NOT NULL DEFAULT '',
   `loam` int(1) DEFAULT NULL,
   `mm` int(2) DEFAULT NULL,
   `ma` int(2) DEFAULT NULL,
@@ -191,8 +194,13 @@ CREATE TABLE IF NOT EXISTS `bu09` (
   `mant` int(2) DEFAULT NULL,
   `cal` int(2) DEFAULT NULL,
   `pjm` int(2) DEFAULT NULL,
-  `ines` int(2) DEFAULT NULL
+  `ines` int(2) DEFAULT NULL,
+  PRIMARY KEY (`sid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 資料表的匯出資料 `bu09`
+--
 
 INSERT INTO `bu09` (`sid`, `loam`, `mm`, `ma`, `fm`, `ac`, `eca`, `ecb`, `inap`, `eci`, `eebm`, `ima`, `mana`, `pom`, `hrm`, `esm`, `mads`, `sta`, `stb`, `erem`, `mant`, `cal`, `pjm`, `ines`) VALUES
 ('SD980465 ', 1, 72, 68, 71, 68, 60, 71, 72, 85, 99, 94, 78, 82, 83, 66, 90, 67, 70, 80, 60, 68, 73, 79),
@@ -237,7 +245,6 @@ INSERT INTO `bu09` (`sid`, `loam`, `mm`, `ma`, `fm`, `ac`, `eca`, `ecb`, `inap`,
 ('SD980508 ', 0, 66, 44, 76, 94, 52, 75, 79, 83, 61, 89, 80, 79, 76, 50, 88, 64, 67, 75, 81, 68, 75, 77),
 ('SD980509 ', 0, 70, 54, 63, 65, 74, 76, 81, 80, 61, 88, 78, 75, 74, 48, 88, 53, 50, 74, 74, 62, 70, 80),
 ('SD980510 ', 0, 89, 78, 80, 99, 85, 91, 93, 98, 99, 99, 94, 91, 83, 72, 90, 87, 91, 82, 88, 67, 82, 83),
-('SD980511 ', 0, 89, 91, 88, 93, 0, 0, 92, 71, 85, 99, 92, 99, 90, 95, 90, 0, 0, 87, 0, 0, 84, 90),
 ('SD980512 ', 0, 62, 64, 60, 78, 74, 88, 84, 83, 64, 60, 75, 85, 75, 50, 88, 61, 65, 76, 72, 80, 72, 80),
 ('SD980513 ', 0, 63, 80, 63, 99, 70, 91, 90, 94, 93, 93, 89, 87, 79, 64, 90, 88, 77, 80, 82, 75, 72, 86),
 ('SD980514 ', 1, 70, 67, 70, 95, 76, 83, 85, 89, 71, 91, 95, 83, 75, 60, 85, 70, 50, 80, 75, 73, 70, 79),
@@ -277,7 +284,6 @@ INSERT INTO `bu09` (`sid`, `loam`, `mm`, `ma`, `fm`, `ac`, `eca`, `ecb`, `inap`,
 ('SD980562 ', 1, 65, 64, 72, 68, 69, 69, 87, 88, 86, 99, 87, 90, 88, 64, 85, 82, 70, 78, 75, 80, 58, 79),
 ('SD980563 ', 1, 69, 73, 70, 76, 39, 76, 80, 85, 68, 85, 81, 87, 83, 74, 90, 63, 81, 78, 84, 65, 66, 86),
 ('SD980564 ', 1, 81, 87, 65, 94, 60, 65, 87, 87, 87, 84, 77, 80, 60, 0, 95, 72, 63, 32, 86, 80, 39, 83),
-('SD980566 ', 1, 77, 79, 75, 85, 0, 0, 93, 95, 89, 99, 85, 91, 95, 76, 90, 0, 0, 78, 0, 0, 87, 94),
 ('SD980567 ', 0, 62, 72, 63, 60, 64, 65, 87, 86, 79, 95, 81, 79, 88, 68, 85, 60, 64, 80, 60, 70, 55, 80),
 ('SD980568 ', 0, 81, 65, 67, 70, 74, 65, 85, 88, 90, 99, 84, 85, 88, 69, 90, 75, 80, 82, 74, 72, 62, 90),
 ('SD980569 ', 0, 73, 74, 61, 60, 60, 56, 85, 77, 87, 91, 72, 78, 68, 68, 90, 52, 49, 78, 74, 73, 59, 90),
@@ -291,41 +297,14 @@ INSERT INTO `bu09` (`sid`, `loam`, `mm`, `ma`, `fm`, `ac`, `eca`, `ecb`, `inap`,
 ('SD980577 ', 0, 79, 70, 60, 87, 32, 72, 86, 87, 63, 85, 79, 77, 82, 61, 85, 80, 68, 82, 78, 77, 61, 83),
 ('SD980578 ', 0, 75, 67, 60, 60, 25, 41, 74, 81, 72, 72, 63, 66, 75, 66, 85, 40, 39, 69, 71, 60, 66, 80);
 
-CREATE TABLE IF NOT EXISTS `bu09df` (
-  `maj` varchar(2) DEFAULT NULL,
-  `year` int(4) DEFAULT NULL,
-  `subj` varchar(4) DEFAULT NULL,
-  `sdas` varchar(2) DEFAULT NULL,
-  `grade` int(1) DEFAULT NULL,
-  `subd` varchar(24) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- --------------------------------------------------------
 
-INSERT INTO `bu09df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
-('BU', 2009, 'mm', 'MM', 2, '行銷管理'),
-('BU', 2009, 'ma', 'MM', 2, '管理會計'),
-('BU', 2009, 'fm', 'MM', 2, '財務管理'),
-('BU', 2009, 'ac', 'MM', 1, '會計學'),
-('BU', 2009, 'eca', 'MM', 1, '經濟學（一）'),
-('BU', 2009, 'ecb', 'MM', 1, '經濟學（二）'),
-('BU', 2009, 'inap', 'PA', 1, '網際網路應用'),
-('BU', 2009, 'eci', 'PA', 1, '電子商務概論'),
-('BU', 2009, 'eebm', 'PA', 2, '電子企業經營管理'),
-('BU', 2009, 'ima', 'PA', 2, '資訊管理應用'),
-('BU', 2009, 'mana', 'MM', 1, '管理學'),
-('BU', 2009, 'pom', 'MM', 2, '生產與作業管理'),
-('BU', 2009, 'hrm', 'MM', 3, '人力資源管理'),
-('BU', 2009, 'esm', 'PA', 3, '企業策略管理'),
-('BU', 2009, 'mads', 'PA', 3, '管理文獻探討'),
-('BU', 2009, 'sta', 'MA', 1, '統計學（一）'),
-('BU', 2009, 'stb', 'MA', 2, '統計學（二）'),
-('BU', 2009, 'erem', 'PA', 3, '企業研究方法'),
-('BU', 2009, 'mant', 'MA', 1, '管理數學'),
-('BU', 2009, 'cal', 'MA', 1, '微積分'),
-('BU', 2009, 'pjm', 'MM', 3, '專案管理'),
-('BU', 2009, 'ines', 'GE', 3, '創新與創業');
+--
+-- 資料表結構 `bu10`
+--
 
 CREATE TABLE IF NOT EXISTS `bu10` (
-  `sid` varchar(9) DEFAULT NULL,
+  `sid` varchar(9) NOT NULL DEFAULT '',
   `loam` int(1) DEFAULT NULL,
   `mm` int(2) DEFAULT NULL,
   `ma` int(2) DEFAULT NULL,
@@ -348,8 +327,13 @@ CREATE TABLE IF NOT EXISTS `bu10` (
   `calb` int(2) DEFAULT NULL,
   `sta` int(2) DEFAULT NULL,
   `stb` int(2) DEFAULT NULL,
-  `ec` int(2) DEFAULT NULL
+  `ec` int(2) DEFAULT NULL,
+  PRIMARY KEY (`sid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 資料表的匯出資料 `bu10`
+--
 
 INSERT INTO `bu10` (`sid`, `loam`, `mm`, `ma`, `fm`, `ac`, `apec`, `inap`, `eci`, `eebm`, `ima`, `mana`, `pom`, `hrm`, `esm`, `mads`, `erem`, `pjm`, `ines`, `cala`, `calb`, `sta`, `stb`, `ec`) VALUES
 ('SD990459 ', 0, 60, 77, 75, 81, 72, 75, 72, 78, 88, 84, 95, 85, 89, 85, 87, 96, 87, 75, 60, 71, 73, 69),
@@ -446,41 +430,14 @@ INSERT INTO `bu10` (`sid`, `loam`, `mm`, `ma`, `fm`, `ac`, `apec`, `inap`, `eci`
 ('SD990578 ', 1, 72, 71, 72, 85, 71, 79, 72, 87, 99, 86, 72, 81, 65, 92, 72, 65, 90, 70, 61, 50, 0, 85),
 ('SD990579 ', 0, 62, 77, 62, 70, 63, 77, 78, 65, 68, 88, 67, 77, 76, 88, 63, 61, 69, 44, 60, 47, 35, 71);
 
-CREATE TABLE IF NOT EXISTS `bu10df` (
-  `maj` varchar(2) DEFAULT NULL,
-  `year` int(4) DEFAULT NULL,
-  `subj` varchar(4) DEFAULT NULL,
-  `sdas` varchar(2) DEFAULT NULL,
-  `grade` int(1) DEFAULT NULL,
-  `subd` varchar(24) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- --------------------------------------------------------
 
-INSERT INTO `bu10df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
-('BU', 2010, 'mm', 'MM', 2, '行銷管理'),
-('BU', 2010, 'ma', 'MM', 2, '管理會計'),
-('BU', 2010, 'fm', 'MM', 2, '財務管理'),
-('BU', 2010, 'ac', 'MM', 1, '會計學'),
-('BU', 2010, 'apec', 'MM', 1, '應用經濟學'),
-('BU', 2010, 'inap', 'PA', 1, '網際網路應用'),
-('BU', 2010, 'eci', 'PA', 1, '電子商務概論'),
-('BU', 2010, 'eebm', 'PA', 2, '電子企業經營管理'),
-('BU', 2010, 'ima', 'PA', 2, '資訊管理應用'),
-('BU', 2010, 'mana', 'MM', 1, '管理學'),
-('BU', 2010, 'pom', 'MM', 2, '生產與作業管理'),
-('BU', 2010, 'hrm', 'MM', 3, '人力資源管理'),
-('BU', 2010, 'esm', 'PA', 3, '企業策略管理'),
-('BU', 2010, 'mads', 'PA', 3, '管理文獻探討'),
-('BU', 2010, 'erem', 'PA', 3, '企業研究方法'),
-('BU', 2010, 'pjm', 'MM', 3, '專案管理'),
-('BU', 2010, 'ines', 'GE', 3, '創新與創業'),
-('BU', 2010, 'cala', 'MA', 1, '微積分(一)'),
-('BU', 2010, 'calb', 'MA', 2, '微積分(二)'),
-('BU', 2010, 'sta', 'MA', 1, '統計學(一)'),
-('BU', 2010, 'stb', 'MA', 2, '統計學(二)'),
-('BU', 2010, 'ec', 'MM', 1, '經濟學原理');
+--
+-- 資料表結構 `bu11`
+--
 
 CREATE TABLE IF NOT EXISTS `bu11` (
-  `sid` varchar(9) DEFAULT NULL,
+  `sid` varchar(9) NOT NULL DEFAULT '',
   `loam` int(1) DEFAULT NULL,
   `mm` int(2) DEFAULT NULL,
   `fm` int(2) DEFAULT NULL,
@@ -501,8 +458,13 @@ CREATE TABLE IF NOT EXISTS `bu11` (
   `care` int(3) DEFAULT NULL,
   `cala` int(2) DEFAULT NULL,
   `calb` int(3) DEFAULT NULL,
-  `ec` int(2) DEFAULT NULL
+  `ec` int(2) DEFAULT NULL,
+  PRIMARY KEY (`sid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 資料表的匯出資料 `bu11`
+--
 
 INSERT INTO `bu11` (`sid`, `loam`, `mm`, `fm`, `ac`, `eebm`, `bswa`, `mwsm`, `mana`, `pom`, `hrm`, `esm`, `mads`, `adpjm`, `erem`, `sta`, `stb`, `ines`, `care`, `cala`, `calb`, `ec`) VALUES
 ('SD1000510', 0, 81, 28, 60, 79, 65, 38, 55, 63, 61, 70, 80, 83, 64, 34, 39, 70, 80, 60, 60, 68),
@@ -614,43 +576,16 @@ INSERT INTO `bu11` (`sid`, `loam`, `mm`, `fm`, `ac`, `eebm`, `bswa`, `mwsm`, `ma
 ('SD1000627', 0, 67, 71, 82, 99, 55, 70, 55, 65, 82, 73, 95, 95, 64, 67, 64, 92, 63, 74, 82, 50),
 ('SD1000628', 1, 65, 80, 92, 99, 84, 88, 66, 88, 84, 76, 90, 92, 75, 81, 82, 92, 88, 87, 86, 69),
 ('SD1000629', 1, 74, 66, 92, 99, 81, 84, 65, 74, 82, 73, 88, 92, 64, 76, 74, 82, 73, 74, 75, 79),
-('SD1000633', 0, 69, 60, 70, 61, 65, 85, 60, 60, 61, 66, 88, 88, 60, 60, 66, 69, 74, 66, 73, 60),
-('SD1000738', 0, 74, 70, 0, 61, 0, 0, 0, 0, 61, 77, 88, 86, 69, 0, 69, 87, 77, 67, 60, 85),
-('SD1000739', 0, 73, 63, 0, 0, 84, 0, 0, 0, 61, 72, 88, 88, 64, 0, 50, 88, 77, 60, 60, 80);
+('SD1000633', 0, 69, 60, 70, 61, 65, 85, 60, 60, 61, 66, 88, 88, 60, 60, 66, 69, 74, 66, 73, 60);
 
-CREATE TABLE IF NOT EXISTS `bu11df` (
-  `maj` varchar(2) DEFAULT NULL,
-  `year` int(4) DEFAULT NULL,
-  `subj` varchar(5) DEFAULT NULL,
-  `sdas` varchar(2) DEFAULT NULL,
-  `grade` int(1) DEFAULT NULL,
-  `subd` varchar(24) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- --------------------------------------------------------
 
-INSERT INTO `bu11df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
-('BU', 2011, 'mm', 'MM', 2, '行銷管理'),
-('BU', 2011, 'fm', 'MM', 2, '財務管理'),
-('BU', 2011, 'ac', 'MM', 1, '會計學'),
-('BU', 2011, 'eebm', 'PA', 2, '企業電子化管理'),
-('BU', 2011, 'bswa', 'PA', 1, '商用軟體應用'),
-('BU', 2011, 'mwsm', 'PA', 1, '多媒體網站管理'),
-('BU', 2011, 'mana', 'MM', 1, '管理學'),
-('BU', 2011, 'pom', 'MM', 2, '生產與作業管理'),
-('BU', 2011, 'hrm', 'MM', 2, '人力資源管理'),
-('BU', 2011, 'esm', 'PA', 3, '企業策略管理'),
-('BU', 2011, 'mads', 'PA', 3, '管理文獻探討'),
-('BU', 2011, 'adpjm', 'MM', 3, '進階專案管理實務'),
-('BU', 2011, 'erem', 'PA', 3, '企業研究方法'),
-('BU', 2011, 'sta', 'MA', 1, '應用統計學(一)'),
-('BU', 2011, 'stb', 'MA', 1, '應用統計學(二)'),
-('BU', 2011, 'ines', 'GE', 3, '創新與創業'),
-('BU', 2011, 'care', 'GE', 3, '職涯分析與規劃'),
-('BU', 2011, 'cala', 'MA', 1, '商用微積分(一)'),
-('BU', 2011, 'calb', 'MA', 1, '商用微積分(二)'),
-('BU', 2011, 'ec', 'MM', 1, '經濟學原理與實務');
+--
+-- 資料表結構 `bu12`
+--
 
 CREATE TABLE IF NOT EXISTS `bu12` (
-  `sid` varchar(9) DEFAULT NULL,
+  `sid` varchar(9) NOT NULL DEFAULT '',
   `loam` int(1) DEFAULT NULL,
   `mm` int(2) DEFAULT NULL,
   `fm` int(2) DEFAULT NULL,
@@ -670,8 +605,13 @@ CREATE TABLE IF NOT EXISTS `bu12` (
   `care` int(3) DEFAULT NULL,
   `cala` int(2) DEFAULT NULL,
   `calb` int(3) DEFAULT NULL,
-  `ec` int(2) DEFAULT NULL
+  `ec` int(2) DEFAULT NULL,
+  PRIMARY KEY (`sid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 資料表的匯出資料 `bu12`
+--
 
 INSERT INTO `bu12` (`sid`, `loam`, `mm`, `fm`, `ac`, `eebm`, `bswa`, `mwsm`, `mana`, `pom`, `hrm`, `esm`, `adpjm`, `erem`, `sta`, `stb`, `ines`, `care`, `cala`, `calb`, `ec`) VALUES
 ('SD1011002', 1, 92, 77, 60, 99, 86, 86, 62, 77, 89, 65, 71, 63, 76, 75, 74, 68, 84, 60, 64),
@@ -723,8 +663,6 @@ INSERT INTO `bu12` (`sid`, `loam`, `mm`, `fm`, `ac`, `eebm`, `bswa`, `mwsm`, `ma
 ('SD1011052', 1, 89, 75, 74, 99, 86, 82, 75, 71, 92, 65, 87, 61, 79, 73, 88, 78, 70, 60, 80),
 ('SD1011053', 0, 88, 87, 93, 99, 81, 89, 72, 77, 89, 77, 76, 66, 80, 73, 77, 79, 66, 65, 89),
 ('SD1011054', 0, 93, 69, 75, 99, 94, 95, 73, 76, 94, 82, 92, 65, 71, 61, 90, 96, 64, 60, 69),
-('SD1011060', 0, 90, 85, 93, 99, 0, 0, 0, 81, 94, 80, 83, 66, 66, 49, 84, 80, 70, 60, 0),
-('SD1011063', 0, 69, 72, 67, 95, 0, 75, 70, 68, 79, 55, 70, 67, 45, 0, 81, 92, 60, 0, 0),
 ('SD1011067', 0, 80, 65, 60, 99, 62, 72, 69, 66, 91, 65, 87, 61, 70, 50, 83, 91, 86, 76, 69),
 ('SD1011068', 1, 67, 51, 66, 98, 84, 83, 63, 29, 88, 62, 74, 63, 66, 34, 86, 28, 74, 60, 72),
 ('SD1011069', 0, 81, 66, 63, 99, 77, 76, 65, 90, 86, 62, 89, 62, 75, 74, 73, 80, 80, 77, 70),
@@ -774,42 +712,16 @@ INSERT INTO `bu12` (`sid`, `loam`, `mm`, `fm`, `ac`, `eebm`, `bswa`, `mwsm`, `ma
 ('SD1011115', 0, 8, 18, 31, 61, 33, 44, 36, 60, 60, 32, 62, 52, 27, 40, 60, 0, 65, 60, 61),
 ('SD1011116', 1, 69, 71, 82, 99, 87, 83, 79, 71, 84, 65, 95, 60, 85, 85, 77, 89, 86, 64, 83),
 ('SD1011117', 1, 71, 70, 60, 88, 60, 60, 71, 60, 83, 54, 90, 65, 63, 44, 83, 0, 77, 60, 66),
-('SD1011118', 0, 75, 74, 73, 99, 84, 86, 89, 91, 91, 71, 83, 60, 88, 98, 80, 29, 83, 79, 81),
-('SD1011346', 0, 87, 92, 0, 99, 0, 0, 0, 93, 92, 76, 74, 63, 0, 87, 78, 78, 93, 81, 82),
-('SD1011773', 0, 77, 60, 90, 80, 0, 73, 79, 36, 71, 51, 76, 48, 19, 0, 75, 78, 65, 50, 0);
+('SD1011118', 0, 75, 74, 73, 99, 84, 86, 89, 91, 91, 71, 83, 60, 88, 98, 80, 29, 83, 79, 81);
 
-CREATE TABLE IF NOT EXISTS `bu12df` (
-  `maj` varchar(2) DEFAULT NULL,
-  `year` int(4) DEFAULT NULL,
-  `subj` varchar(5) DEFAULT NULL,
-  `sdas` varchar(2) DEFAULT NULL,
-  `grade` int(1) DEFAULT NULL,
-  `subd` varchar(24) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- --------------------------------------------------------
 
-INSERT INTO `bu12df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
-('BU', 2012, 'mm', 'MM', 2, '行銷管理'),
-('BU', 2012, 'fm', 'MM', 2, '財務管理'),
-('BU', 2012, 'ac', 'MM', 1, '會計學'),
-('BU', 2012, 'eebm', 'PA', 2, '企業電子化管理'),
-('BU', 2012, 'bswa', 'PA', 1, '商用軟體應用'),
-('BU', 2012, 'mwsm', 'PA', 1, '多媒體網站管理'),
-('BU', 2012, 'mana', 'MM', 1, '管理學'),
-('BU', 2012, 'pom', 'MM', 2, '生產與作業管理'),
-('BU', 2012, 'hrm', 'MM', 2, '人力資源管理'),
-('BU', 2012, 'esm', 'PA', 3, '企業策略管理'),
-('BU', 2012, 'adpjm', 'MM', 3, '進階專案管理實務'),
-('BU', 2012, 'erem', 'PA', 3, '企業研究方法'),
-('BU', 2012, 'sta', 'MA', 1, '應用統計學(一)'),
-('BU', 2012, 'stb', 'MA', 1, '應用統計學(二)'),
-('BU', 2012, 'ines', 'GE', 3, '創新與創業'),
-('BU', 2012, 'care', 'GE', 3, '職涯分析與規劃'),
-('BU', 2012, 'cala', 'MA', 1, '商用微積分(一)'),
-('BU', 2012, 'calb', 'MA', 1, '商用微積分(二)'),
-('BU', 2012, 'ec', 'MM', 1, '經濟學原理與實務');
+--
+-- 資料表結構 `bu13`
+--
 
 CREATE TABLE IF NOT EXISTS `bu13` (
-  `sid` varchar(9) DEFAULT NULL,
+  `sid` varchar(9) NOT NULL DEFAULT '',
   `loam` int(1) DEFAULT NULL,
   `mm` int(2) DEFAULT NULL,
   `fm` int(2) DEFAULT NULL,
@@ -828,8 +740,13 @@ CREATE TABLE IF NOT EXISTS `bu13` (
   `calb` int(2) DEFAULT NULL,
   `ec` int(2) DEFAULT NULL,
   `pjm` int(3) DEFAULT NULL,
-  `pjmp` int(2) DEFAULT NULL
+  `pjmp` int(2) DEFAULT NULL,
+  PRIMARY KEY (`sid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 資料表的匯出資料 `bu13`
+--
 
 INSERT INTO `bu13` (`sid`, `loam`, `mm`, `fm`, `ac`, `eebm`, `bswa`, `mwsm`, `mana`, `pom`, `hrm`, `erem`, `sta`, `stb`, `ines`, `cala`, `calb`, `ec`, `pjm`, `pjmp`) VALUES
 ('SD1020907', 1, 85, 83, 85, 99, 97, 89, 82, 94, 83, 85, 99, 98, 87, 90, 90, 99, 92, 92),
@@ -884,7 +801,6 @@ INSERT INTO `bu13` (`sid`, `loam`, `mm`, `fm`, `ac`, `eebm`, `bswa`, `mwsm`, `ma
 ('SD1020960', 1, 79, 64, 74, 71, 81, 87, 65, 70, 76, 80, 71, 68, 85, 76, 81, 66, 70, 93),
 ('SD1020961', 1, 78, 0, 85, 91, 74, 84, 67, 81, 0, 0, 70, 73, 0, 64, 80, 88, 78, 0),
 ('SD1020964', 0, 80, 82, 84, 94, 98, 95, 81, 83, 75, 87, 97, 94, 86, 81, 80, 87, 76, 88),
-('SD1020965', 0, 60, 60, 66, 60, 70, 60, 53, 61, 0, 45, 60, 31, 0, 0, 0, 0, 62, 74),
 ('SD1020969', 0, 80, 65, 60, 75, 83, 0, 78, 75, 88, 79, 80, 90, 85, 65, 68, 78, 75, 68),
 ('SD1020972', 0, 87, 98, 95, 99, 99, 80, 75, 85, 88, 60, 75, 86, 94, 70, 80, 68, 91, 92),
 ('SD1020973', 0, 80, 97, 98, 99, 99, 95, 81, 84, 86, 76, 78, 97, 96, 71, 94, 66, 86, 94),
@@ -938,38 +854,14 @@ INSERT INTO `bu13` (`sid`, `loam`, `mm`, `fm`, `ac`, `eebm`, `bswa`, `mwsm`, `ma
 ('SD1021024', 0, 87, 78, 97, 99, 93, 93, 95, 72, 92, 82, 74, 79, 89, 74, 94, 72, 92, 85),
 ('SD1021026', 1, 82, 83, 80, 99, 90, 80, 76, 78, 86, 70, 80, 77, 91, 93, 88, 60, 77, 85);
 
-CREATE TABLE IF NOT EXISTS `bu13df` (
-  `maj` varchar(2) DEFAULT NULL,
-  `year` int(4) DEFAULT NULL,
-  `subj` varchar(4) DEFAULT NULL,
-  `sdas` varchar(2) DEFAULT NULL,
-  `grade` int(1) DEFAULT NULL,
-  `subd` varchar(24) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- --------------------------------------------------------
 
-INSERT INTO `bu13df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
-('BU', 2013, 'mm', 'MM', 2, '行銷管理'),
-('BU', 2013, 'fm', 'MM', 2, '財務管理'),
-('BU', 2013, 'ac', 'MM', 1, '會計學'),
-('BU', 2013, 'eebm', 'PA', 2, '企業電子化管理'),
-('BU', 2013, 'bswa', 'PA', 1, '商用軟體應用'),
-('BU', 2013, 'mwsm', 'PA', 1, '多媒體網站管理'),
-('BU', 2013, 'mana', 'MM', 1, '管理學'),
-('BU', 2013, 'pom', 'MM', 2, '生產與作業管理'),
-('BU', 2013, 'hrm', 'MM', 2, '人力資源管理'),
-('BU', 2013, 'erem', 'PA', 3, '企業研究方法'),
-('BU', 2013, 'sta', 'MA', 1, '應用統計學(一)'),
-('BU', 2013, 'stb', 'MA', 1, '應用統計學(二)'),
-('BU', 2013, 'ines', 'GE', 3, '創新與創業'),
-('BU', 2013, 'care', 'GE', 3, '職涯分析與規劃'),
-('BU', 2013, 'cala', 'MA', 1, '商用微積分(一)'),
-('BU', 2013, 'calb', 'MA', 1, '商用微積分(二)'),
-('BU', 2013, 'ec', 'MM', 1, '經濟學原理與實務'),
-('BU', 2013, 'pjm', 'MM', 2, '專案管理實務'),
-('BU', 2013, 'pjmp', 'MM', 2, '專案企劃實務');
+--
+-- 資料表結構 `bu14`
+--
 
 CREATE TABLE IF NOT EXISTS `bu14` (
-  `sid` varchar(9) DEFAULT NULL,
+  `sid` varchar(9) NOT NULL DEFAULT '',
   `loam` int(1) DEFAULT NULL,
   `mm` int(2) DEFAULT NULL,
   `ac` int(3) DEFAULT NULL,
@@ -983,8 +875,13 @@ CREATE TABLE IF NOT EXISTS `bu14` (
   `cala` int(2) DEFAULT NULL,
   `calb` int(2) DEFAULT NULL,
   `ec` int(3) DEFAULT NULL,
-  `pjm` int(2) DEFAULT NULL
+  `pjm` int(2) DEFAULT NULL,
+  PRIMARY KEY (`sid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 資料表的匯出資料 `bu14`
+--
 
 INSERT INTO `bu14` (`sid`, `loam`, `mm`, `ac`, `eebm`, `bswa`, `mwsm`, `mana`, `pom`, `sta`, `stb`, `cala`, `calb`, `ec`, `pjm`) VALUES
 ('SD1030908', 0, 89, 91, 99, 94, 71, 75, 93, 77, 99, 64, 70, 94, 95),
@@ -1091,43 +988,27 @@ INSERT INTO `bu14` (`sid`, `loam`, `mm`, `ac`, `eebm`, `bswa`, `mwsm`, `mana`, `
 ('SD1031031', 0, 79, 87, 99, 89, 97, 0, 99, 96, 78, 94, 79, 85, 60),
 ('SD1031032', 1, 83, 81, 83, 80, 86, 86, 80, 87, 91, 74, 93, 86, 65),
 ('SD1031033', 0, 67, 77, 89, 88, 80, 76, 82, 76, 78, 87, 76, 84, 64),
-('SD1031037', 0, 54, 87, 62, 82, 60, 84, 60, 0, 0, 61, 60, 83, 54),
 ('SD1031327', 0, 67, 74, 61, 82, 79, 85, 84, 61, 65, 61, 70, 78, 75);
 
-CREATE TABLE IF NOT EXISTS `bu14df` (
-  `maj` varchar(2) DEFAULT NULL,
-  `year` int(4) DEFAULT NULL,
-  `subj` varchar(4) DEFAULT NULL,
-  `sdas` varchar(2) DEFAULT NULL,
-  `grade` int(1) DEFAULT NULL,
-  `subd` varchar(24) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- --------------------------------------------------------
 
-INSERT INTO `bu14df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
-('BU', 2014, 'mm', 'MM', 2, '行銷管理'),
-('BU', 2014, 'fm', 'MM', 2, '財務管理'),
-('BU', 2014, 'ac', 'MM', 1, '會計學'),
-('BU', 2014, 'eebm', 'PA', 2, '企業電子化管理'),
-('BU', 2014, 'bswa', 'PA', 1, '商用軟體應用'),
-('BU', 2014, 'mwsm', 'PA', 1, '多媒體網站管理'),
-('BU', 2014, 'mana', 'MM', 1, '管理學'),
-('BU', 2014, 'pom', 'MM', 2, '生產與作業管理'),
-('BU', 2014, 'hrm', 'MM', 2, '人力資源管理'),
-('BU', 2014, 'sta', 'MA', 1, '應用統計學(一)'),
-('BU', 2014, 'stb', 'MA', 1, '應用統計學(二)'),
-('BU', 2014, 'cala', 'MA', 1, '商用微積分(一)'),
-('BU', 2014, 'calb', 'MA', 1, '商用微積分(二)'),
-('BU', 2014, 'ec', 'MM', 1, '經濟學原理與實務'),
-('BU', 2014, 'pjm', 'MM', 2, '專案管理實務');
+--
+-- 資料表結構 `bu15`
+--
 
 CREATE TABLE IF NOT EXISTS `bu15` (
-  `sid` varchar(9) DEFAULT NULL,
+  `sid` varchar(9) NOT NULL DEFAULT '',
   `loam` int(1) DEFAULT NULL,
   `bswa` int(2) DEFAULT NULL,
   `sta` int(2) DEFAULT NULL,
   `ec` int(3) DEFAULT NULL,
-  `care` int(3) DEFAULT NULL
+  `care` int(3) DEFAULT NULL,
+  PRIMARY KEY (`sid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 資料表的匯出資料 `bu15`
+--
 
 INSERT INTO `bu15` (`sid`, `loam`, `bswa`, `sta`, `ec`, `care`) VALUES
 ('SD1040845', 0, 91, 91, 91, 94),
@@ -1182,7 +1063,6 @@ INSERT INTO `bu15` (`sid`, `loam`, `bswa`, `sta`, `ec`, `care`) VALUES
 ('SD1040896', 0, 87, 82, 77, 94),
 ('SD1040897', 0, 76, 49, 70, 83),
 ('SD1040898', 0, 79, 65, 80, 67),
-('SD1040899', 0, 82, 0, 91, 94),
 ('SD1040900', 0, 87, 88, 95, 94),
 ('SD1040904', 0, 89, 69, 84, 84),
 ('SD1040905', 0, 93, 99, 100, 100),
@@ -1233,23 +1113,14 @@ INSERT INTO `bu15` (`sid`, `loam`, `bswa`, `sta`, `ec`, `care`) VALUES
 ('SD1040953', 0, 76, 39, 78, 77),
 ('SD1040954', 0, 82, 86, 84, 73);
 
-CREATE TABLE IF NOT EXISTS `bu15df` (
-  `maj` varchar(2) DEFAULT NULL,
-  `year` int(4) DEFAULT NULL,
-  `subj` varchar(4) DEFAULT NULL,
-  `sdas` varchar(2) DEFAULT NULL,
-  `grade` int(1) DEFAULT NULL,
-  `subd` varchar(24) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- --------------------------------------------------------
 
-INSERT INTO `bu15df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
-('BU', 2015, 'bswa', 'PA', 1, '商用軟體應用'),
-('BU', 2015, 'sta', 'MA', 1, '應用統計學(一)'),
-('BU', 2015, 'ec', 'MM', 1, '經濟學原理與實務'),
-('BU', 2015, 'care', 'GE', 1, '興趣與職涯探索');
+--
+-- 資料表結構 `fi08`
+--
 
 CREATE TABLE IF NOT EXISTS `fi08` (
-  `sid` varchar(9) DEFAULT NULL,
+  `sid` varchar(9) NOT NULL DEFAULT '',
   `loam` int(1) DEFAULT NULL,
   `itdc` int(3) DEFAULT NULL,
   `mana` int(2) DEFAULT NULL,
@@ -1278,8 +1149,13 @@ CREATE TABLE IF NOT EXISTS `fi08` (
   `inse` int(2) DEFAULT NULL,
   `insep` int(2) DEFAULT NULL,
   `ivpm` int(2) DEFAULT NULL,
-  `filice` int(3) DEFAULT NULL
+  `filice` int(3) DEFAULT NULL,
+  PRIMARY KEY (`sid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 資料表的匯出資料 `fi08`
+--
 
 INSERT INTO `fi08` (`sid`, `loam`, `itdc`, `mana`, `eci`, `buetc`, `cala`, `calb`, `sta`, `stb`, `eca`, `ecb`, `ecmi`, `ecma`, `myba`, `mybb`, `imaca`, `imacb`, `inap`, `ecp`, `claw`, `bula`, `bulb`, `fma`, `fmb`, `ivm`, `inse`, `insep`, `ivpm`, `filice`) VALUES
 ('SD970332 ', 0, 73, 72, 82, 79, 75, 69, 61, 63, 63, 60, 70, 75, 68, 72, 64, 60, 85, 86, 88, 87, 72, 60, 69, 66, 85, 82, 63, 63),
@@ -1335,7 +1211,6 @@ INSERT INTO `fi08` (`sid`, `loam`, `itdc`, `mana`, `eci`, `buetc`, `cala`, `calb
 ('SD970383 ', 0, 86, 81, 87, 88, 83, 90, 75, 91, 81, 75, 73, 78, 89, 92, 89, 85, 85, 100, 82, 80, 79, 76, 89, 88, 85, 89, 85, 100),
 ('SD970384 ', 0, 81, 89, 94, 93, 82, 87, 90, 96, 77, 75, 73, 92, 81, 81, 93, 90, 90, 96, 92, 91, 90, 76, 94, 87, 85, 85, 85, 95),
 ('SD970385 ', 0, 73, 60, 69, 88, 43, 60, 5, 2, 49, 60, 43, 66, 52, 74, 83, 69, 64, 74, 70, 60, 61, 21, 41, 38, 64, 73, 49, 0),
-('SD970386 ', 1, 0, 0, 85, 93, 0, 0, 0, 96, 0, 0, 78, 90, 89, 86, 95, 99, 0, 100, 84, 86, 86, 62, 90, 85, 85, 88, 78, 100),
 ('SD970390 ', 0, 90, 83, 79, 93, 82, 75, 75, 68, 67, 65, 70, 69, 76, 75, 72, 60, 83, 74, 86, 80, 78, 75, 66, 83, 84, 86, 81, 95),
 ('SD970391 ', 1, 83, 74, 70, 84, 83, 73, 76, 63, 75, 68, 82, 65, 74, 70, 80, 67, 84, 90, 75, 64, 76, 70, 63, 85, 78, 76, 68, 69),
 ('SD970392 ', 1, 96, 74, 88, 84, 71, 60, 64, 87, 91, 60, 69, 69, 69, 68, 68, 61, 75, 99, 83, 80, 80, 65, 60, 64, 82, 85, 71, 90),
@@ -1388,44 +1263,14 @@ INSERT INTO `fi08` (`sid`, `loam`, `itdc`, `mana`, `eci`, `buetc`, `cala`, `calb
 ('SD970442 ', 1, 88, 75, 85, 81, 85, 95, 70, 82, 77, 76, 67, 86, 80, 80, 95, 91, 82, 90, 91, 65, 72, 70, 78, 73, 82, 80, 77, 69),
 ('SD970443 ', 0, 97, 73, 72, 82, 49, 60, 24, 60, 47, 48, 69, 60, 73, 72, 60, 60, 79, 84, 83, 73, 66, 60, 42, 60, 80, 86, 63, 0);
 
-CREATE TABLE IF NOT EXISTS `fi08df` (
-  `maj` varchar(2) DEFAULT NULL,
-  `year` int(4) DEFAULT NULL,
-  `subj` varchar(5) DEFAULT NULL,
-  `sdas` varchar(2) DEFAULT NULL,
-  `grade` int(1) DEFAULT NULL,
-  `subd` varchar(24) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- --------------------------------------------------------
 
-INSERT INTO `fi08df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
-('FI', 2008, 'itdc', 'PA', 1, '計算機概論'),
-('FI', 2008, 'mana', 'MM', 1, '管理學'),
-('FI', 2008, 'eci', 'PA', 2, '電子商務概論'),
-('FI', 2008, 'buetc', 'GE', 3, '企業倫理'),
-('FI', 2008, 'cala', 'MA', 1, '微積分（一）'),
-('FI', 2008, 'calb', 'MA', 1, '微積分（二）'),
-('FI', 2008, 'sta', 'MA', 1, '統計學（一）'),
-('FI', 2008, 'stb', 'MA', 1, '統計學（二）'),
-('FI', 2008, 'eca', 'MM', 1, '經濟學（一）'),
-('FI', 2008, 'ecb', 'MM', 1, '經濟學（二）'),
-('FI', 2008, 'ecmi', 'MM', 2, '個體經濟學'),
-('FI', 2008, 'ecma', 'MM', 2, '總體經濟學'),
-('FI', 2008, 'myba', 'PA', 2, '貨幣銀行學（一）'),
-('FI', 2008, 'mybb', 'PA', 2, '貨幣銀行學（二）'),
-('FI', 2008, 'imaca', 'PA', 1, '中級會計學（一）'),
-('FI', 2008, 'imacb', 'PA', 1, '中級會計學（二）'),
-('FI', 2008, 'inap', 'PA', 1, '網際網路應用'),
-('FI', 2008, 'ecp', 'PA', 2, '電子商務實務'),
-('FI', 2008, 'claw', 'PA', 1, '民法概要'),
-('FI', 2008, 'bula', 'PA', 2, '商事法（一）'),
-('FI', 2008, 'bulb', 'PA', 2, '商事法（二）'),
-('FI', 2008, 'fma', 'MM', 2, '財務管理（一）'),
-('FI', 2008, 'fmb', 'MM', 2, '財務管理（二）'),
-('FI', 2008, 'ivm', 'PA', 3, '投資學'),
-('FI', 2008, 'inse', 'PA', 3, '保險學');
+--
+-- 資料表結構 `fi09`
+--
 
 CREATE TABLE IF NOT EXISTS `fi09` (
-  `sid` varchar(9) DEFAULT NULL,
+  `sid` varchar(9) NOT NULL DEFAULT '',
   `loam` int(1) DEFAULT NULL,
   `pjm` int(3) DEFAULT NULL,
   `ines` int(2) DEFAULT NULL,
@@ -1449,8 +1294,13 @@ CREATE TABLE IF NOT EXISTS `fi09` (
   `ivm` int(2) DEFAULT NULL,
   `inse` int(2) DEFAULT NULL,
   `insep` int(2) DEFAULT NULL,
-  `ivpm` int(2) DEFAULT NULL
+  `ivpm` int(2) DEFAULT NULL,
+  PRIMARY KEY (`sid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 資料表的匯出資料 `fi09`
+--
 
 INSERT INTO `fi09` (`sid`, `loam`, `pjm`, `ines`, `cala`, `calb`, `sta`, `stb`, `eca`, `ecb`, `ecmi`, `ecma`, `myba`, `mybb`, `imaca`, `imacb`, `claw`, `bula`, `bulb`, `fma`, `fmb`, `ivm`, `inse`, `insep`, `ivpm`) VALUES
 ('SD980350 ', 0, 91, 92, 95, 95, 99, 100, 62, 64, 87, 89, 85, 91, 68, 93, 82, 90, 96, 78, 81, 83, 87, 76, 77),
@@ -1505,8 +1355,6 @@ INSERT INTO `fi09` (`sid`, `loam`, `pjm`, `ines`, `cala`, `calb`, `sta`, `stb`, 
 ('SD980401 ', 0, 70, 70, 81, 39, 69, 34, 61, 60, 61, 60, 67, 72, 81, 76, 65, 70, 80, 60, 60, 69, 72, 61, 54),
 ('SD980402 ', 1, 71, 77, 83, 73, 77, 64, 74, 72, 85, 78, 88, 85, 90, 94, 66, 90, 82, 70, 75, 74, 73, 70, 69),
 ('SD980403 ', 1, 76, 81, 11, 21, 37, 33, 60, 39, 76, 70, 61, 77, 65, 76, 69, 87, 88, 60, 64, 68, 76, 69, 69),
-('SD980406 ', 0, 80, 90, 0, 0, 93, 94, 0, 0, 87, 84, 78, 88, 91, 93, 90, 87, 85, 77, 78, 79, 84, 83, 81),
-('SD980408 ', 0, 75, 89, 0, 0, 0, 60, 0, 0, 60, 60, 88, 84, 60, 77, 78, 83, 85, 70, 60, 68, 79, 89, 73),
 ('SD980410 ', 0, 96, 95, 91, 97, 98, 100, 64, 62, 89, 84, 77, 75, 90, 100, 83, 85, 85, 71, 100, 90, 85, 85, 96),
 ('SD980412 ', 0, 97, 93, 71, 66, 91, 90, 64, 75, 88, 83, 76, 79, 81, 84, 79, 94, 90, 70, 75, 93, 85, 87, 91),
 ('SD980413 ', 1, 93, 88, 38, 35, 66, 66, 60, 60, 76, 68, 73, 66, 90, 75, 82, 87, 82, 60, 60, 81, 81, 75, 83),
@@ -1553,45 +1401,16 @@ INSERT INTO `fi09` (`sid`, `loam`, `pjm`, `ines`, `cala`, `calb`, `sta`, `stb`, 
 ('SD980457 ', 1, 88, 66, 81, 73, 80, 49, 75, 63, 86, 66, 79, 80, 93, 94, 81, 72, 83, 60, 36, 68, 73, 77, 60),
 ('SD980458 ', 0, 100, 69, 60, 60, 70, 65, 78, 76, 78, 70, 86, 86, 84, 89, 84, 96, 83, 60, 73, 84, 88, 93, 79),
 ('SD980459 ', 1, 80, 83, 95, 77, 72, 73, 66, 68, 77, 79, 80, 85, 85, 82, 70, 75, 69, 60, 60, 67, 77, 78, 82),
-('SD980460 ', 1, 74, 60, 63, 25, 0, 0, 60, 38, 63, 47, 75, 65, 10, 60, 63, 78, 59, 24, 27, 52, 76, 65, 60),
-('SD980462 ', 1, 77, 79, 0, 0, 62, 66, 0, 0, 74, 76, 81, 72, 86, 91, 60, 75, 63, 60, 60, 54, 73, 72, 67);
+('SD980460 ', 1, 74, 60, 63, 25, 0, 0, 60, 38, 63, 47, 75, 65, 10, 60, 63, 78, 59, 24, 27, 52, 76, 65, 60);
 
-CREATE TABLE IF NOT EXISTS `fi09df` (
-  `maj` varchar(2) DEFAULT NULL,
-  `year` int(4) DEFAULT NULL,
-  `subj` varchar(5) DEFAULT NULL,
-  `sdas` varchar(2) DEFAULT NULL,
-  `grade` int(1) DEFAULT NULL,
-  `subd` varchar(24) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- --------------------------------------------------------
 
-INSERT INTO `fi09df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
-('FI', 2009, 'pjm', 'MM', 3, '專案管理'),
-('FI', 2009, 'ines', 'GE', 3, '創新與創業'),
-('FI', 2009, 'cala', 'MA', 1, '微積分（一）'),
-('FI', 2009, 'calb', 'MA', 1, '微積分（二）'),
-('FI', 2009, 'sta', 'MA', 2, '統計學（一）'),
-('FI', 2009, 'stb', 'MA', 2, '統計學（二）'),
-('FI', 2009, 'eca', 'MM', 1, '經濟學（一）'),
-('FI', 2009, 'ecb', 'MM', 1, '經濟學（二）'),
-('FI', 2009, 'ecmi', 'MM', 2, '個體經濟學'),
-('FI', 2009, 'ecma', 'MM', 2, '總體經濟學'),
-('FI', 2009, 'myba', 'PA', 2, '貨幣銀行學（一）'),
-('FI', 2009, 'mybb', 'PA', 2, '貨幣銀行學（二）'),
-('FI', 2009, 'imaca', 'PA', 1, '中級會計學（一）'),
-('FI', 2009, 'imacb', 'PA', 1, '中級會計學（二）'),
-('FI', 2009, 'claw', 'PA', 1, '民法概要'),
-('FI', 2009, 'bula', 'PA', 2, '商事法（一）'),
-('FI', 2009, 'bulb', 'PA', 2, '商事法（二）'),
-('FI', 2009, 'fma', 'MM', 2, '財務管理（一）'),
-('FI', 2009, 'fmb', 'MM', 2, '財務管理（二）'),
-('FI', 2009, 'ivm', 'PA', 3, '投資學'),
-('FI', 2009, 'inse', 'PA', 3, '保險學'),
-('FI', 2009, 'insep', 'PA', 3, '保險實務'),
-('FI', 2009, 'ivpm', 'MM', 3, '投資組合管理');
+--
+-- 資料表結構 `fi10`
+--
 
 CREATE TABLE IF NOT EXISTS `fi10` (
-  `sid` varchar(9) DEFAULT NULL,
+  `sid` varchar(9) NOT NULL DEFAULT '',
   `loam` int(1) DEFAULT NULL,
   `pjm` int(2) DEFAULT NULL,
   `ines` int(2) DEFAULT NULL,
@@ -1615,11 +1434,15 @@ CREATE TABLE IF NOT EXISTS `fi10` (
   `ivm` int(2) DEFAULT NULL,
   `inse` int(2) DEFAULT NULL,
   `insep` int(2) DEFAULT NULL,
-  `ivpm` int(2) DEFAULT NULL
+  `ivpm` int(2) DEFAULT NULL,
+  PRIMARY KEY (`sid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- 資料表的匯出資料 `fi10`
+--
+
 INSERT INTO `fi10` (`sid`, `loam`, `pjm`, `ines`, `cala`, `calb`, `sta`, `stb`, `ec`, `ecmi`, `ecma`, `apec`, `myba`, `mybb`, `imaca`, `imacb`, `claw`, `bula`, `bulb`, `fma`, `fmb`, `ivm`, `inse`, `insep`, `ivpm`) VALUES
-('SD990341 ', 0, 78, 86, 94, 96, 83, 79, 83, 71, 77, 89, 61, 65, 0, 71, 0, 69, 82, 78, 86, 91, 69, 65, 79),
 ('SD990348 ', 0, 87, 87, 77, 79, 96, 89, 79, 76, 84, 68, 85, 67, 87, 94, 85, 88, 92, 83, 100, 98, 88, 86, 97),
 ('SD990349 ', 1, 77, 79, 85, 75, 60, 60, 88, 76, 78, 70, 71, 84, 83, 88, 84, 72, 94, 65, 80, 77, 81, 62, 60),
 ('SD990350 ', 1, 62, 85, 72, 62, 69, 66, 84, 71, 60, 81, 80, 73, 72, 73, 83, 72, 92, 71, 90, 77, 79, 76, 82),
@@ -1664,8 +1487,6 @@ INSERT INTO `fi10` (`sid`, `loam`, `pjm`, `ines`, `cala`, `calb`, `sta`, `stb`, 
 ('SD990393 ', 0, 78, 82, 67, 78, 72, 60, 81, 70, 68, 87, 75, 73, 78, 74, 88, 80, 70, 60, 66, 66, 70, 84, 71),
 ('SD990394 ', 1, 72, 81, 69, 60, 48, 0, 77, 49, 60, 62, 74, 71, 69, 78, 77, 80, 73, 60, 60, 70, 74, 77, 67),
 ('SD990395 ', 0, 81, 82, 77, 68, 75, 62, 73, 63, 72, 63, 74, 67, 73, 71, 73, 75, 90, 68, 70, 75, 72, 66, 70),
-('SD990397 ', 0, 75, 83, 0, 0, 85, 76, 0, 81, 80, 0, 66, 81, 70, 74, 77, 70, 88, 85, 88, 86, 0, 62, 81),
-('SD990398 ', 0, 81, 89, 0, 0, 90, 86, 0, 62, 79, 75, 77, 63, 0, 69, 97, 75, 97, 77, 90, 92, 75, 77, 90),
 ('SD990401 ', 1, 73, 80, 82, 81, 80, 70, 90, 71, 61, 86, 67, 69, 80, 78, 76, 79, 94, 62, 61, 76, 68, 76, 74),
 ('SD990402 ', 0, 87, 88, 70, 90, 84, 90, 93, 88, 85, 84, 81, 75, 89, 86, 89, 90, 97, 82, 86, 92, 84, 73, 95),
 ('SD990403 ', 0, 82, 78, 67, 72, 68, 86, 71, 72, 66, 72, 78, 67, 93, 93, 80, 77, 94, 60, 77, 79, 84, 66, 76),
@@ -1717,46 +1538,16 @@ INSERT INTO `fi10` (`sid`, `loam`, `pjm`, `ines`, `cala`, `calb`, `sta`, `stb`, 
 ('SD990451 ', 0, 69, 85, 70, 73, 30, 85, 60, 45, 61, 75, 65, 65, 63, 19, 60, 54, 83, 42, 48, 62, 75, 62, 60),
 ('SD990452 ', 0, 71, 77, 71, 60, 62, 60, 75, 71, 62, 60, 72, 82, 79, 74, 86, 76, 84, 62, 68, 71, 66, 70, 61),
 ('SD990453 ', 1, 78, 76, 18, 24, 60, 60, 72, 71, 60, 66, 69, 60, 67, 68, 74, 64, 73, 60, 63, 74, 80, 60, 72),
-('SD990454 ', 0, 65, 60, 70, 70, 60, 30, 61, 40, 60, 61, 62, 62, 76, 63, 65, 50, 70, 60, 60, 40, 60, 60, 46),
-('SD990455 ', 0, 70, 88, 0, 0, 60, 41, 0, 65, 64, 87, 84, 79, 0, 0, 79, 65, 90, 63, 60, 67, 71, 72, 65),
-('SD991015 ', 0, 75, 81, 0, 0, 77, 0, 0, 60, 67, 92, 73, 71, 71, 64, 74, 80, 77, 60, 68, 66, 67, 75, 71);
+('SD990454 ', 0, 65, 60, 70, 70, 60, 30, 61, 40, 60, 61, 62, 62, 76, 63, 65, 50, 70, 60, 60, 40, 60, 60, 46);
 
-CREATE TABLE IF NOT EXISTS `fi10df` (
-  `maj` varchar(2) DEFAULT NULL,
-  `year` int(4) DEFAULT NULL,
-  `subj` varchar(5) DEFAULT NULL,
-  `sdas` varchar(2) DEFAULT NULL,
-  `grade` int(1) DEFAULT NULL,
-  `subd` varchar(24) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- --------------------------------------------------------
 
-INSERT INTO `fi10df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
-('FI', 2010, 'pjm', 'MM', 3, '專案管理'),
-('FI', 2010, 'ines', 'GE', 3, '創新與創業'),
-('FI', 2010, 'cala', 'MA', 1, '微積分（一）'),
-('FI', 2010, 'calb', 'MA', 1, '微積分（二）'),
-('FI', 2010, 'sta', 'MA', 2, '統計學（一）'),
-('FI', 2010, 'stb', 'MA', 2, '統計學（二）'),
-('FI', 2010, 'ec', 'MM', 1, '經濟學原理'),
-('FI', 2010, 'ecmi', 'MM', 2, '個體經濟學'),
-('FI', 2010, 'ecma', 'MM', 2, '總體經濟學'),
-('FI', 2010, 'apec', 'MM', 1, '應用經濟學'),
-('FI', 2010, 'myba', 'PA', 2, '貨幣銀行學（一）'),
-('FI', 2010, 'mybb', 'PA', 2, '貨幣銀行學（二）'),
-('FI', 2010, 'imaca', 'PA', 1, '中級會計學（一）'),
-('FI', 2010, 'imacb', 'PA', 1, '中級會計學（二）'),
-('FI', 2010, 'claw', 'PA', 1, '民法概要'),
-('FI', 2010, 'bula', 'PA', 2, '商事法（一）'),
-('FI', 2010, 'bulb', 'PA', 2, '商事法（二）'),
-('FI', 2010, 'fma', 'MM', 2, '財務管理（一）'),
-('FI', 2010, 'fmb', 'MM', 2, '財務管理（二）'),
-('FI', 2010, 'ivm', 'PA', 3, '投資學'),
-('FI', 2010, 'inse', 'PA', 3, '保險學'),
-('FI', 2010, 'insep', 'PA', 3, '保險實務'),
-('FI', 2010, 'ivpm', 'MM', 3, '投資組合管理');
+--
+-- 資料表結構 `fi11`
+--
 
 CREATE TABLE IF NOT EXISTS `fi11` (
-  `sid` varchar(9) DEFAULT NULL,
+  `sid` varchar(9) NOT NULL DEFAULT '',
   `loam` int(1) DEFAULT NULL,
   `ines` int(2) DEFAULT NULL,
   `care` int(2) DEFAULT NULL,
@@ -1778,8 +1569,13 @@ CREATE TABLE IF NOT EXISTS `fi11` (
   `ivm` int(2) DEFAULT NULL,
   `inse` int(2) DEFAULT NULL,
   `fuop` int(2) DEFAULT NULL,
-  `mfin` int(2) DEFAULT NULL
+  `mfin` int(2) DEFAULT NULL,
+  PRIMARY KEY (`sid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 資料表的匯出資料 `fi11`
+--
 
 INSERT INTO `fi11` (`sid`, `loam`, `ines`, `care`, `cala`, `calb`, `ec`, `sta`, `stb`, `apec`, `myba`, `mybb`, `imaca`, `imacb`, `fsta`, `claw`, `bul`, `fma`, `fmb`, `ivm`, `inse`, `fuop`, `mfin`) VALUES
 ('SD1000317', 0, 85, 92, 91, 93, 81, 71, 86, 85, 65, 70, 60, 77, 77, 78, 0, 82, 71, 76, 79, 82, 84),
@@ -1896,44 +1692,17 @@ INSERT INTO `fi11` (`sid`, `loam`, `ines`, `care`, `cala`, `calb`, `ec`, `sta`, 
 ('SD1000498', 0, 79, 90, 75, 83, 83, 83, 86, 94, 77, 89, 72, 75, 72, 93, 91, 89, 77, 80, 67, 79, 89),
 ('SD1000499', 0, 83, 93, 65, 60, 80, 60, 61, 81, 74, 71, 66, 63, 70, 67, 72, 60, 60, 71, 68, 65, 85),
 ('SD1000500', 0, 92, 93, 99, 92, 86, 90, 96, 91, 96, 90, 87, 83, 89, 94, 96, 99, 95, 85, 87, 90, 96),
-('SD1000684', 0, 79, 91, 68, 60, 79, 60, 70, 89, 80, 73, 0, 65, 64, 81, 97, 70, 89, 81, 79, 79, 96),
 ('SD1000737', 0, 66, 88, 83, 60, 88, 60, 60, 87, 71, 63, 66, 60, 63, 70, 60, 60, 60, 67, 76, 65, 86),
 ('SD1000798', 0, 81, 87, 60, 60, 79, 0, 30, 76, 83, 72, 60, 47, 67, 82, 0, 94, 60, 51, 79, 64, 82);
 
-CREATE TABLE IF NOT EXISTS `fi11df` (
-  `maj` varchar(2) DEFAULT NULL,
-  `year` int(4) DEFAULT NULL,
-  `subj` varchar(5) DEFAULT NULL,
-  `sdas` varchar(2) DEFAULT NULL,
-  `grade` int(1) DEFAULT NULL,
-  `subd` varchar(24) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- --------------------------------------------------------
 
-INSERT INTO `fi11df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
-('FI', 2011, 'ines', 'GE', 3, '創新與創業'),
-('FI', 2011, 'care', 'GE', 3, '職涯分析與規劃'),
-('FI', 2011, 'cala', 'MA', 1, '商用微積分(一)'),
-('FI', 2011, 'calb', 'MA', 1, '商用微積分(二)'),
-('FI', 2011, 'ec', 'MM', 1, '經濟學原理與實務'),
-('FI', 2011, 'sta', 'MA', 2, '應用統計學(一)'),
-('FI', 2011, 'stb', 'MA', 2, '應用統計學(二)'),
-('FI', 2011, 'apec', 'MM', 1, '應用經濟學'),
-('FI', 2011, 'myba', 'PA', 2, '貨幣銀行學（一）'),
-('FI', 2011, 'mybb', 'PA', 2, '貨幣銀行學（二）'),
-('FI', 2011, 'imaca', 'PA', 1, '中級會計學（一）'),
-('FI', 2011, 'imacb', 'PA', 1, '中級會計學（二）'),
-('FI', 2011, 'fsta', 'PA', 3, '財務報表分析'),
-('FI', 2011, 'claw', 'PA', 1, '民法概要'),
-('FI', 2011, 'bul', 'PA', 2, '商事法'),
-('FI', 2011, 'fma', 'MM', 2, '財務管理（一）'),
-('FI', 2011, 'fmb', 'MM', 2, '財務管理（二）'),
-('FI', 2011, 'ivm', 'PA', 3, '投資學'),
-('FI', 2011, 'inse', 'PA', 2, '保險學'),
-('FI', 2011, 'fuop', 'PA', 3, '期貨與選擇權'),
-('FI', 2011, 'mfin', 'PA', 3, '金融業行銷');
+--
+-- 資料表結構 `fi12`
+--
 
 CREATE TABLE IF NOT EXISTS `fi12` (
-  `sid` varchar(9) DEFAULT NULL,
+  `sid` varchar(9) NOT NULL DEFAULT '',
   `loam` int(1) DEFAULT NULL,
   `ines` int(2) DEFAULT NULL,
   `care` int(2) DEFAULT NULL,
@@ -1955,11 +1724,15 @@ CREATE TABLE IF NOT EXISTS `fi12` (
   `ivm` int(2) DEFAULT NULL,
   `inse` int(2) DEFAULT NULL,
   `fuop` int(2) DEFAULT NULL,
-  `mfin` int(2) DEFAULT NULL
+  `mfin` int(2) DEFAULT NULL,
+  PRIMARY KEY (`sid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- 資料表的匯出資料 `fi12`
+--
+
 INSERT INTO `fi12` (`sid`, `loam`, `ines`, `care`, `cala`, `calb`, `ec`, `sta`, `stb`, `apec`, `myba`, `mybb`, `imaca`, `imacb`, `fsta`, `claw`, `bul`, `fma`, `fmb`, `ivm`, `inse`, `fuop`, `mfin`) VALUES
-('SD1010687', 0, 25, 80, 0, 0, 61, 9, 12, 0, 63, 86, 0, 61, 66, 60, 71, 47, 61, 64, 72, 74, 81),
 ('SD1010857', 0, 90, 91, 97, 95, 75, 92, 99, 80, 84, 83, 83, 91, 93, 96, 89, 100, 92, 94, 87, 96, 94),
 ('SD1010858', 1, 80, 87, 83, 76, 71, 86, 88, 60, 83, 80, 60, 45, 79, 60, 69, 78, 73, 83, 74, 92, 90),
 ('SD1010859', 1, 76, 87, 93, 72, 66, 81, 0, 64, 88, 82, 46, 11, 75, 64, 74, 76, 71, 67, 72, 81, 89),
@@ -2011,8 +1784,6 @@ INSERT INTO `fi12` (`sid`, `loam`, `ines`, `care`, `cala`, `calb`, `ec`, `sta`, 
 ('SD1010908', 0, 90, 89, 68, 71, 82, 89, 91, 78, 84, 91, 84, 94, 88, 71, 87, 95, 91, 90, 82, 95, 90),
 ('SD1010909', 1, 85, 91, 67, 60, 71, 76, 62, 62, 81, 81, 63, 73, 77, 60, 78, 70, 71, 75, 76, 85, 84),
 ('SD1010911', 0, 88, 84, 82, 64, 65, 60, 19, 60, 66, 79, 60, 30, 67, 79, 86, 69, 70, 72, 80, 73, 93),
-('SD1010924', 0, 94, 87, 60, 60, 0, 71, 78, 0, 77, 79, 81, 88, 79, 77, 76, 77, 79, 76, 73, 85, 88),
-('SD1010925', 0, 76, 84, 0, 0, 0, 43, 60, 0, 77, 76, 0, 60, 67, 73, 72, 60, 67, 60, 73, 77, 89),
 ('SD1010927', 0, 76, 0, 72, 71, 70, 63, 60, 78, 93, 86, 62, 29, 43, 70, 72, 62, 51, 54, 73, 0, 0),
 ('SD1010929', 0, 80, 87, 64, 60, 76, 71, 70, 81, 78, 82, 70, 65, 67, 72, 87, 75, 65, 65, 73, 84, 81),
 ('SD1010930', 0, 83, 82, 60, 86, 73, 69, 86, 83, 76, 75, 60, 72, 89, 82, 76, 68, 78, 78, 78, 92, 90),
@@ -2066,43 +1837,16 @@ INSERT INTO `fi12` (`sid`, `loam`, `ines`, `care`, `cala`, `calb`, `ec`, `sta`, 
 ('SD1010981', 1, 84, 86, 61, 67, 85, 60, 60, 80, 76, 75, 72, 60, 64, 64, 60, 68, 71, 71, 74, 81, 83),
 ('SD1010982', 1, 85, 87, 63, 60, 76, 49, 60, 83, 83, 74, 60, 60, 74, 73, 81, 43, 70, 73, 73, 87, 90),
 ('SD1010983', 0, 72, 85, 94, 98, 73, 88, 95, 87, 82, 78, 76, 82, 91, 91, 80, 99, 86, 76, 74, 88, 88),
-('SD1010998', 0, 80, 89, 0, 0, 0, 60, 76, 0, 88, 83, 60, 70, 66, 84, 81, 60, 82, 67, 0, 85, 90),
 ('SD1011156', 0, 74, 0, 81, 73, 72, 60, 40, 0, 50, 60, 63, 0, 0, 86, 79, 64, 66, 60, 69, 0, 60);
 
-CREATE TABLE IF NOT EXISTS `fi12df` (
-  `maj` varchar(2) DEFAULT NULL,
-  `year` int(4) DEFAULT NULL,
-  `subj` varchar(5) DEFAULT NULL,
-  `sdas` varchar(2) DEFAULT NULL,
-  `grade` int(1) DEFAULT NULL,
-  `subd` varchar(24) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- --------------------------------------------------------
 
-INSERT INTO `fi12df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
-('FI', 2012, 'ines', 'GE', 3, '創新與創業'),
-('FI', 2012, 'care', 'GE', 3, '職涯分析與規劃'),
-('FI', 2012, 'cala', 'MA', 1, '商用微積分(一)'),
-('FI', 2012, 'calb', 'MA', 1, '商用微積分(二)'),
-('FI', 2012, 'ec', 'MM', 1, '經濟學原理與實務'),
-('FI', 2012, 'sta', 'MA', 2, '應用統計學（一）'),
-('FI', 2012, 'stb', 'MA', 2, '應用統計學（二）'),
-('FI', 2012, 'apec', 'MM', 1, '應用經濟學'),
-('FI', 2012, 'myba', 'PA', 2, '貨幣銀行學（一）'),
-('FI', 2012, 'mybb', 'PA', 2, '貨幣銀行學（二）'),
-('FI', 2012, 'imaca', 'PA', 1, '中級會計學（一）'),
-('FI', 2012, 'imacb', 'PA', 1, '中級會計學（二）'),
-('FI', 2012, 'fsta', 'PA', 3, '財務報表分析'),
-('FI', 2012, 'claw', 'PA', 1, '民法概要'),
-('FI', 2012, 'bul', 'PA', 1, '商事法'),
-('FI', 2012, 'fma', 'MM', 2, '財務管理（一）'),
-('FI', 2012, 'fmb', 'MM', 2, '財務管理（二）'),
-('FI', 2012, 'ivm', 'PA', 3, '投資學'),
-('FI', 2012, 'inse', 'PA', 2, '保險學'),
-('FI', 2012, 'fuop', 'PA', 3, '期貨與選擇權'),
-('FI', 2012, 'mfin', 'PA', 3, '金融業行銷');
+--
+-- 資料表結構 `fi13`
+--
 
 CREATE TABLE IF NOT EXISTS `fi13` (
-  `sid` varchar(9) DEFAULT NULL,
+  `sid` varchar(9) NOT NULL DEFAULT '',
   `loam` int(1) DEFAULT NULL,
   `ines` int(2) DEFAULT NULL,
   `cala` int(2) DEFAULT NULL,
@@ -2123,8 +1867,13 @@ CREATE TABLE IF NOT EXISTS `fi13` (
   `fmb` int(2) DEFAULT NULL,
   `ivm` int(2) DEFAULT NULL,
   `inse` int(2) DEFAULT NULL,
-  `mfin` int(2) DEFAULT NULL
+  `mfin` int(2) DEFAULT NULL,
+  PRIMARY KEY (`sid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 資料表的匯出資料 `fi13`
+--
 
 INSERT INTO `fi13` (`sid`, `loam`, `ines`, `cala`, `calb`, `ec`, `pjm`, `pjmp`, `sta`, `stb`, `apec`, `myba`, `mybb`, `imaca`, `imacb`, `claw`, `bul`, `fma`, `fmb`, `ivm`, `inse`, `mfin`) VALUES
 ('SD1020767', 0, 78, 93, 90, 52, 84, 98, 48, 72, 60, 79, 75, 26, 0, 74, 82, 60, 62, 60, 72, 72),
@@ -2174,7 +1923,6 @@ INSERT INTO `fi13` (`sid`, `loam`, `ines`, `cala`, `calb`, `ec`, `pjm`, `pjmp`, 
 ('SD1020817', 0, 84, 46, 26, 60, 81, 100, 47, 20, 42, 62, 73, 22, 62, 74, 83, 60, 60, 64, 72, 76),
 ('SD1020818', 1, 84, 60, 61, 71, 83, 100, 71, 75, 52, 75, 85, 62, 60, 72, 82, 60, 61, 62, 73, 67),
 ('SD1020819', 0, 69, 75, 60, 47, 76, 100, 10, 5, 41, 50, 75, 7, 0, 73, 82, 35, 41, 52, 60, 76),
-('SD1020834', 0, 95, 99, 93, 94, 91, 100, 96, 86, 92, 85, 86, 0, 0, 81, 85, 82, 76, 92, 95, 83),
 ('SD1020835', 0, 90, 98, 90, 81, 86, 100, 64, 78, 74, 86, 93, 71, 0, 82, 85, 74, 82, 86, 81, 84),
 ('SD1020838', 1, 86, 75, 72, 67, 84, 90, 19, 60, 85, 76, 80, 69, 72, 63, 84, 60, 29, 68, 66, 70),
 ('SD1020839', 1, 86, 69, 0, 61, 0, 0, 65, 78, 61, 78, 68, 84, 0, 60, 0, 78, 80, 88, 71, 92),
@@ -2227,43 +1975,16 @@ INSERT INTO `fi13` (`sid`, `loam`, `ines`, `cala`, `calb`, `ec`, `pjm`, `pjmp`, 
 ('SD1020888', 1, 76, 70, 60, 84, 64, 76, 60, 60, 74, 75, 61, 60, 63, 55, 81, 64, 60, 82, 68, 69),
 ('SD1020889', 1, 75, 60, 60, 83, 68, 70, 47, 64, 70, 70, 70, 60, 18, 79, 81, 46, 45, 68, 63, 65),
 ('SD1020890', 0, 88, 65, 70, 76, 75, 89, 63, 86, 79, 62, 69, 60, 61, 83, 81, 67, 80, 76, 65, 87),
-('SD1020891', 0, 75, 99, 79, 77, 60, 74, 77, 60, 86, 60, 66, 79, 80, 73, 81, 60, 48, 77, 54, 76),
-('SD1020906', 0, 81, 0, 0, 67, 61, 71, 60, 67, 0, 60, 72, 60, 60, 0, 0, 48, 42, 86, 68, 77);
+('SD1020891', 0, 75, 99, 79, 77, 60, 74, 77, 60, 86, 60, 66, 79, 80, 73, 81, 60, 48, 77, 54, 76);
 
-CREATE TABLE IF NOT EXISTS `fi13df` (
-  `maj` varchar(2) DEFAULT NULL,
-  `year` int(4) DEFAULT NULL,
-  `subj` varchar(5) DEFAULT NULL,
-  `sdas` varchar(2) DEFAULT NULL,
-  `grade` int(1) DEFAULT NULL,
-  `subd` varchar(24) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- --------------------------------------------------------
 
-INSERT INTO `fi13df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
-('FI', 2013, 'ines', 'GE', 3, '創新與創業'),
-('FI', 2013, 'cala', 'MA', 1, '商用微積分(一)'),
-('FI', 2013, 'calb', 'MA', 1, '商用微積分(二)'),
-('FI', 2013, 'ec', 'MM', 1, '經濟學原理與實務'),
-('FI', 2013, 'pjm', 'MM', 2, '專案管理實務'),
-('FI', 2013, 'pjmp', 'MM', 2, '專案企劃實務'),
-('FI', 2013, 'sta', 'MA', 2, '應用統計學（一）'),
-('FI', 2013, 'stb', 'MA', 2, '應用統計學（二）'),
-('FI', 2013, 'apec', 'MM', 1, '應用經濟學'),
-('FI', 2013, 'myba', 'PA', 2, '貨幣銀行學（一）'),
-('FI', 2013, 'mybb', 'PA', 2, '貨幣銀行學（二）'),
-('FI', 2013, 'imaca', 'PA', 1, '中級會計學（一）'),
-('FI', 2013, 'imacb', 'PA', 1, '中級會計學（二）'),
-('FI', 2013, 'claw', 'PA', 1, '民法概要'),
-('FI', 2013, 'bul', 'PA', 1, '商事法'),
-('FI', 2013, 'fma', 'MM', 2, '財務管理（一）'),
-('FI', 2013, 'fmb', 'MM', 2, '財務管理（二）'),
-('FI', 2013, 'ivm', 'PA', 3, '投資學'),
-('FI', 2013, 'inse', 'PA', 2, '保險學'),
-('FI', 2013, 'fuop', 'PA', 3, '期貨與選擇權'),
-('FI', 2013, 'mfin', 'PA', 3, '金融業行銷');
+--
+-- 資料表結構 `fi14`
+--
 
 CREATE TABLE IF NOT EXISTS `fi14` (
-  `sid` varchar(9) DEFAULT NULL,
+  `sid` varchar(9) NOT NULL DEFAULT '',
   `loam` int(1) DEFAULT NULL,
   `cala` int(2) DEFAULT NULL,
   `ec` int(2) DEFAULT NULL,
@@ -2275,8 +1996,13 @@ CREATE TABLE IF NOT EXISTS `fi14` (
   `imacb` int(3) DEFAULT NULL,
   `claw` int(2) DEFAULT NULL,
   `bul` int(2) DEFAULT NULL,
-  `fma` int(2) DEFAULT NULL
+  `fma` int(2) DEFAULT NULL,
+  PRIMARY KEY (`sid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 資料表的匯出資料 `fi14`
+--
 
 INSERT INTO `fi14` (`sid`, `loam`, `cala`, `ec`, `pjm`, `sta`, `apec`, `myba`, `imaca`, `imacb`, `claw`, `bul`, `fma`) VALUES
 ('SD1030761', 0, 86, 71, 83, 77, 79, 67, 83, 73, 64, 69, 68),
@@ -2379,43 +2105,26 @@ INSERT INTO `fi14` (`sid`, `loam`, `cala`, `ec`, `pjm`, `sta`, `apec`, `myba`, `
 ('SD1030902', 0, 95, 89, 69, 60, 93, 76, 82, 0, 94, 92, 67),
 ('SD1030904', 1, 86, 84, 70, 66, 85, 80, 60, 0, 84, 81, 68);
 
-CREATE TABLE IF NOT EXISTS `fi14df` (
-  `maj` varchar(2) DEFAULT NULL,
-  `year` int(4) DEFAULT NULL,
-  `subj` varchar(5) DEFAULT NULL,
-  `sdas` varchar(2) DEFAULT NULL,
-  `grade` int(1) DEFAULT NULL,
-  `subd` varchar(24) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- --------------------------------------------------------
 
-INSERT INTO `fi14df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
-('FI', 2014, 'care', 'GE', 3, '職涯分析與規劃'),
-('FI', 2014, 'cala', 'MA', 1, '商用微積分(一)'),
-('FI', 2014, 'ec', 'MM', 1, '經濟學原理與實務'),
-('FI', 2014, 'pjm', 'MM', 2, '專案管理實務'),
-('FI', 2014, 'sta', 'MA', 2, '應用統計學（一）'),
-('FI', 2014, 'apec', 'MM', 1, '應用經濟學'),
-('FI', 2014, 'myba', 'PA', 2, '貨幣銀行學（一）'),
-('FI', 2014, 'imaca', 'PA', 1, '中級會計學（一）'),
-('FI', 2014, 'imacb', 'PA', 1, '中級會計學（二）'),
-('FI', 2014, 'fsta', 'PA', 2, '財務報表分析'),
-('FI', 2014, 'claw', 'PA', 1, '民法概要'),
-('FI', 2014, 'bul', 'PA', 1, '商事法'),
-('FI', 2014, 'fma', 'MM', 2, '財務管理（一）'),
-('FI', 2014, 'ivm', 'PA', 3, '投資學'),
-('FI', 2014, 'inse', 'PA', 2, '保險學'),
-('FI', 2014, 'fuop', 'PA', 3, '期貨與選擇權'),
-('FI', 2014, 'mfin', 'PA', 3, '金融業行銷');
+--
+-- 資料表結構 `fi15`
+--
 
 CREATE TABLE IF NOT EXISTS `fi15` (
-  `sid` varchar(9) DEFAULT NULL,
+  `sid` varchar(9) NOT NULL DEFAULT '',
   `loam` int(1) DEFAULT NULL,
   `cala` int(2) DEFAULT NULL,
   `ec` int(2) DEFAULT NULL,
   `care` int(2) DEFAULT NULL,
   `imaca` int(3) DEFAULT NULL,
-  `claw` int(2) DEFAULT NULL
+  `claw` int(2) DEFAULT NULL,
+  PRIMARY KEY (`sid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 資料表的匯出資料 `fi15`
+--
 
 INSERT INTO `fi15` (`sid`, `loam`, `cala`, `ec`, `care`, `imaca`, `claw`) VALUES
 ('SD1040712', 0, 96, 75, 88, 87, 78),
@@ -2519,25 +2228,14 @@ INSERT INTO `fi15` (`sid`, `loam`, `cala`, `ec`, `care`, `imaca`, `claw`) VALUES
 ('SD1040829', 0, 89, 85, 88, 86, 60),
 ('SD1040830', 0, 97, 86, 88, 100, 75);
 
-CREATE TABLE IF NOT EXISTS `fi15df` (
-  `maj` varchar(2) DEFAULT NULL,
-  `year` int(4) DEFAULT NULL,
-  `subj` varchar(5) DEFAULT NULL,
-  `sdas` varchar(2) DEFAULT NULL,
-  `grade` int(1) DEFAULT NULL,
-  `subd` varchar(24) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- --------------------------------------------------------
 
-INSERT INTO `fi15df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
-('FI', 2015, 'cala', 'MA', 1, '商用微積分(一)'),
-('FI', 2015, 'ec', 'MM', 1, '經濟學原理與實務'),
-('FI', 2015, 'care', 'GE', 1, '興趣與職涯探索'),
-('FI', 2015, 'imaca', 'PA', 1, '中級會計學（一）'),
-('FI', 2015, 'claw', 'PA', 1, '民法概要'),
-('FI', 2015, 'ivm', 'PA', 3, '投資學');
+--
+-- 資料表結構 `ib08`
+--
 
 CREATE TABLE IF NOT EXISTS `ib08` (
-  `sid` varchar(9) DEFAULT NULL,
+  `sid` varchar(9) NOT NULL DEFAULT '',
   `loam` int(1) DEFAULT NULL,
   `itdc` int(2) DEFAULT NULL,
   `mana` int(2) DEFAULT NULL,
@@ -2565,8 +2263,13 @@ CREATE TABLE IF NOT EXISTS `ib08` (
   `aca` int(2) DEFAULT NULL,
   `acb` int(2) DEFAULT NULL,
   `fm` int(2) DEFAULT NULL,
-  `itmfi` int(2) DEFAULT NULL
+  `itmfi` int(2) DEFAULT NULL,
+  PRIMARY KEY (`sid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 資料表的匯出資料 `ib08`
+--
 
 INSERT INTO `ib08` (`sid`, `loam`, `itdc`, `mana`, `eci`, `buetc`, `eitba`, `eitbb`, `ebcmm`, `eca`, `ecb`, `ecmi`, `ecma`, `cala`, `calb`, `sta`, `stb`, `apeci`, `mm`, `gmktm`, `itbsm`, `claw`, `prittd`, `mbinf`, `itmtr`, `aca`, `acb`, `fm`, `itmfi`) VALUES
 ('SD970219 ', 0, 95, 94, 85, 87, 85, 85, 86, 64, 60, 74, 95, 98, 99, 87, 90, 91, 93, 92, 84, 81, 81, 91, 87, 60, 65, 73, 94),
@@ -2672,46 +2375,14 @@ INSERT INTO `ib08` (`sid`, `loam`, `itdc`, `mana`, `eci`, `buetc`, `eitba`, `eit
 ('SD970330 ', 1, 84, 87, 76, 85, 63, 60, 78, 68, 60, 66, 60, 95, 90, 60, 60, 86, 60, 60, 63, 75, 75, 62, 71, 69, 60, 60, 70),
 ('SD970331 ', 0, 74, 86, 74, 86, 65, 73, 77, 60, 60, 78, 60, 94, 85, 80, 66, 77, 72, 75, 82, 71, 80, 61, 78, 60, 61, 68, 74);
 
-CREATE TABLE IF NOT EXISTS `ib08df` (
-  `maj` varchar(2) DEFAULT NULL,
-  `year` int(4) DEFAULT NULL,
-  `subj` varchar(6) DEFAULT NULL,
-  `sdas` varchar(2) DEFAULT NULL,
-  `grade` int(1) DEFAULT NULL,
-  `subd` varchar(27) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- --------------------------------------------------------
 
-INSERT INTO `ib08df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
-('IB', 2008, 'itdc', 'PA', 1, '計算機概論'),
-('IB', 2008, 'mana', 'MM', 1, '管理學'),
-('IB', 2008, 'eci', 'PA', 2, '電子商務概論'),
-('IB', 2008, 'buetc', 'GE', 4, '企業倫理'),
-('IB', 2008, 'eitba', 'PA', 3, '國際商務英文（一）'),
-('IB', 2008, 'eitbb', 'PA', 3, '國際商務英文（二）'),
-('IB', 2008, 'ebcmm', 'PA', 4, '商務英語溝通'),
-('IB', 2008, 'eca', 'MM', 1, '經濟學（一）'),
-('IB', 2008, 'ecb', 'MM', 1, '經濟學（二）'),
-('IB', 2008, 'ecmi', 'MM', 2, '個體經濟學'),
-('IB', 2008, 'ecma', 'MM', 2, '總體經濟學'),
-('IB', 2008, 'cala', 'MA', 1, '商用微積分（一）'),
-('IB', 2008, 'calb', 'MA', 1, '商用微積分（二）'),
-('IB', 2008, 'sta', 'MA', 2, '統計學（一）'),
-('IB', 2008, 'stb', 'MA', 2, '統計學（二）'),
-('IB', 2008, 'apeci', 'PA', 2, '電子商務應用'),
-('IB', 2008, 'mm', 'MM', 2, '行銷管理'),
-('IB', 2008, 'gmktm', 'MM', 3, '全球行銷管理'),
-('IB', 2008, 'itbsm', 'MM', 3, '國際企業管理'),
-('IB', 2008, 'claw', 'PA', 1, '民法概要'),
-('IB', 2008, 'prittd', 'PA', 3, '國際貿易實務'),
-('IB', 2008, 'mbinf', 'MM', 3, '商務資訊管理'),
-('IB', 2008, 'itmtr', 'PA', 3, '國際貿易理論'),
-('IB', 2008, 'aca', 'MM', 1, '會計學（一）'),
-('IB', 2008, 'acb', 'MM', 1, '會計學（二）'),
-('IB', 2008, 'fm', 'MM', 2, '財務管理'),
-('IB', 2008, 'itmfi', 'PA', 3, '國際金融理論');
+--
+-- 資料表結構 `ib09`
+--
 
 CREATE TABLE IF NOT EXISTS `ib09` (
-  `sid` varchar(9) DEFAULT NULL,
+  `sid` varchar(9) NOT NULL DEFAULT '',
   `loam` int(1) DEFAULT NULL,
   `mm` int(2) DEFAULT NULL,
   `ma` int(2) DEFAULT NULL,
@@ -2734,8 +2405,13 @@ CREATE TABLE IF NOT EXISTS `ib09` (
   `mamt` int(2) DEFAULT NULL,
   `cal` int(2) DEFAULT NULL,
   `pjm` int(2) DEFAULT NULL,
-  `ines` int(2) DEFAULT NULL
+  `ines` int(2) DEFAULT NULL,
+  PRIMARY KEY (`sid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 資料表的匯出資料 `ib09`
+--
 
 INSERT INTO `ib09` (`sid`, `loam`, `mm`, `ma`, `fm`, `ac`, `eca`, `ecb`, `inap`, `eci`, `eebm`, `ima`, `mana`, `pom`, `hrm`, `esm`, `mads`, `sta`, `stb`, `erem`, `mamt`, `cal`, `pjm`, `ines`) VALUES
 ('SD980465 ', 1, 72, 68, 71, 68, 60, 71, 72, 85, 99, 94, 78, 82, 83, 66, 90, 67, 70, 80, 60, 68, 73, 79),
@@ -2780,7 +2456,6 @@ INSERT INTO `ib09` (`sid`, `loam`, `mm`, `ma`, `fm`, `ac`, `eca`, `ecb`, `inap`,
 ('SD980508 ', 0, 66, 44, 76, 94, 52, 75, 79, 83, 61, 89, 80, 79, 76, 50, 88, 64, 67, 75, 81, 68, 75, 77),
 ('SD980509 ', 0, 70, 54, 63, 65, 74, 76, 81, 80, 61, 88, 78, 75, 74, 48, 88, 53, 50, 74, 74, 62, 70, 80),
 ('SD980510 ', 0, 89, 78, 80, 99, 85, 91, 93, 98, 99, 99, 94, 91, 83, 72, 90, 87, 91, 82, 88, 67, 82, 83),
-('SD980511 ', 0, 89, 91, 88, 93, 0, 0, 92, 71, 85, 99, 92, 99, 90, 95, 90, 0, 0, 87, 0, 0, 84, 90),
 ('SD980512 ', 0, 62, 64, 60, 78, 74, 88, 84, 83, 64, 60, 75, 85, 75, 50, 88, 61, 65, 76, 72, 80, 72, 80),
 ('SD980513 ', 0, 63, 80, 63, 99, 70, 91, 90, 94, 93, 93, 89, 87, 79, 64, 90, 88, 77, 80, 82, 75, 72, 86),
 ('SD980514 ', 1, 70, 67, 70, 95, 76, 83, 85, 89, 71, 91, 95, 83, 75, 60, 85, 70, 50, 80, 75, 73, 70, 79),
@@ -2820,7 +2495,6 @@ INSERT INTO `ib09` (`sid`, `loam`, `mm`, `ma`, `fm`, `ac`, `eca`, `ecb`, `inap`,
 ('SD980562 ', 1, 65, 64, 72, 68, 69, 69, 87, 88, 86, 99, 87, 90, 88, 64, 85, 82, 70, 78, 75, 80, 58, 79),
 ('SD980563 ', 1, 69, 73, 70, 76, 39, 76, 80, 85, 68, 85, 81, 87, 83, 74, 90, 63, 81, 78, 84, 65, 66, 86),
 ('SD980564 ', 1, 81, 87, 65, 94, 60, 65, 87, 87, 87, 84, 77, 80, 60, 0, 95, 72, 63, 32, 86, 80, 39, 83),
-('SD980566 ', 1, 77, 79, 75, 85, 0, 0, 93, 95, 89, 99, 85, 91, 95, 76, 90, 0, 0, 78, 0, 0, 87, 94),
 ('SD980567 ', 0, 62, 72, 63, 60, 64, 65, 87, 86, 79, 95, 81, 79, 88, 68, 85, 60, 64, 80, 60, 70, 55, 80),
 ('SD980568 ', 0, 81, 65, 67, 70, 74, 65, 85, 88, 90, 99, 84, 85, 88, 69, 90, 75, 80, 82, 74, 72, 62, 90),
 ('SD980569 ', 0, 73, 74, 61, 60, 60, 56, 85, 77, 87, 91, 72, 78, 68, 68, 90, 52, 49, 78, 74, 73, 59, 90),
@@ -2834,41 +2508,14 @@ INSERT INTO `ib09` (`sid`, `loam`, `mm`, `ma`, `fm`, `ac`, `eca`, `ecb`, `inap`,
 ('SD980577 ', 0, 79, 70, 60, 87, 32, 72, 86, 87, 63, 85, 79, 77, 82, 61, 85, 80, 68, 82, 78, 77, 61, 83),
 ('SD980578 ', 0, 75, 67, 60, 60, 25, 41, 74, 81, 72, 72, 63, 66, 75, 66, 85, 40, 39, 69, 71, 60, 66, 80);
 
-CREATE TABLE IF NOT EXISTS `ib09df` (
-  `maj` varchar(2) DEFAULT NULL,
-  `year` int(4) DEFAULT NULL,
-  `subj` varchar(4) DEFAULT NULL,
-  `sdas` varchar(2) DEFAULT NULL,
-  `grade` int(1) DEFAULT NULL,
-  `subd` varchar(24) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- --------------------------------------------------------
 
-INSERT INTO `ib09df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
-('IB', 2009, 'mm', 'MM', 2, '行銷管理'),
-('IB', 2009, 'ma', 'MM', 2, '管理會計'),
-('IB', 2009, 'fm', 'MM', 2, '財務管理'),
-('IB', 2009, 'ac', 'MM', 1, '會計學'),
-('IB', 2009, 'eca', 'MM', 1, '經濟學（一）'),
-('IB', 2009, 'ecb', 'MM', 1, '經濟學（二）'),
-('IB', 2009, 'inap', 'PA', 2, '網際網路應用'),
-('IB', 2009, 'eci', 'PA', 2, '電子商務概論'),
-('IB', 2009, 'eebm', 'MM', 3, '電子企業經營管理'),
-('IB', 2009, 'ima', 'PA', 3, '資訊管理應用'),
-('IB', 2009, 'mana', 'MM', 1, '管理學'),
-('IB', 2009, 'pom', 'MM', 2, '生產與作業管理'),
-('IB', 2009, 'hrm', 'MM', 2, '人力資源管理'),
-('IB', 2009, 'esm', 'MM', 3, '企業策略管理'),
-('IB', 2009, 'mads', 'PA', 3, '管理文獻探討'),
-('IB', 2009, 'sta', 'MA', 2, '統計學（一）'),
-('IB', 2009, 'stb', 'MA', 2, '統計學（二）'),
-('IB', 2009, 'erem', 'PA', 3, '企業研究方法'),
-('IB', 2009, 'mamt', 'MA', 3, '管理數學'),
-('IB', 2009, 'cal', 'MA', 1, '微積分'),
-('IB', 2009, 'pjm', 'MM', 3, '專案管理'),
-('IB', 2009, 'ines', 'GE', 3, '創新與創業');
+--
+-- 資料表結構 `ib10`
+--
 
 CREATE TABLE IF NOT EXISTS `ib10` (
-  `sid` varchar(9) DEFAULT NULL,
+  `sid` varchar(9) NOT NULL DEFAULT '',
   `loam` int(1) DEFAULT NULL,
   `mm` int(2) DEFAULT NULL,
   `ma` int(2) DEFAULT NULL,
@@ -2891,8 +2538,13 @@ CREATE TABLE IF NOT EXISTS `ib10` (
   `calb` int(2) DEFAULT NULL,
   `sta` int(2) DEFAULT NULL,
   `stb` int(2) DEFAULT NULL,
-  `ec` int(2) DEFAULT NULL
+  `ec` int(2) DEFAULT NULL,
+  PRIMARY KEY (`sid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 資料表的匯出資料 `ib10`
+--
 
 INSERT INTO `ib10` (`sid`, `loam`, `mm`, `ma`, `fm`, `ac`, `apec`, `inap`, `eci`, `eebm`, `ima`, `mana`, `pom`, `hrm`, `esm`, `mads`, `erem`, `pjm`, `ines`, `cala`, `calb`, `sta`, `stb`, `ec`) VALUES
 ('SD990459 ', 0, 60, 77, 75, 81, 72, 75, 72, 78, 88, 84, 95, 85, 89, 85, 87, 96, 87, 75, 60, 71, 73, 69),
@@ -2989,41 +2641,14 @@ INSERT INTO `ib10` (`sid`, `loam`, `mm`, `ma`, `fm`, `ac`, `apec`, `inap`, `eci`
 ('SD990578 ', 1, 72, 71, 72, 85, 71, 79, 72, 87, 99, 86, 72, 81, 65, 92, 72, 65, 90, 70, 61, 50, 0, 85),
 ('SD990579 ', 0, 62, 77, 62, 70, 63, 77, 78, 65, 68, 88, 67, 77, 76, 88, 63, 61, 69, 44, 60, 47, 35, 71);
 
-CREATE TABLE IF NOT EXISTS `ib10df` (
-  `maj` varchar(2) DEFAULT NULL,
-  `year` int(4) DEFAULT NULL,
-  `subj` varchar(4) DEFAULT NULL,
-  `sdas` varchar(2) DEFAULT NULL,
-  `grade` int(1) DEFAULT NULL,
-  `subd` varchar(24) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- --------------------------------------------------------
 
-INSERT INTO `ib10df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
-('IB', 2010, 'mm', 'MM', 2, '行銷管理'),
-('IB', 2010, 'ma', 'MM', 2, '管理會計'),
-('IB', 2010, 'fm', 'MM', 2, '財務管理'),
-('IB', 2010, 'ac', 'MM', 1, '會計學'),
-('IB', 2010, 'apec', 'MM', 1, '應用經濟學'),
-('IB', 2010, 'inap', 'PA', 2, '網際網路應用'),
-('IB', 2010, 'eci', 'PA', 2, '電子商務概論'),
-('IB', 2010, 'eebm', 'MM', 3, '電子企業經營管理'),
-('IB', 2010, 'ima', 'PA', 3, '資訊管理應用'),
-('IB', 2010, 'mana', 'MM', 1, '管理學'),
-('IB', 2010, 'pom', 'MM', 2, '生產與作業管理'),
-('IB', 2010, 'hrm', 'MM', 2, '人力資源管理'),
-('IB', 2010, 'esm', 'MM', 3, '企業策略管理'),
-('IB', 2010, 'mads', 'PA', 3, '管理文獻探討'),
-('IB', 2010, 'erem', 'PA', 3, '企業研究方法'),
-('IB', 2010, 'pjm', 'MM', 3, '專案管理'),
-('IB', 2010, 'ines', 'GE', 3, '創新與創業'),
-('IB', 2010, 'cala', 'MA', 1, '微積分(一)'),
-('IB', 2010, 'calb', 'MA', 1, '微積分(二)'),
-('IB', 2010, 'sta', 'MA', 2, '統計學(一)'),
-('IB', 2010, 'stb', 'MA', 2, '統計學(二)'),
-('IB', 2010, 'ec', 'MM', 1, '經濟學原理');
+--
+-- 資料表結構 `ib11`
+--
 
 CREATE TABLE IF NOT EXISTS `ib11` (
-  `sid` varchar(9) DEFAULT NULL,
+  `sid` varchar(9) NOT NULL DEFAULT '',
   `loam` int(1) DEFAULT NULL,
   `mm` int(2) DEFAULT NULL,
   `fm` int(2) DEFAULT NULL,
@@ -3044,8 +2669,13 @@ CREATE TABLE IF NOT EXISTS `ib11` (
   `care` int(3) DEFAULT NULL,
   `cala` int(2) DEFAULT NULL,
   `calb` int(3) DEFAULT NULL,
-  `ec` int(2) DEFAULT NULL
+  `ec` int(2) DEFAULT NULL,
+  PRIMARY KEY (`sid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 資料表的匯出資料 `ib11`
+--
 
 INSERT INTO `ib11` (`sid`, `loam`, `mm`, `fm`, `ac`, `eebm`, `bswa`, `mwsm`, `mana`, `pom`, `hrm`, `esm`, `mads`, `adpjm`, `erem`, `sta`, `stb`, `ines`, `care`, `cala`, `calb`, `ec`) VALUES
 ('SD1000510', 0, 81, 28, 60, 79, 65, 38, 55, 63, 61, 70, 80, 83, 64, 34, 39, 70, 80, 60, 60, 68),
@@ -3157,43 +2787,16 @@ INSERT INTO `ib11` (`sid`, `loam`, `mm`, `fm`, `ac`, `eebm`, `bswa`, `mwsm`, `ma
 ('SD1000627', 0, 67, 71, 82, 99, 55, 70, 55, 65, 82, 73, 95, 95, 64, 67, 64, 92, 63, 74, 82, 50),
 ('SD1000628', 1, 65, 80, 92, 99, 84, 88, 66, 88, 84, 76, 90, 92, 75, 81, 82, 92, 88, 87, 86, 69),
 ('SD1000629', 1, 74, 66, 92, 99, 81, 84, 65, 74, 82, 73, 88, 92, 64, 76, 74, 82, 73, 74, 75, 79),
-('SD1000633', 0, 69, 60, 70, 61, 65, 85, 60, 60, 61, 66, 88, 88, 60, 60, 66, 69, 74, 66, 73, 60),
-('SD1000738', 0, 74, 70, 0, 61, 0, 0, 0, 0, 61, 77, 88, 86, 69, 0, 69, 87, 77, 67, 60, 85),
-('SD1000739', 0, 73, 63, 0, 0, 84, 0, 0, 0, 61, 72, 88, 88, 64, 0, 50, 88, 77, 60, 60, 80);
+('SD1000633', 0, 69, 60, 70, 61, 65, 85, 60, 60, 61, 66, 88, 88, 60, 60, 66, 69, 74, 66, 73, 60);
 
-CREATE TABLE IF NOT EXISTS `ib11df` (
-  `maj` varchar(2) DEFAULT NULL,
-  `year` int(4) DEFAULT NULL,
-  `subj` varchar(5) DEFAULT NULL,
-  `sdas` varchar(2) DEFAULT NULL,
-  `grade` int(1) DEFAULT NULL,
-  `subd` varchar(24) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- --------------------------------------------------------
 
-INSERT INTO `ib11df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
-('IB', 2011, 'mm', 'MM', 2, '行銷管理'),
-('IB', 2011, 'fm', 'MM', 2, '財務管理'),
-('IB', 2011, 'ac', 'MM', 1, '會計學'),
-('IB', 2011, 'eebm', 'MM', 3, '企業電子化管理'),
-('IB', 2011, 'bswa', 'PA', 1, '商用軟體應用'),
-('IB', 2011, 'mwsm', 'MM', 1, '多媒體網站管理'),
-('IB', 2011, 'mana', 'MM', 1, '管理學'),
-('IB', 2011, 'pom', 'MM', 2, '生產與作業管理'),
-('IB', 2011, 'hrm', 'MM', 2, '人力資源管理'),
-('IB', 2011, 'esm', 'MM', 3, '企業策略管理'),
-('IB', 2011, 'mads', 'PA', 3, '管理文獻探討'),
-('IB', 2011, 'adpjm', 'MM', 3, '進階專案管理實務'),
-('IB', 2011, 'erem', 'PA', 3, '企業研究方法'),
-('IB', 2011, 'sta', 'MA', 2, '應用統計學(一)'),
-('IB', 2011, 'stb', 'MA', 2, '應用統計學(二)'),
-('IB', 2011, 'ines', 'GE', 3, '創新與創業'),
-('IB', 2011, 'care', 'GE', 3, '職涯分析與規劃'),
-('IB', 2011, 'cala', 'MA', 1, '商用微積分(一)'),
-('IB', 2011, 'calb', 'MA', 1, '商用微積分(二)'),
-('IB', 2011, 'ec', 'MM', 1, '經濟學原理與實務');
+--
+-- 資料表結構 `ib12`
+--
 
 CREATE TABLE IF NOT EXISTS `ib12` (
-  `sid` varchar(9) DEFAULT NULL,
+  `sid` varchar(9) NOT NULL DEFAULT '',
   `loam` int(1) DEFAULT NULL,
   `ines` int(2) DEFAULT NULL,
   `care` int(2) DEFAULT NULL,
@@ -3221,8 +2824,13 @@ CREATE TABLE IF NOT EXISTS `ib12` (
   `aca` int(2) DEFAULT NULL,
   `acb` int(2) DEFAULT NULL,
   `fm` int(3) DEFAULT NULL,
-  `itmfi` int(3) DEFAULT NULL
+  `itmfi` int(3) DEFAULT NULL,
+  PRIMARY KEY (`sid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 資料表的匯出資料 `ib12`
+--
 
 INSERT INTO `ib12` (`sid`, `loam`, `ines`, `care`, `cala`, `calb`, `ec`, `eitba`, `eitbb`, `ebcmm`, `eortr`, `eci`, `maec`, `apeci`, `sta`, `stb`, `mana`, `mm`, `itmt`, `itmtr`, `itbsm`, `prittda`, `prittdb`, `gmktm`, `erplab`, `aca`, `acb`, `fm`, `itmfi`) VALUES
 ('SD1010721', 1, 96, 79, 94, 98, 85, 91, 91, 89, 90, 96, 84, 89, 76, 98, 92, 89, 94, 76, 100, 95, 88, 90, 90, 60, 77, 100, 100),
@@ -3275,7 +2883,6 @@ INSERT INTO `ib12` (`sid`, `loam`, `ines`, `care`, `cala`, `calb`, `ec`, `eitba`
 ('SD1010774', 1, 75, 72, 69, 88, 82, 60, 82, 79, 80, 68, 52, 81, 44, 79, 88, 80, 71, 85, 74, 72, 64, 60, 73, 60, 64, 60, 74),
 ('SD1010775', 1, 64, 82, 65, 85, 65, 55, 80, 60, 60, 76, 52, 80, 40, 77, 87, 76, 73, 78, 72, 82, 65, 79, 68, 60, 60, 61, 60),
 ('SD1010777', 1, 94, 79, 85, 66, 60, 71, 83, 77, 84, 81, 67, 83, 89, 94, 89, 78, 89, 78, 96, 82, 74, 79, 82, 70, 60, 77, 69),
-('SD1010788', 0, 78, 79, 0, 77, 0, 56, 85, 79, 78, 80, 0, 86, 0, 76, 0, 83, 81, 82, 100, 90, 65, 67, 84, 0, 0, 93, 73),
 ('SD1010792', 0, 96, 94, 60, 73, 88, 92, 88, 86, 93, 84, 94, 96, 87, 60, 91, 90, 94, 84, 91, 85, 72, 100, 85, 60, 61, 73, 70),
 ('SD1010793', 0, 96, 91, 85, 79, 86, 90, 88, 83, 88, 92, 89, 86, 85, 60, 91, 96, 90, 90, 90, 88, 72, 94, 93, 60, 64, 80, 80),
 ('SD1010794', 0, 1, 1, 66, 26, 71, 50, 0, 0, 60, 78, 63, 0, 60, 0, 60, 0, 15, 1, 40, 1, 1, 0, 0, 43, 20, 0, 1),
@@ -3322,54 +2929,16 @@ INSERT INTO `ib12` (`sid`, `loam`, `ines`, `care`, `cala`, `calb`, `ec`, `eitba`
 ('SD1010839', 0, 68, 91, 66, 73, 71, 55, 82, 72, 78, 72, 80, 68, 66, 4, 89, 50, 60, 70, 60, 72, 60, 72, 68, 60, 30, 31, 60),
 ('SD1010840', 1, 90, 89, 73, 66, 84, 77, 80, 75, 78, 92, 93, 89, 87, 89, 87, 98, 85, 88, 76, 90, 65, 98, 88, 60, 60, 94, 93),
 ('SD1010841', 0, 96, 94, 75, 77, 83, 88, 86, 83, 85, 83, 96, 82, 66, 74, 92, 92, 89, 90, 86, 92, 80, 100, 98, 61, 75, 72, 70),
-('SD1010842', 1, 92, 88, 68, 62, 80, 69, 75, 73, 75, 82, 87, 81, 76, 60, 84, 64, 72, 78, 65, 82, 71, 92, 81, 60, 60, 76, 83),
-('SD1010854', 1, 73, 80, 0, 0, 0, 67, 75, 60, 54, 70, 0, 70, 61, 13, 0, 78, 67, 74, 60, 70, 70, 72, 88, 0, 0, 42, 60),
-('SD1010855', 0, 63, 84, 0, 0, 0, 40, 76, 25, 53, 65, 0, 65, 60, 1, 0, 71, 66, 70, 60, 72, 60, 68, 66, 0, 0, 25, 60),
-('SD1011249', 0, 67, 76, 74, 60, 76, 55, 84, 86, 80, 80, 0, 0, 0, 0, 0, 77, 86, 74, 67, 78, 60, 72, 91, 0, 0, 0, 65),
-('SD1011349', 0, 74, 79, 78, 69, 77, 56, 81, 66, 65, 85, 73, 0, 0, 90, 0, 92, 85, 84, 88, 84, 77, 79, 79, 0, 71, 78, 60);
+('SD1010842', 1, 92, 88, 68, 62, 80, 69, 75, 73, 75, 82, 87, 81, 76, 60, 84, 64, 72, 78, 65, 82, 71, 92, 81, 60, 60, 76, 83);
 
-CREATE TABLE IF NOT EXISTS `ib12df` (
-  `maj` varchar(2) DEFAULT NULL,
-  `year` int(4) DEFAULT NULL,
-  `subj` varchar(7) DEFAULT NULL,
-  `sdas` varchar(2) DEFAULT NULL,
-  `grade` int(1) DEFAULT NULL,
-  `subd` varchar(27) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- --------------------------------------------------------
 
-INSERT INTO `ib12df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
-('IB', 2012, 'ines', 'GE', 3, '創新與創業'),
-('IB', 2012, 'care', 'GE', 3, '職涯分析與規劃'),
-('IB', 2012, 'cala', 'MA', 1, '商用微積分(一)'),
-('IB', 2012, 'calb', 'MA', 1, '商用微積分(二)'),
-('IB', 2012, 'ec', 'MM', 1, '經濟學原理與實務'),
-('IB', 2012, 'eitba', 'PA', 3, '國際商務英文（一）'),
-('IB', 2012, 'eitbb', 'PA', 3, '國際商務英文（二）'),
-('IB', 2012, 'ebcmm', 'PA', 4, '商務英語溝通'),
-('IB', 2012, 'becvt', 'PA', 4, '商用英語會話'),
-('IB', 2012, 'eortr', 'PA', 2, '英語口語訓練'),
-('IB', 2012, 'praen', 'PA', 4, '實用英語'),
-('IB', 2012, 'eci', 'PA', 2, '電子商務概論'),
-('IB', 2012, 'maec', 'MM', 1, '管理經濟學'),
-('IB', 2012, 'apeci', 'PA', 2, '電子商務應用'),
-('IB', 2012, 'sta', 'MA', 2, '應用統計學(一)'),
-('IB', 2012, 'stb', 'MA', 2, '應用統計學(二)'),
-('IB', 2012, 'mana', 'MM', 1, '管理學'),
-('IB', 2012, 'mm', 'MM', 1, '行銷管理'),
-('IB', 2012, 'itmt', 'PA', 2, '國際市場概論'),
-('IB', 2012, 'itmtr', 'PA', 3, '國際貿易'),
-('IB', 2012, 'itbsm', 'MM', 3, '國際企業管理'),
-('IB', 2012, 'prittda', 'PA', 3, '國貿實務(一)'),
-('IB', 2012, 'prittdb', 'PA', 3, '國貿實務(二)'),
-('IB', 2012, 'gmktm', 'MM', 3, '全球行銷管理'),
-('IB', 2012, 'erplab', 'PA', 4, '貿易ERP軟體'),
-('IB', 2012, 'aca', 'MM', 1, '會計學(一)'),
-('IB', 2012, 'acb', 'MM', 1, '會計學(二)'),
-('IB', 2012, 'fm', 'MM', 2, '財務管理'),
-('IB', 2012, 'itmfi', 'PA', 3, '國際金融');
+--
+-- 資料表結構 `ib13`
+--
 
 CREATE TABLE IF NOT EXISTS `ib13` (
-  `sid` varchar(9) DEFAULT NULL,
+  `sid` varchar(9) NOT NULL DEFAULT '',
   `loam` int(1) DEFAULT NULL,
   `ines` int(2) DEFAULT NULL,
   `cala` int(3) DEFAULT NULL,
@@ -3391,8 +2960,13 @@ CREATE TABLE IF NOT EXISTS `ib13` (
   `prittda` int(3) DEFAULT NULL,
   `aca` int(2) DEFAULT NULL,
   `acb` int(2) DEFAULT NULL,
-  `fm` int(2) DEFAULT NULL
+  `fm` int(2) DEFAULT NULL,
+  PRIMARY KEY (`sid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 資料表的匯出資料 `ib13`
+--
 
 INSERT INTO `ib13` (`sid`, `loam`, `ines`, `cala`, `calb`, `ec`, `pjm`, `pjmp`, `eitba`, `eortr`, `eci`, `maec`, `apeci`, `sta`, `stb`, `mana`, `mm`, `itmt`, `itbsm`, `prittda`, `aca`, `acb`, `fm`) VALUES
 ('SD1020646', 0, 93, 91, 98, 83, 82, 91, 87, 90, 86, 88, 91, 97, 95, 93, 93, 88, 75, 88, 72, 63, 86),
@@ -3443,7 +3017,6 @@ INSERT INTO `ib13` (`sid`, `loam`, `ines`, `cala`, `calb`, `ec`, `pjm`, `pjmp`, 
 ('SD1020696', 0, 71, 91, 83, 71, 78, 73, 84, 88, 73, 80, 78, 90, 74, 87, 84, 72, 80, 72, 64, 83, 81),
 ('SD1020697', 1, 94, 95, 69, 87, 87, 86, 89, 86, 76, 88, 92, 93, 90, 89, 89, 85, 82, 83, 77, 78, 87),
 ('SD1020698', 0, 60, 78, 60, 64, 42, 66, 69, 55, 65, 64, 75, 60, 87, 85, 66, 60, 75, 60, 62, 74, 65),
-('SD1020706', 0, 68, 60, 0, 0, 74, 64, 89, 84, 72, 82, 82, 78, 80, 0, 88, 82, 82, 70, 0, 0, 79),
 ('SD1020708', 1, 74, 98, 89, 79, 84, 73, 75, 78, 75, 86, 78, 78, 87, 97, 86, 78, 75, 65, 71, 67, 72),
 ('SD1020709', 1, 86, 84, 73, 70, 70, 72, 67, 60, 74, 80, 70, 75, 85, 88, 75, 66, 60, 65, 49, 40, 65),
 ('SD1020710', 0, 93, 100, 100, 100, 98, 83, 87, 82, 90, 89, 90, 87, 88, 95, 100, 87, 89, 99, 99, 92, 99),
@@ -3489,52 +3062,16 @@ INSERT INTO `ib13` (`sid`, `loam`, `ines`, `cala`, `calb`, `ec`, `pjm`, `pjmp`, 
 ('SD1020753', 1, 93, 82, 84, 91, 94, 84, 74, 63, 83, 89, 84, 82, 94, 87, 95, 60, 66, 86, 72, 64, 81),
 ('SD1020754', 1, 82, 60, 60, 68, 68, 48, 69, 60, 75, 70, 71, 60, 60, 78, 73, 65, 63, 67, 65, 60, 60),
 ('SD1020755', 0, 72, 72, 85, 71, 63, 71, 81, 73, 72, 71, 75, 69, 89, 83, 86, 69, 70, 65, 60, 60, 63),
-('SD1020761', 0, 98, 0, 0, 85, 0, 0, 76, 72, 95, 0, 90, 80, 97, 74, 98, 94, 76, 92, 61, 92, 90),
 ('SD1020762', 0, 78, 92, 83, 66, 0, 0, 66, 0, 89, 81, 84, 93, 88, 60, 60, 75, 60, 61, 70, 75, 60);
 
-CREATE TABLE IF NOT EXISTS `ib13df` (
-  `maj` varchar(2) DEFAULT NULL,
-  `year` int(4) DEFAULT NULL,
-  `subj` varchar(7) DEFAULT NULL,
-  `sdas` varchar(2) DEFAULT NULL,
-  `grade` int(1) DEFAULT NULL,
-  `subd` varchar(27) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- --------------------------------------------------------
 
-INSERT INTO `ib13df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
-('IB', 2013, 'ines', 'GE', 3, '創新與創業'),
-('IB', 2013, 'care', 'GE', 3, '職涯分析與規劃'),
-('IB', 2013, 'cala', 'MA', 1, '商用微積分(一)'),
-('IB', 2013, 'calb', 'MA', 1, '商用微積分(二)'),
-('IB', 2013, 'ec', 'MM', 1, '經濟學原理與實務'),
-('IB', 2013, 'pjm', 'MM', 2, '專案管理實務'),
-('IB', 2013, 'pjmp', 'MM', 2, '專案企劃實務'),
-('IB', 2013, 'eitba', 'PA', 3, '國際商務英文（一）'),
-('IB', 2013, 'eitbb', 'PA', 3, '國際商務英文（二）'),
-('IB', 2013, 'ebcmm', 'PA', 4, '商務英語溝通'),
-('IB', 2013, 'becvt', 'PA', 4, '商用英語會話'),
-('IB', 2013, 'eortr', 'PA', 2, '英語口語訓練'),
-('IB', 2013, 'praen', 'PA', 4, '實用英語'),
-('IB', 2013, 'eci', 'PA', 2, '電子商務概論'),
-('IB', 2013, 'maec', 'MM', 1, '管理經濟學'),
-('IB', 2013, 'apeci', 'PA', 2, '電子商務應用'),
-('IB', 2013, 'sta', 'MA', 2, '應用統計學(一)'),
-('IB', 2013, 'stb', 'MA', 2, '應用統計學(二)'),
-('IB', 2013, 'mana', 'MM', 1, '管理學'),
-('IB', 2013, 'mm', 'MM', 1, '行銷管理'),
-('IB', 2013, 'itmt', 'PA', 2, '國際市場概論'),
-('IB', 2013, 'gmktm', 'MM', 3, '全球行銷管理'),
-('IB', 2013, 'erplab', 'PA', 4, '貿易ERP軟體'),
-('IB', 2013, 'itbsm', 'MM', 3, '國際企業管理'),
-('IB', 2013, 'prittda', 'PA', 3, '國際貿易與實務(一)'),
-('IB', 2013, 'prittdb', 'PA', 3, '國際貿易與實務(二)'),
-('IB', 2013, 'aca', 'MM', 1, '會計學(一)'),
-('IB', 2013, 'acb', 'MM', 1, '會計學(二)'),
-('IB', 2013, 'fm', 'MM', 2, '財務管理'),
-('IB', 2013, 'itmfi', 'PA', 3, '國際金融');
+--
+-- 資料表結構 `ib14`
+--
 
 CREATE TABLE IF NOT EXISTS `ib14` (
-  `sid` varchar(9) DEFAULT NULL,
+  `sid` varchar(9) NOT NULL DEFAULT '',
   `loam` int(1) DEFAULT NULL,
   `cala` int(2) DEFAULT NULL,
   `calb` int(3) DEFAULT NULL,
@@ -3548,8 +3085,13 @@ CREATE TABLE IF NOT EXISTS `ib14` (
   `mm` int(3) DEFAULT NULL,
   `itmt` int(2) DEFAULT NULL,
   `aca` int(2) DEFAULT NULL,
-  `acb` int(2) DEFAULT NULL
+  `acb` int(2) DEFAULT NULL,
+  PRIMARY KEY (`sid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 資料表的匯出資料 `ib14`
+--
 
 INSERT INTO `ib14` (`sid`, `loam`, `cala`, `calb`, `ec`, `pjm`, `eortr`, `eci`, `maec`, `sta`, `mana`, `mm`, `itmt`, `aca`, `acb`) VALUES
 ('SD1030650', 0, 73, 73, 79, 71, 84, 75, 72, 90, 97, 84, 76, 66, 60),
@@ -3600,8 +3142,6 @@ INSERT INTO `ib14` (`sid`, `loam`, `cala`, `calb`, `ec`, `pjm`, `eortr`, `eci`, 
 ('SD1030698', 0, 94, 100, 83, 71, 81, 79, 86, 91, 98, 82, 91, 71, 60),
 ('SD1030699', 1, 78, 70, 78, 79, 72, 77, 83, 86, 81, 85, 61, 60, 60),
 ('SD1030702', 0, 63, 77, 60, 77, 55, 70, 77, 63, 70, 91, 70, 60, 62),
-('SD1030703', 0, 79, 67, 60, 77, 69, 67, 74, 79, 0, 74, 64, 0, 60),
-('SD1030706', 0, 74, 89, 78, 74, 80, 90, 72, 82, 74, 75, 81, 0, 86),
 ('SD1030707', 0, 65, 84, 52, 70, 72, 70, 54, 50, 72, 73, 77, 48, 66),
 ('SD1030708', 0, 91, 94, 82, 78, 84, 84, 67, 91, 93, 87, 78, 60, 68),
 ('SD1030709', 0, 67, 82, 80, 85, 78, 77, 62, 89, 86, 87, 87, 63, 60),
@@ -3651,48 +3191,26 @@ INSERT INTO `ib14` (`sid`, `loam`, `cala`, `calb`, `ec`, `pjm`, `eortr`, `eci`, 
 ('SD1030756', 0, 92, 99, 83, 83, 82, 83, 85, 83, 87, 79, 83, 84, 63),
 ('SD1030759', 1, 86, 69, 71, 64, 69, 72, 0, 63, 0, 0, 74, 71, 63);
 
-CREATE TABLE IF NOT EXISTS `ib14df` (
-  `maj` varchar(2) DEFAULT NULL,
-  `year` int(4) DEFAULT NULL,
-  `subj` varchar(6) DEFAULT NULL,
-  `sdas` varchar(2) DEFAULT NULL,
-  `grade` int(1) DEFAULT NULL,
-  `subd` varchar(24) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- --------------------------------------------------------
 
-INSERT INTO `ib14df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
-('IB', 2014, 'ines', 'GE', 3, '創新與創業'),
-('IB', 2014, 'care', 'GE', 3, '職涯分析與規劃'),
-('IB', 2014, 'cala', 'MA', 1, '商用微積分(一)'),
-('IB', 2014, 'calb', 'MA', 1, '商用微積分(二)'),
-('IB', 2014, 'ec', 'MM', 1, '經濟學原理與實務'),
-('IB', 2014, 'pjm', 'MM', 2, '專案管理實務'),
-('IB', 2014, 'pjmp', 'MM', 2, '專案企劃實務'),
-('IB', 2014, 'eortr', 'PA', 2, '英語口語訓練'),
-('IB', 2014, 'eci', 'PA', 2, '電子商務概論'),
-('IB', 2014, 'maec', 'MM', 1, '管理經濟學'),
-('IB', 2014, 'apeci', 'PA', 2, '電子商務應用'),
-('IB', 2014, 'sta', 'MA', 2, '應用統計學(一)'),
-('IB', 2014, 'stb', 'MA', 2, '應用統計學(二)'),
-('IB', 2014, 'mana', 'MM', 1, '管理學'),
-('IB', 2014, 'mm', 'MM', 1, '行銷管理'),
-('IB', 2014, 'itmt', 'PA', 2, '國際市場概論'),
-('IB', 2014, 'erplab', 'PA', 4, '貿易ERP軟體'),
-('IB', 2014, 'itbsm', 'MM', 3, '國際企業管理'),
-('IB', 2014, 'aca', 'MM', 1, '會計學(一)'),
-('IB', 2014, 'acb', 'MM', 1, '會計學(二)'),
-('IB', 2014, 'fm', 'MM', 2, '財務管理'),
-('IB', 2014, 'itmfi', 'PA', 3, '國際金融');
+--
+-- 資料表結構 `ib15`
+--
 
 CREATE TABLE IF NOT EXISTS `ib15` (
-  `sid` varchar(9) DEFAULT NULL,
+  `sid` varchar(9) NOT NULL DEFAULT '',
   `loam` int(1) DEFAULT NULL,
   `cala` int(3) DEFAULT NULL,
   `ec` int(2) DEFAULT NULL,
   `care` int(2) DEFAULT NULL,
   `mm` int(3) DEFAULT NULL,
-  `aca` int(3) DEFAULT NULL
+  `aca` int(3) DEFAULT NULL,
+  PRIMARY KEY (`sid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 資料表的匯出資料 `ib15`
+--
 
 INSERT INTO `ib15` (`sid`, `loam`, `cala`, `ec`, `care`, `mm`, `aca`) VALUES
 ('SD1040605', 1, 100, 90, 85, 100, 70),
@@ -3799,24 +3317,14 @@ INSERT INTO `ib15` (`sid`, `loam`, `cala`, `ec`, `care`, `mm`, `aca`) VALUES
 ('SD1040709', 1, 91, 81, 92, 75, 68),
 ('SD1040710', 1, 79, 70, 77, 67, 62);
 
-CREATE TABLE IF NOT EXISTS `ib15df` (
-  `maj` varchar(2) DEFAULT NULL,
-  `year` int(4) DEFAULT NULL,
-  `subj` varchar(4) DEFAULT NULL,
-  `sdas` varchar(2) DEFAULT NULL,
-  `grade` int(1) DEFAULT NULL,
-  `subd` varchar(24) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- --------------------------------------------------------
 
-INSERT INTO `ib15df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
-('IB', 2015, 'cala', 'MA', 1, '商用微積分(一)'),
-('IB', 2015, 'ec', 'MM', 1, '經濟學原理與實務'),
-('IB', 2015, 'care', 'GE', 1, '興趣與職涯探索'),
-('IB', 2015, 'mm', 'MM', 1, '行銷管理'),
-('IB', 2015, 'aca', 'MM', 1, '會計學(一)');
+--
+-- 資料表結構 `id08`
+--
 
 CREATE TABLE IF NOT EXISTS `id08` (
-  `sid` varchar(9) DEFAULT NULL,
+  `sid` varchar(9) NOT NULL DEFAULT '',
   `loam` int(1) DEFAULT NULL,
   `itdc` int(2) DEFAULT NULL,
   `mana` int(2) DEFAULT NULL,
@@ -3841,8 +3349,13 @@ CREATE TABLE IF NOT EXISTS `id08` (
   `iidm` int(2) DEFAULT NULL,
   `cotas` int(2) DEFAULT NULL,
   `fypl` int(2) DEFAULT NULL,
-  `pjm` int(2) DEFAULT NULL
+  `pjm` int(2) DEFAULT NULL,
+  PRIMARY KEY (`sid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 資料表的匯出資料 `id08`
+--
 
 INSERT INTO `id08` (`sid`, `loam`, `itdc`, `mana`, `eci`, `buetc`, `hufa`, `quma`, `ec`, `mots`, `sta`, `cmat`, `calb`, `pgl`, `oprsa`, `stb`, `oprsb`, `lgma`, `cala`, `pom`, `erp`, `ac`, `iidm`, `cotas`, `fypl`, `pjm`) VALUES
 ('SD970741 ', 1, 61, 62, 0, 90, 90, 79, 78, 83, 74, 83, 75, 70, 83, 85, 66, 83, 74, 86, 92, 81, 88, 99, 66, 82),
@@ -3949,46 +3462,16 @@ INSERT INTO `id08` (`sid`, `loam`, `itdc`, `mana`, `eci`, `buetc`, `hufa`, `quma
 ('SD970853 ', 0, 13, 60, 70, 0, 0, 0, 65, 1, 0, 30, 49, 73, 1, 60, 1, 0, 49, 64, 0, 89, 76, 20, 0, 0),
 ('SD970854 ', 0, 24, 83, 88, 85, 88, 64, 98, 99, 66, 87, 49, 82, 72, 74, 70, 76, 74, 55, 87, 94, 84, 63, 82, 90),
 ('SD970855 ', 0, 75, 80, 78, 80, 82, 69, 84, 94, 66, 80, 66, 91, 82, 92, 61, 65, 69, 60, 81, 100, 67, 96, 60, 85),
-('SD970856 ', 1, 77, 93, 93, 75, 88, 75, 90, 99, 99, 78, 74, 84, 97, 98, 96, 88, 86, 80, 98, 100, 81, 95, 99, 90),
-('SD970857 ', 1, 0, 0, 0, 0, 75, 70, 0, 60, 90, 81, 64, 90, 76, 0, 50, 81, 60, 60, 73, 60, 79, 30, 74, 0);
+('SD970856 ', 1, 77, 93, 93, 75, 88, 75, 90, 99, 99, 78, 74, 84, 97, 98, 96, 88, 86, 80, 98, 100, 81, 95, 99, 90);
 
-CREATE TABLE IF NOT EXISTS `id08df` (
-  `maj` varchar(2) DEFAULT NULL,
-  `year` int(4) DEFAULT NULL,
-  `subj` varchar(5) DEFAULT NULL,
-  `sdas` varchar(2) DEFAULT NULL,
-  `grade` int(1) DEFAULT NULL,
-  `subd` varchar(21) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- --------------------------------------------------------
 
-INSERT INTO `id08df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
-('ID', 2008, 'itdc', 'PA', 1, '計算機概論'),
-('ID', 2008, 'mana', 'MM', 1, '管理學'),
-('ID', 2008, 'eci', 'PA', 2, '電子商務概論'),
-('ID', 2008, 'buetc', 'GE', 3, '企業倫理'),
-('ID', 2008, 'hufa', 'PA', 3, '人因工程'),
-('ID', 2008, 'quma', 'MM', 3, '品質管理'),
-('ID', 2008, 'ec', 'MM', 1, '經濟學'),
-('ID', 2008, 'mots', 'PA', 2, '工作研究'),
-('ID', 2008, 'sta', 'MA', 1, '統計學(一)'),
-('ID', 2008, 'cmat', 'PA', 1, '商業自動化'),
-('ID', 2008, 'calb', 'MA', 1, '微積分(二)'),
-('ID', 2008, 'pgl', 'PA', 1, '程式語言'),
-('ID', 2008, 'oprsa', 'PA', 2, '作業研究(一)'),
-('ID', 2008, 'stb', 'MA', 2, '統計學(二)'),
-('ID', 2008, 'oprsb', 'PA', 2, '作業研究(二)'),
-('ID', 2008, 'lgma', 'MM', 3, '物流管理'),
-('ID', 2008, 'cala', 'MA', 1, '微積分(一)'),
-('ID', 2008, 'pom', 'MM', 2, '生產與作業管理'),
-('ID', 2008, 'erp', 'PA', 3, '企業資源規劃'),
-('ID', 2008, 'ac', 'MM', 1, '會計學'),
-('ID', 2008, 'iidm', 'MM', 1, '工業管理導論'),
-('ID', 2008, 'cotas', 'PA', 2, '企業成本分析'),
-('ID', 2008, 'fypl', 'PA', 3, '設施規劃'),
-('ID', 2008, 'pjm', 'MM', 3, '專案管理');
+--
+-- 資料表結構 `id09`
+--
 
 CREATE TABLE IF NOT EXISTS `id09` (
-  `sid` varchar(9) DEFAULT NULL,
+  `sid` varchar(9) NOT NULL DEFAULT '',
   `loam` int(1) DEFAULT NULL,
   `pjm` int(2) DEFAULT NULL,
   `ines` int(2) DEFAULT NULL,
@@ -4013,8 +3496,13 @@ CREATE TABLE IF NOT EXISTS `id09` (
   `cotas` int(3) DEFAULT NULL,
   `fypl` int(2) DEFAULT NULL,
   `itdc` int(2) DEFAULT NULL,
-  `mana` int(2) DEFAULT NULL
+  `mana` int(2) DEFAULT NULL,
+  PRIMARY KEY (`sid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 資料表的匯出資料 `id09`
+--
 
 INSERT INTO `id09` (`sid`, `loam`, `pjm`, `ines`, `hufa`, `quma`, `eci`, `ec`, `mots`, `sta`, `cmat`, `calb`, `pgl`, `oprsa`, `stb`, `oprsb`, `lgma`, `cala`, `pom`, `erp`, `ac`, `iidm`, `cotas`, `fypl`, `itdc`, `mana`) VALUES
 ('SD980754 ', 0, 98, 81, 88, 73, 75, 70, 92, 81, 60, 64, 86, 85, 93, 87, 75, 80, 97, 84, 68, 87, 71, 84, 66, 67),
@@ -4111,46 +3599,16 @@ INSERT INTO `id09` (`sid`, `loam`, `pjm`, `ines`, `hufa`, `quma`, `eci`, `ec`, `
 ('SD980862 ', 1, 75, 90, 76, 77, 0, 91, 84, 65, 39, 75, 24, 69, 66, 68, 67, 66, 76, 85, 60, 78, 68, 69, 39, 60),
 ('SD980863 ', 0, 85, 75, 66, 85, 61, 85, 79, 65, 71, 73, 85, 67, 68, 72, 80, 72, 85, 90, 95, 67, 65, 71, 50, 65),
 ('SD980865 ', 1, 70, 88, 50, 48, 1, 80, 80, 73, 1, 25, 68, 71, 60, 48, 46, 61, 69, 71, 60, 60, 70, 60, 4, 71),
-('SD980866 ', 0, 85, 75, 63, 64, 1, 74, 80, 73, 65, 60, 87, 40, 95, 50, 73, 75, 68, 76, 60, 60, 60, 67, 10, 69),
-('SD980869 ', 0, 70, 90, 45, 7, 1, 0, 1, 75, 85, 0, 71, 41, 68, 35, 35, 0, 60, 68, 60, 77, 69, 60, 0, 0);
+('SD980866 ', 0, 85, 75, 63, 64, 1, 74, 80, 73, 65, 60, 87, 40, 95, 50, 73, 75, 68, 76, 60, 60, 60, 67, 10, 69);
 
-CREATE TABLE IF NOT EXISTS `id09df` (
-  `maj` varchar(2) DEFAULT NULL,
-  `year` int(4) DEFAULT NULL,
-  `subj` varchar(5) DEFAULT NULL,
-  `sdas` varchar(2) DEFAULT NULL,
-  `grade` int(1) DEFAULT NULL,
-  `subd` varchar(21) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- --------------------------------------------------------
 
-INSERT INTO `id09df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
-('ID', 2009, 'pjm', 'MM', 3, '專案管理'),
-('ID', 2009, 'ines', 'GE', 3, '創新與創業'),
-('ID', 2009, 'hufa', 'PA', 3, '人因工程'),
-('ID', 2009, 'quma', 'MM', 3, '品質管理'),
-('ID', 2009, 'eci', 'PA', 2, '電子商務概論'),
-('ID', 2009, 'ec', 'MM', 1, '經濟學'),
-('ID', 2009, 'mots', 'PA', 3, '工作研究'),
-('ID', 2009, 'sta', 'PA', 1, '統計學(一)'),
-('ID', 2009, 'cmat', 'PA', 1, '商業自動化'),
-('ID', 2009, 'calb', 'MA', 1, '微積分(二)'),
-('ID', 2009, 'pgl', 'PA', 2, '程式語言'),
-('ID', 2009, 'oprsa', 'PA', 2, '作業研究(一)'),
-('ID', 2009, 'stb', 'MA', 2, '統計學(二)'),
-('ID', 2009, 'oprsb', 'PA', 2, '作業研究(二)'),
-('ID', 2009, 'lgma', 'MM', 3, '物流管理'),
-('ID', 2009, 'cala', 'MA', 1, '微積分(一)'),
-('ID', 2009, 'pom', 'MM', 2, '生產與作業管理'),
-('ID', 2009, 'erp', 'PA', 3, '企業資源規劃'),
-('ID', 2009, 'ac', 'PA', 1, '會計學'),
-('ID', 2009, 'iidm', 'MM', 1, '工業管理導論'),
-('ID', 2009, 'cotas', 'PA', 2, '企業成本分析'),
-('ID', 2009, 'fypl', 'PA', 3, '設施規劃'),
-('ID', 2009, 'itdc', 'PA', 1, '計算機概論'),
-('ID', 2009, 'mana', 'MM', 1, '管理學');
+--
+-- 資料表結構 `id10`
+--
 
 CREATE TABLE IF NOT EXISTS `id10` (
-  `sid` varchar(9) DEFAULT NULL,
+  `sid` varchar(9) NOT NULL DEFAULT '',
   `loam` int(1) DEFAULT NULL,
   `pjm` int(2) DEFAULT NULL,
   `ines` int(2) DEFAULT NULL,
@@ -4173,8 +3631,13 @@ CREATE TABLE IF NOT EXISTS `id10` (
   `iidm` int(2) DEFAULT NULL,
   `fypl` int(2) DEFAULT NULL,
   `itdc` int(2) DEFAULT NULL,
-  `mana` int(2) DEFAULT NULL
+  `mana` int(2) DEFAULT NULL,
+  PRIMARY KEY (`sid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 資料表的匯出資料 `id10`
+--
 
 INSERT INTO `id10` (`sid`, `loam`, `pjm`, `ines`, `cala`, `calb`, `sta`, `stb`, `ec`, `hufa`, `quma`, `eci`, `mots`, `pgl`, `oprsa`, `oprsb`, `lgma`, `pom`, `erp`, `ac`, `iidm`, `fypl`, `itdc`, `mana`) VALUES
 ('SD990763 ', 0, 99, 95, 64, 60, 78, 93, 60, 96, 87, 92, 94, 98, 90, 93, 89, 94, 90, 61, 88, 70, 77, 94),
@@ -4274,41 +3737,14 @@ INSERT INTO `id10` (`sid`, `loam`, `pjm`, `ines`, `cala`, `calb`, `sta`, `stb`, 
 ('SD990874 ', 0, 66, 77, 46, 76, 10, 71, 68, 88, 68, 86, 67, 52, 30, 65, 84, 60, 84, 99, 68, 70, 60, 54),
 ('SD990875 ', 1, 72, 70, 55, 61, 35, 60, 61, 57, 60, 81, 61, 54, 32, 60, 64, 60, 64, 92, 60, 63, 60, 34);
 
-CREATE TABLE IF NOT EXISTS `id10df` (
-  `maj` varchar(2) DEFAULT NULL,
-  `year` int(4) DEFAULT NULL,
-  `subj` varchar(5) DEFAULT NULL,
-  `sdas` varchar(2) DEFAULT NULL,
-  `grade` int(1) DEFAULT NULL,
-  `subd` varchar(21) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- --------------------------------------------------------
 
-INSERT INTO `id10df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
-('ID', 2010, 'pjm', 'MM', 3, '專案管理'),
-('ID', 2010, 'ines', 'GE', 3, '創新與創業'),
-('ID', 2010, 'cala', 'MA', 1, '微積分(一)'),
-('ID', 2010, 'calb', 'MA', 1, '微積分(二)'),
-('ID', 2010, 'sta', 'MA', 2, '統計學(一)'),
-('ID', 2010, 'stb', 'MA', 2, '統計學(二)'),
-('ID', 2010, 'ec', 'MM', 1, '經濟學原理'),
-('ID', 2010, 'hufa', 'PA', 3, '人因工程'),
-('ID', 2010, 'quma', 'MM', 3, '品質管理'),
-('ID', 2010, 'eci', 'PA', 2, '電子商務概論'),
-('ID', 2010, 'mots', 'PA', 3, '工作研究'),
-('ID', 2010, 'pgl', 'PA', 1, '程式語言'),
-('ID', 2010, 'oprsa', 'PA', 2, '作業研究(一)'),
-('ID', 2010, 'oprsb', 'PA', 2, '作業研究(二)'),
-('ID', 2010, 'lgma', 'MM', 3, '物流管理'),
-('ID', 2010, 'pom', 'MM', 2, '生產與作業管理'),
-('ID', 2010, 'erp', 'PA', 3, '企業資源規劃'),
-('ID', 2010, 'ac', 'MM', 1, '會計學'),
-('ID', 2010, 'iidm', 'MM', 1, '工業管理導論'),
-('ID', 2010, 'fypl', 'PA', 3, '設施規劃'),
-('ID', 2010, 'itdc', 'PA', 1, '計算機概論'),
-('ID', 2010, 'mana', 'MM', 1, '管理學');
+--
+-- 資料表結構 `id11`
+--
 
 CREATE TABLE IF NOT EXISTS `id11` (
-  `sid` varchar(9) DEFAULT NULL,
+  `sid` varchar(9) NOT NULL DEFAULT '',
   `loam` int(1) DEFAULT NULL,
   `ines` int(2) DEFAULT NULL,
   `care` int(2) DEFAULT NULL,
@@ -4330,8 +3766,13 @@ CREATE TABLE IF NOT EXISTS `id11` (
   `hufa` int(2) DEFAULT NULL,
   `adpjm` int(3) DEFAULT NULL,
   `sta` int(2) DEFAULT NULL,
-  `stb` int(2) DEFAULT NULL
+  `stb` int(2) DEFAULT NULL,
+  PRIMARY KEY (`sid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 資料表的匯出資料 `id11`
+--
 
 INSERT INTO `id11` (`sid`, `loam`, `ines`, `care`, `cala`, `calb`, `ec`, `quma`, `oprs`, `lgma`, `pom`, `erp`, `ac`, `iidm`, `fypl`, `mana`, `comap`, `apeci`, `mots`, `hufa`, `adpjm`, `sta`, `stb`) VALUES
 ('SD1000820', 0, 81, 80, 89, 65, 82, 88, 97, 89, 90, 79, 70, 82, 88, 68, 78, 79, 75, 79, 97, 91, 82),
@@ -4437,45 +3878,16 @@ INSERT INTO `id11` (`sid`, `loam`, `ines`, `care`, `cala`, `calb`, `ec`, `quma`,
 ('SD1000934', 0, 83, 88, 74, 45, 91, 75, 61, 81, 82, 73, 91, 72, 88, 73, 80, 89, 75, 77, 100, 65, 72),
 ('SD1000935', 0, 75, 85, 79, 60, 89, 60, 61, 79, 60, 70, 99, 88, 83, 73, 88, 96, 81, 50, 70, 69, 63),
 ('SD1000936', 0, 84, 0, 64, 65, 68, 0, 62, 78, 93, 0, 88, 82, 0, 83, 75, 90, 75, 87, 0, 83, 83),
-('SD1000938', 0, 77, 0, 78, 60, 81, 65, 98, 91, 80, 0, 81, 84, 0, 69, 67, 88, 85, 70, 60, 74, 70),
-('SD1000943', 0, 85, 85, 0, 15, 0, 60, 72, 70, 60, 64, 99, 93, 60, 0, 75, 0, 77, 73, 80, 0, 88),
-('SD1000944', 0, 85, 88, 0, 0, 71, 60, 60, 73, 68, 76, 65, 84, 83, 79, 0, 68, 60, 50, 77, 82, 85),
-('SD1001004', 0, 70, 88, 0, 0, 73, 80, 62, 90, 67, 77, 65, 80, 71, 81, 0, 66, 75, 61, 89, 81, 67);
+('SD1000938', 0, 77, 0, 78, 60, 81, 65, 98, 91, 80, 0, 81, 84, 0, 69, 67, 88, 85, 70, 60, 74, 70);
 
-CREATE TABLE IF NOT EXISTS `id11df` (
-  `maj` varchar(2) DEFAULT NULL,
-  `year` int(4) DEFAULT NULL,
-  `subj` varchar(5) DEFAULT NULL,
-  `sdas` varchar(2) DEFAULT NULL,
-  `grade` int(1) DEFAULT NULL,
-  `subd` varchar(24) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- --------------------------------------------------------
 
-INSERT INTO `id11df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
-('ID', 2011, 'ines', 'GE', 3, '創新與創業'),
-('ID', 2011, 'care', 'GE', 3, '職涯分析與規劃'),
-('ID', 2011, 'cala', 'MA', 1, '商用微積分(一)'),
-('ID', 2011, 'calb', 'MA', 1, '商用微積分(二)'),
-('ID', 2011, 'ec', 'MM', 1, '經濟學原理與實務'),
-('ID', 2011, 'quma', 'MM', 3, '品質管理'),
-('ID', 2011, 'oprs', 'PA', 2, '作業研究'),
-('ID', 2011, 'lgma', 'MM', 3, '物流管理'),
-('ID', 2011, 'pom', 'MM', 2, '生產與作業管理'),
-('ID', 2011, 'erp', 'PA', 3, '企業資源規劃'),
-('ID', 2011, 'ac', 'MM', 1, '會計學'),
-('ID', 2011, 'iidm', 'MM', 1, '工業管理導論'),
-('ID', 2011, 'fypl', 'PA', 3, '設施規劃'),
-('ID', 2011, 'mana', 'MM', 1, '管理學'),
-('ID', 2011, 'comap', 'PA', 1, '計算機應用'),
-('ID', 2011, 'apeci', 'PA', 1, '電子商務應用'),
-('ID', 2011, 'mots', 'PA', 2, '工作研究'),
-('ID', 2011, 'hufa', 'PA', 2, '人因工程'),
-('ID', 2011, 'adpjm', 'MM', 3, '進階專案管理實務'),
-('ID', 2011, 'sta', 'MA', 2, '應用統計學(一)'),
-('ID', 2011, 'stb', 'MA', 2, '應用統計學(二)');
+--
+-- 資料表結構 `id12`
+--
 
 CREATE TABLE IF NOT EXISTS `id12` (
-  `sid` varchar(9) DEFAULT NULL,
+  `sid` varchar(9) NOT NULL DEFAULT '',
   `loam` int(1) DEFAULT NULL,
   `ines` int(2) DEFAULT NULL,
   `care` int(2) DEFAULT NULL,
@@ -4496,8 +3908,13 @@ CREATE TABLE IF NOT EXISTS `id12` (
   `hufa` int(2) DEFAULT NULL,
   `adpjm` int(3) DEFAULT NULL,
   `sta` int(2) DEFAULT NULL,
-  `stb` int(2) DEFAULT NULL
+  `stb` int(2) DEFAULT NULL,
+  PRIMARY KEY (`sid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 資料表的匯出資料 `id12`
+--
 
 INSERT INTO `id12` (`sid`, `loam`, `ines`, `care`, `cala`, `calb`, `ec`, `quma`, `oprs`, `lgma`, `pom`, `erp`, `ac`, `iidm`, `mana`, `comap`, `apeci`, `mots`, `hufa`, `adpjm`, `sta`, `stb`) VALUES
 ('SD1011298', 0, 97, 92, 98, 95, 99, 95, 99, 87, 98, 99, 89, 94, 91, 92, 72, 99, 98, 99, 97, 97),
@@ -4549,9 +3966,6 @@ INSERT INTO `id12` (`sid`, `loam`, `ines`, `care`, `cala`, `calb`, `ec`, `quma`,
 ('SD1011351', 0, 75, 80, 68, 60, 80, 70, 62, 80, 60, 68, 74, 85, 80, 61, 0, 65, 62, 95, 62, 81),
 ('SD1011352', 1, 0, 1, 73, 74, 69, 30, 30, 1, 76, 22, 74, 85, 50, 69, 0, 60, 10, 60, 28, 20),
 ('SD1011353', 1, 76, 80, 70, 60, 61, 75, 63, 80, 60, 66, 60, 81, 63, 70, 0, 75, 68, 99, 71, 85),
-('SD1011355', 1, 88, 85, 0, 0, 85, 85, 0, 88, 85, 81, 60, 80, 0, 0, 0, 88, 82, 97, 90, 92),
-('SD1011356', 0, 81, 80, 60, 81, 0, 75, 86, 79, 87, 80, 0, 0, 0, 0, 65, 98, 63, 92, 80, 87),
-('SD1011358', 0, 80, 70, 26, 63, 0, 70, 60, 0, 60, 70, 0, 60, 0, 67, 60, 64, 70, 96, 0, 80),
 ('SD1011359', 0, 89, 80, 60, 60, 48, 76, 60, 81, 68, 72, 41, 87, 60, 10, 61, 81, 52, 87, 61, 72),
 ('SD1011360', 0, 90, 80, 93, 72, 91, 90, 93, 72, 75, 76, 63, 94, 80, 46, 79, 84, 76, 98, 87, 79),
 ('SD1011361', 0, 84, 1, 69, 80, 77, 71, 76, 67, 70, 60, 69, 83, 83, 60, 92, 77, 80, 92, 86, 82),
@@ -4597,45 +4011,16 @@ INSERT INTO `id12` (`sid`, `loam`, `ines`, `care`, `cala`, `calb`, `ec`, `quma`,
 ('SD1011409', 0, 79, 85, 60, 61, 62, 53, 83, 81, 80, 74, 88, 85, 60, 36, 52, 79, 64, 98, 60, 77),
 ('SD1011410', 0, 82, 85, 68, 75, 86, 70, 82, 80, 88, 65, 99, 82, 70, 72, 74, 84, 66, 99, 89, 72),
 ('SD1011412', 0, 91, 85, 85, 77, 91, 80, 90, 86, 90, 90, 99, 90, 81, 31, 81, 81, 83, 100, 91, 95),
-('SD1011413', 0, 84, 80, 0, 0, 65, 76, 62, 71, 85, 60, 43, 0, 65, 0, 76, 85, 76, 98, 0, 0),
-('SD1011414', 0, 81, 80, 0, 0, 77, 81, 68, 79, 85, 76, 60, 0, 84, 0, 96, 76, 72, 100, 85, 0),
-('SD1011415', 0, 89, 80, 76, 0, 76, 73, 60, 76, 70, 66, 60, 81, 80, 0, 73, 80, 61, 97, 71, 0),
-('SD1011416', 0, 80, 80, 0, 0, 60, 72, 68, 63, 73, 75, 60, 80, 0, 0, 0, 80, 60, 96, 87, 67);
+('SD1011415', 0, 89, 80, 76, 0, 76, 73, 60, 76, 70, 66, 60, 81, 80, 0, 73, 80, 61, 97, 71, 0);
 
-CREATE TABLE IF NOT EXISTS `id12df` (
-  `maj` varchar(2) DEFAULT NULL,
-  `year` int(4) DEFAULT NULL,
-  `subj` varchar(5) DEFAULT NULL,
-  `sdas` varchar(2) DEFAULT NULL,
-  `grade` int(1) DEFAULT NULL,
-  `subd` varchar(24) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- --------------------------------------------------------
 
-INSERT INTO `id12df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
-('ID', 2012, 'ines', 'GE', 3, '創新與創業'),
-('ID', 2012, 'care', 'GE', 3, '職涯分析與規劃'),
-('ID', 2012, 'cala', 'MA', 1, '商用微積分(一)'),
-('ID', 2012, 'calb', 'MA', 1, '商用微積分(二)'),
-('ID', 2012, 'ec', 'MM', 1, '經濟學原理與實務'),
-('ID', 2012, 'quma', 'MM', 3, '品質管理'),
-('ID', 2012, 'oprs', 'PA', 2, '作業研究'),
-('ID', 2012, 'lgma', 'MM', 3, '物流管理'),
-('ID', 2012, 'pom', 'MM', 2, '生產與作業管理'),
-('ID', 2012, 'erp', 'PA', 3, '企業資源規劃'),
-('ID', 2012, 'ac', 'MM', 1, '會計學'),
-('ID', 2012, 'iidm', 'MM', 1, '工業管理導論'),
-('ID', 2012, 'fypl', 'PA', 3, '設施規劃'),
-('ID', 2012, 'mana', 'MM', 1, '管理學'),
-('ID', 2012, 'comap', 'PA', 1, '計算機應用'),
-('ID', 2012, 'apeci', 'PA', 1, '電子商務應用'),
-('ID', 2012, 'mots', 'PA', 2, '工作研究'),
-('ID', 2012, 'hufa', 'PA', 2, '人因工程'),
-('ID', 2012, 'adpjm', 'MM', 3, '進階專案管理實務'),
-('ID', 2012, 'sta', 'MA', 2, '應用統計學(一)'),
-('ID', 2012, 'stb', 'MA', 2, '應用統計學(二)');
+--
+-- 資料表結構 `id13`
+--
 
 CREATE TABLE IF NOT EXISTS `id13` (
-  `sid` varchar(9) DEFAULT NULL,
+  `sid` varchar(9) NOT NULL DEFAULT '',
   `loam` int(1) DEFAULT NULL,
   `ines` int(2) DEFAULT NULL,
   `cala` int(2) DEFAULT NULL,
@@ -4655,8 +4040,13 @@ CREATE TABLE IF NOT EXISTS `id13` (
   `hufa` int(2) DEFAULT NULL,
   `sta` int(2) DEFAULT NULL,
   `stb` int(2) DEFAULT NULL,
-  `quma` int(2) DEFAULT NULL
+  `quma` int(2) DEFAULT NULL,
+  PRIMARY KEY (`sid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 資料表的匯出資料 `id13`
+--
 
 INSERT INTO `id13` (`sid`, `loam`, `ines`, `cala`, `calb`, `ec`, `pjm`, `pjmp`, `oprs`, `lgma`, `pom`, `ac`, `iidm`, `mana`, `comap`, `apeci`, `mots`, `hufa`, `sta`, `stb`, `quma`) VALUES
 ('SD1021155', 0, 90, 86, 80, 88, 98, 100, 96, 89, 82, 95, 77, 93, 92, 100, 76, 84, 94, 96, 70),
@@ -4757,38 +4147,14 @@ INSERT INTO `id13` (`sid`, `loam`, `ines`, `cala`, `calb`, `ec`, `pjm`, `pjmp`, 
 ('SD1021262', 0, 74, 53, 60, 50, 73, 96, 0, 78, 80, 50, 66, 70, 51, 70, 50, 51, 70, 65, 60),
 ('SD1021264', 0, 83, 78, 60, 88, 74, 100, 82, 75, 80, 75, 83, 94, 76, 92, 78, 76, 83, 90, 75);
 
-CREATE TABLE IF NOT EXISTS `id13df` (
-  `maj` varchar(2) DEFAULT NULL,
-  `year` int(4) DEFAULT NULL,
-  `subj` varchar(5) DEFAULT NULL,
-  `sdas` varchar(2) DEFAULT NULL,
-  `grade` int(1) DEFAULT NULL,
-  `subd` varchar(24) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- --------------------------------------------------------
 
-INSERT INTO `id13df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
-('ID', 2013, 'ines', 'GE', 3, '創新與創業'),
-('ID', 2013, 'cala', 'MA', 1, '商用微積分(一)'),
-('ID', 2013, 'calb', 'MA', 1, '商用微積分(二)'),
-('ID', 2013, 'ec', 'MM', 1, '經濟學原理與實務'),
-('ID', 2013, 'pjm', 'MM', 2, '專案管理實務'),
-('ID', 2013, 'pjmp', 'MM', 2, '專案企劃實務'),
-('ID', 2013, 'oprs', 'PA', 2, '作業研究'),
-('ID', 2013, 'lgma', 'MM', 3, '物流管理'),
-('ID', 2013, 'pom', 'MM', 2, '生產與作業管理'),
-('ID', 2013, 'ac', 'MM', 1, '會計學'),
-('ID', 2013, 'iidm', 'MM', 1, '工業管理導論'),
-('ID', 2013, 'mana', 'MM', 1, '管理學'),
-('ID', 2013, 'comap', 'PA', 1, '計算機應用'),
-('ID', 2013, 'apeci', 'PA', 1, '電子商務應用'),
-('ID', 2013, 'mots', 'PA', 2, '工作研究'),
-('ID', 2013, 'hufa', 'PA', 2, '人因工程'),
-('ID', 2013, 'sta', 'MA', 2, '應用統計學(一)'),
-('ID', 2013, 'stb', 'MA', 2, '應用統計學(二)'),
-('ID', 2013, 'quma', 'MM', 3, '品質管理');
+--
+-- 資料表結構 `id14`
+--
 
 CREATE TABLE IF NOT EXISTS `id14` (
-  `sid` varchar(9) DEFAULT NULL,
+  `sid` varchar(9) NOT NULL DEFAULT '',
   `loam` int(1) DEFAULT NULL,
   `cala` int(2) DEFAULT NULL,
   `calb` int(2) DEFAULT NULL,
@@ -4802,8 +4168,13 @@ CREATE TABLE IF NOT EXISTS `id14` (
   `comap` int(3) DEFAULT NULL,
   `apeci` int(2) DEFAULT NULL,
   `mots` int(2) DEFAULT NULL,
-  `sta` int(2) DEFAULT NULL
+  `sta` int(2) DEFAULT NULL,
+  PRIMARY KEY (`sid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 資料表的匯出資料 `id14`
+--
 
 INSERT INTO `id14` (`sid`, `loam`, `cala`, `calb`, `ec`, `pjm`, `oprs`, `pom`, `ac`, `iidm`, `mana`, `comap`, `apeci`, `mots`, `sta`) VALUES
 ('SD1031161', 0, 84, 62, 76, 91, 93, 70, 90, 35, 72, 63, 87, 63, 60),
@@ -4855,8 +4226,6 @@ INSERT INTO `id14` (`sid`, `loam`, `cala`, `calb`, `ec`, `pjm`, `oprs`, `pom`, `
 ('SD1031212', 0, 80, 61, 66, 65, 45, 40, 70, 42, 45, 65, 61, 30, 37),
 ('SD1031213', 0, 49, 60, 78, 100, 65, 90, 90, 61, 88, 81, 32, 71, 89),
 ('SD1031214', 1, 72, 62, 82, 100, 89, 83, 85, 38, 70, 70, 85, 68, 78),
-('SD1031215', 0, 85, 0, 70, 100, 95, 75, 68, 0, 72, 90, 0, 70, 84),
-('SD1031216', 0, 84, 84, 88, 100, 92, 91, 78, 0, 0, 84, 0, 66, 96),
 ('SD1031219', 1, 84, 75, 93, 79, 91, 68, 99, 91, 79, 70, 76, 85, 67),
 ('SD1031220', 1, 67, 60, 62, 60, 91, 60, 84, 79, 66, 60, 39, 52, 72),
 ('SD1031221', 0, 60, 61, 47, 82, 72, 79, 84, 91, 79, 65, 64, 65, 64),
@@ -4910,40 +4279,27 @@ INSERT INTO `id14` (`sid`, `loam`, `cala`, `calb`, `ec`, `pjm`, `oprs`, `pom`, `
 ('SD1031270', 1, 87, 81, 89, 67, 70, 60, 99, 89, 71, 72, 62, 63, 60),
 ('SD1031272', 0, 77, 77, 89, 100, 96, 82, 63, 77, 88, 77, 0, 85, 89);
 
-CREATE TABLE IF NOT EXISTS `id14df` (
-  `maj` varchar(2) DEFAULT NULL,
-  `year` int(4) DEFAULT NULL,
-  `subj` varchar(5) DEFAULT NULL,
-  `sdas` varchar(2) DEFAULT NULL,
-  `grade` int(1) DEFAULT NULL,
-  `subd` varchar(24) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- --------------------------------------------------------
 
-INSERT INTO `id14df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
-('ID', 2014, 'cala', 'MA', 1, '商用微積分(一)'),
-('ID', 2014, 'calb', 'MA', 1, '商用微積分(二)'),
-('ID', 2014, 'ec', 'MM', 1, '經濟學原理與實務'),
-('ID', 2014, 'pjm', 'MM', 2, '專案管理實務'),
-('ID', 2014, 'oprs', 'PA', 2, '作業研究'),
-('ID', 2014, 'pom', 'MM', 2, '生產與作業管理'),
-('ID', 2014, 'ac', 'MM', 1, '會計學'),
-('ID', 2014, 'iidm', 'MM', 1, '工業管理導論'),
-('ID', 2014, 'mana', 'MM', 1, '管理學'),
-('ID', 2014, 'comap', 'PA', 1, '計算機應用'),
-('ID', 2014, 'apeci', 'PA', 1, '電子商務應用'),
-('ID', 2014, 'mots', 'PA', 2, '工作研究'),
-('ID', 2014, 'sta', 'MA', 2, '應用統計學(一)');
+--
+-- 資料表結構 `id15`
+--
 
 CREATE TABLE IF NOT EXISTS `id15` (
-  `sid` varchar(9) DEFAULT NULL,
+  `sid` varchar(9) NOT NULL DEFAULT '',
   `loam` int(1) DEFAULT NULL,
   `cala` int(2) DEFAULT NULL,
   `ec` int(2) DEFAULT NULL,
   `care` int(2) DEFAULT NULL,
   `ac` int(2) DEFAULT NULL,
   `iidm` int(2) DEFAULT NULL,
-  `comap` int(2) DEFAULT NULL
+  `comap` int(2) DEFAULT NULL,
+  PRIMARY KEY (`sid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 資料表的匯出資料 `id15`
+--
 
 INSERT INTO `id15` (`sid`, `loam`, `cala`, `ec`, `care`, `ac`, `iidm`, `comap`) VALUES
 ('SD1041075', 1, 80, 77, 90, 60, 86, 90),
@@ -5029,7 +4385,6 @@ INSERT INTO `id15` (`sid`, `loam`, `cala`, `ec`, `care`, `ac`, `iidm`, `comap`) 
 ('SD1041161', 1, 60, 60, 30, 60, 54, 80),
 ('SD1041162', 0, 91, 76, 46, 74, 78, 81),
 ('SD1041163', 0, 74, 77, 92, 60, 71, 82),
-('SD1041164', 0, 14, 0, 0, 0, 14, 81),
 ('SD1041165', 0, 84, 88, 98, 80, 98, 90),
 ('SD1041166', 1, 94, 79, 89, 60, 86, 90),
 ('SD1041167', 0, 83, 78, 84, 65, 77, 87),
@@ -5047,25 +4402,14 @@ INSERT INTO `id15` (`sid`, `loam`, `cala`, `ec`, `care`, `ac`, `iidm`, `comap`) 
 ('SD1041179', 1, 79, 89, 86, 60, 91, 94),
 ('SD1041180', 1, 76, 68, 88, 94, 80, 80);
 
-CREATE TABLE IF NOT EXISTS `id15df` (
-  `maj` varchar(2) DEFAULT NULL,
-  `year` int(4) DEFAULT NULL,
-  `subj` varchar(5) DEFAULT NULL,
-  `sdas` varchar(2) DEFAULT NULL,
-  `grade` int(1) DEFAULT NULL,
-  `subd` varchar(24) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- --------------------------------------------------------
 
-INSERT INTO `id15df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
-('ID', 2015, 'cala', 'MA', 1, '商用微積分(一)'),
-('ID', 2015, 'ec', 'MM', 1, '經濟學原理與實務'),
-('ID', 2015, 'care', 'GE', 1, '興趣與職涯探索'),
-('ID', 2015, 'ac', 'MM', 1, '會計學'),
-('ID', 2015, 'iidm', 'MM', 1, '工業管理導論'),
-('ID', 2015, 'comap', 'PA', 1, '計算機應用');
+--
+-- 資料表結構 `im08`
+--
 
 CREATE TABLE IF NOT EXISTS `im08` (
-  `sid` varchar(9) DEFAULT NULL,
+  `sid` varchar(9) NOT NULL DEFAULT '',
   `loam` int(1) DEFAULT NULL,
   `itdc` int(2) DEFAULT NULL,
   `mana` int(2) DEFAULT NULL,
@@ -5091,8 +4435,13 @@ CREATE TABLE IF NOT EXISTS `im08` (
   `inkpg` int(3) DEFAULT NULL,
   `idbs` int(2) DEFAULT NULL,
   `dbms` int(2) DEFAULT NULL,
-  `boodis` int(2) DEFAULT NULL
+  `boodis` int(2) DEFAULT NULL,
+  PRIMARY KEY (`sid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 資料表的匯出資料 `im08`
+--
 
 INSERT INTO `im08` (`sid`, `loam`, `itdc`, `mana`, `eci`, `buetc`, `intpr`, `st`, `cala`, `calb`, `ec`, `ac`, `sadm`, `mis`, `cppg`, `dtst`, `opsy`, `oopg`, `pcpg`, `adcpg`, `itmuis`, `nwkpm`, `itdcn`, `inkpg`, `idbs`, `dbms`, `boodis`) VALUES
 ('SD970562 ', 0, 79, 71, 83, 84, 70, 68, 60, 60, 78, 72, 74, 85, 63, 63, 76, 40, 63, 60, 88, 75, 80, 90, 68, 82, 84),
@@ -5193,7 +4542,6 @@ INSERT INTO `im08` (`sid`, `loam`, `itdc`, `mana`, `eci`, `buetc`, `intpr`, `st`
 ('SD970673 ', 1, 89, 76, 93, 0, 72, 81, 60, 67, 72, 86, 89, 0, 60, 74, 0, 83, 67, 60, 87, 80, 81, 0, 79, 0, 0),
 ('SD970674 ', 0, 80, 94, 89, 80, 79, 60, 60, 60, 74, 69, 86, 78, 60, 76, 70, 76, 64, 60, 87, 81, 78, 94, 76, 81, 90),
 ('SD970675 ', 0, 95, 82, 90, 77, 71, 60, 73, 60, 89, 60, 75, 72, 79, 74, 79, 79, 84, 66, 86, 69, 81, 100, 78, 85, 88),
-('SD970676 ', 0, 82, 78, 90, 85, 65, 60, 40, 60, 0, 69, 70, 70, 60, 72, 70, 70, 63, 60, 84, 37, 77, 100, 60, 78, 86),
 ('SD970680 ', 1, 30, 55, 98, 50, 75, 60, 60, 45, 61, 46, 60, 68, 62, 65, 61, 62, 62, 45, 3, 60, 64, 69, 60, 45, 76),
 ('SD970681 ', 1, 60, 87, 99, 97, 80, 86, 65, 84, 67, 72, 95, 78, 81, 81, 76, 95, 81, 90, 85, 84, 85, 87, 79, 82, 90),
 ('SD970682 ', 0, 60, 80, 99, 97, 76, 60, 60, 60, 66, 66, 87, 84, 81, 76, 76, 86, 81, 90, 83, 85, 86, 86, 77, 81, 90),
@@ -5250,44 +4598,14 @@ INSERT INTO `im08` (`sid`, `loam`, `itdc`, `mana`, `eci`, `buetc`, `intpr`, `st`
 ('SD970736 ', 1, 55, 60, 98, 80, 65, 60, 45, 45, 71, 79, 82, 60, 80, 66, 71, 69, 80, 55, 79, 80, 64, 86, 65, 65, 83),
 ('SD970737 ', 0, 53, 65, 96, 95, 73, 71, 60, 60, 72, 64, 98, 76, 70, 66, 70, 75, 70, 67, 82, 71, 74, 86, 80, 83, 88);
 
-CREATE TABLE IF NOT EXISTS `im08df` (
-  `maj` varchar(2) DEFAULT NULL,
-  `year` int(4) DEFAULT NULL,
-  `subj` varchar(6) DEFAULT NULL,
-  `sdas` varchar(2) DEFAULT NULL,
-  `grade` int(1) DEFAULT NULL,
-  `subd` varchar(24) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- --------------------------------------------------------
 
-INSERT INTO `im08df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
-('IM', 2008, 'itdc', 'PA', 1, '計算機概論'),
-('IM', 2008, 'mana', 'MM', 2, '管理學'),
-('IM', 2008, 'eci', 'MM', 2, '電子商務概論'),
-('IM', 2008, 'buetc', 'GE', 4, '企業倫理'),
-('IM', 2008, 'intpr', 'MA', 2, '機率論'),
-('IM', 2008, 'st', 'MA', 2, '統計學'),
-('IM', 2008, 'cala', 'MA', 1, '微積分(一)'),
-('IM', 2008, 'calb', 'MA', 1, '微積分(二)'),
-('IM', 2008, 'ec', 'MM', 1, '經濟學'),
-('IM', 2008, 'ac', 'MM', 1, '會計學'),
-('IM', 2008, 'sadm', 'PA', 2, '系統分析與設計'),
-('IM', 2008, 'mis', 'MM', 3, '管理資訊系統'),
-('IM', 2008, 'cppg', 'PA', 1, '程式設計'),
-('IM', 2008, 'dtst', 'PA', 2, '資料結構'),
-('IM', 2008, 'opsy', 'PA', 3, '作業系統'),
-('IM', 2008, 'oopg', 'PA', 1, '物件導向程式設計'),
-('IM', 2008, 'pcpg', 'PA', 1, '程式設計實習'),
-('IM', 2008, 'adcpg', 'PA', 1, '進階程式設計'),
-('IM', 2008, 'itmuis', 'PA', 1, '多媒體概論'),
-('IM', 2008, 'nwkpm', 'PA', 2, '網路規劃與管理'),
-('IM', 2008, 'itdcn', 'PA', 1, '網路概論'),
-('IM', 2008, 'inkpg', 'PA', 3, '網際網路程式設計'),
-('IM', 2008, 'idbs', 'PA', 2, '資料庫系統概論'),
-('IM', 2008, 'dbms', 'PA', 3, '資料庫管理系統'),
-('IM', 2008, 'boodis', 'PA', 4, '書報討論');
+--
+-- 資料表結構 `im09`
+--
 
 CREATE TABLE IF NOT EXISTS `im09` (
-  `sid` varchar(9) DEFAULT NULL,
+  `sid` varchar(9) NOT NULL DEFAULT '',
   `loam` int(1) DEFAULT NULL,
   `pjm` int(2) DEFAULT NULL,
   `ines` int(2) DEFAULT NULL,
@@ -5311,8 +4629,13 @@ CREATE TABLE IF NOT EXISTS `im09` (
   `itdcn` int(2) DEFAULT NULL,
   `inkpg` int(2) DEFAULT NULL,
   `idbs` int(2) DEFAULT NULL,
-  `dbms` int(2) DEFAULT NULL
+  `dbms` int(2) DEFAULT NULL,
+  PRIMARY KEY (`sid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 資料表的匯出資料 `im09`
+--
 
 INSERT INTO `im09` (`sid`, `loam`, `pjm`, `ines`, `st`, `cala`, `calb`, `ec`, `ac`, `mana`, `sadm`, `mis`, `pom`, `itdc`, `cppg`, `dtst`, `opsy`, `oopg`, `pcpg`, `adcpg`, `nwkpm`, `itdcn`, `inkpg`, `idbs`, `dbms`) VALUES
 ('SD980584 ', 0, 84, 77, 63, 85, 95, 65, 75, 82, 85, 82, 66, 60, 81, 60, 72, 73, 60, 47, 88, 71, 75, 67, 84),
@@ -5361,7 +4684,6 @@ INSERT INTO `im09` (`sid`, `loam`, `pjm`, `ines`, `st`, `cala`, `calb`, `ec`, `a
 ('SD980633 ', 0, 91, 78, 82, 74, 60, 64, 65, 69, 80, 79, 90, 60, 86, 90, 79, 99, 86, 86, 58, 62, 96, 66, 96),
 ('SD980634 ', 1, 86, 63, 60, 73, 62, 71, 86, 75, 85, 87, 83, 62, 62, 62, 62, 63, 62, 44, 65, 70, 77, 69, 82),
 ('SD980636 ', 0, 92, 61, 70, 75, 60, 62, 63, 60, 80, 77, 67, 60, 61, 73, 68, 60, 61, 50, 70, 61, 56, 60, 70),
-('SD980638 ', 1, 92, 68, 65, 0, 0, 0, 0, 60, 85, 77, 81, 83, 0, 68, 64, 67, 78, 0, 70, 75, 70, 60, 75),
 ('SD980644 ', 0, 42, 77, 1, 60, 50, 60, 67, 66, 80, 84, 60, 67, 67, 72, 73, 65, 70, 50, 60, 38, 79, 64, 61),
 ('SD980645 ', 0, 78, 75, 64, 66, 45, 60, 71, 60, 80, 80, 63, 63, 60, 67, 75, 73, 68, 52, 64, 61, 78, 56, 54),
 ('SD980646 ', 0, 94, 92, 98, 97, 98, 80, 71, 82, 80, 92, 96, 83, 85, 92, 80, 81, 85, 75, 98, 95, 96, 74, 98),
@@ -5407,7 +4729,6 @@ INSERT INTO `im09` (`sid`, `loam`, `pjm`, `ines`, `st`, `cala`, `calb`, `ec`, `a
 ('SD980693 ', 0, 86, 90, 71, 73, 80, 74, 81, 75, 85, 85, 87, 79, 66, 65, 76, 81, 83, 63, 63, 80, 95, 76, 82),
 ('SD980694 ', 1, 72, 88, 60, 70, 49, 64, 79, 64, 80, 70, 67, 69, 67, 71, 70, 72, 91, 60, 34, 77, 72, 60, 63),
 ('SD980695 ', 0, 78, 78, 40, 71, 45, 84, 64, 71, 80, 80, 66, 60, 60, 60, 62, 70, 60, 50, 41, 60, 85, 69, 56),
-('SD980698 ', 0, 88, 85, 65, 0, 0, 0, 0, 81, 85, 92, 89, 0, 74, 73, 83, 92, 78, 0, 72, 98, 94, 81, 78),
 ('SD980702 ', 0, 86, 87, 87, 60, 60, 72, 75, 73, 90, 62, 73, 61, 60, 77, 78, 65, 60, 65, 72, 66, 93, 72, 74),
 ('SD980703 ', 1, 85, 71, 40, 60, 64, 63, 76, 74, 70, 62, 67, 62, 69, 61, 66, 53, 70, 60, 60, 75, 77, 60, 54),
 ('SD980704 ', 1, 72, 75, 62, 31, 60, 63, 73, 82, 62, 78, 60, 71, 73, 49, 60, 61, 76, 63, 89, 72, 76, 52, 44),
@@ -5448,45 +4769,16 @@ INSERT INTO `im09` (`sid`, `loam`, `pjm`, `ines`, `st`, `cala`, `calb`, `ec`, `a
 ('SD980746 ', 0, 91, 63, 66, 42, 65, 68, 77, 84, 80, 71, 73, 78, 94, 65, 82, 65, 93, 86, 73, 83, 90, 63, 80),
 ('SD980747 ', 0, 79, 66, 88, 50, 45, 72, 83, 76, 80, 63, 80, 75, 65, 68, 65, 68, 60, 80, 78, 60, 75, 70, 83),
 ('SD980748 ', 0, 78, 68, 74, 60, 75, 72, 82, 84, 75, 71, 74, 65, 77, 64, 86, 61, 76, 78, 76, 73, 87, 66, 71),
-('SD980749 ', 0, 82, 72, 80, 33, 60, 79, 79, 82, 75, 73, 67, 68, 60, 67, 78, 60, 61, 80, 61, 70, 72, 68, 68),
-('SD980752 ', 0, 88, 69, 61, 0, 73, 0, 76, 0, 60, 52, 60, 0, 0, 64, 76, 98, 82, 0, 60, 80, 73, 66, 40);
+('SD980749 ', 0, 82, 72, 80, 33, 60, 79, 79, 82, 75, 73, 67, 68, 60, 67, 78, 60, 61, 80, 61, 70, 72, 68, 68);
 
-CREATE TABLE IF NOT EXISTS `im09df` (
-  `maj` varchar(2) DEFAULT NULL,
-  `year` int(4) DEFAULT NULL,
-  `subj` varchar(5) DEFAULT NULL,
-  `sdas` varchar(2) DEFAULT NULL,
-  `grade` int(1) DEFAULT NULL,
-  `subd` varchar(24) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- --------------------------------------------------------
 
-INSERT INTO `im09df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
-('IM', 2009, 'pjm', 'MM', 4, '專案管理'),
-('IM', 2009, 'ines', 'GE', 3, '創新與創業'),
-('IM', 2009, 'st', 'MA', 2, '統計學'),
-('IM', 2009, 'cala', 'MA', 1, '微積分(一)'),
-('IM', 2009, 'calb', 'MA', 1, '微積分(二)'),
-('IM', 2009, 'ec', 'MM', 1, '經濟學'),
-('IM', 2009, 'ac', 'MM', 1, '會計學'),
-('IM', 2009, 'mana', 'MM', 2, '管理學'),
-('IM', 2009, 'sadm', 'PA', 2, '系統分析與設計'),
-('IM', 2009, 'mis', 'MM', 3, '管理資訊系統'),
-('IM', 2009, 'pom', 'MM', 2, '生產與作業管理'),
-('IM', 2009, 'itdc', 'PA', 1, '計算機概論'),
-('IM', 2009, 'cppg', 'PA', 1, '程式設計'),
-('IM', 2009, 'dtst', 'PA', 2, '資料結構'),
-('IM', 2009, 'opsy', 'PA', 3, '作業系統'),
-('IM', 2009, 'oopg', 'PA', 1, '物件導向程式設計'),
-('IM', 2009, 'pcpg', 'PA', 1, '程式設計實習'),
-('IM', 2009, 'adcpg', 'PA', 1, '進階程式設計'),
-('IM', 2009, 'nwkpm', 'PA', 2, '網路規劃與管理'),
-('IM', 2009, 'itdcn', 'PA', 1, '網路概論'),
-('IM', 2009, 'inkpg', 'PA', 3, '網際網路程式設計'),
-('IM', 2009, 'idbs', 'PA', 2, '資料庫系統概論'),
-('IM', 2009, 'dbms', 'PA', 3, '資料庫管理系統');
+--
+-- 資料表結構 `im10`
+--
 
 CREATE TABLE IF NOT EXISTS `im10` (
-  `sid` varchar(9) DEFAULT NULL,
+  `sid` varchar(9) NOT NULL DEFAULT '',
   `loam` int(1) DEFAULT NULL,
   `pjm` int(2) DEFAULT NULL,
   `ines` int(2) DEFAULT NULL,
@@ -5510,8 +4802,13 @@ CREATE TABLE IF NOT EXISTS `im10` (
   `inkpg` int(3) DEFAULT NULL,
   `xmwd` int(3) DEFAULT NULL,
   `idbs` int(2) DEFAULT NULL,
-  `dbms` int(3) DEFAULT NULL
+  `dbms` int(3) DEFAULT NULL,
+  PRIMARY KEY (`sid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 資料表的匯出資料 `im10`
+--
 
 INSERT INTO `im10` (`sid`, `loam`, `pjm`, `ines`, `cala`, `calb`, `sta`, `ec`, `ac`, `mana`, `sadm`, `mis`, `pom`, `itdc`, `cppg`, `dtst`, `oopg`, `pcpg`, `adcpg`, `nwkpm`, `itdcn`, `inkpg`, `xmwd`, `idbs`, `dbms`) VALUES
 ('SD990595 ', 0, 94, 91, 60, 68, 71, 73, 62, 89, 87, 77, 73, 73, 30, 30, 60, 60, 35, 79, 67, 71, 70, 60, 76),
@@ -5656,45 +4953,16 @@ INSERT INTO `im10` (`sid`, `loam`, `pjm`, `ines`, `cala`, `calb`, `sta`, `ec`, `
 ('SD990755 ', 0, 83, 74, 86, 88, 66, 83, 79, 72, 85, 85, 68, 65, 86, 61, 70, 67, 64, 60, 64, 45, 70, 60, 62),
 ('SD990756 ', 1, 79, 70, 19, 7, 60, 43, 82, 71, 65, 85, 63, 69, 76, 60, 65, 84, 50, 60, 60, 48, 61, 55, 54),
 ('SD990757 ', 0, 84, 83, 84, 60, 60, 81, 81, 76, 65, 85, 69, 78, 78, 66, 80, 84, 82, 60, 86, 70, 93, 72, 95),
-('SD990758 ', 0, 81, 85, 83, 93, 75, 70, 87, 87, 68, 85, 67, 68, 66, 70, 77, 84, 85, 82, 74, 80, 87, 67, 89),
-('SD990761 ', 0, 84, 76, 0, 0, 84, 0, 0, 84, 60, 85, 80, 0, 97, 75, 74, 90, 0, 90, 97, 69, 89, 83, 98);
+('SD990758 ', 0, 81, 85, 83, 93, 75, 70, 87, 87, 68, 85, 67, 68, 66, 70, 77, 84, 85, 82, 74, 80, 87, 67, 89);
 
-CREATE TABLE IF NOT EXISTS `im10df` (
-  `maj` varchar(2) DEFAULT NULL,
-  `year` int(4) DEFAULT NULL,
-  `subj` varchar(5) DEFAULT NULL,
-  `sdas` varchar(2) DEFAULT NULL,
-  `grade` int(1) DEFAULT NULL,
-  `subd` varchar(30) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- --------------------------------------------------------
 
-INSERT INTO `im10df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
-('IM', 2010, 'pjm', 'MM', 4, '專案管理'),
-('IM', 2010, 'ines', 'GE', 4, '創新與創業'),
-('IM', 2010, 'cala', 'MA', 1, '微積分(一)'),
-('IM', 2010, 'calb', 'MA', 1, '微積分(二)'),
-('IM', 2010, 'sta', 'MA', 2, '統計學(一)'),
-('IM', 2010, 'ec', 'MM', 1, '經濟學原理'),
-('IM', 2010, 'ac', 'MM', 1, '會計學'),
-('IM', 2010, 'mana', 'MM', 2, '管理學'),
-('IM', 2010, 'sadm', 'PA', 2, '系統分析與設計'),
-('IM', 2010, 'mis', 'MM', 3, '管理資訊系統'),
-('IM', 2010, 'pom', 'MM', 2, '生產與作業管理'),
-('IM', 2010, 'itdc', 'PA', 1, '計算機概論'),
-('IM', 2010, 'cppg', 'PA', 1, '程式設計'),
-('IM', 2010, 'dtst', 'PA', 2, '資料結構'),
-('IM', 2010, 'oopg', 'PA', 1, '物件導向程式設計'),
-('IM', 2010, 'pcpg', 'PA', 1, '程式設計實習'),
-('IM', 2010, 'adcpg', 'PA', 1, '進階程式設計'),
-('IM', 2010, 'nwkpm', 'PA', 2, '網路規劃與管理'),
-('IM', 2010, 'itdcn', 'PA', 1, '網路概論'),
-('IM', 2010, 'inkpg', 'PA', 3, '網際網路程式設計'),
-('IM', 2010, 'xmwd', 'PA', 2, '延伸標記語言網頁設計'),
-('IM', 2010, 'idbs', 'PA', 2, '資料庫系統概論'),
-('IM', 2010, 'dbms', 'PA', 3, '資料庫管理系統');
+--
+-- 資料表結構 `im11`
+--
 
 CREATE TABLE IF NOT EXISTS `im11` (
-  `sid` varchar(9) DEFAULT NULL,
+  `sid` varchar(9) NOT NULL DEFAULT '',
   `loam` int(1) DEFAULT NULL,
   `ines` int(2) DEFAULT NULL,
   `care` int(2) DEFAULT NULL,
@@ -5716,8 +4984,13 @@ CREATE TABLE IF NOT EXISTS `im11` (
   `inkpg` int(3) DEFAULT NULL,
   `xmwd` int(3) DEFAULT NULL,
   `idbs` int(2) DEFAULT NULL,
-  `dbms` int(2) DEFAULT NULL
+  `dbms` int(2) DEFAULT NULL,
+  PRIMARY KEY (`sid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 資料表的匯出資料 `im11`
+--
 
 INSERT INTO `im11` (`sid`, `loam`, `ines`, `care`, `cala`, `calb`, `ec`, `st`, `mana`, `sadm`, `mis`, `pom`, `itdc`, `cppg`, `dtst`, `oopg`, `pcpg`, `nwkpm`, `itdcn`, `inkpg`, `xmwd`, `idbs`, `dbms`) VALUES
 ('SD1000636', 1, 90, 86, 91, 73, 88, 85, 77, 84, 72, 81, 78, 60, 78, 65, 69, 80, 84, 82, 80, 78, 83),
@@ -5774,10 +5047,6 @@ INSERT INTO `im11` (`sid`, `loam`, `ines`, `care`, `cala`, `calb`, `ec`, `st`, `
 ('SD1000690', 1, 65, 73, 60, 60, 74, 75, 94, 82, 83, 77, 83, 74, 76, 60, 72, 92, 47, 66, 61, 63, 90),
 ('SD1000691', 0, 91, 60, 68, 64, 80, 66, 70, 61, 74, 70, 74, 60, 69, 63, 68, 44, 71, 61, 74, 60, 50),
 ('SD1000693', 0, 95, 89, 83, 61, 78, 93, 91, 86, 93, 84, 69, 80, 79, 62, 68, 87, 73, 71, 85, 72, 93),
-('SD1000694', 0, 84, 84, 0, 36, 73, 60, 61, 70, 83, 72, 0, 0, 65, 80, 80, 60, 0, 74, 69, 70, 88),
-('SD1000695', 0, 89, 71, 0, 83, 73, 0, 65, 70, 85, 76, 0, 0, 71, 60, 0, 71, 75, 50, 88, 55, 55),
-('SD1000698', 0, 80, 92, 0, 0, 74, 71, 0, 75, 80, 81, 0, 71, 99, 61, 85, 60, 72, 70, 60, 62, 70),
-('SD1000699', 0, 89, 93, 60, 73, 0, 64, 86, 66, 78, 76, 0, 0, 0, 93, 0, 61, 0, 75, 70, 60, 91),
 ('SD1000700', 1, 82, 68, 70, 78, 78, 62, 60, 91, 78, 68, 69, 99, 91, 98, 99, 79, 83, 100, 91, 61, 93),
 ('SD1000703', 0, 80, 88, 60, 60, 86, 65, 83, 92, 60, 82, 51, 27, 75, 32, 60, 82, 68, 34, 62, 75, 89),
 ('SD1000704', 0, 82, 88, 89, 77, 95, 65, 77, 76, 94, 87, 62, 60, 66, 40, 60, 69, 79, 84, 75, 67, 90),
@@ -5822,10 +5091,6 @@ INSERT INTO `im11` (`sid`, `loam`, `ines`, `care`, `cala`, `calb`, `ec`, `st`, `
 ('SD1000754', 1, 73, 67, 69, 60, 73, 64, 80, 87, 65, 68, 69, 76, 53, 64, 76, 71, 73, 60, 80, 54, 90),
 ('SD1000755', 1, 79, 75, 60, 60, 69, 60, 82, 80, 50, 61, 67, 40, 75, 27, 60, 60, 71, 60, 67, 67, 86),
 ('SD1000756', 1, 89, 81, 64, 70, 84, 84, 83, 89, 90, 91, 61, 48, 72, 60, 60, 73, 83, 87, 73, 81, 94),
-('SD1000757', 0, 78, 62, 0, 73, 0, 78, 82, 85, 83, 82, 0, 88, 78, 90, 88, 90, 0, 43, 76, 76, 90),
-('SD1000758', 0, 86, 91, 87, 76, 0, 80, 83, 95, 80, 69, 0, 0, 69, 87, 84, 87, 96, 82, 70, 75, 90),
-('SD1000761', 0, 75, 76, 0, 0, 0, 0, 0, 80, 78, 83, 0, 99, 66, 78, 99, 67, 64, 38, 72, 71, 90),
-('SD1000762', 0, 79, 75, 0, 0, 80, 75, 83, 91, 90, 85, 0, 0, 74, 0, 0, 80, 95, 48, 62, 63, 87),
 ('SD1000765', 0, 99, 84, 60, 60, 72, 62, 79, 70, 90, 64, 50, 60, 23, 65, 72, 15, 12, 62, 60, 60, 89),
 ('SD1000766', 1, 68, 94, 69, 60, 90, 63, 91, 74, 90, 79, 69, 69, 60, 60, 67, 60, 79, 66, 61, 75, 71),
 ('SD1000767', 1, 67, 90, 84, 74, 85, 76, 86, 63, 95, 79, 62, 73, 63, 80, 82, 60, 60, 65, 70, 74, 91),
@@ -5872,43 +5137,16 @@ INSERT INTO `im11` (`sid`, `loam`, `ines`, `care`, `cala`, `calb`, `ec`, `st`, `
 ('SD1000813', 0, 83, 93, 86, 79, 95, 84, 83, 80, 93, 79, 74, 70, 68, 78, 80, 75, 61, 90, 67, 96, 89),
 ('SD1000814', 0, 25, 79, 63, 60, 76, 75, 82, 67, 88, 69, 72, 65, 43, 83, 75, 41, 82, 68, 61, 69, 60),
 ('SD1000815', 0, 5, 0, 40, 24, 62, 60, 44, 23, 75, 60, 68, 53, 0, 79, 66, 1, 31, 0, 50, 32, 1),
-('SD1000817', 0, 40, 76, 60, 32, 42, 70, 73, 71, 85, 79, 69, 78, 60, 68, 85, 67, 71, 74, 92, 85, 76),
-('SD1000818', 0, 70, 82, 61, 60, 0, 62, 0, 73, 94, 81, 0, 0, 62, 71, 65, 39, 78, 80, 75, 78, 93);
+('SD1000817', 0, 40, 76, 60, 32, 42, 70, 73, 71, 85, 79, 69, 78, 60, 68, 85, 67, 71, 74, 92, 85, 76);
 
-CREATE TABLE IF NOT EXISTS `im11df` (
-  `maj` varchar(2) DEFAULT NULL,
-  `year` int(4) DEFAULT NULL,
-  `subj` varchar(5) DEFAULT NULL,
-  `sdas` varchar(2) DEFAULT NULL,
-  `grade` int(1) DEFAULT NULL,
-  `subd` varchar(30) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- --------------------------------------------------------
 
-INSERT INTO `im11df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
-('IM', 2011, 'ines', 'GE', 3, '創新與創業'),
-('IM', 2011, 'care', 'GE', 3, '職涯分析與規劃'),
-('IM', 2011, 'cala', 'MA', 1, '商用微積分(一)'),
-('IM', 2011, 'calb', 'MA', 1, '商用微積分(二)'),
-('IM', 2011, 'ec', 'MM', 1, '經濟學原理與實務'),
-('IM', 2011, 'st', 'MA', 2, '統計學'),
-('IM', 2011, 'mana', 'MM', 2, '管理學'),
-('IM', 2011, 'sadm', 'PA', 2, '系統分析與設計'),
-('IM', 2011, 'mis', 'MM', 3, '管理資訊系統'),
-('IM', 2011, 'pom', 'MM', 2, '生產與作業管理'),
-('IM', 2011, 'itdc', 'PA', 1, '計算機概論'),
-('IM', 2011, 'cppg', 'PA', 1, '程式設計'),
-('IM', 2011, 'dtst', 'PA', 2, '資料結構'),
-('IM', 2011, 'oopg', 'PA', 1, '物件導向程式設計'),
-('IM', 2011, 'pcpg', 'PA', 1, '程式設計實習'),
-('IM', 2011, 'nwkpm', 'PA', 2, '網路規劃與管理'),
-('IM', 2011, 'itdcn', 'PA', 1, '網路概論'),
-('IM', 2011, 'inkpg', 'PA', 3, '網際網路程式設計'),
-('IM', 2011, 'xmwd', 'PA', 2, '延伸標記語言網頁設計'),
-('IM', 2011, 'idbs', 'PA', 2, '資料庫系統概論'),
-('IM', 2011, 'dbms', 'PA', 3, '資料庫管理系統');
+--
+-- 資料表結構 `im12`
+--
 
 CREATE TABLE IF NOT EXISTS `im12` (
-  `sid` varchar(9) DEFAULT NULL,
+  `sid` varchar(9) NOT NULL DEFAULT '',
   `loam` int(1) DEFAULT NULL,
   `ines` int(2) DEFAULT NULL,
   `care` int(2) DEFAULT NULL,
@@ -5930,8 +5168,13 @@ CREATE TABLE IF NOT EXISTS `im12` (
   `inkpg` int(2) DEFAULT NULL,
   `xmwd` int(2) DEFAULT NULL,
   `idbs` int(2) DEFAULT NULL,
-  `dbms` int(3) DEFAULT NULL
+  `dbms` int(3) DEFAULT NULL,
+  PRIMARY KEY (`sid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 資料表的匯出資料 `im12`
+--
 
 INSERT INTO `im12` (`sid`, `loam`, `ines`, `care`, `cala`, `calb`, `ec`, `st`, `mana`, `sadm`, `mis`, `pom`, `itdc`, `cppg`, `dtst`, `oopg`, `pcpg`, `nwkpm`, `itdcn`, `inkpg`, `xmwd`, `idbs`, `dbms`) VALUES
 ('SD1011122', 0, 89, 88, 79, 75, 90, 64, 75, 90, 75, 83, 73, 60, 67, 60, 69, 70, 62, 75, 90, 75, 100),
@@ -5979,7 +5222,6 @@ INSERT INTO `im12` (`sid`, `loam`, `ines`, `care`, `cala`, `calb`, `ec`, `st`, `
 ('SD1011172', 0, 74, 70, 76, 60, 68, 61, 71, 68, 50, 82, 69, 95, 69, 72, 93, 5, 67, 68, 74, 61, 60),
 ('SD1011173', 0, 0, 0, 63, 67, 86, 60, 73, 67, 0, 46, 70, 29, 67, 40, 60, 18, 40, 0, 65, 38, 0),
 ('SD1011174', 0, 79, 83, 97, 90, 83, 76, 76, 81, 80, 74, 88, 60, 84, 63, 68, 62, 60, 89, 80, 60, 100),
-('SD1011176', 0, 88, 87, 0, 0, 0, 64, 83, 86, 80, 83, 0, 92, 85, 0, 92, 87, 0, 92, 83, 84, 92),
 ('SD1011179', 0, 71, 79, 68, 0, 65, 69, 81, 65, 60, 0, 64, 73, 62, 0, 73, 0, 0, 60, 0, 61, 20),
 ('SD1011184', 0, 92, 93, 76, 84, 65, 84, 78, 81, 81, 66, 66, 78, 78, 74, 74, 74, 70, 83, 63, 67, 75),
 ('SD1011185', 0, 98, 90, 69, 81, 73, 91, 94, 80, 91, 93, 60, 88, 85, 77, 60, 70, 72, 79, 97, 82, 93),
@@ -6029,8 +5271,6 @@ INSERT INTO `im12` (`sid`, `loam`, `ines`, `care`, `cala`, `calb`, `ec`, `st`, `
 ('SD1011234', 0, 60, 28, 70, 75, 78, 60, 62, 64, 72, 63, 76, 77, 77, 76, 91, 83, 98, 77, 60, 26, 61),
 ('SD1011235', 1, 86, 95, 83, 77, 68, 93, 87, 85, 82, 80, 66, 71, 83, 74, 82, 75, 61, 91, 99, 73, 88),
 ('SD1011236', 0, 86, 87, 77, 67, 73, 69, 72, 74, 81, 63, 67, 86, 77, 67, 82, 60, 61, 76, 85, 72, 72),
-('SD1011239', 0, 92, 94, 0, 0, 0, 77, 82, 83, 81, 86, 90, 95, 77, 71, 95, 79, 94, 99, 80, 74, 85),
-('SD1011242', 1, 71, 67, 0, 0, 0, 60, 49, 64, 72, 60, 1, 76, 25, 0, 76, 0, 0, 30, 0, 0, 55),
 ('SD1011243', 0, 81, 96, 93, 97, 93, 82, 95, 80, 85, 84, 89, 79, 93, 83, 79, 89, 92, 80, 94, 89, 79),
 ('SD1011244', 0, 92, 96, 88, 76, 87, 80, 95, 89, 90, 99, 81, 61, 65, 74, 61, 87, 90, 67, 90, 76, 85),
 ('SD1011245', 0, 92, 96, 87, 85, 86, 89, 97, 88, 90, 99, 79, 60, 72, 60, 60, 90, 86, 76, 85, 77, 82),
@@ -6072,43 +5312,16 @@ INSERT INTO `im12` (`sid`, `loam`, `ines`, `care`, `cala`, `calb`, `ec`, `st`, `
 ('SD1011287', 0, 71, 81, 60, 60, 79, 67, 77, 67, 88, 60, 86, 71, 75, 79, 71, 81, 60, 79, 78, 60, 79),
 ('SD1011288', 0, 72, 83, 78, 60, 84, 71, 81, 84, 81, 73, 75, 37, 27, 26, 60, 52, 63, 60, 64, 77, 74),
 ('SD1011290', 0, 79, 87, 66, 60, 77, 63, 84, 55, 83, 70, 75, 60, 60, 51, 60, 75, 61, 42, 62, 54, 80),
-('SD1011291', 1, 72, 92, 69, 60, 75, 60, 84, 63, 85, 65, 80, 61, 49, 48, 61, 85, 46, 60, 67, 61, 75),
-('SD1011293', 1, 75, 86, 60, 0, 0, 67, 81, 61, 85, 81, 78, 63, 60, 87, 79, 82, 81, 63, 77, 68, 79);
+('SD1011291', 1, 72, 92, 69, 60, 75, 60, 84, 63, 85, 65, 80, 61, 49, 48, 61, 85, 46, 60, 67, 61, 75);
 
-CREATE TABLE IF NOT EXISTS `im12df` (
-  `maj` varchar(2) DEFAULT NULL,
-  `year` int(4) DEFAULT NULL,
-  `subj` varchar(5) DEFAULT NULL,
-  `sdas` varchar(2) DEFAULT NULL,
-  `grade` int(1) DEFAULT NULL,
-  `subd` varchar(30) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- --------------------------------------------------------
 
-INSERT INTO `im12df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
-('IM', 2012, 'ines', 'GE', 3, '創新與創業'),
-('IM', 2012, 'care', 'GE', 3, '職涯分析與規劃'),
-('IM', 2012, 'cala', 'MA', 1, '商用微積分(一)'),
-('IM', 2012, 'calb', 'MA', 1, '商用微積分(二)'),
-('IM', 2012, 'ec', 'MM', 1, '經濟學原理與實務'),
-('IM', 2012, 'st', 'MA', 2, '統計學'),
-('IM', 2012, 'mana', 'MM', 2, '管理學'),
-('IM', 2012, 'sadm', 'PA', 2, '系統分析與設計'),
-('IM', 2012, 'mis', 'MM', 3, '管理資訊系統'),
-('IM', 2012, 'pom', 'MM', 3, '生產與作業管理'),
-('IM', 2012, 'itdc', 'PA', 1, '計算機概論'),
-('IM', 2012, 'cppg', 'PA', 1, '程式設計'),
-('IM', 2012, 'dtst', 'PA', 2, '資料結構'),
-('IM', 2012, 'oopg', 'PA', 1, '物件導向程式設計'),
-('IM', 2012, 'pcpg', 'PA', 1, '程式設計實習'),
-('IM', 2012, 'nwkpm', 'PA', 2, '網路規劃與管理'),
-('IM', 2012, 'itdcn', 'PA', 1, '網路概論'),
-('IM', 2012, 'inkpg', 'PA', 3, '網際網路程式設計'),
-('IM', 2012, 'xmwd', 'PA', 2, '延伸標記語言網頁設計'),
-('IM', 2012, 'idbs', 'PA', 2, '資料庫系統概論'),
-('IM', 2012, 'dbms', 'PA', 3, '資料庫管理系統');
+--
+-- 資料表結構 `im13`
+--
 
 CREATE TABLE IF NOT EXISTS `im13` (
-  `sid` varchar(9) DEFAULT NULL,
+  `sid` varchar(9) NOT NULL DEFAULT '',
   `loam` int(1) DEFAULT NULL,
   `ines` int(2) DEFAULT NULL,
   `cala` int(3) DEFAULT NULL,
@@ -6130,8 +5343,13 @@ CREATE TABLE IF NOT EXISTS `im13` (
   `xmwd` int(3) DEFAULT NULL,
   `inkpg` int(2) DEFAULT NULL,
   `idbs` int(2) DEFAULT NULL,
-  `dbms` int(3) DEFAULT NULL
+  `dbms` int(3) DEFAULT NULL,
+  PRIMARY KEY (`sid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 資料表的匯出資料 `im13`
+--
 
 INSERT INTO `im13` (`sid`, `loam`, `ines`, `cala`, `calb`, `ec`, `pjm`, `pjmp`, `st`, `mana`, `sadm`, `mis`, `itdc`, `cppg`, `dtst`, `oopg`, `pcpg`, `nwkpm`, `itdcn`, `xmwd`, `inkpg`, `idbs`, `dbms`) VALUES
 ('SD1021033', 0, 84, 79, 83, 81, 92, 92, 78, 88, 82, 97, 76, 71, 70, 60, 90, 73, 85, 76, 95, 89, 98),
@@ -6185,7 +5403,6 @@ INSERT INTO `im13` (`sid`, `loam`, `ines`, `cala`, `calb`, `ec`, `pjm`, `pjmp`, 
 ('SD1021088', 1, 85, 62, 60, 79, 76, 92, 60, 71, 70, 50, 53, 70, 73, 63, 70, 30, 27, 83, 82, 84, 84),
 ('SD1021089', 0, 84, 60, 60, 68, 76, 92, 64, 80, 63, 60, 64, 43, 69, 68, 75, 23, 21, 85, 85, 87, 82),
 ('SD1021090', 1, 79, 68, 74, 82, 91, 84, 63, 84, 71, 60, 74, 80, 67, 75, 88, 67, 79, 90, 94, 94, 88),
-('SD1021091', 0, 79, 0, 0, 87, 91, 86, 60, 76, 46, 60, 81, 0, 52, 0, 0, 4, 0, 70, 75, 83, 84),
 ('SD1021092', 0, 69, 76, 0, 74, 0, 81, 71, 73, 72, 0, 87, 79, 74, 77, 82, 0, 0, 76, 62, 65, 80),
 ('SD1021093', 1, 85, 81, 79, 69, 0, 82, 0, 0, 68, 60, 84, 85, 64, 77, 80, 0, 82, 73, 86, 85, 80),
 ('SD1021094', 1, 90, 60, 69, 92, 85, 91, 63, 82, 95, 90, 82, 88, 60, 57, 70, 60, 84, 96, 99, 77, 100),
@@ -6236,44 +5453,16 @@ INSERT INTO `im13` (`sid`, `loam`, `ines`, `cala`, `calb`, `ec`, `pjm`, `pjmp`, 
 ('SD1021149', 0, 90, 68, 62, 92, 90, 92, 64, 84, 95, 90, 75, 60, 64, 63, 67, 73, 90, 76, 95, 84, 100),
 ('SD1021150', 0, 91, 69, 76, 78, 87, 93, 73, 81, 85, 83, 84, 70, 66, 56, 81, 60, 74, 92, 98, 70, 81),
 ('SD1021151', 0, 91, 87, 86, 82, 86, 86, 73, 87, 88, 85, 73, 74, 70, 96, 81, 60, 95, 96, 98, 80, 79),
-('SD1021152', 1, 90, 65, 79, 92, 87, 60, 60, 77, 90, 84, 60, 65, 61, 47, 75, 60, 66, 68, 65, 78, 64),
-('SD1021153', 0, 67, 71, 0, 0, 74, 78, 60, 69, 70, 80, 88, 84, 42, 0, 0, 4, 60, 30, 0, 52, 73);
+('SD1021152', 1, 90, 65, 79, 92, 87, 60, 60, 77, 90, 84, 60, 65, 61, 47, 75, 60, 66, 68, 65, 78, 64);
 
-CREATE TABLE IF NOT EXISTS `im13df` (
-  `maj` varchar(2) DEFAULT NULL,
-  `year` int(4) DEFAULT NULL,
-  `subj` varchar(5) DEFAULT NULL,
-  `sdas` varchar(2) DEFAULT NULL,
-  `grade` int(1) DEFAULT NULL,
-  `subd` varchar(30) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- --------------------------------------------------------
 
-INSERT INTO `im13df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
-('IM', 2013, 'ines', 'GE', 3, '創新與創業'),
-('IM', 2013, 'care', 'GE', 3, '職涯分析與規劃'),
-('IM', 2013, 'cala', 'MA', 1, '商用微積分(一)'),
-('IM', 2013, 'calb', 'MA', 1, '商用微積分(二)'),
-('IM', 2013, 'ec', 'MM', 1, '經濟學原理與實務'),
-('IM', 2013, 'pjm', 'MM', 2, '專案管理實務'),
-('IM', 2013, 'pjmp', 'MM', 2, '專案企劃實務'),
-('IM', 2013, 'st', 'MA', 2, '統計學'),
-('IM', 2013, 'mana', 'MM', 2, '管理學'),
-('IM', 2013, 'sadm', 'PA', 2, '系統分析與設計'),
-('IM', 2013, 'mis', 'MM', 3, '管理資訊系統'),
-('IM', 2013, 'itdc', 'PA', 1, '計算機概論'),
-('IM', 2013, 'cppg', 'PA', 1, '程式設計'),
-('IM', 2013, 'dtst', 'PA', 2, '資料結構'),
-('IM', 2013, 'oopg', 'PA', 1, '物件導向程式設計'),
-('IM', 2013, 'pcpg', 'PA', 1, '程式設計實習'),
-('IM', 2013, 'nwkpm', 'PA', 2, '網路規劃與管理'),
-('IM', 2013, 'itdcn', 'PA', 1, '網路概論'),
-('IM', 2013, 'xmwd', 'PA', 2, '延伸標記語言網頁設計'),
-('IM', 2013, 'inkpg', 'PA', 3, '網際網路程式設計'),
-('IM', 2013, 'idbs', 'PA', 2, '資料庫系統概論'),
-('IM', 2013, 'dbms', 'PA', 3, '資料庫管理系統');
+--
+-- 資料表結構 `im14`
+--
 
 CREATE TABLE IF NOT EXISTS `im14` (
-  `sid` varchar(9) DEFAULT NULL,
+  `sid` varchar(9) NOT NULL DEFAULT '',
   `loam` int(1) DEFAULT NULL,
   `cala` int(3) DEFAULT NULL,
   `calb` int(3) DEFAULT NULL,
@@ -6287,8 +5476,13 @@ CREATE TABLE IF NOT EXISTS `im14` (
   `oopg` int(2) DEFAULT NULL,
   `pcpg` int(2) DEFAULT NULL,
   `nwkpm` int(2) DEFAULT NULL,
-  `itdcn` int(2) DEFAULT NULL
+  `itdcn` int(2) DEFAULT NULL,
+  PRIMARY KEY (`sid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 資料表的匯出資料 `im14`
+--
 
 INSERT INTO `im14` (`sid`, `loam`, `cala`, `calb`, `ec`, `pjm`, `st`, `mana`, `itdc`, `cppg`, `dtst`, `oopg`, `pcpg`, `nwkpm`, `itdcn`) VALUES
 ('SD1031038', 1, 60, 60, 75, 76, 61, 84, 70, 73, 43, 60, 73, 22, 68),
@@ -6396,42 +5590,27 @@ INSERT INTO `im14` (`sid`, `loam`, `cala`, `calb`, `ec`, `pjm`, `st`, `mana`, `i
 ('SD1031154', 1, 79, 60, 82, 83, 64, 60, 82, 70, 47, 53, 79, 73, 53),
 ('SD1031158', 0, 97, 82, 75, 94, 70, 62, 77, 85, 61, 86, 0, 60, 0);
 
-CREATE TABLE IF NOT EXISTS `im14df` (
-  `maj` varchar(2) DEFAULT NULL,
-  `year` int(4) DEFAULT NULL,
-  `subj` varchar(5) DEFAULT NULL,
-  `sdas` varchar(2) DEFAULT NULL,
-  `grade` int(1) DEFAULT NULL,
-  `subd` varchar(24) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- --------------------------------------------------------
 
-INSERT INTO `im14df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
-('IM', 2014, 'care', 'GE', 3, '職涯分析與規劃'),
-('IM', 2014, 'cala', 'MA', 1, '商用微積分(一)'),
-('IM', 2014, 'calb', 'MA', 1, '商用微積分(二)'),
-('IM', 2014, 'ec', 'MM', 1, '經濟學原理與實務'),
-('IM', 2014, 'pjm', 'MM', 2, '專案管理實務'),
-('IM', 2014, 'st', 'MA', 2, '統計學'),
-('IM', 2014, 'mana', 'MM', 2, '管理學'),
-('IM', 2014, 'mis', 'MM', 3, '管理資訊系統'),
-('IM', 2014, 'itdc', 'PA', 1, '計算機概論'),
-('IM', 2014, 'cppg', 'PA', 1, '程式設計'),
-('IM', 2014, 'dtst', 'PA', 2, '資料結構'),
-('IM', 2014, 'oopg', 'PA', 1, '物件導向程式設計'),
-('IM', 2014, 'pcpg', 'PA', 1, '程式設計實習'),
-('IM', 2014, 'nwkpm', 'PA', 2, '網路規劃與管理'),
-('IM', 2014, 'itdcn', 'PA', 1, '網路概論');
+--
+-- 資料表結構 `im15`
+--
 
 CREATE TABLE IF NOT EXISTS `im15` (
-  `sid` varchar(9) DEFAULT NULL,
+  `sid` varchar(9) NOT NULL DEFAULT '',
   `loam` int(1) DEFAULT NULL,
   `cala` int(2) DEFAULT NULL,
   `ec` int(2) DEFAULT NULL,
   `care` int(2) DEFAULT NULL,
   `itdc` int(2) DEFAULT NULL,
   `cppg` int(2) DEFAULT NULL,
-  `pcpg` int(2) DEFAULT NULL
+  `pcpg` int(2) DEFAULT NULL,
+  PRIMARY KEY (`sid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 資料表的匯出資料 `im15`
+--
 
 INSERT INTO `im15` (`sid`, `loam`, `cala`, `ec`, `care`, `itdc`, `cppg`, `pcpg`) VALUES
 ('SD1040958', 0, 77, 86, 92, 75, 60, 85),
@@ -6548,19 +5727,6 @@ INSERT INTO `im15` (`sid`, `loam`, `cala`, `ec`, `care`, `itdc`, `cppg`, `pcpg`)
 ('SD1041073', 0, 91, 70, 92, 95, 60, 60),
 ('SD1041074', 0, 93, 80, 92, 90, 60, 60);
 
-CREATE TABLE IF NOT EXISTS `im15df` (
-  `maj` varchar(2) DEFAULT NULL,
-  `year` int(4) DEFAULT NULL,
-  `subj` varchar(4) DEFAULT NULL,
-  `sdas` varchar(2) DEFAULT NULL,
-  `grade` int(1) DEFAULT NULL,
-  `subd` varchar(24) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-INSERT INTO `im15df` (`maj`, `year`, `subj`, `sdas`, `grade`, `subd`) VALUES
-('IM', 2015, 'cala', 'MA', 1, '商用微積分(一)'),
-('IM', 2015, 'ec', 'MM', 1, '經濟學原理與實務'),
-('IM', 2015, 'care', 'GE', 1, '興趣與職涯探索'),
-('IM', 2015, 'itdc', 'PA', 1, '計算機概論'),
-('IM', 2015, 'cppg', 'PA', 1, '程式設計'),
-('IM', 2015, 'pcpg', 'PA', 1, '程式設計實習');
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
