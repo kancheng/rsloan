@@ -1,6 +1,6 @@
 
 #home-txtbg {
-  max-height:516px;
+  max-height:616px;
   width:100%;
   text-align:center;
   background-color: #428BCA;
@@ -9,13 +9,43 @@
 }
 
 #home-txtct {
-  font-size:120px;
+  font-size:160px;
   margin-bottom:0;
   color:#fdfdfd;
 }
 
-#home-micttxt {
-  font-weight : 200px;
-  font-size : 17px;
+#home-mic {
+  font-size : 20px;
   color : #fdfdfd;
+}
+
+
+@font-face {
+  font-family: haoye-font;
+  src: local(Heiti TC), local("微軟正黑體");
+  /* no unicode-range; default to all characters */
+}
+
+/* Latin characters 專用 */
+@font-face {
+  font-family: haoye-font; /* 同樣的 font-family */
+  unicode-range: U+00-024F;  /* Latin, Latin1 Sup., Ext-A, Ext-B */
+  src: local(Helvetica),     /* OS X preferred */
+       local(Arial);         /* Other OS */
+}
+
+/* 注音符號專用 */
+@font-face {
+  font-family: haoye-font;      /* 同樣的 font-family */
+  unicode-range: U+3100-312F;     /* Bopomofo */
+  src: local(LiHei Pro),          /* OS X */
+       local("微軟正黑體"); /* Windows Vista+ */
+}
+
+/* 日文假名專用 */
+@font-face {
+  font-family: haoye-font;            /* 同樣的 font-family */
+  unicode-range: U+3040-30FF;           /* Hiragana, Katakana */
+  src: local(Hiragino Kaku Gothic Pro), /* OS X */
+       local(Meiryo);                   /* Windows Vista+ */
 }

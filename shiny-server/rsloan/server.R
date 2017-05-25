@@ -475,7 +475,16 @@ function(input, output, session) {
     }
   )
   
+
+  
+  
   output$prosloan3 = renderPlot({
+    
+    tmsp$lrdata = round(as.numeric(as.character(untslon$slon)) / as.numeric(as.character(untslon$total)),4)
+    tmsp$lrclub = as.character(untslon$club)
+    tmsp$lrtest = data.frame( data = tmsp$lrdata, club = tmsp$lrclub)
+    tmsp$lrtest2 = ggplot(data = tmsp$lrtest, mapping = aes(club, data ,fill = club )) + geom_bar(stat = 'identity', position = 'stack') + labs( title = "就貸比例") + 
+      geom_text(mapping = aes(label = data), size = 5, colour = 'black', vjust = 1.5, hjust = .5, position = position_stack())
     
     tmsp$slone11 = data.frame(club = as.character(untslon$club), 
                               type = as.character(rep("slon")), data = as.numeric(as.character(tmsp$temuntslon$slon)))
@@ -498,14 +507,14 @@ function(input, output, session) {
     
     tmsp$slonae2 = rbind( tmsp$slone21, tmsp$slone22)
     tmsp$temae2 = ggplot(data = tmsp$slonae2, mapping = aes(club,data, fill = type)) + geom_bar(stat = 'identity', position = 'stack') + 
-      labs( title = "就貸比") + geom_text(mapping = aes(label = data), size = 5, colour = 'black', vjust = 1.5, hjust = .5, position = position_stack())
+      labs( title = "就貸人數") + geom_text(mapping = aes(label = data), size = 5, colour = 'black', vjust = 1.5, hjust = .5, position = position_stack())
     
     require(grid)
     # Move to a new page
     grid.newpage()
     # Create layout : nrow = 2, ncol = 2
-    # pushViewport(viewport(layout = grid.layout(2, 2)))
-    pushViewport(viewport(layout = grid.layout(1, 2)))
+    pushViewport(viewport(layout = grid.layout(2, 2)))
+    # pushViewport(viewport(layout = grid.layout(1, 2)))
     # A helper function to define a region on the layout
     define_region = function(row, col){
       viewport(layout.pos.row = row, layout.pos.col = col)
@@ -513,9 +522,11 @@ function(input, output, session) {
     
     print(tmsp$temae, vp = define_region(1, 1))
     print(tmsp$temae2, vp = define_region(1, 2))
-    
+    print(tmsp$lrtest2, vp = define_region(2, 1:2))
+
   })
   
+
   
   output$prosloan = renderPlot({
 
@@ -526,10 +537,19 @@ function(input, output, session) {
   output$prosloan2 = renderPlot({
     
     tmsp$temae2
+    
   })
   
+  output$temloanrate = renderPlot({
+  # tmsp$lrdata = round(as.numeric(as.character(untslon$slon)) / as.numeric(as.character(untslon$total)),4)
+  #  tmsp$lrclub = as.character(untslon$club)
+  #  tmsp$lrtest = data.frame( data = tmsp$lrdata, club = tmsp$lrclub)
+  #  tmsp$lrtest2 = ggplot(data = tmsp$lrtest, mapping = aes(club, data ,fill = club )) + geom_bar(stat = 'identity', position = 'stack') + labs( title = "就貸比例") + 
+  #    geom_text(mapping = aes(label = data), size = 5, colour = 'black', vjust = 1.5, hjust = .5, position = position_stack())
+    tmsp$lrtest2
+    
+  })
 
-  
   # Diagram
   output$spbt1vto = renderPrint({
     tmsp$spbtxt1 = paste0( "c(", input$spbtxt1, ")")

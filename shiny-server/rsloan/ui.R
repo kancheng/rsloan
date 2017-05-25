@@ -17,18 +17,21 @@ shinyUI(
     tags$head(
       tags$link(rel = "shortcut icon", href = "https://raw.githubusercontent.com/kancheng/rsloan/master/shiny-server/rsloan/www/favicon.ico")
     ),
-    navbarPage("RSLoan",
+    navbarPage("A3S",
                
                tabPanel( "Home",
                          
                          div( id = "home-txtbg",
-                              div( id = "home-txtct", "RSLoan"),
+                              div( id = "home-txtct", "A3S"),
                               br(),
-                              br(),
-                              div( id = "home-micttxt",
-                                   "The system is to analyze students' learning performance and economic status.")
-                              ,br()),
-                         
+                              div( id = "home-mic",
+                                "學業成就分析系統",
+                                br(),
+                                "Academic achievement analysis system"
+                              ),
+                              br()
+                              ),
+                         br(),
                          div( titlePanel("About"),
                               "Organization : Lunghwa University of Science and Technology",
                               br(),
@@ -90,7 +93,7 @@ shinyUI(
 
                                     tabPanel("Setting - 分析設定",
                                       tabsetPanel(
-                                        tabPanel("分群設定",
+                                        tabPanel("*分群設定",
 
                                           h1( "檢視資料欄位" ),
                                           helpText("Display the Dataset's Colume name which user's choice. "),
@@ -112,7 +115,7 @@ shinyUI(
                                           submitButton("Submit", icon("refresh"), width = "40%")
 
                                         ),
-                                        tabPanel("建議分群",
+                                        tabPanel("*建議分群",
                                           sidebarLayout( 
                                             sidebarPanel(width = 3,
                                                          
@@ -141,7 +144,7 @@ shinyUI(
 
                                           )
                                         ),
-                                        tabPanel("功能參數設定",
+                                        tabPanel("*功能參數設定",
                                           fluidRow(
                                             column(4, wellPanel(
                                               h2("Hierarchical Clustering"),       
@@ -175,7 +178,7 @@ shinyUI(
                                     ),
                                     tabPanel("Cluster - 集群分析",
                                              tabsetPanel(
-                                               tabPanel("分群資料結果檢視",
+                                               tabPanel("*分群資料結果檢視",
                                                         h2("Cluster"),
                                                         helpText("檢視分群資料集"),
                                                         # submitButton("Submit", icon("refresh"), width = "30%"),
@@ -203,7 +206,7 @@ shinyUI(
                                     tabPanel("Summary - 敘述統計",
                                       tabsetPanel(
                                         
-                                        tabPanel("Summary" ,
+                                        tabPanel("*Summary" ,
                                              h2("Summary"),
                                              helpText("分群狀態、最小最大等計算"),
                                              # submitButton("Submit", icon("refresh"), width = "30%"),
@@ -245,7 +248,7 @@ shinyUI(
                                     tabPanel("Analysis - 變異數分析",
                                       tabsetPanel(  
                                              
-                                        tabPanel("Analysis",
+                                        tabPanel("*Analysis",
                                              h2("Analysis"),
                                              helpText("ANOVA & Tukey 分析"),
                                              # submitButton("Submit", icon("refresh"), width = "30%"),
@@ -266,7 +269,7 @@ shinyUI(
                                     tabPanel("SLoan - 就學貸敘述統計",
                                       tabsetPanel(
                                                
-                                        tabPanel( "Have SLoan - 有就學貸款",
+                                        tabPanel( "*Have SLoan - 有就學貸款",
                                                          h2("Have SLoan"),
                                                          helpText("有辦理就學貸款的各群敘述統計"),
                                                          # submitButton("Submit", icon("refresh"), width = "30%"),
@@ -296,7 +299,7 @@ shinyUI(
                                           )
                                         ),
                                                
-                                        tabPanel( "Not SLoan - 無就學貸款",
+                                        tabPanel( "*Not SLoan - 無就學貸款",
                                                          h2("Not SLoan"),
                                                          helpText("無辦理就學貸款的各群敘述統計"),
                                                          # submitButton("Submit", icon("refresh"), width = "30%"),
@@ -342,7 +345,7 @@ shinyUI(
                                     
                                     tabPanel("Propotion - 就學貸款人數比率",
                                       sidebarLayout(
-                                        mainPanel(width = 4,
+                                        mainPanel(width = 3,
                                              h2("Table"),
                                              helpText("檢視就學貸款人數比率資料集"),
                                              # submitButton("Submit", icon("refresh"), width = "30%"),
@@ -351,9 +354,9 @@ shinyUI(
                                              helpText("下載就學貸款人數比率資料集 CSV"),
                                              downloadButton('pptndtdl', 'Download')
                                         ),
-                                        mainPanel(width = 6,
+                                        mainPanel(width = 7,
                                           tabsetPanel(
-                                            tabPanel("Merge",
+                                            tabPanel("*Merge",
                                                      h2("Plot"),
                                                      br(),
                                                      # submitButton("Submit", icon("refresh"), width = "30%"),
@@ -367,12 +370,23 @@ shinyUI(
                                               br(),
                                               plotOutput("prosloan")
                                             ),
-                                            tabPanel("就貸比",
+                                            tabPanel("就貸人數",
                                               h2("Plot"),
                                               br(),
                                               # submitButton("Submit", icon("refresh"), width = "30%"),
                                               br(),
                                               plotOutput("prosloan2")
+                                            ),
+                                            tabPanel("就貸比例",
+                                                     h2("Formula"),
+                                                     br(),
+                                                     withMathJax(),
+                                                     helpText("$$ 就貸比例 = \\frac{分群中辦理就學貸款人數}{分群總人數}$$"),
+                                                     br(),
+                                                     h2("Percentage"),
+                                                     br(),
+                                                     plotOutput('temloanrate'),
+                                                     br()   
                                             )
                                           )
                                         )
@@ -380,7 +394,7 @@ shinyUI(
                                     ),
                                     tabPanel("Diagram - 視覺化結果",
                                              tabsetPanel(
-                                               tabPanel("Plot Setting - 單圖參數設定",
+                                               tabPanel("*Plot Setting - 單圖參數設定",
                                                         sidebarLayout(
                                                           sidebarPanel(width = 3,
                                                                        
@@ -431,7 +445,7 @@ shinyUI(
                                                           )
                                                         )
                                                ),
-                                               tabPanel("Plot Setting - 多圖參數設定",
+                                               tabPanel("*Plot Setting - 多圖參數設定",
                                                         sidebarLayout(
                                                           sidebarPanel(width = 3,
                                                                        
@@ -473,6 +487,8 @@ shinyUI(
                
                tabPanel("Instruction",
                         h1("說明"),
+                        helpText("The system is to analyze students' learning performance and economic status."),
+                        br(),
                         sidebarLayout(
                           mainPanel( width = 4,
                                       h2("範例檔案下載"),
