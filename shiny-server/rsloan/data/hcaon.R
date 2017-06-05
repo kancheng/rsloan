@@ -55,7 +55,20 @@ hcaon = function( Odata, beky, keycol, hck = 5, hcm = "ward.D", dism = "euclidea
 	assign( hcbsdtavtna,
 		hcbsdtavtem
 	, env = .GlobalEnv)
+	
+	hcbsdtavtem1 = hcbsdtavtem[hcbsdtavtem$loam == 1,]
+	hcbsdtavtem0 = hcbsdtavtem[hcbsdtavtem$loam == 0,]	
+	hcbsdtavtna1 = paste0(dtname,"avt1")
+	hcbsdtavtna0 = paste0(dtname,"avt0")
+	
+	assign( hcbsdtavtna1,
+	        hcbsdtavtem1
+	, env = .GlobalEnv)
 
+	assign( hcbsdtavtna0,
+	        hcbsdtavtem0
+  , env = .GlobalEnv)
+	
 # TukeyHSD & ANOVA CSV process
 
 	optkavtm =  data.frame( tsnm = character(), 

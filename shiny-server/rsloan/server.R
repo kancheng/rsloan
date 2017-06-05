@@ -585,6 +585,7 @@ function(input, output, session) {
     tmsp$shspic  = sg2proc2("untavt", tmsp$evalspbtxt1, tmsp$evalspbtxt2)
     untavt.gmp2
   })
+  
   output$multiplot = renderPlot({
     tmsp$evalmpbtxt1 = eval(parse(text = tmsp$mpbtxt1))
     tmsp$evalmpbtxt2 = eval(parse(text = tmsp$mpbtxt2))
@@ -599,6 +600,77 @@ function(input, output, session) {
   output$alldtscolnm3 = renderPrint({
     colnames(tmsp$cudf)
   })
+  
+  output$espbt1vto = renderPrint({
+    tmsp$espbtxt1 = paste0( "c(", input$espbtxt1, ")")
+    cat(tmsp$espbtxt1)
+  })
+  
+  output$espbt2vto = renderPrint({
+    tmsp$espbtxt2 = paste0( "c(", input$espbtxt2, ")")
+    cat(tmsp$espbtxt2)
+  })
+  
+  output$ealldtscolnm2 = renderPrint({
+    colnames(tmsp$cudf)
+  })
+  
+  output$el1singplot = renderPlot({
+    tmsp$el1evalspbtxt1 = eval(parse(text = tmsp$espbtxt1))
+    tmsp$el1evalspbtxt2 = eval(parse(text = tmsp$espbtxt2))
+    tmsp$el1shspic  = eachsg2proc("untavt1", tmsp$el1evalspbtxt1, tmsp$el1evalspbtxt2)
+    untavt1.egmp
+  })
+  
+  output$el1singplot2 = renderPlot({
+    tmsp$el1evalspbtxt1 = eval(parse(text = tmsp$espbtxt1))
+    tmsp$el1evalspbtxt2 = eval(parse(text = tmsp$espbtxt2))
+    tmsp$el1shspic  = eachsg2proc2("untavt1", tmsp$el1evalspbtxt1, tmsp$el1evalspbtxt2)
+    untavt1.egmp2
+  })
+
+  output$el0singplot = renderPlot({
+    tmsp$el0evalspbtxt1 = eval(parse(text = tmsp$espbtxt1))
+    tmsp$el0evalspbtxt2 = eval(parse(text = tmsp$espbtxt2))
+    tmsp$el0shspic  = eachsg2proc("untavt0", tmsp$el0evalspbtxt1, tmsp$el0evalspbtxt2)
+    untavt0.egmp
+  })
+  
+  output$el0singplot2 = renderPlot({
+    tmsp$el0evalspbtxt1 = eval(parse(text = tmsp$espbtxt1))
+    tmsp$el0evalspbtxt2 = eval(parse(text = tmsp$espbtxt2))
+    tmsp$el0shspic  = eachsg2proc2("untavt0", tmsp$el0evalspbtxt1, tmsp$el0evalspbtxt2)
+    untavt0.egmp2
+  })
+  
+  output$empb1vto = renderPrint({
+    tmsp$empbtxt1 = paste0( "c(", input$empbtxt1, ")")
+    cat(tmsp$empbtxt1)
+  })
+  
+  output$empb2vto = renderPrint({
+    tmsp$empbtxt2 = paste0( "c(", input$empbtxt2, ")")
+    cat(tmsp$empbtxt2)
+  })
+  
+  output$ealldtscolnm3 = renderPrint({
+    colnames(tmsp$cudf)
+  })
+  
+  output$el1multiplot = renderPlot({
+    tmsp$el1evalmpbtxt1 = eval(parse(text = tmsp$empbtxt1))
+    tmsp$el1evalmpbtxt2 = eval(parse(text = tmsp$empbtxt2))
+    tmsp$el1shmpic = mg2proc("untavt1", tmsp$el1evalmpbtxt1, tmsp$el1evalmpbtxt2)
+    untavt1.mulgmp
+  })
+  
+  output$el0multiplot = renderPlot({
+    tmsp$el0evalmpbtxt1 = eval(parse(text = tmsp$empbtxt1))
+    tmsp$el0evalmpbtxt2 = eval(parse(text = tmsp$empbtxt2))
+    tmsp$el0shmpic = mg2proc("untavt0", tmsp$el0evalmpbtxt1, tmsp$el0evalmpbtxt2)
+    untavt0.mulgmp
+  })
+  
   # Instruction
   
   output$downloadDemo = downloadHandler(

@@ -479,6 +479,115 @@ shinyUI(
                                                         submitButton("Submit", icon("refresh"), width = "30%"),
                                                         br(),
                                                         plotOutput("multiplot")
+                                               ),
+                                               tabPanel("*分組單圖參數設定",
+                                                        sidebarLayout(
+                                                          sidebarPanel(width = 3,
+                                                                       
+                                                                       h2( "Single Plot" ),
+                                                                       h3("PK Column"),
+                                                                       textInput("espbtxt1", "", value = "\"微積分一\""),
+                                                                       verbatimTextOutput("espbt1vto"),
+                                                                       # submitButton("Submit", icon("refresh"), width = "30%"),
+                                                                       
+                                                                       h3("Analyze Column"),
+                                                                       textInput("espbtxt2", "", value = "\"計算機概論\""),
+                                                                       verbatimTextOutput("espbt2vto"),
+                                                                       submitButton("Submit", icon("refresh"), width = "30%")
+                                                                       
+                                                          ),
+                                                          mainPanel(width = 7,
+                                                                    
+                                                                    h1( "Dataset Column" ),
+                                                                    helpText("Display the Dataset's Colume name which user's choice. "),
+                                                                    br(),
+                                                                    textOutput("ealldtscolnm2", container = pre)
+                                                                    
+                                                          )
+                                                        )
+                                               ),
+                                               tabPanel("分組單繪圖",
+                                                        tabsetPanel(
+                                                          tabPanel("顯示有辦理就學貸款數值",
+                                                                   h2("Single Plot"),
+                                                                   helpText("單一科目散佈圖"),
+                                                                   br(),
+                                                                   submitButton("Submit", icon("refresh"), width = "30%"),
+                                                                   br(),
+                                                                   plotOutput("el1singplot")
+                                                          ),
+                                                          tabPanel("隱藏有辦理就學貸款數值",
+                                                                   h2("Single Plot"),
+                                                                   helpText("單一科目散佈圖"),
+                                                                   br(),
+                                                                   submitButton("Submit", icon("refresh"), width = "30%"),
+                                                                   br(),
+                                                                   plotOutput("el1singplot2")                                                          
+                                                          ),
+                                                          tabPanel("顯示無辦理就學貸款數值",
+                                                                   h2("Single Plot"),
+                                                                   helpText("單一科目散佈圖"),
+                                                                   br(),
+                                                                   submitButton("Submit", icon("refresh"), width = "30%"),
+                                                                   br(),
+                                                                   plotOutput("el0singplot")
+                                                          ),
+                                                          tabPanel("隱藏無辦理就學貸款數值",
+                                                                   h2("Single Plot"),
+                                                                   helpText("單一科目散佈圖"),
+                                                                   br(),
+                                                                   submitButton("Submit", icon("refresh"), width = "30%"),
+                                                                   br(),
+                                                                   plotOutput("el0singplot2")                                                          
+                                                          )
+                                                        )
+                                               ),
+                                               tabPanel("*分組多圖參數設定",
+                                                        sidebarLayout(
+                                                          sidebarPanel(width = 3,
+                                                                       
+                                                                       h2( "Multiple Plot" ),
+                                                                       h3("PK Column"),
+                                                                       textInput("empbtxt1", "", value = "\"微積分一\""),
+                                                                       verbatimTextOutput("empb1vto"),
+                                                                       # submitButton("Submit", icon("refresh"), width = "30%"),
+                                                                       
+                                                                       h3("Analyze Column"),
+                                                                       textInput("empbtxt2", "", value = "\"計算機概論\", \"管理學\", \"統計學\", \"微積分一\""
+                                                                                 , width = "100%"),
+                                                                       verbatimTextOutput("empb2vto"),
+                                                                       submitButton("Submit", icon("refresh"), width = "30%") 
+                                                                       
+                                                          ),
+                                                          mainPanel(width = 7,
+                                                                    
+                                                                    h1( "Dataset Column" ),
+                                                                    helpText("Display the Dataset's Colume name which user's choice. "),
+                                                                    br(),
+                                                                    textOutput("ealldtscolnm3", container = pre)
+                                                                    
+                                                          )
+                                                        )
+                                               ),
+                                               tabPanel("分組多繪圖",
+                                                tabsetPanel(
+                                                  tabPanel("有辦理就學貸款",
+                                                        h2("Multiple Plot"),
+                                                        helpText("多科目散佈圖合併"),
+                                                        br(),
+                                                        submitButton("Submit", icon("refresh"), width = "30%"),
+                                                        br(),
+                                                        plotOutput("el1multiplot")
+                                                  ),
+                                                  tabPanel("無辦理就學貸款",
+                                                           h2("Multiple Plot"),
+                                                           helpText("多科目散佈圖合併"),
+                                                           br(),
+                                                           submitButton("Submit", icon("refresh"), width = "30%"),
+                                                           br(),
+                                                           plotOutput("el0multiplot")
+                                                  )   
+                                                )                                                        
                                                )
                                              )
                                     )
