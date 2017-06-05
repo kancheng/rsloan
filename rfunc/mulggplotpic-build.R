@@ -5,7 +5,7 @@ sg2proc = function( dft = "untavt", midx, cidx){
 	for( snm in 1:length(cidx)){
 		s.nm = paste0( dft, ".", "gmp")	
 		s.cmdr = paste0( "ggplot(", dft, 
-		") + geom_point( aes(x = ", 
+		") + geom_point( alpha = 0.5, size = 3, aes(x = ", 
 		midx, ", y = ", cidx[snm], 
 		", colour = factor(hcadata) )) + facet_grid( ~ loam) + scale_colour_hue( l = 50 ) + ",
 		"geom_text( check_overlap = TRUE, angle = 45, aes( x = ", midx, " + 1, y = ", cidx[snm], " + 1, label = bnm))")
@@ -13,6 +13,18 @@ sg2proc = function( dft = "untavt", midx, cidx){
 		assign( s.nm, s.eval, env = .GlobalEnv)
 	}
 
+}
+
+sg2proc2 = function( dft = "untavt", midx, cidx){
+  for( snm in 1:length(cidx)){
+    s.nm = paste0( dft, ".", "gmp2")	
+    s.cmdr = paste0( "ggplot(", dft, 
+                     ") + geom_point( alpha = 0.5, size = 3, aes(x = ", 
+                     midx, ", y = ", cidx[snm], 
+                     ", colour = factor(hcadata) )) + facet_grid( ~ loam) ")
+    s.eval = eval(parse(text = s.cmdr))
+    assign( s.nm, s.eval, env = .GlobalEnv)
+  }
 }
 
 mg2proc = function( dft = "untavt", midx, cidx){
@@ -26,7 +38,7 @@ mg2proc = function( dft = "untavt", midx, cidx){
 
 		s.nm = paste0( dft, ".", cidx[snm], ".", "gmp")	
 		s.cmdr = paste0( "ggplot(", dft, 
-		") + geom_point( aes(x = ", 
+		") + geom_point( alpha = 0.5, aes(x = ", 
 		midx, ", y = ", cidx[snm], 
 		", colour = factor(hcadata) )) + facet_grid( ~ loam) + scale_colour_hue( l = 50 )")
 		mupobjnm = paste0( mupobjnm, s.nm,", ")
