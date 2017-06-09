@@ -660,14 +660,14 @@ function(input, output, session) {
   output$el1multiplot = renderPlot({
     tmsp$el1evalmpbtxt1 = eval(parse(text = tmsp$empbtxt1))
     tmsp$el1evalmpbtxt2 = eval(parse(text = tmsp$empbtxt2))
-    tmsp$el1shmpic = mg2proc("untavt1", tmsp$el1evalmpbtxt1, tmsp$el1evalmpbtxt2)
+    tmsp$el1shmpic = eachmg2proc("untavt1", tmsp$el1evalmpbtxt1, tmsp$el1evalmpbtxt2)
     untavt1.mulgmp
   })
   
   output$el0multiplot = renderPlot({
     tmsp$el0evalmpbtxt1 = eval(parse(text = tmsp$empbtxt1))
     tmsp$el0evalmpbtxt2 = eval(parse(text = tmsp$empbtxt2))
-    tmsp$el0shmpic = mg2proc("untavt0", tmsp$el0evalmpbtxt1, tmsp$el0evalmpbtxt2)
+    tmsp$el0shmpic = eachmg2proc("untavt0", tmsp$el0evalmpbtxt1, tmsp$el0evalmpbtxt2)
     untavt0.mulgmp
   })
   
