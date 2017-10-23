@@ -152,7 +152,7 @@ NA 值的資料筆數處理 [rsloan-dcna](https://github.com/kancheng/rsloan-dcn
 
 ## Paper
 
-詳見 .....
+Kan, Hao-Cheng. (2017). *"A Study of Academic Achievement Analysis System: Using Cluster Analysis and Visualization"*. (Lunghwa University of Science and Technology). Retrieved from http://hdl.handle.net/11296/ndltd/17803647827157686465 .
 
 
 ## LICENSE
