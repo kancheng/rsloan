@@ -157,6 +157,6 @@ Kan, Hao-Cheng. (2017). *"A Study of Academic Achievement Analysis System: Using
 
 ## LICENSE
 
-[MIT](https://github.com/kancheng/rsloan/blob/master/LICENSE)
+[MIT License](https://github.com/kancheng/rsloan/blob/master/LICENSE)
 
 
